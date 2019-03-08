@@ -98,7 +98,13 @@
         <img src="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/img/profile.png" alt="{{ SITETITLE }}" title="{{ SITETITLE }}">
         {% endif %}
       </a>
-      <h1><a href="{{ SITEURL }}">{{ SITETITLE }}</a></h1>
+      {% if SITETITLE|length > 2 %}
+          <h1><a href="{{ SITEURL }}">
+                  <span style="font-weight:bolder; color:#FF5A09">{{ SITETITLE[0] }}</span>{{ SITETITLE[1:-1] }}<span style="font-weight:bolder; color:#FF5A09">{{ SITETITLE[-1] }}</span>
+              </a></h1>
+      {% else %}
+          <h1><a href="{{ SITEURL }}">{{ SITETITLE }}</a></h1>
+      {% endif %}
 
       {% if SITESUBTITLE %}<p>{{ SITESUBTITLE }}</p>{% endif %}
 
