@@ -44,7 +44,7 @@ MATH_JAX = {'process_summary': True}
 # {{{ Theme
 THEME = 'themes/Flex'
 SITETITLE = SITENAME
-SITESUBTITLE = 'the language and computation playground'
+SITESUBTITLE = 'language ⊗ computation'
 SITEDESCRIPTION = SITESUBTITLE
 SITELOGO = SITEURL + '/img/logo.svg'
 FAVICON = SITEURL + ''
