@@ -35,11 +35,11 @@
     <link href="{{ SITEURL }}/{{ CUSTOM_CSS }}" rel="stylesheet">
   {% endif %}
 
-  {% if ATOM_IN_MENU and FEED_ALL_ATOM %}
+  {% if FEED_ALL_ATOM %}
     <link href="{{ FEED_DOMAIN }}/{{ FEED_ALL_ATOM }}" type="application/atom+xml" rel="alternate" title="{{ SITENAME }} Atom">
   {% endif %}
 
-  {% if RSS_IN_MENU and FEED_ALL_RSS %}
+  {% if FEED_ALL_RSS %}
     <link href="{{ FEED_DOMAIN }}/{{ FEED_ALL_RSS }}" type="application/rss+xml" rel="alternate" title="{{ SITENAME }} RSS">
   {% endif %}
 
@@ -156,11 +156,11 @@
       <a href="{{ link }}">{{ title }}</a>
       {% endfor %}
 
-      {% if FEED_ALL_ATOM %}
+      {% if ATOM_IN_MENU and FEED_ALL_ATOM %}
       <a href="{{ FEED_DOMAIN }}/{{ FEED_ALL_ATOM }}">{{ _('Atom') }}</a>
       {% endif %}
 
-      {% if FEED_ALL_RSS %}
+      {% if RSS_IN_MENU and FEED_ALL_RSS %}
       <a href="{{ FEED_DOMAIN }}/{{ FEED_ALL_RSS }}">{{ _('RSS') }}</a>
       {% endif %}
     </nav>
