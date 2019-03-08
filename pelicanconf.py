@@ -17,14 +17,20 @@ PATH = 'content'
 SITEURL = 'http://localhost:8000'
 USE_FOLDER_AS_CATEGORY = True
 
-ARTICLE_PATHS = ['news', 'tutorials', 'discussions']
+ARTICLE_PATHS = ['News', 'Tutorials', 'Discussions']
 ARTICLE_URL = '{slug}_{date:%Y-%m-%d}.html'
 ARTICLE_SAVE_AS = ARTICLE_URL
 PAGE_PATHS = ['pages']
 PAGE_URL = '{slug}.html'
 PAGE_SAVE_AS = PAGE_URL
 
-STATIC_PATHS = ['img']
+STATIC_PATHS = ['img', 'extra/CNAME', 'extra/README.md']
+STATIC_EXCLUDE_SOURCES = False
+IGNORE_FILES = ['extra']
+EXTRA_PATH_METADATA = {
+    'extra/README.md': {'path': 'README.md'},
+    'extra/CNAME': {'path': 'CNAME'}
+}
 # }}}
 
 
@@ -40,7 +46,7 @@ THEME = 'themes/Flex'
 SITETITLE = SITENAME
 SITESUBTITLE = 'the language and computation playground'
 SITEDESCRIPTION = SITESUBTITLE
-SITELOGO = SITEURL + ''
+SITELOGO = SITEURL + '/img/logo.svg'
 FAVICON = SITEURL + ''
 CC_LICENSE = {
     'name': 'Creative Commons Attribution-ShareAlike',
@@ -79,7 +85,7 @@ FEED_MAX_ITEMS = 10
 
 # {{{ Sidebar links
 # Blogroll
-LINKS = (('Subscribe', FEED_URL),)
+# LINKS = (('Subscribe', FEED_URL),)
 
 # Social widget
 SOCIAL = (('github', 'https://github.com/outde-xyz/website'),
