@@ -58,6 +58,8 @@ MAIN_MENU = True
 MENUITEMS = (('Tutorials', '/category/tutorials.html'),
              ('by author', '/authors.html'),
              ('by topic', '/tags.html'),)
+ATOM_IN_MENU = False
+RSS_IN_MENU = False
 PYGMENTS_STYLE = 'friendly'
 
 ROBOTS = 'index, follow'
