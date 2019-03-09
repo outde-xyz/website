@@ -64,6 +64,8 @@
     </p>
   </div>
 
+  {% include "custom/share_post.html" %}
+
   {% if ADD_THIS_ID %}
   <div class="center social-share">
     <p>{{ _('Like this article? Share it with your friends!') }}</p>
@@ -75,9 +77,11 @@
 
   {% include "partial/neighbors.html" %}
 
+  {% include "custom/series.html" %}
+
   {% if article.related_posts %}
   <div class="related-posts">
-    <h4>{{ _('You might enjoy') }}</h4>
+    <h4>{{ _('You might also enjoy') }}</h4>
     <ul class="related-posts">
     {% for related_post in article.related_posts %}
       <li><a href="{{ SITEURL }}/{{ related_post.url }}">{{ related_post.title }}</a></li>
@@ -88,16 +92,7 @@
     <div class="addthis_relatedposts_inline"></div>
   {% endif %}
 
-  {% if USE_UTTERANCES %}
-  <script src="https://utteranc.es/client.js"
-          repo="outde-xyz/website"
-          issue-term="pathname"
-          label="✨💬✨ comments"
-          theme="github-light"
-          crossorigin="anonymous"
-          async>
-  </script>
-  {% endif %}
+  {% include "custom/utterances.html" %}
 
   {% if GOOGLE_ADSENSE and GOOGLE_ADSENSE.ads.article_bottom %}
     <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
