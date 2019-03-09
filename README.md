@@ -35,10 +35,13 @@ If you want to generate the website from the source files, you need all of the f
 1.  A number of Python3 libraries:
     - `pygments`, version 2.3 or higher
     - `typogrify` library, version 2.0.7 or higher
-    - `pybtex`, version 0.21 or higher
     - *beautifulsoup4*; in Debian, the library is called `python3-bs4`
 
     As before, use pip or your package manager to install these dependencies.
+
+1.  At least version 2.2 of `pandoc` and 0.14 of `pandoc-citeproc`.
+    Linux users should definitely install those from their repositories.
+    Everybody else is referred to [pandoc's install guide](https://pandoc.org/installing.html).
 
 1.  A recent-ish version of the `make` tool.
     This is usually already installed on Linux and OSX.
@@ -60,12 +63,12 @@ Python's `pip` has the nasty habit of scattering the install files across variou
 A better solution is to create a *virtual environment* in your home directory that holds all the files related to working with pelican:
 
 ~~~~~
-mkdir ~/.mlrg_env
-virtualenv ~/.mlrg_env
-~/.mlrg_env/bin/pip install pelican ghp-import
+mkdir ~/.outdex_env
+virtualenv -p python3 ~/.outdex_env
+~/.outdex_env/bin/pip3 install pelican ghp-import
 ~~~~~
 
-You then have to make the pelican script accessible through your shell, either by adding `~/.mlrg_env` to your PATH or by symlinking it to a folder in your PATH (e.g. `/usr/bin` or `~/bin`).
+You then have to make the pelican script accessible through your shell, either by adding `~/.outdex_env` to your PATH or by symlinking it to a folder in your PATH (e.g. `/usr/local/bin` or `~/bin`).
 
 If that sounds like too much of a hassle, install `pipsi`, which automatically creates and manages virtual environments.
 
@@ -88,7 +91,7 @@ Workflow
 
 Creating a new post is easy.
 
-1.  Go to the folder *content* and then the folder for the appropriate category (`discussions`, `news`, or `tutorials`).
+1.  Go to the folder *content* and then the folder for the appropriate category (`Discussions`, `News`, or `Tutorials`).
 1.  Create a new markdown file.
 1.  Make sure the markdown file starts with a well-formed header with the first few lines consisting of
     - `Title:`,
@@ -111,3 +114,16 @@ Now only two things remain to be done:
     - `git add .`
     - `git commit`
     - `git push origin master`
+
+To Do
+-----
+
+- [ ] set up email for submissions
+- [ ] fix summary breaking math; should always end immediately after first paragraph
+- [ ] maybe switch commenting system to `staticman`?
+- [ ] expand pandoc reader to handle Pelican's `{filename}`-hooks
+- [ ] adapt filter for pandoc to automatically include tikz and forest code as svgs
+- [ ] design pandoc filter for converting glossed examples to HTML tables
+- [ ] Categories should not be treated as tags
+- [ ] automatically convert posts to PDF and embed download link
+- [ ] create favicon from logo
