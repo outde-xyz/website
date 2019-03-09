@@ -32,13 +32,13 @@ If you want to generate the website from the source files, you need all of the f
 
     or use your package manager if you're on Linux.
 
-1.  Python's `pygments` library, version 2.3 or higher.
+1.  A number of Python3 libraries:
+    - `pygments`, version 2.3 or higher
+    - `typogrify` library, version 2.0.7 or higher
+    - `pybtex`, version 0.21 or higher
+    - *beautifulsoup4*; in Debian, the library is called `python3-bs4`
 
-1.  Python's `typogrify` library, version 2.0.7 or higher.
-    As before, use pip or your package manager.
-
-1.  The Python package *Beautiful Soup*, version 4.
-    In Debian, the relevant package is called `python3-bs4`.
+    As before, use pip or your package manager to install these dependencies.
 
 1.  A recent-ish version of the `make` tool.
     This is usually already installed on Linux and OSX.
