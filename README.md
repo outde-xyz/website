@@ -32,7 +32,9 @@ If you want to generate the website from the source files, you need all of the f
 
     or use your package manager if you're on Linux.
 
-1.  Python's typogrify library, version 2.0.7 or higher.
+1.  Python's `pygments` library, version 2.3 or higher.
+
+1.  Python's `typogrify` library, version 2.0.7 or higher.
     As before, use pip or your package manager.
 
 1.  The Python package *Beautiful Soup*, version 4.
