@@ -1,5 +1,64 @@
 Title: Contribute
 Author: Thomas Graf
-Date: 2019-03-18
+Date: 2019-03-09
 
-Something about outdex
+Want to make a guest post?
+Great, it's easy!
+Just email us your post as a text file: `submission@outde.xyz`.
+No pdfs please, it needs to be an editable file.
+A simple test file is best, but doc and docx are acceptable if necessary.
+As long as your submission is suitable for the outdex, we'll post it directly under your name.
+No registration, no special software, just writing.
+
+If you're tech-savvy and want to make our life a little easier, read on.
+
+
+## Level 1: Use Markdown for writing
+
+All posts are text file in Markdown and automatically converted to HTML. 
+Uploading a Markdown submission only takes a few seconds for us, so it's greatly preferred to a `doc` or `docx` file.
+Markdown is very easy to learn, it only takes about 30 minutes.
+Here's two very accessible resources:
+
+- [the interactive markdown tutorial](https://www.markdowntutorial.com/)
+- [Github's markdown reference](https://guides.github.com/features/mastering-markdown/)
+
+The first few lines of your Markdown file should follow a specific template.
+Here's a typical example:
+
+```
+Title: Outdex doesn't use titlecase
+Author: Jane Doe
+Date: 2037-03-19
+Tags: phonology, SPE, Minimalist grammars, well-formedness, job market
+
+The post starts here.
+Just keep writing.
+You may use Latex for math: $\mathrm{language} \otimes \mathrm{computation}$.
+```
+
+
+## Level 2: Submit via pull requests
+
+If you expect to make several guest posts and know your way around git and github, it is easier to submit files as pull requests:
+
+1. Go to [our github repository](https://github.com/outde-xyz/website).
+1. [Fork it](https://help.github.com/en/articles/fork-a-repo).
+1. Write your post as a markdown file.
+   Depending on the post's category, it should be saved in one of the following folders:
+   - `content/Discussions` for open-ended posts that are meant to get a conversation going in the comments section
+   - `content/News` for announcements, e.g. an interesting workshop, new journal, etc.
+   - `content/Tutorials` for reader-friendly introductions to a technical topic or subject matter
+1. Sync the file to your fork.
+1. [Create a pull request](https://help.github.com/en/articles/creating-a-pull-request-from-a-fork) against the `waitlist` branch of our repository.
+
+
+## Level 3: Do a test build before submission
+
+Outdex is built with [Pelican](https://docs.getpelican.com/en/stable/).
+To make sure that your post builds correctly before you submit it, you can install Pelican on your own machine and do a test build.
+Check the [source repository](https://github.com/outde-xyz/website)'s [README](https://github.com/outde-xyz/website/blob/master/README.md) for details.
+
+*Note*: As a guest author, you won't be able to push the file directly to the source repository.
+Only regular contributors can do that.
+Guest authors still have to submit their file via email or as a pull request.
