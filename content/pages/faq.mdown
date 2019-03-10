@@ -8,7 +8,7 @@ Status: published
 ### Do I need an account to comment?
 
 Yes.
-Since we use GitHub issues as a general commenting system, you need a [GitHub account](https://github/com/join) to comment.
+Since we use GitHub issues as a general commenting system, you need a [GitHub account](https://github.com/join) to comment.
 It's free, and GitHub has a good track record of respecting its users' privacy.
 
 ### I wanted to post a comment, but I got some scary message about giving access rights to Utterances.
@@ -39,7 +39,7 @@ Advanced users: If you use [uMatrix](https://addons.mozilla.org/en-US/firefox/ad
 Yes, this is a known limitation of GitHub.
 Math in articles is rendered properly via MathJAX, but GitHub does not allow that for content on their platform, including all comments on articles.
 
-The only known work-around at this point is to install a browser extension for [Chrome](https://chrome.google.com/webstore/detail/mathjax-plugin-for-github/) or [Firefox](https://github.com/traversaro/github-mathjax-firefox).
+The only known work-around at this point is to install a browser extension for [Chrome](https://github.com/orsharir/github-mathjax) or [Firefox](https://github.com/traversaro/github-mathjax-firefox).
 
 
 ### I installed the plugin, but the LaTeX math ignores all linebreaks.
