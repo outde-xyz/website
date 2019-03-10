@@ -38,6 +38,8 @@ class PandocReader(BaseReader):
         if status:
             raise subprocess.CalledProcessError(status, pandoc_cmd)
 
+        # TG: fix for broken {filename} past pandoc 1.15
+        output = output.replace('%7Bfilename%7D','{filename}')
         return output, metadata
 
 def add_reader(readers):
