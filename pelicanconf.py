@@ -36,10 +36,39 @@ EXTRA_PATH_METADATA = {
 
 # {{{ Plugins
 PLUGIN_PATHS = ['plugins']
-PLUGINS = ['neighbors', 'post_stats', 'related_posts', 'render_math']
-MATH_JAX = {'process_summary': True}
+PLUGINS = [
+           'pandoc_reader',
+           'post_stats',
+           'related_posts',
+           # 'render_math',
+           'series',
+           'share_post',
+           # 'summary',
+           ]
+# pandoc-reader options
+PANDOC_EXTENSIONS = [
+  '+smart',
+]
+PANDOC_ARGS = [
+  '--mathjax',
+  '--filter',
+  'pandoc-citeproc',
+  '--bibliography',
+  './bib/references.bib',
+  '--csl',
+  './bib/language.csl'
+]
+# render_math options
+# MATH_JAX = {'auto_insert': False, 'process_summary': True}
+# summary options
+# SUMMARY_USE_FIRST_PARAGRAPH = True
 # }}}
 
+
+# {{{ Math config
+USE_MATHJAX = True
+MATHJAX_BUNDLE = 'TeX-AMS_SVG'
+# }}}
 
 # {{{ Theme
 THEME = 'themes/Flex'
@@ -90,8 +119,7 @@ FEED_MAX_ITEMS = 10
 # LINKS = (('Subscribe', FEED_URL),)
 
 # Social widget
-SOCIAL = (('github', 'https://github.com/outde-xyz/website'),
-          ('rss', FEED_URL),)
+SOCIAL = (('github', 'https://github.com/outde-xyz/website'), ('rss', FEED_URL))
 # }}}
 
 
@@ -101,5 +129,11 @@ DEFAULT_PAGINATION = 10
 DELETE_OUTPUT_DIRECTORY = True
 OUTPUT_RETENTION = ['README.md', '.git', '.gitignore']
 # Uncomment following line if you want document-relative URLs when developing
-#RELATIVE_URLS = True
+# RELATIVE_URLS = True
+# Do not publish articles by default;
+# only if they have the meta field
+# Status: published
+DEFAULT_METADATA = {
+    'status': 'draft',
+}
 # }}}
