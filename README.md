@@ -4,7 +4,16 @@ Source Files for the Outdex Blog
 This repository holds the source files for the Outdex blog.
 The `master` branch holds the source files, the gh-pages branch is used for the output files.
 The source files are simple markdown files that are automatically converted to HTML via [Pelican](http://docs.getpelican.com/), a static website generator implemented in Python.
-They are then uploaded to Github with [ghp-import](https://github.com/davisp/ghp-import).
+We use the `pandoc_reader` plugin to get access to the [pandoc dialect](https://pandoc.org/MANUAL.html#pandocs-markdown) instead of basic markdown.
+After conversion, the HTML files are uploaded to Github with [ghp-import](https://github.com/davisp/ghp-import).
+
+
+Cloning the repository
+----------------------
+
+The themes folder contains our [custom fork](https://github.com/outde-xyz/Flex) of the [flex theme](https://github.com/alexandrevicenzi/Flex).
+The fork is incorporated as a submodule.
+Since a standard clone does not initialize submodules, you have to use `git clone --recursive` instead of just `git clone`.
 
 
 System Requirements
@@ -114,6 +123,7 @@ Now only two things remain to be done:
     - `git add .`
     - `git commit`
     - `git push origin master`
+
 
 To Do
 -----
