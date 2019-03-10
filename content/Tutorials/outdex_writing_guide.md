@@ -242,7 +242,7 @@ As far as I know, there is no easy way of fixing this.[^fixit]
 
 [^fixit]: Feel free to investigate, though, perhaps there is a hack.
 
-## Example numbers
+### Example numbers
 
 Alright, let me be blunt here: outdex can't offer you the sophisticated example numbering scheme of the average linguistics paper.
 No fancy (2a') or anything like that.
