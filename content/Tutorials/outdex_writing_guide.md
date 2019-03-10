@@ -6,6 +6,9 @@ Tags: backend, markdown, pandoc
 Status: published
 
 This post gives a brief overview of the [pandoc features](https://pandoc.org/MANUAL.html#pandocs-markdown) that authors can use for their outdex articles.
+This is for authors only.
+The comments are much more limited, unfortunately, and only support github-flavored markdown.
+
 If anything's unclear, please leave a comment.
 
 
