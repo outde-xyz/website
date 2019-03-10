@@ -18,7 +18,7 @@ SITEURL = 'http://localhost:8000'
 USE_FOLDER_AS_CATEGORY = True
 
 ARTICLE_PATHS = ['News', 'Tutorials', 'Discussions']
-ARTICLE_URL = '{slug}_{date:%Y-%m-%d}.html'
+ARTICLE_URL = '{date:%Y-%m-%d}/{slug}.html'
 ARTICLE_SAVE_AS = ARTICLE_URL
 PAGE_PATHS = ['pages']
 PAGE_URL = '{slug}.html'
@@ -71,7 +71,7 @@ MATHJAX_BUNDLE = 'TeX-AMS_SVG'
 # }}}
 
 # {{{ Theme
-THEME = 'themes/Flex'
+THEME = 'themes/flex'
 SITETITLE = SITENAME
 SITESUBTITLE = 'language ⊗ computation'
 SITEDESCRIPTION = SITESUBTITLE
