@@ -13,7 +13,7 @@ from pelicanconf import *
 # If your site is available via HTTPS, make sure SITEURL begins with https://
 SITEURL = 'https://outde.xyz'
 SITELOGO = SITEURL + '/img/logo.svg'
-FAVICON = SITEURL + ''
+FAVICON = SITEURL + '/img/favicon.ico'
 RELATIVE_URLS = False
 
 FEED_ALL_ATOM = 'feeds/all.atom.xml'

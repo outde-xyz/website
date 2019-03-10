@@ -76,7 +76,7 @@ SITETITLE = SITENAME
 SITESUBTITLE = 'language ⊗ computation'
 SITEDESCRIPTION = SITESUBTITLE
 SITELOGO = SITEURL + '/img/logo.svg'
-FAVICON = SITEURL + ''
+FAVICON = SITEURL + 'img/favicon.ico'
 CC_LICENSE = {
     'name': 'Creative Commons Attribution-ShareAlike',
     'version': '4.0',
