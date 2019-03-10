@@ -162,7 +162,7 @@ This also works in the comments section and does not depend on any javascript.
 Math is super-easy: just use the standard LaTeX commands.
 For instance
 
-```
+```latex
 $\mathrm{language} \otimes \mathrm{computation}
 ```
 
@@ -179,7 +179,7 @@ We're not limited to oneliners, more complex commands are fine, too.
 
 The code for this is really just standard Latex:
 
-```
+```latex
 \begin{align*}
     \text{outdex} :=
     \begin{cases}
