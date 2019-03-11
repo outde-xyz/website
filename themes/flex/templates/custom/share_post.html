@@ -1,0 +1,18 @@
+{% if article.share_post and article.status != 'draft' %}
+<div class="center social-share">
+  <p id="post-share-links">
+    Like this article? Share it:
+    <a href="{{article.share_post['twitter']}}" target="_blank" title="Share on Twitter">Twitter</a>
+    •
+    <a href="{{article.share_post['facebook']}}" target="_blank" title="Share on Facebook">Facebook</a>
+    •
+    <a href="{{article.share_post['diaspora']}}" target="_blank" title="Share on Diaspora">Diaspora</a>
+    •
+    <a href="{{article.share_post['linkedin']}}" target="_blank" title="Share on LinkedIn">LinkedIn</a>
+    •
+    <a href="{{article.share_post['hacker-news']}}" target="_blank" title="Share on HackerNews">HackerNews</a>
+    •
+    <a href="{{article.share_post['email']}}" target="_blank" title="Share via Email">Email</a>
+  </p>
+</div>
+{% endif %}
