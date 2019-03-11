@@ -85,7 +85,7 @@ Once it gets merged in, Netlify will also rebuild the `master` branch and your p
 System Requirements
 -------------------
 
-Outdex is now hosted on Netlify, which offers better build tools with automatic deployment.
+Outdex is now hosted on [Netlify](https://www.netlify.com), which offers better build tools with automatic deployment.
 So there is no longer any need for a local build environment, commits are automatically deployed by Netlify.
 Even guest authors can use this: if they file a pull request, they automatically get a link to a Netlify preview.
 
