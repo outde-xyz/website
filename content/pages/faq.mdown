@@ -85,16 +85,18 @@ Here's a brief overview of what gets loaded:
 
 - `cloudflare.com`: MathJAX for typesetting math in articles (does not apply to comments)
 - `utteranc.es`: load comments from GitHub
+- `outde.xyz`: provide [JSON linked data](https://json-ld.org/); can be safely blocked
 
 
 ### What else is loaded from remote domains?
 
-- `outde.xyz`: provide [JSON linked data](https://json-ld.org/); can be safely blocked
-- `creativecommons.org`: load the license in the footer; can be safely blocked
-- `licensebuttons.net`: load the license button in the footer; can be safely blocked
-- `fonts.googleapis.com`: load some fonts for the theme; can be safely blocked
-- `*.gstatic.com`: also used for font loading; can be safely blocked
-- `avatars*.githubusercontent.com`: load avatars in comments; can be safely blocked
+Not much, and all of it can be safely blocked without breaking the site:
+
+- `creativecommons.org`: load the license in the footer
+- `licensebuttons.net`: load the license button in the footer
+- `fonts.googleapis.com`: load some fonts for the theme
+- `*.gstatic.com`: also used for font loading
+- `avatars*.githubusercontent.com`: load avatars in comments
 
 
 ### Do you use Google analytics or similar tracking scripts?
