@@ -57,15 +57,12 @@ If you expect to make several guest posts and know your way around git and githu
     - `content/News` for announcements, e.g. an interesting workshop, new journal, etc.
     - `content/Tutorials` for reader-friendly introductions to a technical topic or subject matter
 1.  Sync the file to your fork.
-1.  [Create a pull request](https://help.github.com/en/articles/creating-a-pull-request-from-a-fork) against the `waitlist` branch of our repository.
+1.  [Create a pull request](https://help.github.com/en/articles/creating-a-pull-request-from-a-fork) against the `staging` branch of our repository.
 
 
-## Level 3: Do a test build before submission
+## Level 3: Check the test build after submitting
 
-Outdex is built with [Pelican](https://docs.getpelican.com/en/stable/).
-To make sure that your post builds correctly before you submit it, you can install Pelican on your own machine and do a test build.
-Check the [source repository](https://github.com/outde-xyz/website)'s [README](https://github.com/outde-xyz/website/blob/master/README.md) for details.
-
-*Note*: As a guest author, you won't be able to push the file directly to the source repository.
-Only regular contributors can do that.
-Guest authors still have to submit their file via email or as a pull request.
+Outdex is deployed via [Netlify](https:/www.netlify.com).
+Whenever a pull request is made, Netlify creates a preview and includes the link as part of the pull request.
+Click that link to make sure that your submission will display the way you want.
+If there's any issue, modify your pull request.
