@@ -3,3 +3,4 @@ output/*
 *.py[cod]
 *.pid
 __pycache__
+venv
