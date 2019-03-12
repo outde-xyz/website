@@ -41,7 +41,7 @@ Check the references above for the basics.
 
 For converting markdown to HTML, we use Pelican with the `pandoc_reader` plugin.
 This gives us access to the full [pandoc syntax](https://pandoc.org/MANUAL.html#pandocs-markdown), so we can do quite a few things that are not possible with standard markdown.
-See the [tutorial post]({filename}../tutorials/outdex_writing_guide.md) for details on math typesetting, syntax highlighting, and citation management, among others.
+See the [tutorial post]({filename}../Tutorials/outdex_writing_guide.md) for details on math typesetting, syntax highlighting, and citation management, among others.
 
 
 ## Level 2: Submit via pull requests
