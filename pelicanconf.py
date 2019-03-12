@@ -42,7 +42,7 @@ PLUGINS = [
            # 'render_math',
            'series',
            'share_post',
-           'summary',
+           # 'summary',
            ]
 # pandoc-reader options
 PANDOC_EXTENSIONS = [
