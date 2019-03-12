@@ -24,11 +24,10 @@ PAGE_PATHS = ['pages']
 PAGE_URL = '{slug}.html'
 PAGE_SAVE_AS = PAGE_URL
 
-STATIC_PATHS = ['img', 'extra/CNAME', 'extra/README.md']
+STATIC_PATHS = ['img', 'extra/CNAME']
 STATIC_EXCLUDE_SOURCES = False
 IGNORE_FILES = ['extra']
 EXTRA_PATH_METADATA = {
-    'extra/README.md': {'path': 'README.md'},
     'extra/CNAME': {'path': 'CNAME'}
 }
 # }}}
