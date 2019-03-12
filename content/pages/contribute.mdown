@@ -1,13 +1,12 @@
 Title: Contribute
 Author: Thomas Graf
 Date: 2019-03-09
-Status: published
 
 Want to make a guest post?
 Great, it's easy!
 Just email us your post as a text file: `submission@outde.xyz`.
 No pdfs please, it needs to be an editable file.
-A simple test file is best, but doc and docx are acceptable if necessary.
+A plain text file is best, but doc and docx are acceptable if necessary.
 As long as your submission is suitable for the outdex, we'll post it directly under your name.
 No registration, no special software, just writing.
 
@@ -42,7 +41,7 @@ Check the references above for the basics.
 
 For converting markdown to HTML, we use Pelican with the `pandoc_reader` plugin.
 This gives us access to the full [pandoc syntax](https://pandoc.org/MANUAL.html#pandocs-markdown), so we can do quite a few things that are not possible with standard markdown.
-See the tutorial post for details on math typesetting, syntax highlighting, and citation management, among others.
+See the [tutorial post]({filename}../Tutorials/outdex_writing_guide.md) for details on math typesetting, syntax highlighting, and citation management, among others.
 
 
 ## Level 2: Submit via pull requests

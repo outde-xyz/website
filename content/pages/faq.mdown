@@ -1,7 +1,6 @@
 Title: FAQ
 Author: Thomas Graf
 Date: 2019-03-10
-Status: published
 
 ## Technical issues
 

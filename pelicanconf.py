@@ -132,7 +132,7 @@ OUTPUT_RETENTION = ['README.md', '.git', '.gitignore']
 # Do not publish articles by default;
 # only if they have the meta field
 # Status: published
-DEFAULT_METADATA = {
-    'status': 'draft',
-}
+# DEFAULT_METADATA = {
+#     'status': 'draft',
+# }
 # }}}

@@ -3,7 +3,6 @@ Authors: Thomas Graf
 Date: 2019-03-09
 Series: Outdex guide
 Tags: backend, markdown, pandoc
-Status: published
 
 This post gives a brief overview of the [pandoc features](https://pandoc.org/MANUAL.html#pandocs-markdown) that authors can use for their outdex articles.
 This is for authors only.
@@ -11,6 +10,7 @@ The comments are much more limited, unfortunately, and only support github-flavo
 
 If anything's unclear, please leave a comment.
 
+<!-- PELICAN_END_SUMMARY -->
 
 ## Basic markdown features
 
