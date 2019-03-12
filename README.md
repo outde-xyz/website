@@ -145,13 +145,11 @@ A better solution is to create a *virtual environment* in your home directory th
 
 ~~~~~
 mkdir ~/.outdex_env
-virtualenv -p python3 ~/.outdex_env
-~/.outdex_env/bin/pip3 install pelican ghp-import
+python3 -m venv ~/.outdex_env
+~/.outdex_env/bin/pip3 install pelican ghp-import markdown pygments typogrify beautifulsoup4
 ~~~~~
 
-You then have to make the pelican script accessible through your shell, either by adding `~/.outdex_env` to your PATH or by symlinking it to a folder in your PATH (e.g. `/usr/local/bin` or `~/bin`).
-
-If that sounds like too much of a hassle, install `pipsi`, which automatically creates and manages virtual environments.
+You then have to make the pelican script accessible through your shell, either by adding `~/.outdex_env` to your PATH or by symlinking it to a folder in your PATH (e.g. `/usr/local/bin` or `~/.local/bin`).
 
 
 Technical issues
