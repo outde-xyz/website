@@ -10,6 +10,7 @@ The comments are much more limited, unfortunately, and only support github-flavo
 
 If anything's unclear, please leave a comment.
 
+<!-- PELICAN_END_SUMMARY -->
 
 ## Basic markdown features
 
