@@ -124,6 +124,7 @@ SOCIAL = (('github', 'https://github.com/outde-xyz/website'), ('rss', FEED_URL))
 
 # {{{ Misc
 USE_UTTERANCES = False
+USE_TALKYARD = True
 DEFAULT_PAGINATION = 10
 DELETE_OUTPUT_DIRECTORY = True
 OUTPUT_RETENTION = ['README.md', '.git', '.gitignore']
