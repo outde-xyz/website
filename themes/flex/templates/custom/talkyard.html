@@ -1,17 +1,10 @@
-{% if USE_UTTERANCES %}
-<h2>Comments</h2>
-
-<ul>
-    <li>You need a <a href="https://github.com/join">GitHub account</a> to comment.</li>
-    <li>Check the <a href="https://outde.xyz/faq.html">FAQ</a> for technical details and how to use math.</li>
-</ul>
-
-<script src="https://utteranc.es/client.js"
-        repo="outde-xyz/website"
-        issue-term="pathname"
-        label="✨💬✨ comments"
-        theme="github-light"
-        crossorigin="anonymous"
-        async>
-</script>
+{% if USE_TALKYARD %}
+<script>talkyardServerUrl='https://comments-for-outde-xyz.talkyard.net';</script>
+<script async defer src="https://c1.ty-cdn.net/-/talkyard-comments.min.js"></script>
+<!-- You can specify a per page discussion id on the next line, if your URLs might change. -->
+<div class="talkyard-comments" data-discussion-id="" style="margin-top: 45px;">
+<noscript>Please enable Javascript to view comments.</noscript>
+<p style="margin-top: 25px; opacity: 0.9; font-size: 96%">Comments powered by
+<a href="https://www.talkyard.io">Talkyard</a>.</p>
+</div>
 {% endif %}
