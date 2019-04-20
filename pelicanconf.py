@@ -15,6 +15,7 @@ DEFAULT_LANG = 'en'
 # {{{ Path and url specs
 PATH = 'content'
 SITEURL = 'http://localhost:8000'
+ABS_SITEURL = SITEURL
 USE_FOLDER_AS_CATEGORY = True
 
 ARTICLE_PATHS = ['News', 'Tutorials', 'Discussions']
