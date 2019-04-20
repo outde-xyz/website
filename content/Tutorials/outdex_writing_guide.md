@@ -280,4 +280,6 @@ Now example numbering is pretty pointless if you don't actually reference the nu
     I have a very long one, but names can be short, too.
 ```
 
+You can now refer to this example with `(@an_example_label_is_always_useful)`, like I did in the previous paragraph.
+
 ## References
