@@ -1,6 +1,7 @@
 ---
 title: The playground is open!
-authors: Thomas Graf
+authors:
+    - Thomas Graf
 date: 2019-03-07
 ---
 

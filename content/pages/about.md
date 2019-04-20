@@ -1,6 +1,7 @@
 ---
 title: About
-authors: Thomas Graf
+authors:
+    - Thomas Graf
 date: 2019-03-18
 ---
 

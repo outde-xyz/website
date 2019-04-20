@@ -1,5 +1,5 @@
 ---
-title: Authoring articles with pandoc
+title: "Authoring articles: The YAML header"
 authors:
     - Thomas Graf
 date: 2019-04-19
