@@ -13,14 +13,18 @@ class PandocReader(BaseReader):
         with pelican_open(filename) as fp:
             metadata, content = frontmatter.parse(fp)
 
+        # date is parsed as datetime object, convert back to string
+        if metadata.get("date"):
+            metadata["date"] = metadata["date"].strftime("%Y-%m-%d")
+        
         # tags and authors must be comma-separated lists for pelican
         for x in ("tags", "authors"):
             if x in metadata:
                 metadata[x] = [",".join(metadata[x])]
 
-        # date is parsed as datetime object, convert back to string
-        if metadata.get("date"):
-            metadata["date"] = metadata["date"].strftime("%Y-%m-%d")
+        # pass on for processing to Pelican
+        for key, val in metadata.items():
+            metadata[key] = self.process_metadata(key, val)
 
         extra_args = self.settings.get('PANDOC_ARGS', [])
         extensions = self.settings.get('PANDOC_EXTENSIONS', '')
