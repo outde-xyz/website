@@ -37,14 +37,14 @@ EXTRA_PATH_METADATA = {
 # {{{ Plugins
 PLUGIN_PATHS = ['plugins']
 PLUGINS = [
-           # 'pandoc_reader',
+           'pandoc_reader',
            'post_stats',
            'related_posts',
            # 'render_math',
            'series',
            'share_post',
            # 'summary',
-           'frontmark',
+           'md-metayaml',
            ]
 # pandoc-reader options
 PANDOC_EXTENSIONS = [
