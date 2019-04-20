@@ -1,16 +1,18 @@
-Title: Authoring articles with pandoc
-Authors: Thomas Graf
-Date: 2019-03-09
-Series: Outdex guide
-Tags: backend, markdown, pandoc
+---
+title: Authoring articles with pandoc
+authors: Thomas Graf
+date: 2019-03-09
+series: Outdex guide
+tags:
+   - backend
+   - markdown
+   - pandoc
+---
 
 This post gives a brief overview of the [pandoc features](https://pandoc.org/MANUAL.html#pandocs-markdown) that authors can use for their outdex articles.
 This is for authors only.
 The comments are much more limited, unfortunately, and only support github-flavored markdown.
-
 If anything's unclear, please leave a comment.
-
-<!-- PELICAN_END_SUMMARY -->
 
 ## Basic markdown features
 

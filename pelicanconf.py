@@ -37,6 +37,7 @@ EXTRA_PATH_METADATA = {
 # {{{ Plugins
 PLUGIN_PATHS = ['plugins']
 PLUGINS = [
+           'frontmark',
            'pandoc_reader',
            'post_stats',
            'related_posts',
