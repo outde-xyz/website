@@ -163,7 +163,7 @@ Math is super-easy: just use the standard LaTeX commands.
 For instance
 
 ```latex
-$\mathrm{language} \otimes \mathrm{computation}
+$\mathrm{language} \otimes \mathrm{computation}$
 ```
 
 will output $\mathrm{language} \otimes \mathrm{computation}$.
@@ -231,19 +231,8 @@ So if your post cites some papers that are not in there, send along a bibtex fil
 Another staple of academic writing that might not be the best fit for a blog.
 Still, if you absolutely want to add a footnote, do not dispair.[^remark]
 
-[^remark]: You see, I just added one. Here's the code for that:
-    ```
-    Still, if you absolutely want to add a footnote, do not dispair.[^remark]
-
-    [^remark]: You see, I just added one. Here's the code for that:
-    ```
-    Oh, that got scary for a second.
-    Infinite loop avoided.
-
 Footnotes are inserted after the references.
 As far as I know, there is no easy way of fixing this.[^fixit]
-
-[^fixit]: Feel free to investigate, though, perhaps there is a hack.
 
 ### Example numbers
 
@@ -283,3 +272,15 @@ Now example numbering is pretty pointless if you don't actually reference the nu
 You can now refer to this example with `(@an_example_label_is_always_useful)`, like I did in the previous paragraph.
 
 ## References
+
+[^fixit]: Feel free to investigate, though, perhaps there is a hack.
+
+[^remark]: You see, I just added one. Here's the code for that:
+    ```
+    Still, if you absolutely want to add a footnote, do not dispair.[^remark]
+
+    [^remark]: You see, I just added one. Here's the code for that:
+    ```
+    Oh, that got scary for a second.
+    Infinite loop avoided.
+
