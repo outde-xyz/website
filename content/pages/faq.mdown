@@ -7,75 +7,54 @@ Date: 2019-03-10
 ### Do I need an account to comment?
 
 Yes.
-Since we use GitHub issues as a general commenting system, you need a [GitHub account](https://github.com/join) to comment.
-It's free, and GitHub has a good track record of respecting its users' privacy.
+You can either create one, or use an existing Github, Facebook, Gmail, or Twitter account.
 
-### I wanted to post a comment, but I got some scary message about giving access rights to Utterances.
+### I don't see the commenting dialog, where is it?
 
-Utterances is a GitHub app that loads the comments so that they can be displayed directly under the post.
-It has a good reputation, but if you don't want to give it access rights there's an alternative:
-If at least one comment has already been made, you can click on the comments counter to go directly to the GitHub thread for this post.
-You can post there without using Utterances.
-
-
-### I have an account, but I don't see any comments under the articles!
-
-Loading the comments uses Javascript, so make sure it is activated in your browser.
+It's at the bottom of each page.
+If you can't see it, make sure Javascript is activated in your browser.
 
 Advanced users: If you use [uMatrix](https://addons.mozilla.org/en-US/firefox/addon/umatrix/) or a comparable browser add-on, set up your permissions as follows:
 
-| Domain            | cookie | css   | media | script | XHR   | frame | other |
-| -:                | :-:    | :-:   | :-:   | :-:    | :-:   | :-:   | :-:   |
-| `outde.xyz`       |        | allow |       | allow  |       |       |       |
-| `github.com`      | allow  |       |       |        |       |       |       |
-| `api.github.com`  |        |       |       |        | allow |       |       |
-| `utteranc.es`     | allow  | allow |       | allow  |       | allow |       |
-| `api.utteranc.es` | allow  |       |       |        | allow |       |       |
+| Domain                                | cookie | css   | media | script | XHR   | frame | other |
+| -:                                    | :-:    | :-:   | :-:   | :-:    | :-:   | :-:   | :-:   |
+| `outde.xyz`                           |        | allow |       | allow  |       |       |       |
+| `talkyard.net`                        | allow  | allow |       | allow  | allow | allow |       |
+| `comments-for-outde-xyz.talkyard.net` | allow  | allow |       | allow  | allow | allow |       |
+| `ty-cdn.net`                          |        | allow |       | allow  |       |       |       |     
+| `c1.ty-cdn.net`                       |        | allow |       | allow  |       |       |       |     
 
+### When I login, I get an error message that says `Cannot read property 'id' of null`. 
 
-### No LaTeX math is rendered in the comments!
+Your browser is blocking 3rd party cookies.
+You have to whitelist 3rd party cookies for `outde-xyz.talkyard.net`.
+See [this post](https://www.talkyard.io/-217/disabling-3rd-party-cookies-in-ones-browser-breaks-blog-comments-login) for details.
 
-Yes, this is a known limitation of GitHub.
-Math in articles is rendered properly via MathJAX, but GitHub does not allow that for content on their platform, including all comments on articles.
-
-The only known work-around at this point is to install a browser extension for [Chrome](https://github.com/orsharir/github-mathjax) or [Firefox](https://github.com/traversaro/github-mathjax-firefox).
-
-
-### I installed the plugin, but the LaTeX math ignores all linebreaks.
+### Whenever I use LaTeX math in the comment, linebreaks gets ignored.
 
 Short answer: use `\\\\` instead of `\\`.
 
-Long answer: GitHub treats all content in comments as pure Markdown, where `\` is used to escape characters.
+Long answer: All content in the comments is parsed as pure Markdown first.
+In Markdown, `\` is used to escape characters.
 If you type `\\` in Markdown, this gets converted to `\` in the HTML output. 
-But your browser plugin reads the HTML code for typesetting the math.
+But the math typesetting engine uses the HTML output, not the Markdown input.
 So if you want to get `\\`, you have to type two escaped backslashes, i.e. `\\\\`.
 
+### This all sounds awfully tedious. Is there no alternative that's more convenient?
 
-### This all sounds awfully tedious. Why are using GitHub anyways?
+We looked at many alternatives, and the current solution has the fewest drawbacks.
+It respects user privacy, is easy to host and integrate, allows for math and syntax highlighting, has reasonable spam countermeasures in place, and doesn't cost an arm and a leg.
 
-We looked at many alternatives, and GitHub had the fewest drawbacks.
-Just read the [GitHub issue](https://addons.mozilla.org/en-US/firefox/addon/umatrix/) for details.
+### Speaking of spam, I noticed a message from a spam bot. You should remove that.
 
+Actually, outdex relies entirely on user moderation.
+If you see a spam message, flag it as such:
 
-### Aren't you concerned that GitHub is now owned by Microsoft?
+1. Go to the spam message.
+1. Click on the button with three lines, to the left of the message's reply button.
+1. Click `Report`.
 
-No.
-Microsoft has been pretty decent in the last few years when it comes to FOSS.
-Azure is now their main money maker, and they realize that they need to play friendly with the community for this to last.
-But even if they were to go back to their usual "embrace, extend, extinguish", it would be easy to move the blog somewhere else:
-
-1. Use a script to export all GitHub issues to Markdown.
-1. Add the comments to the backmatter of the respective article.
-1. Redeploy the website on another host, with a different commenting system like [staticman](https://github.com/eduardoboucas/staticman).
-
-It's not a dealbreaker, so vendor lock-in is negligible.
-
-
-### I still think GitHub is a bad choice for a commenting system.
-
-Fork [our repo](https://github.com/outde-xyz/website), implement a different one, and file a pull request.
-We're open for alternatives, we just don't have the time to roll out something more sohpisticated for now.
-
+Once a message has been reported as spam by a sufficient number of students, it is automatically hidden.
 
 ### What is all the Javascript for? I thought this was a static blog.
 
@@ -83,7 +62,7 @@ It largely is, but some things just don't work without Javascript.
 Here's a brief overview of what gets loaded:
 
 - `cloudflare.com`: MathJAX for typesetting math in articles (does not apply to comments)
-- `utteranc.es`: load comments from GitHub
+- `talkyard.net`, `ty-cdn.net`, and subdomains thereof: needed for the commenting system
 - `outde.xyz`: provide [JSON linked data](https://json-ld.org/); can be safely blocked
 
 
@@ -95,7 +74,7 @@ Not much, and all of it can be safely blocked without breaking the site:
 - `licensebuttons.net`: load the license button in the footer
 - `fonts.googleapis.com`: load some fonts for the theme
 - `*.gstatic.com`: also used for font loading
-- `avatars*.githubusercontent.com`: load avatars in comments
+- `polyfill.io`: dependency of the talkyard commenting system
 
 
 ### Do you use Google analytics or similar tracking scripts?
