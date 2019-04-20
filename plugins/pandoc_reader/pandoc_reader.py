@@ -2,6 +2,8 @@ import subprocess
 from pelican import signals
 from pelican.readers import BaseReader
 from pelican.utils import pelican_open
+import frontmatter
+
 
 class PandocReader(BaseReader):
     enabled = True
@@ -9,17 +11,11 @@ class PandocReader(BaseReader):
 
     def read(self, filename):
         with pelican_open(filename) as fp:
-            text = list(fp.splitlines())
+            metadata, content = frontmatter.parse(fp.read())
 
-        metadata = {}
-        for i, line in enumerate(text):
-            kv = line.split(':', 1)
-            if len(kv) == 2:
-                name, value = kv[0].lower(), kv[1].strip()
-                metadata[name] = self.process_metadata(name, value)
-            else:
-                content = "\n".join(text[i:])
-                break
+        for x in ("tags", "authors"):
+            if x in metadata:
+                metadata[x] = [",".join(metadata[x])]
 
         extra_args = self.settings.get('PANDOC_ARGS', [])
         extensions = self.settings.get('PANDOC_EXTENSIONS', '')
@@ -30,8 +26,8 @@ class PandocReader(BaseReader):
         pandoc_cmd.extend(extra_args)
 
         proc = subprocess.Popen(pandoc_cmd,
-                                stdin = subprocess.PIPE,
-                                stdout = subprocess.PIPE)
+                                stdin=subprocess.PIPE,
+                                stdout=subprocess.PIPE)
 
         output = proc.communicate(content.encode('utf-8'))[0].decode('utf-8')
         status = proc.wait()
@@ -39,12 +35,14 @@ class PandocReader(BaseReader):
             raise subprocess.CalledProcessError(status, pandoc_cmd)
 
         # TG: fix for broken {filename} past pandoc 1.15
-        output = output.replace('%7Bfilename%7D','{filename}')
+        output = output.replace('%7Bfilename%7D', '{filename}')
         return output, metadata
+
 
 def add_reader(readers):
     for ext in PandocReader.file_extensions:
         readers.reader_classes[ext] = PandocReader
+
 
 def register():
     signals.readers_init.connect(add_reader)
