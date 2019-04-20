@@ -14,7 +14,8 @@ from pelicanconf import *
 SITEURL = 'https://outde.xyz'
 SITELOGO = SITEURL + '/img/logo.svg'
 FAVICON = SITEURL + '/img/favicon.ico'
-RELATIVE_URLS = False
+ABS_SITEURL = SITEURL
+RELATIVE_URLS = True
 
 FEED_ALL_ATOM = 'feeds/all.atom.xml'
 
