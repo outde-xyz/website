@@ -11,7 +11,7 @@ class PandocReader(BaseReader):
 
     def read(self, filename):
         with pelican_open(filename) as fp:
-            metadata, content = frontmatter.parse(fp.read)
+            metadata, content = frontmatter.parse(fp)
 
         for x in ("tags", "authors"):
             if x in metadata:
