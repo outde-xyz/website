@@ -103,7 +103,8 @@ SHOW_POST_AUTHOR = True
 
 # {{{ Feed generation
 # Feed generation is usually not desired when developing
-FEED_URL = 'feeds/all.atom.xml'
+FEED_URL = '/feeds/all.atom.xml'
+FEED_DOMAIN = 'https://outde.xyz'
 FEED_ALL_ATOM = None
 CATEGORY_FEED_ATOM = None
 TRANSLATION_FEED_ATOM = None
@@ -119,7 +120,8 @@ FEED_MAX_ITEMS = 10
 # LINKS = (('Subscribe', FEED_URL),)
 
 # Social widget
-SOCIAL = (('github', 'https://github.com/outde-xyz/website'), ('rss', FEED_URL))
+SOCIAL = (('github', 'https://github.com/outde-xyz/website'),
+          ('rss', FEED_DOMAIN + FEED_URL))
 # }}}
 
 
