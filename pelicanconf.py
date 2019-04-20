@@ -37,7 +37,6 @@ EXTRA_PATH_METADATA = {
 # {{{ Plugins
 PLUGIN_PATHS = ['plugins']
 PLUGINS = [
-           'frontmark',
            'pandoc_reader',
            'post_stats',
            'related_posts',
@@ -45,6 +44,7 @@ PLUGINS = [
            'series',
            'share_post',
            # 'summary',
+           'frontmark',
            ]
 # pandoc-reader options
 PANDOC_EXTENSIONS = [
