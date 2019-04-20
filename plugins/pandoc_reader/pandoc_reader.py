@@ -19,7 +19,8 @@ class PandocReader(BaseReader):
         
         # tags and authors must be comma-separated lists for pelican
         for x in ("tags", "authors"):
-            if x in metadata and isinstance(x, list):
+            if x in metadata and\
+               isinstance(metadata[x], list):
                 metadata[x] = [", ".join(metadata[x])]
 
         # pass on for processing to Pelican
