@@ -56,7 +56,7 @@ If you expect to make several guest posts and know your way around git and githu
     - `content/News` for announcements, e.g. an interesting workshop, new journal, etc.
     - `content/Tutorials` for reader-friendly introductions to a technical topic or subject matter
 1.  Sync the file to your fork.
-1.  [Create a pull request](https://help.github.com/en/articles/creating-a-pull-request-from-a-fork) against the `staging` branch of our repository.
+1.  [Create a pull request](https://help.github.com/en/articles/creating-a-pull-request-from-a-fork) against the `master` branch of our repository.
 
 
 ## Level 3: Check the test build after submitting
