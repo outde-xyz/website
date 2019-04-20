@@ -44,7 +44,6 @@ PLUGINS = [
            'series',
            'share_post',
            # 'summary',
-           'md-metayaml',
            ]
 # pandoc-reader options
 PANDOC_EXTENSIONS = [
