@@ -9,22 +9,26 @@ Whenever a new commit is pushed to the repository, the source files are automati
 Branches
 --------
 
-The repository uses the following branches:
+The repository uses the following standardized branches:
 
 - `master` holds the source files from which the public-facing part of outdex is built.
   Only administrators may push to `master`.
-- `staging` is used for testing that new posts look correct before they're pushed out to master.
-- `writing` is where the actual writing and editing takes place.
-  Any new files should go here first, and progress from here to `staging`, then `master`.
+- `staging` is used for testing new features before they are rolled out.
+  The staging branch is automatically deployed at `https://staging.outdex.xyz`.
+
+New posts should be submitted as pull requests from a forked repository.
 
 Cloning the repository
 ----------------------
 
+1. Create a fork
+1. Use `git clone` to clone your fork.
+1. Work in your local repository as usual and sync changes to your fork.
+1. When you're done, file a pull request so that we can merge in your contribution.
+
 The themes folder contains our [custom fork](https://github.com/outde-xyz/Flex) of the [flex theme](https://github.com/alexandrevicenzi/Flex).
 The fork is not incorporated as a submodule, as this proved too much of a headache to manage correctly.
 Yes, that's against best practices, but our fork of the theme changes so rarely that this isn't an issue in practice.
-So just use `git clone` in the usual fashion, without worrying about submodules.
-
 
 File Structure
 --------------
@@ -43,17 +47,9 @@ As an author, only `content` is of interest to you.
 Workflow
 --------
 
-Creating a new post is easy.
+Creating a new post is easy if you're already familiar with the usual Github workflow.
 
-1.  Make sure you are in the branch `writing`.
-    ```
-    git checkout writing
-    ```
-1.  Also check that your local copy of `writing` is up-to-date.
-    ```
-    git pull
-    ```
-1.  Go to the folder `content` and then the folder for the appropriate category (`Discussions`, `News`, or `Tutorials`).
+1.  In the local clone of your forked repo, go to the folder `content` and then the folder for the appropriate category (`Discussions`, `News`, or `Tutorials`).
 1.  Create a new markdown file.
 1.  Make sure the markdown file starts with a well-formed header with the first few lines consisting of
     - `Title:`,
@@ -66,28 +62,25 @@ Creating a new post is easy.
     ```
     git add .
     git commit -m "some description"
-    git push origin writing
+    git push origin master
     ```
-1.  If there are conflicts, resolve them before proceeding.
-1.  Switch to `staging`, make sure it's up-to-date, then merge in `writing`.
-    ```
-    git checkout staging
-    git pull
-    git merge writing
-    ```
+1.  File a pull request against our repo.
+    Netlify will automatically deploy your commit.
+    It also adds a message to your pull request with a link to the deployed commit.
+    Follow the link to check that your submission compiled correctly.
+1.  If anything is wrong, make the appropriate changes in your fork and sync.
+    The pull request will be updated automatically.
+1.  Once you're happy, add an approval message to the pull request (e.g. *ready for publication*).
+    At this point, we will merge it into the `master` branch.
+    Netlify will then deploy the `master` branch and your post will be visible at `https://outde.xyz`.
 
-The commit will trigger a rebuild of the `staging` branch on Netlify.
-You can check the output at `https://staging.outdex.xyz`.
-If everything looks good, file a pull request against `master`.
-Once it gets merged in, Netlify will also rebuild the `master` branch and your post will be visible at `https://outde.xyz`.
-
+It may sound complicated, but you'll quickly get the hang of it.
 
 System Requirements
 -------------------
 
 Outdex is now hosted on [Netlify](https://www.netlify.com), which offers better build tools with automatic deployment.
-So there is no longer any need for a local build environment, commits are automatically deployed by Netlify.
-Even guest authors can use this: if they file a pull request, they automatically get a link to a Netlify preview.
+So there is no longer any need for a local build environment, commits are automatically deployed by Netlify and each pull request comes with a live preview.
 
 The list below is largely for future reference in case the build environment needs to be recreated from scratch.
 
@@ -179,9 +172,9 @@ To Do
 
 - [x] set up email for submissions (hosted by Zoho)
 - [ ] fix summary breaking math; should always end immediately after first paragraph
-- [ ] maybe switch commenting system to `staticman`?
+- [x] ~~maybe switch commenting system to `staticman`?~~ We're now using [talkyard](https://www.talkyard.io/)
 - [x] expand pandoc reader to handle Pelican's `{filename}`-hooks
-- [ ] adapt filter for pandoc to automatically include tikz and forest code as svgs
+- [ ] adapt filter for pandoc to automatically include tikz and forest code as svgs; this will be tricky because Netlify has no official Latex support
 - [ ] design pandoc filter for converting glossed examples to HTML tables
 - [ ] Categories should not be treated as tags
 - [ ] automatically convert posts to PDF and embed download link
