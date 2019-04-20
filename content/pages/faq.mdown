@@ -1,6 +1,8 @@
-Title: FAQ
-Author: Thomas Graf
-Date: 2019-03-10
+---
+title: FAQ
+authors: Thomas Graf
+date: 2019-03-10
+---
 
 ## Technical issues
 

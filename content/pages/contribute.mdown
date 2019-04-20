@@ -1,6 +1,8 @@
-Title: Contribute
-Author: Thomas Graf
-Date: 2019-03-09
+---
+title: Contribute
+authors: Thomas Graf
+date: 2019-03-09
+---
 
 Want to make a guest post?
 Great, it's easy!
