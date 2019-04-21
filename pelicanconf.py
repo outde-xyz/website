@@ -52,7 +52,7 @@ PANDOC_EXTENSIONS = [
 PANDOC_ARGS = [
   '--mathjax',
 ]
-PANDOC_CSL = './bib/language.csl'
+PANDOC_CSL = 'language.csl'
 # render_math options
 # MATH_JAX = {'auto_insert': False, 'process_summary': True}
 # summary options

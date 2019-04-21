@@ -13,6 +13,37 @@ class PandocReader(BaseReader):
         with pelican_open(filename) as fp:
             metadata, content = frontmatter.parse(fp)
 
+        ###################
+        #  set up pandoc  #
+        ###################
+        extra_args = self.settings.get('PANDOC_ARGS', [])
+        extensions = self.settings.get('PANDOC_EXTENSIONS', [])
+
+        # bibliography processing
+        bibliography = metadata.get("bibliography", False) or\
+              self.settings.get('PANDOC_BIB', '')
+        csl = metadata.get("csl", False) or\
+              self.settings.get('PANDOC_CSL', '')
+        bibprocess = ''
+        if bibliography and csl:
+            bibprocess = ['--filter',
+                          'pandoc-citeproc',
+                          '--bibliography',
+                          './bib/' + bibliography,
+                          '--csl',
+                          './bib/' + csl]
+
+        if isinstance(extensions, list):
+            extensions = ''.join(extensions)
+
+        pandoc_cmd = ["pandoc", "--from=markdown" + extensions, "--to=html5"]
+        pandoc_cmd.extend(extra_args)
+        pandoc_cmd.extend(bibprocess)
+
+
+        #########################
+        #  metadata processing  #
+        #########################
         # date is parsed as datetime object, convert back to string
         if metadata.get("date"):
             metadata["date"] = metadata["date"].strftime("%Y-%m-%d")
@@ -22,33 +53,20 @@ class PandocReader(BaseReader):
             if isinstance(metadata.get(x), list):
                 metadata[x] = ", ".join(metadata[x])
 
-        extra_args = self.settings.get('PANDOC_ARGS', [])
-        extensions = self.settings.get('PANDOC_EXTENSIONS', '')
-
-        # bibliography processing
-        bibliography = metadata.get("bibliography")
-        csl = metadata.get("csl") or\
-              self.settings.get('PANDOC_CSL', '')
-        if bibliography and csl:
-            extensions + ['--filter',
-                          'pandoc-citeproc',
-                          '--bibliography',
-                          './bib/' + bibliography,
-                          '--csl',
-                          csl]
-
-        if isinstance(extensions, list):
-            extensions = ''.join(extensions)
-
-        pandoc_cmd = ["pandoc", "--from=markdown" + extensions, "--to=html5"]
-        pandoc_cmd.extend(extra_args)
-
+        # remove bibliography key
+        try:
+            del metadata['bibliography']
+        except KeyError:
+            pass
 
         # final processing of metadata via Pelican
         for key, val in metadata.items():
             metadata[key] = self.process_metadata(key, val)
 
-        # final processing of content via pandoc
+
+        ################
+        #  run pandoc  #
+        ################
         proc = subprocess.Popen(pandoc_cmd,
                                 stdin=subprocess.PIPE,
                                 stdout=subprocess.PIPE)
@@ -60,6 +78,7 @@ class PandocReader(BaseReader):
 
         # TG: fix for broken {filename} past pandoc 1.15
         output = output.replace('%7Bfilename%7D', '{filename}')
+        output = output.replace('%7Bstatic%7D', '{static}')
         return output, metadata
 
 
