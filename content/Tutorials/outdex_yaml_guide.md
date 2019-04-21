@@ -57,7 +57,7 @@ This is a bit more technical, but it basically ensures that your title comes out
 
 For the sake of reference, here's what the top of the file for this post looks like:
 
-```
+```md
 ---
 title: >-
     Specifying metadata with the YAML header
@@ -80,7 +80,7 @@ Here I've also added `series` to indicate that this post belongs to a multi-part
 At a later point, I might make some changes to this file.
 I could then add a `modified` field to keep track of the date of the most recent update.
 
-```
+```md
 ---
 title: >-
     Specifying metadata with the YAML header
@@ -102,7 +102,7 @@ The first one covered the use of pandoc for the actual content of your submissio
 
 And if I want to use pandoc's citation functionality to add some references to this article, I would have to specify the name of the bib-file to be used.
 
-```
+```md
 ---
 title: >-
     Specifying metadata with the YAML header
