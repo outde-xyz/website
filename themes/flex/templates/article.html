@@ -19,6 +19,11 @@
     {% endif %}
     <h1 id="{{ article.slug }}">{{ article.title }}</h1>
     <p>
+      {% if 'post_stats' in PLUGINS %}
+        🕑 {{ article.stats['read_mins'] }} min
+        &#8226; 
+      {% endif %}
+
       {% if not SHOW_POST_AUTHOR %}
         {% set auth_str = '' %}
       {% else %}
@@ -28,16 +33,12 @@
         {% else %}
           {{ auth_str.append('<a href="%s/%s">%s</a>'|format(SITEURL, article.author.url, article.author)|safe) or ''}}
         {% endfor %}
-        {% set auth_str = ' by ' ~ auth_str|join(', ') %}
+        {% set auth_str = ' 👤 ' ~ auth_str|join(', ') %}
       {% endif %}
-      {{ _('Posted%(auth_str)s on %(when)s in %(category)s',
+      {{ _('%(auth_str)s &#8226; 📆 %(when)s in %(category)s',
            auth_str=auth_str,
            when=article.locale_date,
            category='<a href="%s/%s">%s</a>'|format(SITEURL, article.category.url, article.category)|safe) }}
-
-      {% if 'post_stats' in PLUGINS %}
-        &#8226; {{ article.stats['read_mins'] }} min read
-      {% endif %}
     </p>
   </header>
 
