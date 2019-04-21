@@ -100,5 +100,28 @@ This is the second post on how to write submissions for the Outdex.
 The first one covered the use of pandoc for the actual content of your submission.
 ```
 
+And if I want to use pandoc's citation functionality to add some references to this article, I would have to specify the name of the bib-file to be used.
+
+```
+---
+title: >-
+    Specifying metadata with the YAML header
+series: >-
+    Writing for the Outdex
+authors:
+    - Thomas Graf
+date: 2019-04-20
+modified: 2019-10-14
+bibliography: references.bib
+tags:
+    - backend
+    - metadata
+    - YAML
+---
+
+This is the second post on how to write submissions for the Outdex.
+The first one covered the use of pandoc for the actual content of your submission.
+```
+
 The order of the fields does not matter, nor does the order of the tags.
 But as somebody who's very fond of consistency, I would be greatly pleased if you were to follow the order used in the examples.
