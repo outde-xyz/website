@@ -55,6 +55,8 @@ How about a table, dear prospective author?
 The output above is produced from the markdown code below:
 
 ```
+## Basic markdown features
+
 All the basic markdown features are available.
 You may use **bold** or *italic*.
 There's also `verbatim text`, which is useful for code, e.g. `print("some string")`.
@@ -82,14 +84,15 @@ How about a table, dear prospective author?
 > And quoting works just like in an email.
 ```
 
-The use of `###` indicate a level-3 header.
+The use of `##` indicate a level-2 header.
 The highest level of posts is `##`, since the post title itself should be the only level-1 header.
 So don't use `# Some section`.
 You should always start with `## Some section`.
+You can then create subsections with `### Some subsection` and subsubsections with `#### Some subsubsection` (if you need them).
 
 Not all of the features above may work in the comment section.
-That's because comments are converted directly by Github, which uses a more limited markdown dialect than pandoc.
-Check the github reference that's linked in the comment field.
+That's because the comments use a different markdown implementation that is not as powerful as pandoc.
+There's nothing we can do about this.
 
 
 ## Advanced features
@@ -101,15 +104,15 @@ So the code
 `![outdex logo](../img/logo.svg)`
 will show the lovely outdex logo with the caption *outdex logo* underneath.
 
-![outdex logo](../img/logo.svg)
+![outdex logo]({filename}/img/logo.svg)
 
-But as you might have noticed, this is a little large.
+But as you might have noticed, the size isn't quite appropriate.
 Pandoc allows us to also specify various image attributes as a semicolon-separated list.
 This includes `width` and `height`.
 So here's what we we get with
-`![](../img/logo.svg){ width=50% }`.
+`![]({filename}/img/logo.svg){ width=50% }`.
 
-![](../img/logo.svg){ width=50% }
+![]({filename}/img/logo.svg){ width=50% }
 
 Much better, don't you agree?
 
@@ -162,7 +165,7 @@ putStrLn "See, I didn't lie!"
 ```
 ~~~
 
-This also works in the comments section and does not depend on any javascript.
+This also works in the comments section, but there it requires some finicky Javascript injections and thus might not work on every browser.
 
 ### Mathematics
 
@@ -236,7 +239,7 @@ So if your post cites some papers that are not in there, send along a bibtex fil
 ### Footnotes
 
 Another staple of academic writing that might not be the best fit for a blog.
-Still, if you absolutely want to add a footnote, do not dispair.[^remark]
+Still, if you absolutely want to add a footnote, do not despair.[^remark]
 
 [^remark]: You see, I just added one. Here's the code for that:
     ```
@@ -289,5 +292,13 @@ Now example numbering is pretty pointless if you don't actually reference the nu
 ```
 
 You can now refer to this example with `(@an_example_label_is_always_useful)`, like I did in the previous paragraph.
+
+
+## Wrapping up
+
+Pandoc is a very powerful language, and this post could only highlight the most important features.
+This should be enough for 99% of all Outdex articles.
+But if you think you need more, check the [pandoc manual](https://pandoc.org/MANUAL.html#pandocs-markdown). 
+Odds are, it's already in there.
 
 ## References
