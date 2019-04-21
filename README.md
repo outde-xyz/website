@@ -54,12 +54,14 @@ Creating a new post is easy if you're already familiar with the usual Github wor
 1.  Make sure the markdown file starts with a well-formed YAML header of the following form:
     ```
     ---
-    title: Title of post, with normal capitalization
+    title: >-
+        Title of post, with normal capitalization
+    series: >-
+        only for use with multipart posts
     authors:
         - author1
         - author2
     date: YYYY-MM-DD
-    series: only for use with multipart posts
     modified: YYYY-MM-DD (only used when updating an existing post)
     tags:
         - tag1
