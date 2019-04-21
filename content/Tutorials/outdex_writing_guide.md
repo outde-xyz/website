@@ -234,8 +234,8 @@ Check the pandoc manual for additional citation options.
 All citations will be added at the end of the post.
 So it makes sense to end your post with `## References` to get a nice header for the bibliography.
 
-**Caveat:** you can only use references that are already in our central [bibtex file](https://raw.githubusercontent.com/outde-xyz/website/master/bib/references.bib).
-So if your post cites some papers that are not in there, send along a bibtex file so that we can merge in the references.
+**Caveat:** Just like bibtex, pandoc requires a well-formed bib-file for citations.
+So if you're using citations, make sure to send along a bib-file.
 
 ### Footnotes
 

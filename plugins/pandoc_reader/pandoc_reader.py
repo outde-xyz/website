@@ -25,13 +25,17 @@ class PandocReader(BaseReader):
         extra_args = self.settings.get('PANDOC_ARGS', [])
         extensions = self.settings.get('PANDOC_EXTENSIONS', '')
 
-        if "bibliography" in metadata and PANDOC_CSL:
+        # bibliography processing
+        bibliography = metadata.get("bibliography")
+        csl = metadata.get("bibliography") or\
+              self.settings.get('PANDOC_CSL', '')
+        if bibliography and csl:
             extensions + ['--filter',
                           'pandoc-citeproc',
                           '--bibliography',
-                          './bib/' + metadata["bibliography"],
+                          './bib/' + bibliography,
                           '--csl',
-                          PANDOC_CSL]
+                          csl]
 
         if isinstance(extensions, list):
             extensions = ''.join(extensions)
