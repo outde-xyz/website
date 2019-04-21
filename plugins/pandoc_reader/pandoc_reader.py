@@ -17,7 +17,16 @@ class PandocReader(BaseReader):
         ###################
         #  set up pandoc  #
         ###################
-        extra_args = self.settings.get('PANDOC_ARGS', [])
+        if not metadata.get("toc", False):
+            extra_args = self.settings.get('PANDOC_ARGS', [])
+        else:
+            title = metadata.get("title", '')
+            extra_args = self.settings.get('PANDOC_ARGS', []) +\
+                         ["--toc",
+                          "--template=templates/pandoc-template-toc.html5",
+                          f'--variable="pagetitle:{title}"',
+                          f'--variable="title:{title}"',
+                          "--quiet"]
         extensions = self.settings.get('PANDOC_EXTENSIONS', [])
 
         # bibliography processing
@@ -54,7 +63,7 @@ class PandocReader(BaseReader):
         if status:
             raise subprocess.CalledProcessError(status, pandoc_cmd)
 
-        # TG: fix for broken {filename} past pandoc 1.15
+        # fix for broken {filename} past pandoc 1.15
         output = output.replace('%7Bfilename%7D', '{filename}')
         output = output.replace('%7Bstatic%7D', '{static}')
 
@@ -113,17 +122,23 @@ class PandocReader(BaseReader):
                 metadata[x] = ", ".join(metadata[x])
 
         # remove bibliography key
-        try:
-            del metadata['bibliography']
-        except KeyError:
-            pass
+        metadata_clean = {key: metadata[key]
+                          for key in ('title',
+                                      'author',
+                                      'authors',
+                                      'date',
+                                      'modified',
+                                      'series',
+                                      'summary',
+                                      'tags')
+                          if key in metadata}
 
         # final processing of metadata via Pelican
-        for key, val in metadata.items():
-            metadata[key] = self.process_metadata(key, val)
+        for key, val in metadata_clean.items():
+            metadata_clean[key] = self.process_metadata(key, val)
 
 
-        return output, metadata
+        return output, metadata_clean
 
 
 def add_reader(readers):
