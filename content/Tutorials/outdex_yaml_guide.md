@@ -12,13 +12,15 @@ tags:
     - YAML
 ---
 
+<!-- START_SUMMARY_BLOCK -->
 This is the second post on how to write submissions for the Outdex.
 The first one covered the use of pandoc for the actual content of your submission.
 However, a blog post is more than just its content.
 It also involves crucial *metadata* such as the author(s), the date it was published, and topic tags.
 Don't despair, though, adding metadata to your post takes less than 2 minutes.
 All you have to do is add a short YAML-header at the very top.
-If that doesn't mean anything to you, read on.
+Even if that doesn't mean anything to you, please read on.
+<!-- END_SUMMARY_BLOCK -->
 
 Every Outdex post is created from a markdown file with a `.md` ending.
 The bulk of the file will be the content of the post.

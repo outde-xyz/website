@@ -13,12 +13,14 @@ tags:
     - pandoc
 ---
 
+<!-- START_SUMMARY_BLOCK -->
 This is the first post in an ongoing series of mini-tutorials for Outdex contributors.
 This post gives a brief overview of the [pandoc features](https://pandoc.org/MANUAL.html#pandocs-markdown) that authors can use for their outdex articles.
 This is for authors only, the average Outdex reader won't find much of interest here.
 
 In the near future, there will be follow-up posts that cover the use of YAML headers for metadata, how to submit articles via [Github](https://github.com), and some aspects of the [talkyard commenting system](https://www.talkyard.io) we use.
 If anything's unclear, please leave a comment.
+<!-- END_SUMMARY_BLOCK -->
 
 ## Basic markdown features
 

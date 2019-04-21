@@ -181,6 +181,8 @@ Our version of the `pandoc_reader` plugin contains several fixes and extensions.
     It then preprocesses them and passes them on to Pelican.
     This makes it easy to pass parameters to pandoc (e.g. CLS and bib-files), and we'll also be able to create PDFs from the same source files.
 
+1.  We also process custom edge markers to auto-extract the summary.
+
 To Do
 -----
 

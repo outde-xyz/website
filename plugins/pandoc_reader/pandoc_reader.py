@@ -3,6 +3,7 @@ from pelican import signals
 from pelican.readers import BaseReader
 from pelican.utils import pelican_open
 import frontmatter
+import re
 
 
 class PandocReader(BaseReader):
@@ -41,6 +42,64 @@ class PandocReader(BaseReader):
         pandoc_cmd.extend(bibprocess)
 
 
+        ################
+        #  run pandoc  #
+        ################
+        proc = subprocess.Popen(pandoc_cmd,
+                                stdin=subprocess.PIPE,
+                                stdout=subprocess.PIPE)
+
+        output = proc.communicate(content.encode('utf-8'))[0].decode('utf-8')
+        status = proc.wait()
+        if status:
+            raise subprocess.CalledProcessError(status, pandoc_cmd)
+
+        # TG: fix for broken {filename} past pandoc 1.15
+        output = output.replace('%7Bfilename%7D', '{filename}')
+        output = output.replace('%7Bstatic%7D', '{static}')
+
+
+        #####################
+        #  extract summary  #
+        #####################
+        start_sep = self.settings.get('PANDOC_SUMMARY_SEPARATOR_START',
+                                      '<!-- START_SUMMARY_BLOCK -->')
+        end_sep = self.settings.get('PANDOC_SUMMARY_SEPARATOR_END',
+                                    '<!-- END_SUMMARY_BLOCK -->')
+        
+        # only extract summary if user hasn't supplied it
+        if 'summary' not in metadata: 
+            # text = output.splitlines()
+            summary = ''
+            segments = re.split(r"(" +
+                                re.escape(start_sep) +
+                                r"|" +
+                                re.escape(end_sep) +
+                                r")",
+                                output,
+                                re.DOTALL)
+            try:
+                start = segments.index(start_sep)
+                end = segments.index(end_sep)
+                if start < end:
+                    summary = segments[start+1]
+                    output = ''.join(segments[:start] +
+                                     segments[start+1:end] +
+                                     segments[end+1:])
+            except ValueError:
+                # we'll just rely on the Pelican default
+                pass
+            if summary:
+                # make sure we start with <p>
+                summary = re.sub(r"^\s*(<p>)?", "<p>", summary, re.DOTALL)
+                # and end with </p>
+                if not re.match(r".*</p>.*",
+                                summary.split("<p>")[-1],
+                                re.DOTALL):
+                    summary += "</p>"
+                metadata['summary'] = summary
+
+
         #########################
         #  metadata processing  #
         #########################
@@ -64,21 +123,6 @@ class PandocReader(BaseReader):
             metadata[key] = self.process_metadata(key, val)
 
 
-        ################
-        #  run pandoc  #
-        ################
-        proc = subprocess.Popen(pandoc_cmd,
-                                stdin=subprocess.PIPE,
-                                stdout=subprocess.PIPE)
-
-        output = proc.communicate(content.encode('utf-8'))[0].decode('utf-8')
-        status = proc.wait()
-        if status:
-            raise subprocess.CalledProcessError(status, pandoc_cmd)
-
-        # TG: fix for broken {filename} past pandoc 1.15
-        output = output.replace('%7Bfilename%7D', '{filename}')
-        output = output.replace('%7Bstatic%7D', '{static}')
         return output, metadata
 
 
