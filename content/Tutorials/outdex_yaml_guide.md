@@ -1,13 +1,15 @@
 ---
-title: "Specifying metadata with the YAML header"
-series: "Writing for the Outdex"
+title: >-
+    Adding metadata to your article
+series: >-
+    Writing for the Outdex
 authors:
     - Thomas Graf
 date: 2019-04-20
 tags:
     - backend
-    - markdown
-    - pandoc
+    - metadata
+    - YAML
 ---
 
 This is the second post on how to write submissions for the Outdex.
@@ -32,7 +34,8 @@ To fix this, we add a YAML-header, which is surrounded by `---` above and below 
 
 ```md
 ---
-title: "Still to be decided"
+title: >-
+    Still to be decided
 authors:
     - J. Doe
 date: 2039-03-12
@@ -49,20 +52,23 @@ And that's it!
 Easy peasy.
 Note the empty line between `---` and the content.
 While not needed, this is generally considered good style.
+You might also wonder about the use of `>-`.
+This is a bit more technical, but it basically ensures that your title comes out the right way even if it contains certain characters like `:`.
 
 For the sake of reference, here's what the top of the file for this post looks like:
 
 ```
 ---
-title: "Specifying metadata with the YAML header"
+title: >-
+    Specifying metadata with the YAML header
 authors:
     - Thomas Graf
 date: 2019-04-20
 series: Writing for the Outdex
 tags:
     - backend
-    - markdown
-    - pandoc
+    - metadata
+    - YAML
 ---
 
 This is the second post on how to write submissions for the Outdex.
@@ -76,16 +82,18 @@ I could then add a `modified` field to keep track of the date of the most recent
 
 ```
 ---
-title: "Specifying metadata with the YAML header"
-series: "Writing for the Outdex"
+title: >-
+    Specifying metadata with the YAML header
+series: >-
+    Writing for the Outdex
 authors:
     - Thomas Graf
 date: 2019-04-20
 modified: 2019-10-14
 tags:
     - backend
-    - markdown
-    - pandoc
+    - metadata
+    - YAML
 ---
 
 This is the second post on how to write submissions for the Outdex.

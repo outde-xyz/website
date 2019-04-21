@@ -1,5 +1,6 @@
 ---
-title: The playground is open!
+title: >-
+    The playground is open!
 authors:
     - Thomas Graf
 date: 2019-03-07

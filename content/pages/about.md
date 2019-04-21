@@ -1,5 +1,6 @@
 ---
-title: About
+title: >-
+    About
 authors:
     - Thomas Graf
 date: 2019-03-18

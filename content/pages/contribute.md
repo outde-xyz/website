@@ -1,5 +1,6 @@
 ---
-title: Contribute
+title: >-
+    Contribute
 authors:
     - Thomas Graf
 date: 2019-03-09

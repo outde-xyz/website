@@ -1,6 +1,8 @@
 ---
-title: "How to use pandoc in Outdex articles"
-series: Writing for the Outdex
+title: >-
+    How to format articles with pandoc
+series: >-
+    Writing for the Outdex
 authors:
     - Thomas Graf
 date: 2019-04-19
