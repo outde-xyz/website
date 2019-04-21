@@ -51,12 +51,21 @@ Creating a new post is easy if you're already familiar with the usual Github wor
 
 1.  In the local clone of your forked repo, go to the folder `content` and then the folder for the appropriate category (`Discussions`, `News`, or `Tutorials`).
 1.  Create a new markdown file.
-1.  Make sure the markdown file starts with a well-formed header with the first few lines consisting of
-    - `Title:`,
-    - `Author:`, (or `Authors:` if there's multiple; name should be comma-separated)
-    - `Date:` (in format YYYY-MM-DD),
-    - `Tags:` (comma-separated list),
-    - finally, an empty line.
+1.  Make sure the markdown file starts with a well-formed YAML header of the following form:
+    ```
+    ---
+    title: Title of post, with normal capitalization
+    authors:
+        - author1
+        - author2
+    date: YYYY-MM-DD
+    series: only for use with multipart posts
+    modified: YYYY-MM-DD (only used when updating an existing post)
+    tags:
+        - tag1
+        - tag2
+    ---
+    ```
 1.  Look at other posts in the repo for concrete examples.
 1.  Once you are done writing, make a commit in the usual fashion:
     ```

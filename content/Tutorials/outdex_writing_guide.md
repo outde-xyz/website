@@ -1,18 +1,20 @@
 ---
-title: Authoring articles with pandoc
+title: "How to use pandoc in Outdex articles"
+series: Writing for the Outdex
 authors:
     - Thomas Graf
 date: 2019-04-19
-series: Outdex guide
 tags:
     - backend
     - markdown
     - pandoc
 ---
 
+This is the first post in an ongoing series of mini-tutorials for Outdex contributors.
 This post gives a brief overview of the [pandoc features](https://pandoc.org/MANUAL.html#pandocs-markdown) that authors can use for their outdex articles.
-This is for authors only.
-The comments are much more limited, unfortunately, and only support github-flavored markdown.
+This is for authors only, the average Outdex reader won't find much of interest here.
+
+In the near future, there will be follow-up posts that cover the use of YAML headers for metadata, how to submit articles via [Github](https://github.com), and some aspects of the [talkyard commenting system](https://www.talkyard.io) we use.
 If anything's unclear, please leave a comment.
 
 ## Basic markdown features
