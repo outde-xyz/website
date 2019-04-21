@@ -1,11 +1,11 @@
 ---
 title: >-
-    How to format articles with pandoc
+    Authoring articles with pandoc
 series: >-
     Writing for the Outdex
 authors:
     - Thomas Graf
-date: 2019-04-19
+date: 2019-03-09
 bibliography: references.bib
 tags:
     - backend
