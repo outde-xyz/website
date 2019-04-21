@@ -25,7 +25,7 @@ class PandocReader(BaseReader):
         extra_args = self.settings.get('PANDOC_ARGS', [])
         extensions = self.settings.get('PANDOC_EXTENSIONS', '')
 
-        if "bibliography" in metadata and PANDOC_CSL::
+        if "bibliography" in metadata and PANDOC_CSL:
             extensions + ['--filter',
                           'pandoc-citeproc',
                           '--bibliography',
