@@ -13,9 +13,11 @@ tags:
     - photos
 ---
 
+<!-- START_SUMMARY_BLOCK -->
 Yesterday at Stony Brook, we concluded an informal workshop on computational phonology, which focused on theoretical, logical, model-theoretic, and automata-theoretic aspects of phonology (and some syntax). Here 'informal' means the workshop itself has no advanced schedule of talks, nor are there any talks except for the co-located Linguistics Colloquium and Frontiers series talks. Instead we list topics we are interested in presenting and presenters lead discussion, utilizing the whiteboard and as much time as they want, or until the group becomes restless. We take breaks when we want, and have plenty of time to ask questions, talk with each other, and get to see what we are working on. Personally, I find it very refreshingly different from national and international conferences which (perhaps necessarily) come with a planned schedule of tighly-timed talks, Q&A and so on.
 
 I wanted to take a moment to sumarize some of the big picture issues that emerged for me over the past couple of days.
+<!-- END_SUMMARY_BLOCK -->
 
 1. Subregular stringsets (SL, SP, LT, PT, LTT, SF/NC/LTO, REG) form a foundation that can be extended in multiple ways.
    - to other classes of stringsets which combine local and non-local information such as TSL, SPL, PLT, IBSP
