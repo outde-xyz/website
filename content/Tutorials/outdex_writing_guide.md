@@ -110,7 +110,7 @@ But as you might have noticed, the size isn't quite appropriate.
 Pandoc allows us to also specify various image attributes as a semicolon-separated list.
 This includes `width` and `height`.
 So here's what we we get with
-`![]({filename}/img/logo.svg){ width=50% }`.
+`![](../img/logo.svg){ width=50% }`.
 
 ![]({filename}/img/logo.svg){ width=50% }
 
