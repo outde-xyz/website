@@ -1,0 +1,35 @@
+Title: Computational Phonology Workshop 3 
+Author: Jeffrey Heinz
+Date: 2019-04-21
+
+Yesterday at Stony Brook we concluded an informal workshop on computational phonology, which focused on theoretical, logical, model-theoretic, and automata-theoretic aspects of phonology (and some syntax). Here 'informal' means the workshop itself has no advanced schedule of talks, nor are there any talks except for the co-located Linguistics Colloquium and Frontiers series talks. Instead we list topics we are interested in presenting and presenters lead discussion, utilizing the whiteboard and as much time as they want, or until the group becomes restless. We take breaks when we want, and have plenty of time to ask questions, talk with each other, and get to see what we are working on. Personally, I find it very refreshingly different from national and international conferences which (perhaps necessarily) come with a planned schedule of tighly-timed talks, Q&A and so on.
+
+I wanted to take a moment to sumarize some of the big picture issues that emerged for me over the past couple of days.
+
+1. Subregular stringsets (SL, SP, LT, PT, LTT, SF/NC/LTO, REG) form a foundation that can be extended in multiple ways.
+   - to other classes of stringsets which combine local and non-local information such as TSL, SPL, PLT, IBSP
+   - to subregular classes of transductions such as ISL, L/R-OSL, ITSL, L/R-OTSL, QFLFP
+   - to subregular classes treesets and tree transductions 
+   - FO-definable stringsets and tranductions can be cast into multi-linear algebra
+
+2. Similarly, learning algorithms for these subregular stringsets can also be extended to these other classes.
+   - L-OTSL functions 
+   - ISL functions whose co-domain are stochastic finite stringsets
+   - examining phonology as a composition of specific types of xSL transducers (lexicon $\times$ morphology $\times$ phonology) of which some initially represent the identity provides a way to systematically explore how they can be 'distorted' in order to 'best' account for the 'data'. (Different operative principals may chage what 'best' means.)
+
+3. From an empirical perspective, much of this work is motivated by questions like:
+   - We know we need information about contiguous events in speech and language. How much non-contiguous (non-local) information is needed? How is it best characterized? What is the 'minimal' amount of non-local information which needs to be included?
+   - How are such classes learned?
+   - How can the learnability of these classes be used to automate morpho-phonological analysis?
+
+4. While these extensions are important and valuable, we should make every effort to continue to *unify* and *simplify* -- there is a sense in which they are all just parameterized variants of the same underlying mathematical system.
+
+5. There is a tension between the ways the automata and logic characterizations capture the extensional descriptions and how they capture the intensional descriptions.
+   - learning considerations tug on this tension too: descriptive and learnability considerations may push the intensional descriptions in different directions
+
+This is about all I can handle now. Let me see if I can manage to get this onto Outdex in a few minutes or not. 
+
+![Jim explaining SPL on Thursday 4/18](../img/2019-04-21/20190418_155444.jpg "Jim Rogers"){ width=25% }
+![Folks listening to Jim on Thursday 4/18](../img/2019-04-21/20190418_155451.jpg "Folks listening 1"){ width=25% }
+![Folks listening to Jim on Thursday 4/18](../img/2019-04-21/20190418_155458.jpg "Folks listening 2"){ width=25% }
+
