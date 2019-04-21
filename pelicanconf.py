@@ -117,7 +117,7 @@ SOCIAL = (('github', 'https://github.com/outde-xyz/website'),
 
 # {{{ Misc
 USE_UTTERANCES = False
-USE_TALKYARD = True
+USE_TALKYARD = False
 DEFAULT_PAGINATION = 10
 DELETE_OUTPUT_DIRECTORY = True
 OUTPUT_RETENTION = ['README.md', '.git', '.gitignore']
