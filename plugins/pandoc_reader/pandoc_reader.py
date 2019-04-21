@@ -27,7 +27,7 @@ class PandocReader(BaseReader):
 
         # bibliography processing
         bibliography = metadata.get("bibliography")
-        csl = metadata.get("bibliography") or\
+        csl = metadata.get("csl") or\
               self.settings.get('PANDOC_CSL', '')
         if bibliography and csl:
             extensions + ['--filter',
