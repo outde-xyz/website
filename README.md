@@ -63,6 +63,7 @@ Creating a new post is easy if you're already familiar with the usual Github wor
         - author2
     date: YYYY-MM-DD
     modified: YYYY-MM-DD (only used when updating an existing post)
+    bibliography: some_bib_file.bib (if you use citations)
     tags:
         - tag1
         - tag2
@@ -159,24 +160,26 @@ You then have to make the pelican script accessible through your shell, either b
 Technical issues
 ----------------
 
-The `pandoc_reader` plugin breaks Pelican's `{filename}`-hooks because of how pandoc versions after 1.15.0 mangle curly braces.
-The version in our repo has a minor workaround to fix this.
-In `pandoc_reader.py`, 
+Our version of the `pandoc_reader` plugin contains several fixes and extensions.
 
+1.  The default version breaks Pelican's `{filename}`-hooks because of how pandoc versions after 1.15.0 mangle curly braces.
+    The version in our repo has a minor workaround to fix this.
+    In `pandoc_reader.py`, 
 
-```python
-return output, metadata
-```
+    ```python
+    return output, metadata
+    ```
 
-has been expanded to
+    has been expanded to
 
-```python
-output = output.replace('%7Bfilename%7D','{filename}')
-return output, metadata
-```
+    ```python
+    output = output.replace('%7Bfilename%7D','{filename}')
+    return output, metadata
+    ```
 
-We need to make sure that this fix is merged in whenever we update the plugin.
-
+1.  The plugin now uses Python's `frontmatter` package to extract YAML headers.
+    It then preprocesses them and passes them on to Pelican.
+    This makes it easy to pass parameters to pandoc (e.g. CLS and bib-files), and we'll also be able to create PDFs from the same source files.
 
 To Do
 -----
