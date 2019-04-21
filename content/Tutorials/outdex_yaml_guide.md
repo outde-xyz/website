@@ -24,6 +24,8 @@ All you have to do is add a short YAML-header at the very top.
 If that doesn't mean anything to you, don't despair, it only takes 2 minutes to learn.
 <!-- END_SUMMARY_BLOCK -->
 
+## Markdown file = metadata + content
+
 Every Outdex post is created from a markdown file with a `.md` ending.
 The bulk of the file will be the content of the post.
 For the sake of argument, let's assume that you have created a file `my_first_post.md` that only contains the following:
@@ -104,7 +106,7 @@ This is the second post on how to write submissions for the Outdex.
 The first one covered the use of pandoc for the actual content of your submission.
 ```
 
-And if I want to use pandoc's citation functionality to add some references to this article, I would have to specify the name of the bib-file to be used.
+And if I want to use pandoc's citation functionality to add some references to this article, I have to specify the name of the bib-file to be used.
 
 ```md
 ---
@@ -130,7 +132,9 @@ The first one covered the use of pandoc for the actual content of your submissio
 The order of the fields does not matter, nor does the order of the tags.
 But as somebody who's very fond of consistency, I would be greatly pleased if you were to follow the order used in the examples.
 
-There are two more useful entries you can add to the YAML header.
+## Adding a summary and table of contents
+
+There are two more useful entries you can put in the YAML header.
 If you add `toc: true`, a table of contents will be added to your article, just like the one at the top of this post.
 Right now the styling is still very crude, but hopefully I'll have time to tweak that soon.
 
@@ -167,6 +171,8 @@ All you have to do is add a short YAML-header at the very top.
 If that doesn't mean anything to you, don't despair, it only takes 2 minutes to learn.
 <!-- END_SUMMARY_BLOCK -->
 
+## Markdown file = metadata + content
+
 Every Outdex post is created from a markdown file with a `.md` ending.
 The bulk of the file will be the content of the post.
 ```
@@ -198,4 +204,4 @@ tags:
 ---
 ```
 
-While `summary` is supported, you're probably better off using `<!-- START_SUMMARY_BLOCK>` and `<!-- END_SUMMARY_BLOCK>`.
+While `summary` is supported, you're probably better off inserting the `<!-- START_SUMMARY_BLOCK>` and `<!-- END_SUMMARY_BLOCK>` markers right into the content of your article.
