@@ -6,6 +6,7 @@ series: >-
 authors:
     - Thomas Graf
 date: 2019-04-19
+bibliography: references.bib
 tags:
     - backend
     - markdown

@@ -51,13 +51,8 @@ PANDOC_EXTENSIONS = [
 ]
 PANDOC_ARGS = [
   '--mathjax',
-  '--filter',
-  'pandoc-citeproc',
-  '--bibliography',
-  './bib/references.bib',
-  '--csl',
-  './bib/language.csl'
 ]
+PANDOC_CSL = './bib/language.csl'
 # render_math options
 # MATH_JAX = {'auto_insert': False, 'process_summary': True}
 # summary options

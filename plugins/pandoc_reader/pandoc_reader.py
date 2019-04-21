@@ -22,18 +22,29 @@ class PandocReader(BaseReader):
             if isinstance(metadata.get(x), list):
                 metadata[x] = ", ".join(metadata[x])
 
-        # pass on for processing to Pelican
-        for key, val in metadata.items():
-            metadata[key] = self.process_metadata(key, val)
-
         extra_args = self.settings.get('PANDOC_ARGS', [])
         extensions = self.settings.get('PANDOC_EXTENSIONS', '')
+
+        if "bibliography" in metadata and PANDOC_CSL::
+            extensions + ['--filter',
+                          'pandoc-citeproc',
+                          '--bibliography',
+                          './bib/' + metadata["bibliography"],
+                          '--csl',
+                          PANDOC_CSL]
+
         if isinstance(extensions, list):
             extensions = ''.join(extensions)
 
         pandoc_cmd = ["pandoc", "--from=markdown" + extensions, "--to=html5"]
         pandoc_cmd.extend(extra_args)
 
+
+        # final processing of metadata via Pelican
+        for key, val in metadata.items():
+            metadata[key] = self.process_metadata(key, val)
+
+        # final processing of content via pandoc
         proc = subprocess.Popen(pandoc_cmd,
                                 stdin=subprocess.PIPE,
                                 stdout=subprocess.PIPE)
