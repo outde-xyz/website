@@ -64,6 +64,7 @@ Creating a new post is easy if you're already familiar with the usual Github wor
     date: YYYY-MM-DD
     modified: YYYY-MM-DD (only used when updating an existing post)
     bibliography: some_bib_file.bib (if you use citations)
+    toc: true (if you want a table of contents)
     tags:
         - tag1
         - tag2

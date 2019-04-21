@@ -16,8 +16,8 @@ tags:
 
 <!-- START_SUMMARY_BLOCK -->
 This is the first post in an ongoing series of mini-tutorials for Outdex contributors.
-This post gives a brief overview of the [pandoc features](https://pandoc.org/MANUAL.html#pandocs-markdown) that authors can use for their outdex articles.
-This is for authors only, the average Outdex reader won't find much of interest here.
+I'll give a brief overview of some of the lovely [pandoc features](https://pandoc.org/MANUAL.html#pandocs-markdown) that authors can use for their outdex articles:
+formatting with markdown, syntax highlighting, Latex-style math, bibtex-style citations, and example numbering.
 
 In the near future, there will be follow-up posts that cover the use of YAML headers for metadata, how to submit articles via [Github](https://github.com), and some aspects of the [talkyard commenting system](https://www.talkyard.io) we use.
 If anything's unclear, please leave a comment.
@@ -26,6 +26,8 @@ If anything's unclear, please leave a comment.
 ## Basic markdown features
 
 All the basic markdown features are available.
+If you've never used markdown before, you might want to start with the [interactive markdown tutorial](https://www.markdowntutorial.com/) to get a hang of the basics.
+It doesn't take long, and it's really well-made.
 
 ### A simple example
 
@@ -88,13 +90,13 @@ How about a table, dear prospective author?
 > And quoting works just like in an email.
 ```
 
-The use of `##` indicate a level-2 header.
+The use of `##` indicates a level-2 header.
 The highest level of posts is `##`, since the post title itself should be the only level-1 header.
 So don't use `# Some section`.
 You should always start with `## Some section`.
 You can then create subsections with `### Some subsection` and subsubsections with `#### Some subsubsection` (if you need them).
 
-Not all of the features above may work in the comment section.
+Not all of the features above may work in the comments section.
 That's because the comments use a different markdown implementation that is not as powerful as pandoc.
 There's nothing we can do about this.
 
@@ -123,7 +125,7 @@ Much better, don't you agree?
 ### Syntax highlighting
 
 Code is difficult to read if it's all black and white.
-Fortunately, we have an automatic syntax highlighter running in the background.
+Fortunately, we have an automatic syntax highlighter. 
 
 ```python
 print("some highlighted code")
