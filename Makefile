@@ -1,5 +1,6 @@
 PY?=python3
-PELICAN?=./venv/bin/pelican
+PELICAN?=pelican
+VENVPELICAN=./venv/bin/pelican
 PELICANOPTS=
 
 BASEDIR=$(CURDIR)
@@ -82,6 +83,13 @@ ifdef PORT
 	$(PELICAN) -lr $(INPUTDIR) -o $(OUTPUTDIR) -s $(CONFFILE) $(PELICANOPTS) -p $(PORT)
 else
 	$(PELICAN) -lr $(INPUTDIR) -o $(OUTPUTDIR) -s $(CONFFILE) $(PELICANOPTS)
+endif
+
+venvserver:
+ifdef PORT
+	$(VENVPELICAN) -lr $(INPUTDIR) -o $(OUTPUTDIR) -s $(CONFFILE) $(PELICANOPTS) -p $(PORT)
+else
+	$(VENVPELICAN) -lr $(INPUTDIR) -o $(OUTPUTDIR) -s $(CONFFILE) $(PELICANOPTS)
 endif
 
 publish:
