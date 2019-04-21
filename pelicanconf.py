@@ -37,13 +37,12 @@ EXTRA_PATH_METADATA = {
 # {{{ Plugins
 PLUGIN_PATHS = ['plugins']
 PLUGINS = [
+           'extract_toc',
            'pandoc_reader',
            'post_stats',
            'related_posts',
-           # 'render_math',
            'series',
            'share_post',
-           # 'summary',
            ]
 # pandoc-reader options
 PANDOC_EXTENSIONS = [
@@ -53,10 +52,6 @@ PANDOC_ARGS = [
   '--mathjax',
 ]
 PANDOC_CSL = 'language.csl'
-# render_math options
-# MATH_JAX = {'auto_insert': False, 'process_summary': True}
-# summary options
-# SUMMARY_USE_FIRST_PARAGRAPH = True
 # }}}
 
 

@@ -113,8 +113,9 @@ class PandocReader(BaseReader):
         #  metadata processing  #
         #########################
         # date is parsed as datetime object, convert back to string
-        if metadata.get("date"):
-            metadata["date"] = metadata["date"].strftime("%Y-%m-%d")
+        for key in ("date", "modified"):
+            if metadata.get(key):
+                metadata[key] = metadata[key].strftime("%Y-%m-%d")
         
         # tags and authors must be comma-separated lists for pelican
         for x in ("tags", "authors"):
