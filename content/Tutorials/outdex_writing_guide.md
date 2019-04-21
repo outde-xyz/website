@@ -105,7 +105,7 @@ So the code
 `![outdex logo](../img/logo.svg)`
 will show the lovely outdex logo with the caption *outdex logo* underneath.
 
-![outdex logo]({filename}/img/logo.svg)
+![outdex logo]({static}/img/logo.svg)
 
 But as you might have noticed, the size isn't quite appropriate.
 Pandoc allows us to also specify various image attributes as a semicolon-separated list.
@@ -113,7 +113,7 @@ This includes `width` and `height`.
 So here's what we we get with
 `![](../img/logo.svg){ width=50% }`.
 
-![]({filename}/img/logo.svg){ width=50% }
+![]({static}/img/logo.svg){ width=50% }
 
 Much better, don't you agree?
 
