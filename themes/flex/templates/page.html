@@ -11,6 +11,11 @@
   </header>
   <div>
     {% block before_content %}{% endblock %}
+    {% if page.toc %}
+        <nav class="toc">
+        {{ page.toc }}
+        </nav>
+    {% endif %}
     {% block page_content %}{{ page.content }}{% endblock %}
     {% block after_content %}{% endblock %}
   </div>
