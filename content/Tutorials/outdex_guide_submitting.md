@@ -66,7 +66,9 @@ Once your done writing, sync your local changes to your fork:
 
 Your new markdown file is now happily sitting in your fork of the Outdex repository.
 But it won't do you much good in the fork, nobody can see it there.
-So as the last step, you have to [create a **draft pull request**](https://help.github.com/en/articles/creating-a-pull-request-from-a-fork) against the `master` branch of the Outdex repository.
+So as the last step, you have to [create a draft pull request](https://help.github.com/en/articles/creating-a-pull-request-from-a-fork) against the `master` branch of the Outdex repository.
+Make sure it is a **draft** pull request, not a normal pull request.
+That way, we can't merge it in until you've given your final approval.
 
 Here's what happens at this point:
 
@@ -86,7 +88,7 @@ Here's what happens at this point:
 If you want to make changes, just make them directly in your local copy and sync them to your fork.
 Your changes will be automatically pulled into the pull request, and Netlify will deploy the new version.
 Continue revising and checking the preview until you're happy with the result.
-At that point, add a message to the pull request telling us to merge it.
+At that point, click the `Ready for review` button in your pull request so that we can merge in the final version.
 
 ## Staying up to date
 
