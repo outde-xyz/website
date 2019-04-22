@@ -4,9 +4,8 @@ title: >-
 authors:
     - Thomas Graf
 date: 2019-03-10
+toc: true
 ---
-
-## Technical issues
 
 ### Do I need an account to comment?
 
