@@ -21,7 +21,7 @@ It also involves crucial *metadata* such as the author(s), the date it was publi
 Metadata also allows you to enable some advanced features.
 It's a very powerful tool, but also very easy to use.
 All you have to do is add a short YAML-header at the very top.
-If that doesn't mean anything to you, don't despair, it only takes 2 minutes to learn.
+If that doesn't mean anything to you, don't despair, it only takes 4 minutes to learn.
 <!-- END_SUMMARY_BLOCK -->
 
 ## Markdown file = metadata + content
@@ -43,7 +43,7 @@ To fix this, we add a YAML-header, which is surrounded by `---` above and below 
 title: >-
     Still to be decided
 authors:
-    - J. Doe
+    - Alex Doe
 date: 2039-03-12
 tags:
     - some tag
@@ -177,7 +177,7 @@ Every Outdex post is created from a markdown file with a `.md` ending.
 The bulk of the file will be the content of the post.
 ```
 
-## Summary
+## YAML headers in a nutshell
 
 The YAML header is crucial for specifying your article's metadata.
 Right now, the following entries are supported:
