@@ -6,7 +6,7 @@ series: >-
 authors:
     - Thomas Graf
 date: 2019-03-09
-modified: 2019-04-19
+modified: 2019-04-22
 bibliography: references.bib
 tags:
     - backend
@@ -23,15 +23,58 @@ In the near future, there will be follow-up posts that cover the use of YAML hea
 If anything's unclear, please leave a comment.
 <!-- END_SUMMARY_BLOCK -->
 
-## Basic markdown features
+## Markdown: what and why?
 
-All the basic markdown features are available.
+Web documents used to be a pain to write.
+They use HTML, a pretty convoluted *markup* language.
+This means that the document doesn't just contain the actual text, but also a lot of tags to *mark up* the text with formatting information (hence the name).
+So *this* **text** would correspond to `<i>this</i> <b>text</i>` in the HTML document.
+Or consider this list:
+
+1. Item 1
+1. Item 2
+
+That's the output of the following HTML:
+
+```HTML
+<ol>
+<li>Item 1</li>
+<li>Item 2</li>
+</ol>
+```
+
+All these angled brackets and slashes really slow down the writing process.
+And if you forget even one, the layout will go haywire in all kinds of ways.
+Bottom line, you really don't want to write your posts in HTML.
+
+*Markdown* was designed to streamline the writing process.
+You still have to supply markup information, but it's done in a way that mimics common writing conventions.
+Instead of `<i>this</i> <b>text</i>`, you just write `*this* **text**`.
+The list is really just a list:
+
+```md
+1.  Item 1
+2.  Item 2
+```
+
+In addition, markdown isn't limited to only producing websites.
+A markdown document can also be converted to docx, pdf, or even an ebook.
+There's markdown dialects for creating slides, too.
+And all of that can be done largely without special software.
+A markdown file is just a text file, so you can create one with even the crummiest text editor, like Notepad (does Windows still ship with Notepad?).
+Write whatever you want to write, save it as a `.md`-file and, bam, there's your markdown file.
+All you need is a converter that will turn it into the desired output format (HTML, pdf, and so on).
+
+Markdown is now widely used in blogs and is even making inroads into scientific writing.
+So it only makes sense that the Outdex is built on markdown.
+All the basic markdown features are available, but we've got a lot of cool stuff on top of that thanks to the use of [pandoc](https://pandoc.org/MANUAL.html#pandocs-markdown), a very powerful dialect of markdown.
 If you've never used markdown before, you might want to start with the [interactive markdown tutorial](https://www.markdowntutorial.com/) to get a hang of the basics.
 It doesn't take long, and it's really well-made.
+Once you feel comfortable with the markdown basics, come back here to see what markdown features are available to Outdex contributors.
 
 ### A simple example
 
-You may use **bold** or *italic*.
+You may use **bold**, *italic*, or ***both***.
 There's also `verbatim text`, which is useful for code, e.g. `print("some string")`.
 Feel free to use subscript~i~ and superscript^i^.
 Some things you might want to ~~erase~~.
@@ -64,7 +107,7 @@ The output above is produced from the markdown code below:
 ## Basic markdown features
 
 All the basic markdown features are available.
-You may use **bold** or *italic*.
+You may use **bold**, *italic*, or ***both***.
 There's also `verbatim text`, which is useful for code, e.g. `print("some string")`.
 Feel free to use subscript~i~ and superscript^i^.
 Some things you might want to ~~erase~~.
@@ -91,7 +134,7 @@ How about a table, dear prospective author?
 ```
 
 The use of `##` indicates a level-2 header.
-The highest level of posts is `##`, since the post title itself should be the only level-1 header.
+The highest level of headers inside of a post is `##` because the level-1 header is already used for the title of the post.
 So don't use `# Some section`.
 You should always start with `## Some section`.
 You can then create subsections with `### Some subsection` and subsubsections with `#### Some subsubsection` (if you need them).
