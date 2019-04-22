@@ -66,7 +66,7 @@ Once your done writing, sync your local changes to your fork:
 
 Your new markdown file is now happily sitting in your fork of the Outdex repository.
 But it won't do you much good in the fork, nobody can see it there.
-So as the last step, you have [create a pull request](https://help.github.com/en/articles/creating-a-pull-request-from-a-fork) against the `master` branch of the Outdex repository.
+So as the last step, you have to [create a **draft pull request**](https://help.github.com/en/articles/creating-a-pull-request-from-a-fork) against the `master` branch of the Outdex repository.
 
 Here's what happens at this point:
 
@@ -74,13 +74,12 @@ Here's what happens at this point:
    Deployment takes a few minutes.
 1. Once deployment finishes, Netlify will create a preview version and append your pull request with a link to the preview.
    Click on this link to check the preview.
-1. If you're happy with the preview, add a message that you want us to merge the pull request.
+1. If you're happy with the preview, go to your pull request and click the button `Ready for review`.
    Otherwise, start the revise-preview loop (step 3.1).
-1. As soon as you create the pull request, the Outdex maintainers get an email notification.
-   We will take a look at your pull request within the next few days.
-   If the pull request has a message from you that you're happy with the current version, we'll merge it in.
-   Otherwise we wait a few more days.
-   If there's still no approval message 1 week after the initial filing, we'll close the pull request without merging it.
+1. As soon as you mark your pull request as ready for review, the Outdex maintainers get an email notification.
+   We will take a look at your pull request within the next few days and merge it in if everything seems fine.
+   Otherwise we will add a message to the pull request.
+   Make sure you have some way to regularly check your Github notifications (e.g. by having them emailed to you).
 
 ## Step 3.1: Revise loop
 
