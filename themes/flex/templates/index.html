@@ -33,14 +33,14 @@
         {% endfor %}
         {% set auth_str = ' 👤 ' ~ auth_str|join(', ') %}
       {% endif %}
-      {{ _('%(auth_str)s &#8226; 📆 %(when)s',
+      {{ _('%(auth_str)s &#8226; 📆 %(when)s in %(category)s',
            auth_str=auth_str,
            when=article.locale_date,
            category='<a href="%s/%s">%s</a>'|format(SITEURL, article.category.url, article.category)|safe) }}
 
       {% if article.tags and not HOME_HIDE_TAGS %}
           &#8226; {{ _('🏷') }}
-          {% for tag in article.tags %}
+          {% for tag in article.tags if tag != article.category %}
               <a href="{{ SITEURL }}/{{ tag.url }}">{{ tag }}</a>{% if not loop.last %},{% endif %}
           {% endfor %}
       {% endif %}
