@@ -57,7 +57,7 @@ For the last three years, I have been doing a kind of "year in review" assessmen
 I write down my personal list of criteria and see how my current job fares in that respect.
 So far, the scores have been largely off the chart because I'm very happy with my department and I'm still in a stage of my life where I can spend lots of time and energy on my job without making major sacrifices somewhere else.
 But things are constantly in flux, so I never assume that I'm locked into my current job for life.
-Doing that just makes you exploitable, and the university system ruthlessly exploits anybody who views their job as a calling instead of one of several viable means to earn a living.
-Nothing gives an employer more power than a large pool of employees with a calling.
+Doing that just makes you exploitable.
+Nothing gives an employer more power than a large pool of employees with a calling and/or no exit strategy.
 So let's buck the trend and start normalizing the non-academic career.
 Because it really is the reasonable choice, and academia is the oddball move that needs a good justification.
