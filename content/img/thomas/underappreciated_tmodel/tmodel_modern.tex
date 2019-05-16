@@ -1,0 +1,47 @@
+\documentclass[crop,tikz]{standalone}
+\usetikzlibrary{%
+    arrows,
+    arrows.meta,
+    backgrounds,
+    calc,
+    decorations.pathreplacing,
+    fit,
+    matrix,
+    positioning,
+    scopes,
+    shadows
+}
+\usepackage[linguistics]{forest}
+\usepackage[charter]{mathdesign}
+\tikzset{headarrow/.style = {-{Latex[length=.5em]}}}
+\tikzset{move/.style = {dashed,blue,movearrow}}
+
+\newcommand{\mlex}[2]{\ensuremath{\textrm{#1} ::\thinspace \mathrm{#2}}}
+\newcommand{\fsel}[1]{\ensuremath{\mathrm{#1^+}}}
+\newcommand{\fcat}[1]{\ensuremath{\mathrm{#1^-}}}
+\newcommand{\flcr}[1]{\ensuremath{\mathrm{#1^+}}}
+\newcommand{\flce}[1]{\ensuremath{\mathrm{#1^-}}}
+\newcommand{\fadj}[1]{\ensuremath{\mathrm{#1^\sim}}}
+\newcommand{\Merge}{Merge}
+\newcommand{\Move}{Move}
+\newcommand{\Adjoin}{Adjoin}
+
+\begin{document}
+\begin{tikzpicture}[
+    point/.style = {minimum size=0pt, inner sep=0pt, outer sep=0pt}]
+    \node[point] (start) at (0,0) {};
+    \node[point] (end) [below=3em of start] {};
+    \node[point] (PF) [below left=3em and 3em of end] {};
+    \node[point] (LF) [below right=3em and 3em of end] {};
+
+    \draw (start) to (end);
+    \draw[headarrow] (end) to node [left] {PF} (PF);
+    \draw[headarrow] (end) to node [right] {LF} (LF);
+
+    \draw[decorate,decoration={brace,amplitude=5pt}]
+        ($(start) + (.1em,0)$)
+        to
+        node [right,xshift=.3em] {Syntax}
+        ($(end) + (.1em,0)$);
+\end{tikzpicture}
+\end{document}
