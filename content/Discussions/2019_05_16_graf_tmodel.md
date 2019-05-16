@@ -60,7 +60,7 @@ At the same time, the "mediator" part in (@tmodel1) is a little wishy washy.
 I believe the following is a valid paraphrase that gets a bit more specific.
 
 (@tmodel2)
-**T-model (Paraphrase 2)**
+**T-model (Paraphrase 2)**  
 Syntax is the unique part of grammar that is shared equally by PF and LF.
 
 To the syntacticians among you this might be too abstracted as it cuts out several concepts that are frequently associated with the T-model.
