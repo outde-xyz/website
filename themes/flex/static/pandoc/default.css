@@ -59,3 +59,6 @@ code span.st { color: #4070a0; } /* String */
 code span.va { color: #19177c; } /* Variable */
 code span.vs { color: #4070a0; } /* VerbatimString */
 code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+
+figcaption { font-weight: bold; font-size: 80%; text-align: center; }
+figure img { display: block; margin: 0 auto; padding-top: 1em; padding-bottom: 1em; }
