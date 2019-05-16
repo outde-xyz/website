@@ -1,0 +1,49 @@
+\documentclass[crop,tikz]{standalone}
+\usetikzlibrary{%
+    arrows,
+    arrows.meta,
+    backgrounds,
+    calc,
+    fit,
+    matrix,
+    positioning,
+    scopes,
+    shadows
+}
+\usepackage[linguistics]{forest}
+\usepackage[charter]{mathdesign}
+\tikzset{movearrow/.style = {-{Latex[length=.5em]}}}
+\tikzset{move/.style = {dashed,blue,movearrow}}
+
+\newcommand{\mlex}[2]{\ensuremath{\textrm{#1} ::\thinspace \mathrm{#2}}}
+\newcommand{\fsel}[1]{\ensuremath{\mathrm{#1^+}}}
+\newcommand{\fcat}[1]{\ensuremath{\mathrm{#1^-}}}
+\newcommand{\flcr}[1]{\ensuremath{\mathrm{#1^+}}}
+\newcommand{\flce}[1]{\ensuremath{\mathrm{#1^-}}}
+\newcommand{\fadj}[1]{\ensuremath{\mathrm{#1^\sim}}}
+\newcommand{\Merge}{Merge}
+\newcommand{\Move}{Move}
+\newcommand{\Adjoin}{Adjoin}
+
+\begin{document}
+\begin{tikzpicture}
+    % narrow viewport
+    \clip (-.8em, -.8em) rectangle (.8em, .8em);
+
+    % add background
+    \begin{pgfonlayer}{background}
+      \node at (0,0)
+        [fill=outdex_background,minimum size=2.2em] {};
+    \end{pgfonlayer}
+
+    \draw[line width=.2em, white]
+        ($(0,0) - (.5em, .5em)$) -- ($(0,0) + (.5em, .5em)$);
+    \draw[line width=.2em, white]
+        ($(-.01em,0) + (-.5em, .5em)$) -- ($(-.01em,0) + (.54em, -.54em)$);
+    \node at (0,0)
+        [minimum size=0pt, inner sep=1pt,
+         text=outdex_orange,
+         font=\Huge]
+        {$\mathbf{\otimes}$};
+\end{tikzpicture}
+\end{document}
