@@ -151,7 +151,7 @@ A few missteps like that, and all of a sudden I find myself in a debate where ne
 
 The example above is just one of many.
 The same problems arise when discussing generative capacity, parsing, learnability results, pretty much anything.
-Heck, even island constraints or the ^*^ABA generalization.
+Heck, even island constraints or the *ABA generalization.
 Talking across subfields is always difficult, and it takes lots of practice to figure out the right pitch for your target audience.
 I think it's particularly difficult for mathematical and computational linguistics, both of which have a somewhat strained relation with theoretical linguistics for historical reasons.
 The system above has helped me a bit in tailoring the message to the audience, but as I said, there's still plenty of opportunities for derailing the discussion.
