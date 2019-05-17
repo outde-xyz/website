@@ -76,10 +76,10 @@ I'm just trying to make sense of how different commitments play into linguistic 
 
 We now have a coordinate system with four quadrants, each one of which we can associate with specific linguistic communities.
 
-|            | formalist | analysist |
-| --:        | :-:       | :-:       |
-| holist     | CompLing  | HPSG, LFG |
-| atomist    | Minimalist (Hornstein-style) | Minimalist (Legate-style) |
+|              | formalist | analysist |
+| --:          | :-:       | :-:       |
+| **holist**   | CompLing  | HPSG, LFG |
+| **atomist**  | Minimalist (Hornstein-style) | Minimalist (Legate-style) |
 
 I place myself in the formalist-holist quadrant, and I suspect that my holisticity (totally a word) is unusually high even for a computational linguist.
 I think that many syntacticians working with HPSG and LFG comfortably fit in the analyst-holist category, assuming that they don't completely shy away from cognitive commitments.
