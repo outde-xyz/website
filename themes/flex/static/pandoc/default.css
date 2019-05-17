@@ -62,3 +62,5 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 figcaption { font-weight: bold; font-size: 80%; text-align: center; }
 figure img { display: block; margin: 0 auto; padding-top: 1em; padding-bottom: 1em; }
+
+dt { font-weight: bold; }
