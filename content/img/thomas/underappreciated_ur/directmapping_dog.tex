@@ -1,0 +1,37 @@
+\documentclass[crop,tikz]{standalone}
+\usetikzlibrary{%
+    arrows,
+    arrows.meta,
+    backgrounds,
+    calc,
+    decorations.pathreplacing,
+    fit,
+    matrix,
+    positioning,
+    scopes,
+    shadows
+}
+\usepackage[linguistics]{forest}
+\usepackage[charter]{mathdesign}
+\tikzset{headarrow/.style = {-{Latex[length=.5em]}}}
+\tikzset{move/.style = {dashed,blue,movearrow}}
+
+\newcommand{\mlex}[2]{\ensuremath{\textrm{#1} ::\thinspace \mathrm{#2}}}
+\newcommand{\fsel}[1]{\ensuremath{\mathrm{#1^+}}}
+\newcommand{\fcat}[1]{\ensuremath{\mathrm{#1^-}}}
+\newcommand{\flcr}[1]{\ensuremath{\mathrm{#1^+}}}
+\newcommand{\flce}[1]{\ensuremath{\mathrm{#1^-}}}
+\newcommand{\fadj}[1]{\ensuremath{\mathrm{#1^\sim}}}
+\newcommand{\Merge}{Merge}
+\newcommand{\Move}{Move}
+\newcommand{\Adjoin}{Adjoin}
+
+\begin{document}
+\begin{tikzpicture}
+    \node (A) at (0,0) {dog};
+    \node (B) [right=5em of A] {dogs};
+
+    \draw[headarrow, bend left=30] (A) to (B);
+    \draw[headarrow, bend left=30] (B) to (A);
+\end{tikzpicture}
+\end{document}
