@@ -3,7 +3,7 @@ title: >-
     Two dimensions of talking past one another
 authors:
     - Thomas Graf
-date: 2019-04-30
+date: 2019-05-20
 tags:
     - theory
     - methodology
