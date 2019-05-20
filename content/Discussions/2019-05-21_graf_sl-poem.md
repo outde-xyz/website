@@ -1,6 +1,6 @@
 ---
 title: >-
-    A subregular song
+    A song of middles and suffixes
 authors:
     - Thomas Graf
 date: 2019-05-20
