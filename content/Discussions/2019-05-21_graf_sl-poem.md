@@ -36,22 +36,22 @@ To be honest, I'm probably better at complaining, but here we go...
 | such is the passion of mathlings
 | it could encode a lot of things
 | DNA and words and sounds, methinks
-
+|
 | We want to test locality
 | in the strict sense with formality
 | we'll rely on math's regality
 | to find the truth in totality
-
+|
 | We'll play a substitution game
 | where distinct strings should be the same
 | and if it fails we can proclaim
 | it's not SL, oh what a shame
-
+|
 | Pick strings $s$, $t$ from this set
 | and cut them up like a sextet
 | prefix, suffix can[^1] differ, yet
 | middle identity must be met
-
+|
 | Now switch the suffixes around
 | and check if the result is sound
 | you may ask why, I shall expound
@@ -63,22 +63,22 @@ To be honest, I'm probably better at complaining, but here we go...
 | is just too easy to lead astray
 | from left to right on its merry way
 | it collects all substrings of size $k$
-
+|
 | If some $k$-grams are forbidden
 | a $k$-gram scanner won't admit'em
 | and the whole string plainly didn't
 | follow the rules as they are written
-
+|
 | Now $s$ and $t$ are both just fine
 | their $k$-grams all do toe the line
 | the $k$-gram scanner should not whine
 | if $s$ and $t$ do intertwine
-
+|
 | If the middle is long enough
 | we've got the perfect SL-bluff
 | suffix switching adds no stuff
 | but is the outcome up to snuff?
-
+|
 | The $k$-grams are the same, you see,
 | the $k$-gram scanner must decree:
 | "Admit the string for its esprit!"
@@ -90,7 +90,7 @@ To be honest, I'm probably better at complaining, but here we go...
 | while SL-scanners do admit it
 | then the proof has been submitted:
 | the string set's not SL. You get it?
-
+|
 | If after all this neat exposure
 | you still need the full disclosure:
 | An SL language's composure
