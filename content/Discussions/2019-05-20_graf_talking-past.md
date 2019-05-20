@@ -40,7 +40,7 @@ This is the received view in HPSG.
 Which one of the two is preferable --- formalist or analyst --- is not the point here.
 It only matters that this distinction exists.
 
-Orthogonal to the formalist-analyst axis lies the **atomist-holist axis**.
+Orthogonal to the formalist-analyst axis lies the **atomist-holist** axis.
 Both involve a significant amount of cognitive commitment.
 So if you believe that a linguistic theory (whatever that may be) need not express any aspects of linguistic cognition, you have no place on this axis at all.
 In Chomskyan terms, everybody on this axis subscribes to some notion of I-language.
