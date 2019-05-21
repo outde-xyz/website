@@ -3,7 +3,7 @@ title: >-
     A song of middles and suffixes
 authors:
     - Thomas Graf
-date: 2019-05-20
+date: 2019-05-21
 tags:
     - phonology
     - subregular
