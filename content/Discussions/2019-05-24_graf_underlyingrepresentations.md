@@ -57,7 +57,7 @@ Since the two sets are identical, we can conflate them.
 
 ![Reduced bimorphism for surface forms]({static}/img/thomas/underappreciated_ur/bimorphism_sf_reduced.svg){ width=18% }
 
-So overall the picture looks a bit different from syntax, but it's still an instance of bimorphisms.
+So overall the picture looks a bit different from syntax, but it still follows the basic idea behind bimorphisms.
 
 Alright, let's step back from the math for a second and focus what this really tells us.
 In the bimorphism picture, two surface forms $a$ and $b$ are related iff there is an interpolant $c$ such that both $a$ and $b$ can be obtained from $c$.
