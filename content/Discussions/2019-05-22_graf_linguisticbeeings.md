@@ -9,7 +9,7 @@ tags:
 ---
 
 <!-- START_SUMMARY_BLOCK -->
-Continuing yesterday's theme of having fun, here's a pretty accurate typology of our field in picture form.
+Continuing yesterday's theme of having fun, here's a highly, highly accurate typology of our field in picture form.
 <!-- END_SUMMARY_BLOCK -->
 
 ![]({static}/img/thomas/fun_allowed/linguistic_beeings.png){ width=100% }
