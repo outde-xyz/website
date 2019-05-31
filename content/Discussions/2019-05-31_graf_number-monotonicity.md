@@ -239,11 +239,11 @@ So singular, dual, and plural on the Num-head are not features or part of any hi
 This might seem like a conceptual leap, but once we take it we can find patterns for all three numbers.
 These are drawn below, with boxes to indicate that a node is mapped to "inverse".
 
-![Kiowa singular on Num triggers inverse with the first two noun classes]({static}/img/thomas/monotonicity/kaiowa_sg.svg){ width=55% }
+![Kiowa singular on Num triggers inverse with the first two noun classes]({static}/img/thomas/monotonicity/kiowa_sg.svg){ width=55% }
 
-![Kiowa plural on Num triggers inverse almost everywhere]({static}/img/thomas/monotonicity/kaiowa_pl.svg){ width=55% }
+![Kiowa plural on Num triggers inverse almost everywhere]({static}/img/thomas/monotonicity/kiowa_pl.svg){ width=55% }
 
-![Kiowa dual on Num triggers inverse only with the last noun class]({static}/img/thomas/monotonicity/kaiowa_dual.svg){ width=55% }
+![Kiowa dual on Num triggers inverse only with the last noun class]({static}/img/thomas/monotonicity/kiowa_dual.svg){ width=55% }
 
 We already know that these mappings are all monotonic.
 So for any given number and noun class combination in Kiowa, the mapping to an inverse or non-inverse form is monotonic.
