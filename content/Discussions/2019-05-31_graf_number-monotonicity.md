@@ -4,6 +4,7 @@ title: >-
 authors:
     - Thomas Graf
 date: 2019-05-31
+modified: 2019-05-31
 tags:
     - features
     - monotonicity
@@ -108,7 +109,7 @@ Monotonicity requires that ordering statements be preserved.
 In entails that whenever we have $x < y < z$ in some hierarchy, $x$ and $z$ cannot be mapped to the same value while $y$ is mapped to something else.
 So we get a contiguity requirement over hierarchies.
 
-This readily explains Bobaljik's *ABA generalization.
+This readily explains Bobaljik's \*ABA generalization.
 No natural language has paradigms like *good*-*better*-*goodest*.
 If we start out with a semantically natural hierarchy of positive < comparative < superlative, this follows from monotonicity.
 As both the positive and the superlative are mapped to a stem *good*, monotonicity requires the comparative to be mapped to the very same stem.
@@ -175,10 +176,14 @@ And of course everything can go to plural.
 ![Uniform plural agreement]({static}/img/thomas/monotonicity/omnivorous_allpl.svg){ width=55% }
 
 These are the basic cases.
-Notice how none of the branches ever cross.
+Notice how the arc for final marking never crosses those for argument 1 or 2.
+That would be a monotonicity violation as final marking is ordered with respect to the two arguments, and this order must be obeyed.
 This is also the case for omnivorous agreement.
 
 ![Omnivorous plural agreement via the second argument]({static}/img/thomas/monotonicity/omnivorous_good.svg){ width=55% }
+
+Again the arc for final marking does not cross any argument arcs.
+The arcs of argument 1 and 2 do cross, but that is immaterial because the two are unordered with respect to each other, so monotonicity does not apply.
 
 But now suppose that omnivorous agreement could produce singular if just one argument is singular.
 
