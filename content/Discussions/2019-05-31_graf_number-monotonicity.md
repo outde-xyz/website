@@ -1,6 +1,6 @@
 ---
 title: >-
-    Omnivorous number and Kaiowa inverse marking: Monotonicity trumps features?
+    Omnivorous number and Kiowa inverse marking: Monotonicity trumps features?
 authors:
     - Thomas Graf
 date: 2019-05-31
@@ -11,7 +11,7 @@ tags:
     - hierarchies
     - omnivorous number
     - inverse marking
-    - Kaiowa
+    - Kiowa
 ---
 
 <!-- START_SUMMARY_BLOCK -->
@@ -30,7 +30,7 @@ I think it was a very interesting and productive meeting with plenty of fun.
 We got along really well, like a Justice League of feature research (but who's Aquaman?).
 
 In the next few weeks I'll post on various topics that came up during the workshop, in particular privative features.
-But for now, I'd like to comment on one particular issue that regards the feature representation of number and how it matters for omnivorous number and Kaiowa inverse marking.
+But for now, I'd like to comment on one particular issue that regards the feature representation of number and how it matters for omnivorous number and Kiowa inverse marking.
 Peter has [an excellent write-up on his blog](https://blogg.uit.no/psv000/2019/05/31/on-the-privativity-of-number-and-the-possibility-of-negative-feature-specifications/), and I suggest that the main discussion about features should be kept there.
 This post will present a very different point of view that basically says "suck it, features!" and instead uses hierarchies and monotonicity.
 <!-- END_SUMMARY_BLOCK -->
@@ -55,7 +55,7 @@ Note that we never get the opposite, i.e. singular trumping plural:
 
 Omer Preminger has used this to argue for a specific representation of number in terms of privative features, i.e. a system where features have no +/- values.
 
-In Kaiowa inverse marking, we get inverse marking if the number feature on a Num-head disagrees with the "inherent number" of the noun.[^number]
+In Kiowa inverse marking, we get inverse marking if the number feature on a Num-head disagrees with the "inherent number" of the noun.[^number]
 The Num-head can be either singular, dual, or plural.
 According to Daniel Harbour, these are specified via binary feature matrices as follows:
 
@@ -126,7 +126,7 @@ This is expected if we assume an underlying hierarchy of 1 < 2 < 3.
 Monotonicity makes good typological predictions for various other morphosyntactic phenomena, including case syncretism, noun stem allomorphy, and the Person Case Constraint.
 Many linguistic constraints can also be reanalyzed as instances of monotonicity, e.g. the Williams-cycle or the Ban Against Improper Movement.
 
-Alright, so now let's see how monotonicity cracks the empirical nut of fitting omnivorous number and Kaiowa agreement under the same umbrella.
+Alright, so now let's see how monotonicity cracks the empirical nut of fitting omnivorous number and Kiowa agreement under the same umbrella.
 
 ## Monotonicity with omnivorous number
 
@@ -196,16 +196,16 @@ The Williams Cycle and the Ban Against Improper Movement work exactly the same, 
 No, omnivorous number is a bog-standard instance of the general monotonicity requirements that seem to be active in syntax.
 
 
-## Kaiowa number
+## Kiowa number
 
-Alright, one down, leaving only Kaiowa number.
+Alright, one down, leaving only Kiowa number.
 This one looks quite a bit different, but is still monotonic.
 First, we extend the number hierarchy to $\text{sg} \leq \text{pl} \leq \text{dual}$.
 I believe this is fairly natural.
 Yes, it does not jive with semantics, but this hasn't stopped me before, now has it?
 And the hierarchy is in line with the generalization that dual is more marked than plural and that no language has a dual without also having a plural.
 
-Next, I will also define a hierarchy of Kaiowa noun classes:
+Next, I will also define a hierarchy of Kiowa noun classes:
 
 $$\lbrack-\text{sg}\rbrack \leq \lbrack-\text{sg},-\text{pl}\rbrack \leq \lbrack-\text{pl}\rbrack \leq \lbrack+\text{sg}\rbrack$$
 
@@ -233,20 +233,20 @@ Basically, any way to draw a circle around a continuous region of the noun class
 1. $[+\text{sg}]$
 
 That's 8 patterns.
-Now we can ask ourselves if some of those correspond to the behavior we find for singular, dual, and plural in Kaiowa.
+Now we can ask ourselves if some of those correspond to the behavior we find for singular, dual, and plural in Kiowa.
 That is to say, can we identify monotonic maps that correspond with patterns we get with number features on the Num-head?
 So singular, dual, and plural on the Num-head are not features or part of any hierarchy here, instead they are analyzed as mappings from the noun class hierarchy to the inverse hierarchy.
 This might seem like a conceptual leap, but once we take it we can find patterns for all three numbers.
 These are drawn below, with boxes to indicate that a node is mapped to "inverse".
 
-![Kaiowa singular on Num triggers inverse with the first two noun classes]({static}/img/thomas/monotonicity/kaiowa_sg.svg){ width=55% }
+![Kiowa singular on Num triggers inverse with the first two noun classes]({static}/img/thomas/monotonicity/kaiowa_sg.svg){ width=55% }
 
-![Kaiowa plural on Num triggers inverse almost everywhere]({static}/img/thomas/monotonicity/kaiowa_pl.svg){ width=55% }
+![Kiowa plural on Num triggers inverse almost everywhere]({static}/img/thomas/monotonicity/kaiowa_pl.svg){ width=55% }
 
-![Kaiowa dual on Num triggers inverse only with the last noun class]({static}/img/thomas/monotonicity/kaiowa_dual.svg){ width=55% }
+![Kiowa dual on Num triggers inverse only with the last noun class]({static}/img/thomas/monotonicity/kaiowa_dual.svg){ width=55% }
 
 We already know that these mappings are all monotonic.
-So for any given number and noun class combination in Kaiowa, the mapping to an inverse or non-inverse form is monotonic.
+So for any given number and noun class combination in Kiowa, the mapping to an inverse or non-inverse form is monotonic.
 That's our first insight, but things get a lot more interesting from here.
 
 The three mappings above aren't just a random sample from the 8 available monotonic maps.
@@ -255,7 +255,7 @@ If we rank these mappings according to where they start mapping noun classes to 
 If you ask me, this is damn nifty.
 
 So what does this mean?
-It means that Kaiowa obeys a kind of double monotonicity: picking a specific part of the hierarchy for inverse marking must obey monotonicity, and the mapping from inverse marking functions to the number system must also be monotonic.
+It means that Kiowa obeys a kind of double monotonicity: picking a specific part of the hierarchy for inverse marking must obey monotonicity, and the mapping from inverse marking functions to the number system must also be monotonic.
 I don't know about you, but my mind is blown.
 
 ## Implications for features
