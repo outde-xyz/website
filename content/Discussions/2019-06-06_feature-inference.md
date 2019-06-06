@@ -255,7 +255,7 @@ In and of itself, there's nothing wrong with that.
 But the way features are used, we completely skip the actual computation step and go immediately to storing the result.
 Without a principled linking theory between features and computation, features can hide incredibly complex computations.
 I think this is a point that's not sufficiently appreciated by linguists.
-In a comment to my previous point, Peter Svenonius says
+In a comment on my previous post, Peter Svenonius says
 
 > If features are real, then it follows that they are "an explicit part of the representation".
 
