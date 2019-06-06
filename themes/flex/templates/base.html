@@ -33,6 +33,8 @@
 
   <link rel="stylesheet" type="text/css" href="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/pandoc/default.css">
 
+  <link rel="stylesheet" type="text/css" href="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/search/search.css">
+
   {% if CUSTOM_CSS %}
     <link href="{{ SITEURL }}/{{ CUSTOM_CSS }}" rel="stylesheet">
   {% endif %}
@@ -129,6 +131,11 @@
       </nav>
       {% endif %}
 
+      {% if DISPLAY_SEARCH_FORM -%}
+        <form id="search" action"#" onsubmit="javascript:window.open('https://duckduckgo.com/?q='+document.getElementById('keywords').value+'+site:{{ SITEURL }}');">
+          <input id="keywords" type="text" />
+        </form>
+      {% endif %}
       <ul class="social">
         {% for name, link in SOCIAL %}
         <li><a class="sc-{{ name }}" href="{{ link }}" target="_blank"><i class="fa fa-{{ name }}"></i></a></li>

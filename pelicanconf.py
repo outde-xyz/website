@@ -109,6 +109,9 @@ FEED_MAX_ITEMS = 10
 # Blogroll
 # LINKS = (('Subscribe', FEED_URL),)
 
+# Search field
+DISPLAY_SEARCH_FORM = True
+
 # Social widget
 SOCIAL = (('github', 'https://github.com/outde-xyz/website'),
           ('rss', FEED_DOMAIN + FEED_URL))
