@@ -132,7 +132,7 @@
       {% endif %}
 
       {% if DISPLAY_SEARCH_FORM -%}
-        <form id="search" action"#" onsubmit="javascript:window.open('https://duckduckgo.com/?q='+document.getElementById('keywords').value+'+site:{{ SITEURL }}');">
+        <form id="search" action"#" onsubmit="javascript:window.open('https://duckduckgo.com/?q='+document.getElementById('keywords').value+'+site:{{ ABS_SITEURL }}');">
           <input id="keywords" type="text" />
         </form>
       {% endif %}
