@@ -4,6 +4,7 @@ title: >-
 authors:
     - Thomas Graf
 date: 2019-06-06
+modified: 2019-06-07
 bibliography: references.bib
 tags:
     - features
@@ -268,7 +269,7 @@ I think I can now offer a more palatable compromise: Sorry, features aren't as i
 In hindsight, it's actually baffling to me that I didn't think of this any sooner.
 The trade-off between representations and operations/constraints is basically folklore in mathematical linguistics.
 Jeff has been insisting on the importance of complexity classes for representations for ages now and has had some ideas for getting at this through transductions.
-And together with my student Aniello De Santo I have recently argued that TSL, a very basic approximation of autosegmental phonology, should be studied in terms of constraints on the representation and a transduction for inferring the transduction [@DeSantoGraf19FG].
+And together with my student Aniello De Santo I have recently argued that TSL, a very basic approximation of autosegmental phonology, should be studied in terms of constraints on the representation and a transduction for inferring the representation [@DeSantoGraf19FG].
 It was all there in plain sight, but it took a nudge from Gillian for the pieces to assemble in the right way.
 So, thank you Gillian!
 You guys can expect a paper on feature inference within the next few months, with some nifty applications to subcategorization.
