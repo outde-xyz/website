@@ -4,6 +4,7 @@ title: >-
 authors:
     - Thomas Graf
 date: 2019-07-07
+bibliography: references.bib
 tags:
     - history
     - literature
@@ -11,7 +12,7 @@ tags:
 ---
 
 <!-- START_SUMMARY_BLOCK -->
-Time for a quick break from the feature saga.
+Time for a quick break from the on-going feature saga.
 A [recent post on the Computational Complexity blog](https://blog.computationalcomplexity.org/2019/06/what-happened-to-surprising-theorems.html) laments that theorems in complexity theory have become predictable.
 Even when a hard problem is finally solved after decades of research, the answer usually goes in the expected direction.
 Gone are the days of results that come completely out of left field.
@@ -54,3 +55,5 @@ So perhaps I've managed to surprise somebody once in a while.
 
 Either way, it looks like our field still enjoys a high surprisal quotient.
 And even if that may be due to a lack of maturity, I'm fine with mathematical linguistics still being stuck in the *Sturm und Drang* period of its teenage years.
+
+## References
