@@ -3,7 +3,7 @@ title: >-
     Surprising theorems
 authors:
     - Thomas Graf
-date: 2019-07-07
+date: 2019-06-07
 bibliography: references.bib
 tags:
     - history
