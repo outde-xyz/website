@@ -244,4 +244,4 @@ This definitely puts some restrictions on what kinds of sets of exponents can be
 But I don't consider that particularly noteworthy in itself.
 Nobody cares about natural classes in isolation, what matter is how they interact with the rules of the grammar.
 This is the step from a feature set --- a tool for picking out sets of exponents --- to a **feature system**, which controls how grammar rules are applied to exponents.
-That's the real crux, and it's sufficiently complicated that it requires its own follow-up point.
+That's the real crux, and it's sufficiently complicated that it requires its own follow-up post.
