@@ -42,7 +42,7 @@ That's true, but $(ab)^*$ is also strictly 2-local, making it one of the least c
 Similarly, $a^n b^n$ is a **counter language** --- first you count up with each symbol, and as soon as you see your first $b$ you switch over to counting down with each symbol, hoping to reach 0 at the end.
 The class of counter languages includes all regular languages but is a proper subclass of the deterministic context-free languages, which are already a much more restricted fragment of the context-free languages (they can be parsed in linear time, whereas arbitrary CFLs are cubic time).
 So $a^n b^n$ is a pretty bad example of what a context-free language can look like.
-A better choice would be $ww^R$, the language of palindromes, or $a^n b^n \cup a^n b^{2n}$.
+A better choice would be $ww^R$ (the language of palindromes) or $a^n b^n \cup a^n b^{2n}$.
 Both crucially involve non-deterministic guesses that could only be offset by perfect lookahead.
 
 This argument is undermined by two major flaws.
