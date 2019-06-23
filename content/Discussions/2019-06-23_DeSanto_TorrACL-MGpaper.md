@@ -37,10 +37,10 @@ I personally find the high variance still a bit concerning, but it is definitely
     Note also that Milos Stanojevic (who has been producing [so.](https://stanojevic.github.io/papers/2019_NAACL_CCG_Incremental_Rotation.pdf) [many.](https://linguistics.ucla.edu/people/hunter/parsing/move-eager-mg-lc.pdf) [parsers!](https://www.aclweb.org/anthology/W18-2809)) has [recently shown](http://fg.phil.hhu.de/2019/papers/FG2019-Stanojevic.pdf) that the worst case time complexity for parsing MGs with head movement can be dropped to $O(n^{13})$ (so I’m assuming $O(n^{13} \text{ } log \text{ } n)$ for their CKY+$A^*$ implementation).
     My guess is that this might also reduce the expected time complexity, but of course one would have to try and see.
 
-2) Although cross-formalism comparisons are tough (as the authors mention: are we comparing the quality of the parser or the quality of the grammar?), having lifted the CKY+$A^\*$ strategy directly from CCGs allows this paper to do a few interesting comparisons (cf. @Rimell2009).
-So, in terms of accuracy , results are not exactly comparable to those of the CCG algorithm on comparable dependencies.
-However, the authors point out that this might be due to the MG parser requiring more training than the CCG one (due to the increased complexity of the supertags?).
-Thus, lower performance might depend on the early development stage the MG treebank is at the moment. 
+2) Although cross-formalism comparisons are tough (as the authors mention: are we comparing the quality of the parser or the quality of the grammar?), having lifted the CKY+$A^*$ strategy directly from CCGs allows this paper to do a few interesting comparisons (cf. @Rimell2009).
+In terms of accuracy, results are not exactly comparable to those of the CCG algorithm.
+However, this might be due to the MG parser requiring more training than the CCG one (due to the increased complexity of the supertags?).
+Thus, the authors argue that performance might improve in parallel with the MG treebank. 
 I find this pretty convincing, although in terms of practical applications it opens questions about training/performance trade-offs.
 
 2) There are a lot of interesting syntactic considerations one could make based on the test cases the authors report. 
@@ -49,7 +49,7 @@ While it’s possibly a bit too early for this, it would be interesting to look 
 
 3) A side note. MG researchers have long known that Move is a powerful operation, which needs to be restricted quite a bit.
 The MGbank does this by following the usual suggestions in the literature (SMC, SpIC, etc). 
-SMC (or equivalents) aside,  the appeal to syntactically motivated constraints is interesting (although not new), and re-opens questions about the relation between syntactic constraints and parsing performance.
+SMC (or equivalents) aside,  the appeal to syntactically motivated constraints is interesting (although not new), and re-opens questions about the relation between syntactic constraints and parsing performance even on the more NLP\engineering side.
 
 
 ## References
