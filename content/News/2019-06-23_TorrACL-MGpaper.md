@@ -1,3 +1,19 @@
+title: >-
+    News from the MG frontier
+series: >-
+    Writing for the Outdex
+authors:
+    - Aniello De Santo
+date: 2019-06-23
+bibliography: TorrACL_MGpaper.bib
+tags:
+    - MGs
+    - parsing
+    - NLP
+---
+
+
+
 True to my academic lineage, I’m a big fan of Minimalist grammars (MGs): they are a pretty malleable formalism, their core mechanisms are very easy to grasp on an intuitive level, and they are close enough to current minimalist syntax to allow for interesting computational insights into mainstream syntax.
 However, I often find that MGs’charms are a bit wasted on my more NLP-oriented colleagues, compared to those of very close cousins like, say, TAGs or CCGs.
 They are very practical reasons for this, of course, but two things in particular come to mind right away: the lack of any large MG corpus (and/or  automatic ways to generate such corpora) and, relatedly, the lack of  efficient, state-of-the-art, probabilistic parsers.
@@ -20,7 +36,7 @@ This might not be an astonishing performance (I personally find the high varianc
 Note also that Milos Stanojevic (who has been producing [so.](https://stanojevic.github.io/papers/2019_NAACL_CCG_Incremental_Rotation.pdf) [many.](https://linguistics.ucla.edu/people/hunter/parsing/move-eager-mg-lc.pdf) parsers!) has [recently shown](http://fg.phil.hhu.de/2019/papers/FG2019-Stanojevic.pdf) that the worst case time complexity for parsing MGs with head movement can be dropped to $O(n^13)$ (so I’m assuming $O(n^13 log n)$ for their CKY+$A^*$ implementation).
 My guess is that this might also reduce the expected time complexity, but of course one would have to try and see.
 
-2) Although cross-formalism comparisons are tough (as the authors mention: are we comparing the quality of the parser or the quality of the grammar?), having lifted the CKY+$A^*$ strategy directly from CCGs allows this paper to do a few interesting comparisons (cf. @Rimmel2009).
+2) Although cross-formalism comparisons are tough (as the authors mention: are we comparing the quality of the parser or the quality of the grammar?), having lifted the CKY+$A^\*$ strategy directly from CCGs allows this paper to do a few interesting comparisons (cf. @Rimell2009).
 So, in terms of accuracy , results are not exactly comparable to those of the CCG algorithm on comparable dependencies.
 However, the authors point out that this might be due to the MG parser requiring more training than the CCG one (due to the increased complexity of the supertags?).
 Thus, lower performance might depend on the early development stage the MG treebank is at the moment. So, *go and contribute*!
@@ -32,3 +48,6 @@ While it’s possibly a bit too early for this, it would be interesting to look 
 3) A side note. MG researchers have long known that Move is a powerful operation, which needs to be restricted quite a bit.
 The MGbank does this by following the usual suggestions in the literature (SMC, SpIC, etc). 
 SMC (or equivalents) aside,  the appeal to syntactically motivated constraints is interesting (although not new), and reopens questions about the relation between syntactic constraints and parsing performance.
+
+
+## References
