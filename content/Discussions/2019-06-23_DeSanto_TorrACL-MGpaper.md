@@ -1,3 +1,4 @@
+---
 title: >-
     News from the MG frontier
 series: >-
@@ -33,8 +34,8 @@ As people have mentioned on twitter: Yes, that is insanely high (CKY is $O(n^3)$
 However, the cool thing about the $A^*$ component is that the parser performs way better ($O(n^3)$) in practice.
 This might not be an astonishing performance (I personally find the high variance still a bit concerning) but is definitely encouraging.
 
-Note also that Milos Stanojevic (who has been producing [so.](https://stanojevic.github.io/papers/2019_NAACL_CCG_Incremental_Rotation.pdf) [many.](https://linguistics.ucla.edu/people/hunter/parsing/move-eager-mg-lc.pdf) parsers!) has [recently shown](http://fg.phil.hhu.de/2019/papers/FG2019-Stanojevic.pdf) that the worst case time complexity for parsing MGs with head movement can be dropped to $O(n^13)$ (so I’m assuming $O(n^13 log n)$ for their CKY+$A^*$ implementation).
-My guess is that this might also reduce the expected time complexity, but of course one would have to try and see.
+    Note also that Milos Stanojevic (who has been producing [so.](https://stanojevic.github.io/papers/2019_NAACL_CCG_Incremental_Rotation.pdf) [many.](https://linguistics.ucla.edu/people/hunter/parsing/move-eager-mg-lc.pdf) parsers!) has [recently shown](http://fg.phil.hhu.de/2019/papers/FG2019-Stanojevic.pdf) that the worst case time complexity for parsing MGs with head movement can be dropped to $O(n^13)$ (so I’m assuming $O(n^13 log n)$ for their CKY+$A^*$ implementation).
+    My guess is that this might also reduce the expected time complexity, but of course one would have to try and see.
 
 2) Although cross-formalism comparisons are tough (as the authors mention: are we comparing the quality of the parser or the quality of the grammar?), having lifted the CKY+$A^\*$ strategy directly from CCGs allows this paper to do a few interesting comparisons (cf. @Rimell2009).
 So, in terms of accuracy , results are not exactly comparable to those of the CCG algorithm on comparable dependencies.
