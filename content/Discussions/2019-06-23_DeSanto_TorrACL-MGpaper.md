@@ -49,7 +49,7 @@ While it’s possibly a bit too early for this, it would be interesting to look 
 
 3) A side note. MG researchers have long known that Move is a powerful operation, which needs to be restricted quite a bit.
 The MGbank does this by following the usual suggestions in the literature (SMC, SpIC, etc). 
-SMC (or equivalents) aside,  the appeal to syntactically motivated constraints is interesting (although not new), and re-opens questions about the relation between syntactic constraints and parsing performance even on the more NLP\engineering side.
+SMC (or equivalents) aside,  the appeal to syntactically motivated constraints is interesting (although not new), and re-opens questions about the relation between syntactic constraints and parsing performance even on the more NLP/engineering side.
 
 
 ## References
