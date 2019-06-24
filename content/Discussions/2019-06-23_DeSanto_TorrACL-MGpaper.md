@@ -1,8 +1,6 @@
 ---
 title: >-
     News from the MG frontier
-series: >-
-    Writing for the Outdex
 authors:
     - Aniello De Santo
 date: 2019-06-24
