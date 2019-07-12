@@ -45,8 +45,6 @@ They handcrafted a unique tool for a unique problem.
 At least to my layman eyes, their account is maximally [KISS](https://en.wikipedia.org/wiki/KISS_principle).
 
 ![No, not that KISS...]({static}/img/thomas/kiss_theories/kiss_band.jpg){ width=50% }
-
-![Um... closer]({static}/img/thomas/kiss_theories/kiss_lips.jpg){ width=50% }
  
 KISS is short for *Keep It Simple, Stupid!*: simple, independent components, that are easily combined to handle complex tasks.
 Those of you who are familiar with UNIX-style command line interfaces know exactly what I mean.
@@ -119,7 +117,7 @@ Now I don't think those proposals are perfect.
 One advantage of the KISS approach is that one can custom-tailor the machinery so that it easily accommodates rare or marked phenomena that require complex stipulations and addenda in a full-blown formalism.
 I haven't done that (yet?).
 My island story falls short because I have precious little to say about cases where one does get to extract from adjuncts, e.g. Truswell sentences.
-Under my story, it isn't the existence of islands that's surprising, it's the existence of exceptions. 
+Under my story, it isn't the existence of islands that's surprising, it's that there are exceptions. 
 The monotonicity approach still has a lot of empirical ground to cover, too, as I've only looked at a handful of phenomena so far.
 So they're not perfect examples of a KISS theory.
 The perfect KISS theory also has to have top-notch empirical coverage through years of tweaking and refining.
@@ -134,7 +132,7 @@ A KISS account of parasitic gaps that doesn't need features or phrase structure?
 Sorely needed, imho.
 Or perhaps we can simplify [Ben Bruening's Principle C story](https://www.linguisticsociety.org/sites/default/files/342-388_0.pdf) even more?
 I'd be all on board.
-I'd also like to go back and reevaluate [Pollard and Sag's binding theory in terms of o-command](https://pdfs.semanticscholar.org/ba13/938f67e8945d79bc54fe5eaa2313508e640e.pdf), I think it could be revived in a very KISS way.
+I'd also like to go back and reevaluate [Pollard and Sag's o-command binding theory](https://pdfs.semanticscholar.org/ba13/938f67e8945d79bc54fe5eaa2313508e640e.pdf), I think it could be revived in a very KISS way.
 
 Of course KISSing parts of syntax isn't enough, we would also have to rethink how evidence from one domain sheds light on others.
 Phrase structure and c-command provide a lot of the glue that currently ties together the syntactic submodules of movement, binding, agreement, locality, and so on.
