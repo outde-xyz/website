@@ -44,9 +44,9 @@ The authors didn't start with a general theory of animal behavior and then tried
 They handcrafted a unique tool for a unique problem.
 At least to my layman eyes, their account is maximally [KISS](https://en.wikipedia.org/wiki/KISS_principle).
 
-![No, not that KISS...]({static}/img/thomas/kiss_band.jpg){ width=50% }
+![No, not that KISS...]({static}/img/thomas/kiss_theories/kiss_band.jpg){ width=50% }
 
-![Um... closer]({static}/img/thomas/kiss_lips.jpg){ width=50% }
+![Um... closer]({static}/img/thomas/kiss_theories/kiss_lips.jpg){ width=50% }
  
 KISS is short for *Keep It Simple, Stupid!*: simple, independent components, that are easily combined to handle complex tasks.
 Those of you who are familiar with UNIX-style command line interfaces know exactly what I mean.
