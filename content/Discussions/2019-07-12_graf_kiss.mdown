@@ -102,7 +102,7 @@ Yes, there's all kinds of things it has exactly zilch to say about.
 For instance, my account of the PCC has no universal asymmetry between direct and indirect objects --- which turned out to be a good thing because [Adrian Stegovec showed that the asymmetry can go the other way](https://ling.auf.net/lingbuzz/002632).
 That's why focusing on a narrow empirical domain can be a good thing; it increases robustness.
 
-Another KISS-like theory is [my account of the Adjunct Island constraint].
+Another KISS-like theory is [my account of the Adjunct Island constraint](https://thomasgraf.net/doc/papers/Graf13CLS.pdf).
 It relies on one simple mathematical fact: if adjuncts are optional and displacement involves some kind of dependency at the target site, then adjuncts are necessarily islands.
 That's because optionality creates (un)grammaticality entailments such that if a structure is ill-formed without an adjunct, adding an adjunct cannot rescue it.
 By assumption, movement out of an adjunct involves a dependency at the target site.
