@@ -33,7 +33,9 @@
     \node       (r1) [right=of l1] {$\mathbf{1}$};
     \node       (r0) [below=of r1] {$\mathbf{0}$};
 
+    \foreach \Side in {l, r}
+        \draw (\Side 0) to (\Side 1);
     \foreach \Source/\Target in {1/1, 0/0}
-        \draw[headarrow] (l\Source) to (r\Target);
+        \draw[move] (l\Source) to (r\Target);
 \end{tikzpicture}
 \end{document}
