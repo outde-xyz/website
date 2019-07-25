@@ -155,9 +155,10 @@ It makes sense that monotonicity should once again be active here, giving us the
 This story generalizes beyond the four quantifiers discussed here.
 For instance, *at least $n$* and *exactly $n$* are both TSL with monotonic tier projection, whereas *all but $n$* is not.
 It's not surprising, then, that the former two can both be expressed just by a single numeral, whereas the latter always requires a multi-word construction in every language.
-It would be interesting to see how far this approach can go, e.g. for adverbial quantifiers. 
+If you want all the gory details, check out [this manuscript that's been rotting in my drawer for two years now](https://thomasgraf.net/doc/papers/Graf17SP.pdf).
+It would be interesting to see how far this approach can go, e.g. for adverbial quantifiers.
 Tim Fernando also has some work on string representations for temporal semantics, but I've never been able to figure out how this system is supposed to be applied to concrete data.
-If one of you wants to join me in that enterprise, I'd appreciate a fellow traveler.
+If one of you wants to join me in that enterprise, let me know, I'd appreciate a fellow traveler.
 
 
 ## Back to KISS
