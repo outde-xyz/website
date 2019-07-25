@@ -28,7 +28,7 @@ English is not an outlier, these three quantifiers are very common across langua
 But there seems to be no language with a single word for *not all*, i.e. $\neg \forall$.
 Now why the heck is that?
 If language is fine with stuffing $\neg \exists$ into a single word, why not $\neg \forall$?
-Would you be shocked if I told you the answer is [monotonicity]()?
+Would you be shocked if I told you the answer is [monotonicity]({filename}2019-05-31_graf_number-monotonicity.md)?
 Actually, the full answer is monotonicity + subregularity, but one thing at a time.
 <!-- END_SUMMARY_BLOCK -->
 
