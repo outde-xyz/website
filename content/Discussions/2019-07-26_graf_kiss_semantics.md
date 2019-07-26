@@ -17,7 +17,7 @@ tags:
 ---
 
 <!-- START_SUMMARY_BLOCK -->
-I [promised]({filename}2019-07-25_graf_kiss_followup.md), noone asked, but you shall receive: a KISS account of a particular aspect of semantics.
+I [promised]({filename}2019-07-25_graf_kiss_followup.md), and you shall receive: a KISS account of a particular aspect of semantics.
 Remember, KISS means that the account covers a very narrowly circumscribed phenomenon, makes no attempt to integrate with other theories, and instead aims for being maximal simple and self-contained.
 And now for the actual problem:
 
