@@ -22,7 +22,8 @@ Remember, KISS means that the account covers a very narrowly circumscribed pheno
 And now for the actual problem:
 
 It has been noted before that not every logically conceivable quantifier can be realized by a single "word".
-Those are very deliberate scare quotes around *word* as the real issue is much more intricate, but ignore that for now and just focus on the basic facts.
+Those are very deliberate scare quotes around *word* as that isn't quite the right notion --- if it can even be defined.
+But let's ignore that for now and focus just on the basic facts.
 We have *every* for the universal quantifier $\forall$, *some* for the existential quantifier $\exists$, and *no*, which corresponds to $\neg \exists$.
 English is not an outlier, these three quantifiers are very common across languages.
 But there seems to be no language with a single word for *not all*, i.e. $\neg \forall$.
@@ -147,8 +148,8 @@ This gives us four possible tier projections.
 Projecting nothing results in a pathological TSL grammar that cannot distinguish any strings, so we can ignore this case.
 This leaves us with options 2--4, and those are not all the same.
 The projections used by *every*, *no*, and *some* are **monotonic** (or to be more specific, isotonic): $x \leq y$ implies $f(x) \leq f(y)$.
-The projection for *not all* is not monotonic in this sense as we have $\mathbf{0} < \mathbf{1}$ yet $f(\mathbf{0}) = 1 \not\leq 0 = f(\mathbf{1})$.
-And [as I have pointed out before]({filename}/Discussions/2019-05-31_graf_number-monotonicity.md), monotonicity seems to be play a big role in morphology and its interface with syntax.
+The projection for *not all* is not monotonic in this sense as we have $\mathbf{0} < \mathbf{1}$ yet $f(\mathbf{0}) = \mathbf{1} \not\leq \mathbf{0} = f(\mathbf{1})$.
+And [as I have pointed out before]({filename}/Discussions/2019-05-31_graf_number-monotonicity.md), monotonicity seems to play a big role in morphology and its interface with syntax.
 Well, here we are dealing with a problem at the interface of morphology and semantics: how complex a meaning can you stuff into a morphological atom?
 It makes sense that monotonicity should once again be active here, giving us the observed 3/4 split.
 
