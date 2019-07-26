@@ -59,10 +59,10 @@ We can do the very same thing with the other quantifiers:
 
 | **Quantifier** | **Binary stringset** |
 | --:            | :--                        |
-| every          | $\{ s \in \{\mathbf{0, 1}\} \mid s \text{ contains only } \mathbf{1} \}$ |
-| no             | $\{ s \in \{\mathbf{0, 1}\} \mid s \text{ contains only } \mathbf{0} \}$ |
-| some           | $\{ s \in \{\mathbf{0, 1}\} \mid s \text{ contains at least one } \mathbf{1} \}$ |
-| not all        | $\{ s \in \{\mathbf{0, 1}\} \mid s \text{ contains at least one } \mathbf{0} \}$ |
+| every          | $\{ s \in \{\mathbf{0, 1}\}^* \mid s \text{ contains only } \mathbf{1} \}$ |
+| no             | $\{ s \in \{\mathbf{0, 1}\}^* \mid s \text{ contains only } \mathbf{0} \}$ |
+| some           | $\{ s \in \{\mathbf{0, 1}\}^* \mid s \text{ contains at least one } \mathbf{1} \}$ |
+| not all        | $\{ s \in \{\mathbf{0, 1}\}^* \mid s \text{ contains at least one } \mathbf{0} \}$ |
 
 This idea of viewing quantifiers as strings is the foundation of semantic automata theory, which has been around for decades [@Benthem87].
 But semantic automata theory relies on the coarse distinctions of the Chomsky hierarchy.
@@ -141,9 +141,9 @@ This gives us four possible tier projections.
 
 ![Option 2: Everything projects (*every* and *no*)]({static}/img/thomas/kiss_theories/tierprojection_01.svg)
 
-![Option 3: **1** projects (*some*)]({static}/img/thomas/kiss_theories/tierprojection_1.svg)
+![Option 3: Only **1** projects (*some*)]({static}/img/thomas/kiss_theories/tierprojection_1.svg)
 
-![Option 4: **0** projects (*not all*)]({static}/img/thomas/kiss_theories/tierprojection_0.svg)
+![Option 4: Only **0** projects (*not all*)]({static}/img/thomas/kiss_theories/tierprojection_0.svg)
 
 Projecting nothing results in a pathological TSL grammar that cannot distinguish any strings, so we can ignore this case.
 This leaves us with options 2--4, and those are not all the same.
