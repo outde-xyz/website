@@ -36,7 +36,7 @@ It's a program of identifying formal mechanisms that have very limited expressiv
 Beyond that common goal, it's pretty freeform.
 Many roads lead to Rome.
 We may look at good-ol' strings (that's the corner of the program where I usually hang out because I'm old-school like that).
-This subregular *string land* is where you get the classes SL and TSL that [figured prominently in an earlier post on morphosemantics](fixme).
+This subregular *string land* is where you get the classes SL and TSL that [figured prominently in an earlier post on morphosemantics]({filename}/Discussions/2019-07-26_graf_kiss_semantics.md).
 But we could also look at *graph land* for autosegmental structures, or *mappings land* to get a better understanding of how underlying representations are converted to surface forms.
 Pretty much anything is fair game as long as it is insightful.
 Needless to say, that open mindset has resulted in many different perspectives on phonology.
