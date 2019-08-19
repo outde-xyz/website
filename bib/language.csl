@@ -101,7 +101,7 @@
   </macro>
   <macro name="contributors">
     <names variable="author">
-      <name and="text" name-as-sort-order="first" sort-separator=", " delimiter=", " delimiter-precedes-last="always" suffix=". "/>
+      <name and="text" name-as-sort-order="first" sort-separator=", " delimiter=", " delimiter-precedes-last="always" suffix=" "/>
       <label form="verb-short" prefix=", " suffix=". " text-case="lowercase"/>
       <substitute>
         <text macro="editor"/>
@@ -307,9 +307,9 @@
     </choose>
   </macro>
   <citation>
-    <option name="et-al-min" value="4"/>
-    <option name="et-al-use-first" value="1"/>
-    <option name="et-al-subsequent-min" value="4"/>
+    <option name="et-al-min" value="3"/>
+    <option name="et-al-use-first" value="0"/>
+    <option name="et-al-subsequent-min" value="3"/>
     <option name="et-al-subsequent-use-first" value="1"/>
     <option name="disambiguate-add-year-suffix" value="true"/>
     <option name="disambiguate-add-names" value="true"/>
@@ -335,7 +335,7 @@
       <key variable="issued"/>
     </sort>
     <layout suffix=".">
-      <text macro="contributors"/>
+      <text macro="contributors" suffix=". "/>
       <text macro="date" suffix=". "/>
       <text macro="title"/>
       <text macro="description"/>
