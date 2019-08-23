@@ -1,0 +1,52 @@
+\documentclass[crop,tikz]{standalone}
+\usetikzlibrary{%
+    arrows,
+    arrows.meta,
+    backgrounds,
+    calc,
+    decorations.pathreplacing,
+    fit,
+    matrix,
+    positioning,
+    scopes,
+    shadows
+}
+\usepackage[charter]{mathdesign}
+
+\begin{document}
+\begin{tikzpicture}
+    \matrix (good) [matrix of nodes, ampersand replacement=\&,
+                    column sep=-.4em, row sep=1em,
+                   ] {
+        \$ \&   \&   \& H \& H \& H \& L \&   \&   \& \$\\
+        %
+        \$ \& L \& L \& H \& H \& H \& L \& L \& L \& \$\\
+    };
+    \matrix (bad)  [matrix of nodes, ampersand replacement=\&,
+                    column sep=-.4em, row sep=1em,
+                    below=of good
+                   ] {
+        \$ \&   \&   \& H \& H \& H \& L \&   \& H \& \$\\
+        %
+        \$ \& L \& L \& H \& H \& H \& L \& L \& H \& \$\\
+    };
+    \node at (bad-2-1.west) {$^*$};
+
+
+    \foreach \Matrix in {bad,good}
+        \foreach \Node in {1,4,5,6,7,10}
+            \draw (\Matrix-1-\Node) to (\Matrix-2-\Node);
+    \draw (bad-1-9) to (bad-2-9);
+
+    \begin{pgfonlayer}{background}
+        \foreach \Matrix/\Start/\End in {%
+            bad/6/9%
+            }
+            \node[draw,blue!75,fill=blue!15,thick,
+                  minimum height=2em, anchor=south,
+                  fit=(\Matrix-1-\Start.center)(\Matrix-1-\End.center)
+                 ]
+                  {};
+    \end{pgfonlayer}
+\end{tikzpicture}
+\end{document}
