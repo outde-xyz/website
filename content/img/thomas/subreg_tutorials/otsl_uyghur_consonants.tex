@@ -15,23 +15,23 @@
 
 \begin{document}
 \begin{tikzpicture}
+    \matrix (good) [matrix of nodes, ampersand replacement=\&,
+                    column sep=-.4em, row sep=1em,
+                   ] {
+        \$ \&   \&   \&                      \&   \&                      \& C$_\mathrm{[-b]}$ \&                      \&    \&                      \& V$_\mathrm{[-b]}$ \& \$\\
+        %
+        \$ \& C \& C \& V$_\mathrm{neutral}$ \& C \& V$_\mathrm{neutral}$ \& C$_\mathrm{[-b]}$ \& V$_\mathrm{neutral}$ \& \# \& C$_\mathrm{neutral}$ \& V$_\mathrm{[-b]}$ \& \$\\
+    };
+
     \matrix (bad)  [matrix of nodes, ampersand replacement=\&,
                     column sep=-.4em, row sep=1em,
+                    below=of good,
                    ] {
         \$ \&   \&   \& V$_\mathrm{[+b]}$ \&   \& V$_\mathrm{[+b]}$ \&                   \&                      \&    \&                      \& V$_\mathrm{[-b]}$ \& \$\\
         %
         \$ \& C \& C \& V$_\mathrm{[+b]}$ \& C \& V$_\mathrm{[+b]}$ \& C$_\mathrm{[-b]}$ \& V$_\mathrm{neutral}$ \& \# \& C$_\mathrm{neutral}$ \& V$_\mathrm{[-b]}$ \& \$\\
     };
     \node at (bad-2-1.west) {$^*$};
-
-    \matrix (good) [matrix of nodes, ampersand replacement=\&,
-                    column sep=-.4em, row sep=1em,
-                    right=2em of bad
-                   ] {
-        \$ \&   \&   \&                      \&   \&                      \& C$_\mathrm{[-b]}$ \&                      \&    \&                      \& V$_\mathrm{[-b]}$ \& \$\\
-        %
-        \$ \& C \& C \& V$_\mathrm{neutral}$ \& C \& V$_\mathrm{neutral}$ \& C$_\mathrm{[-b]}$ \& V$_\mathrm{neutral}$ \& \# \& C$_\mathrm{neutral}$ \& V$_\mathrm{[-b]}$ \& \$\\
-    };
 
     \foreach \Node in {1,4,6,11,12}
         \draw (bad-1-\Node) to (bad-2-\Node);

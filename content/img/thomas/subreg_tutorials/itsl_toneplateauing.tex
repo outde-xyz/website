@@ -15,8 +15,16 @@
 
 \begin{document}
 \begin{tikzpicture}
+    \matrix (good) [matrix of nodes, ampersand replacement=\&,
+                    column sep=-.4em, row sep=1em,
+                   ] {
+        \$ \&   \&   \& H \& H \& H \& L \&   \&   \& \$\\
+        %
+        \$ \& L \& L \& H \& H \& H \& L \& L \& L \& \$\\
+    };
     \matrix (bad)  [matrix of nodes, ampersand replacement=\&,
                     column sep=-.4em, row sep=1em,
+                    below=of good
                    ] {
         \$ \&   \&   \& H \& H \& H \& L \&   \& H \& \$\\
         %
@@ -24,14 +32,6 @@
     };
     \node at (bad-2-1.west) {$^*$};
 
-    \matrix (good) [matrix of nodes, ampersand replacement=\&,
-                    column sep=-.4em, row sep=1em,
-                    right=2em of bad
-                   ] {
-        \$ \&   \&   \& H \& H \& H \& L \&   \&   \& \$\\
-        %
-        \$ \& L \& L \& H \& H \& H \& L \& L \& L \& \$\\
-    };
 
     \foreach \Matrix in {bad,good}
         \foreach \Node in {1,4,5,6,7,10}
