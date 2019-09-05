@@ -131,7 +131,7 @@ With CCGbank, you can train a robust, broad coverage CCG parser.
 Once you have a parser, you can do tons of things, from question answering to analyzing tweets to semantic parsing.
 Maybe your CCG parser includes a neural supertagger, and boom, now you're interacting with the neural machine learning crowd and present them with problems to solve and they'll cite your work as motivation for whatever they're trying to get published.
 Thanks to John Torr's MGbank there now is an opportunity for similar work on MGs, but we're at least a decade behind the curve.
-And the fact of the matter is Torr shouldn't have had to build it himself.
+And the fact of the matter is John shouldn't have had to build it himself.
 A large, high-quality corpus for Minimalist syntax should have been a high priority for Minimalists from the get go.
 
 Speaking of the lack of corpora, let's talk machine learning.
@@ -152,7 +152,7 @@ That's a convenient position for old-school theoreticians because it maintains t
 But it incorrectly couches the issue as a one-way street, with theoreticians, left to their own devices, producing knowledge that slowly trickles down to the world of applications.
 Just like trickle-down economics, trickle-down knowledge is a sham.
 Science not only informs applications, it is also informed by them. 
-The applied side is a both a knowledge consumer and a question generator.
+The applied side is both a knowledge consumer and a question generator.
 And let's be perfectly blunt here for a second: nowadays, the fate of scientific programs is decided in the court of resource allocation.
 In general, it's easier to get those resources when your field is well-connected with other fields, but this means you sometimes have to do things that aren't all that interesting but are nonetheless valuable.
 Old dogs don't learn new tricks, but if our students have at least some exposure to corpora as part of a standard curriculum, the next generation might fare better in this respect.
