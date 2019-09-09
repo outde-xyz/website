@@ -80,7 +80,7 @@ Even/odd distinctions are a case of *modulo* counting, and this cannot be done w
 But as it turns out, the allomorphy isn't actually conditioned by the number of syllables, but by the position of the rightmost stress in the stem [@Kager96].
 This actually makes the Estonian case allomorphy an SL phenomenon.
 
-[^OTLS]: Actually, it is an open question whether OTSL or IOTSL can do modulo counting, but I'm 99.9% sure that the answer is No. Anybody looking for a topic for a short paper? This might be a good one. Or maybe it will result in you wasting years of your life with little progress because the proof is much harder than I think. If so, read this sentence many years from now to receive my belated apologies.
+[^OTSL]: Actually, it is an open question whether OTSL or IOTSL can do modulo counting, but I'm 99.9% sure that the answer is No. Anybody looking for a topic for a short paper? This might be a good one. Or maybe it will result in you wasting years of your life with little progress because the proof is much harder than I think. If so, read this sentence many years from now to receive my belated apologies.
 
 Anyways, the key point here is that as we move up in complexity, the phenomena that motivate these classes are increasingly rare.
 The table below gives you a quick overview.
