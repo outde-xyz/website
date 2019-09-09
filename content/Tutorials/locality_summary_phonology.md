@@ -31,7 +31,7 @@ To recap: there are various degrees of locality, which are formalized in terms o
 [TSL]({filename}locality_sltsl.md#tier-based-strictly-local-tsl),
 [ITSL]({filename}locality_iotsl.md#adding-context-information-input-tier-based-strictly-local-itsl),
 [OTSL]({filename}locality_iotsl.md#adding-projection-interdependencies-output-tier-based-strictly-local-otsl),
-[IOTSL]({filename}locality_iotsl.md#mixing-input-and-tier-configurations-inpout-output-tier-based-strictly-local-iotsl),
+[IOTSL]({filename}locality_iotsl.md#mixing-input-and-tier-configurations-input-output-tier-based-strictly-local-iotsl),
 and
 [SP]({filename}locality_sp.md#complete-non-locality-strictly-piecewise-sp).
 All of them have in common that they reduce well-formedness of a structure *S* to the question whether *S* contains at least one of finitely many forbidden substructures.
@@ -121,7 +121,7 @@ But if you tell it "here's some data, learn the right SL constraint assuming tha
 How much data?
 Well, it depends on the complexity of the class, but overall a surprisingly small amount.
 In the Gold paradigm, you sometimes get learning results that are underwhelming because they require tons of data.
-SL, SP, and TSL are **efficiently learnable** [@Heinz.etal12; @JardineMcMullin17], which means that the amount of data they need stays below a pretty tight threshold.
+SL, SP, and TSL are **efficiently learnable** [@KasprzikKotzing10; @Heinz.etal12; @JardineMcMullin17], which means that the amount of data they need stays below a pretty tight threshold.
 
 It's nice to know that linguistic phenomena fall into classes that look very reasonable from a learning perspective.
 This actually isn't trivial, in particular if you subscribe to the old-school view of a very rich UG.
