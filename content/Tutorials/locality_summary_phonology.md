@@ -135,7 +135,7 @@ So the fact that we don't find particularly complex phenomena, and that efficien
 Alright, typology and learnability is all nice and dandy, but let's turn to what I consider the killer feature: cross-module notions of complexity.
 While SL, SP, and the various TSL varieties were developed for phonology, they are not limited to just that.
 Of course we can apply them to any domain with a string-based representation, from phonology to morphology and [even parts of semantics]({filename}/Discussions/2019-07-26_graf_kiss_semantics.md).
-In the next post, we'll see that even some aspects of syntax can be studied from a string-based perspective.
+In one of the upcoming posts, we'll see that even some aspects of syntax can be studied from a string-based perspective.
 But where this isn't enough, it is relatively easy to lift these notions of complexity from strings to trees, which allows us to directly compare the complexity of phonological dependencies to syntactic dependencies.
 And what is truly striking about this is just how uniform the two turn out to be from this perspective.
 Island constraints?
