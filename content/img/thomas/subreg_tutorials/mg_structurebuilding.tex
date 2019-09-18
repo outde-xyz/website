@@ -1,0 +1,493 @@
+\documentclass[tikz]{standalone}
+\usetikzlibrary{fit}
+\usepackage[linguistics]{forest}
+\usepackage[charter]{mathdesign}
+
+\newcommand{\mlex}[2]{\ensuremath{\textrm{#1} ::\thinspace \mathrm{#2}}}
+\newcommand{\fsel}[1]{\ensuremath{\mathrm{#1^+\thinspace\unskip}}}
+\newcommand{\fcat}[1]{\ensuremath{\mathrm{#1^-\thinspace\unskip}}}
+\newcommand{\flcr}[1]{\ensuremath{\mathrm{#1^+\thinspace\unskip}}}
+\newcommand{\flce}[1]{\ensuremath{\mathrm{#1^-\thinspace\unskip}}}
+\newcommand{\fsep}{\ensuremath{\bullet}}
+\newcommand{\emptystring}{\ensuremath{\varepsilon}}
+
+
+\begin{document}
+\begin{forest}
+    [,phantom
+        [\mlex{the}{\fsep \fsel{N} \fcat{D}}]
+        [\mlex{man}{\fsep \fcat{N}}]
+    ]
+\end{forest}
+\begin{forest}
+    [DP
+        [\mlex{the}{\fsel{N} \fsep \fcat{D}}]
+        [\mlex{man}{\fcat{N} \fsep}]
+    ]
+\end{forest}
+\begin{forest}
+    [,phantom
+        [\mlex{punched}{\fsep \fsel{D} \fsel{D} \fcat{V}}]
+        [DP
+            [\mlex{the}{\fsel{N} \fsep \fcat{D}}]
+            [\mlex{man}{\fcat{N} \fsep}]
+        ]
+    ]
+\end{forest}
+\begin{forest}
+    [V$'$
+        [\mlex{punched}{\fsel{D} \fsep \fsel{D} \fcat{V}}]
+        [DP
+            [\mlex{the}{\fsel{N} \fcat{D} \fsep}]
+            [\mlex{man}{\fcat{N} \fsep}]
+        ]
+    ]
+\end{forest}
+\begin{forest}
+    [, phantom
+        [\mlex{somebody}{\fsep \fcat{D}}]
+        [V$'$
+            [\mlex{punched}{\fsel{D} \fsep \fsel{D} \fcat{V}}]
+            [DP
+                [\mlex{the}{\fsel{N} \fcat{D} \fsep}]
+                [\mlex{man}{\fcat{N} \fsep}]
+            ]
+        ]
+    ]
+\end{forest}
+\begin{forest}
+    [VP
+        [\mlex{somebody}{\fcat{D} \fsep}]
+        [V$'$
+            [\mlex{punched}{\fsel{D} \fsel{D} \fsep \fcat{V}}]
+            [DP
+                [\mlex{the}{\fsel{N} \fcat{D} \fsep}]
+                [\mlex{man}{\fcat{N} \fsep}]
+            ]
+        ]
+    ]
+\end{forest}
+\begin{forest}
+    [, phantom
+        [\mlex{somebody}{\fsep \fcat{D} \flce{nom}}]
+        [V$'$
+            [\mlex{punched}{\fsel{D} \fsep \fsel{D} \fcat{V}}]
+            [DP
+                [\mlex{the}{\fsel{N} \fcat{D} \fsep}]
+                [\mlex{man}{\fcat{N} \fsep}]
+            ]
+        ]
+    ]
+\end{forest}
+\begin{forest}
+    [VP
+        [\mlex{somebody}{\fcat{D} \fsep \flce{nom}}]
+        [V$'$
+            [\mlex{punched}{\fsel{D} \fsel{D} \fsep \fcat{V}}]
+            [DP
+                [\mlex{the}{\fsel{N} \fcat{D} \fsep}]
+                [\mlex{man}{\fcat{N} \fsep}]
+            ]
+        ]
+    ]
+\end{forest}
+\begin{forest}
+    [, phantom,
+        [\mlex{\emptystring}{\fsep \fsel{V} \flcr{nom} \fcat{T}}]
+        [VP
+            [\mlex{somebody}{\fcat{D} \fsep \flce{nom}}]
+            [V$'$
+                [\mlex{punched}{\fsel{D} \fsel{D} \fsep \fcat{V}}]
+                [DP
+                    [\mlex{the}{\fsel{N} \fcat{D} \fsep}]
+                    [\mlex{man}{\fcat{N} \fsep}]
+                ]
+            ]
+        ]
+    ]
+\end{forest}
+\begin{forest}
+    [T$'$
+        [\mlex{\emptystring}{\fsel{V} \fsep \flcr{nom} \fcat{T}}]
+        [VP
+            [\mlex{somebody}{\fcat{D} \fsep \flce{nom}}]
+            [V$'$
+                [\mlex{punched}{\fsel{D} \fsel{D} \fcat{V} \fsep}]
+                [DP
+                    [\mlex{the}{\fsel{N} \fcat{D} \fsep}]
+                    [\mlex{man}{\fcat{N} \fsep}]
+                ]
+            ]
+        ]
+    ]
+\end{forest}
+\begin{forest}
+    [TP
+        [\mlex{somebody}{\fcat{D} \flce{nom} \fsep}]
+        [T$'$
+            [\mlex{\emptystring}{\fsel{V} \flcr{nom} \fsep \fcat{T}}]
+            [VP
+                [$t$]
+                [V$'$
+                    [\mlex{punched}{\fsel{D} \fsel{D} \fcat{V} \fsep}]
+                    [DP
+                        [\mlex{the}{\fsel{N} \fcat{D} \fsep}]
+                        [\mlex{man}{\fcat{N} \fsep}]
+                    ]
+                ]
+            ]
+        ]
+    ]
+\end{forest}
+\begin{forest}
+    [,phantom
+        [\mlex{\emptystring}{\fsep \fsel{T} \fcat{C}}]
+        [TP
+            [\mlex{somebody}{\fcat{D} \flce{nom} \fsep}]
+            [T$'$
+                [\mlex{\emptystring}{\fsel{V} \flcr{nom} \fsep \fcat{T}}]
+                [VP
+                    [$t$]
+                    [V$'$
+                        [\mlex{punched}{\fsel{D} \fsel{D} \fcat{V} \fsep}]
+                        [DP
+                            [\mlex{the}{\fsel{N} \fcat{D} \fsep}]
+                            [\mlex{man}{\fcat{N} \fsep}]
+                        ]
+                    ]
+                ]
+            ]
+        ]
+    ]
+\end{forest}
+\begin{forest}
+    [CP
+        [\mlex{\emptystring}{\fsel{T} \fsep \fcat{C}}]
+        [TP
+            [\mlex{somebody}{\fcat{D} \flce{nom} \fsep}]
+            [T$'$
+                [\mlex{\emptystring}{\fsel{V} \flcr{nom} \fcat{T} \fsep}]
+                [VP
+                    [$t$]
+                    [V$'$
+                        [\mlex{punched}{\fsel{D} \fsel{D} \fcat{V} \fsep}]
+                        [DP
+                            [\mlex{the}{\fsel{N} \fcat{D} \fsep}]
+                            [\mlex{man}{\fcat{N} \fsep}]
+                        ]
+                    ]
+                ]
+            ]
+        ]
+    ]
+\end{forest}
+\begin{forest}
+    [C'
+        [\mlex{\emptystring}{\fsel{T} \fsep \flcr{top} \fcat{C}}]
+        [TP
+            [\mlex{somebody}{\fcat{D} \flce{nom} \fsep}]
+            [T$'$
+                [\mlex{\emptystring}{\fsel{V} \flcr{nom} \fcat{T} \fsep}]
+                [VP
+                    [$t$]
+                    [V$'$
+                        [\mlex{punched}{\fsel{D} \fsel{D} \fcat{V} \fsep}]
+                        [DP
+                            [\mlex{the}{\fsel{N} \fcat{D} \fsep \flce{top}}]
+                            [\mlex{man}{\fcat{N} \fsep}]
+                        ]
+                    ]
+                ]
+            ]
+        ]
+    ]
+\end{forest}
+\begin{forest}
+    [CP
+        [DP
+            [\mlex{the}{\fsel{N} \fcat{D} \fsep \flce{top}}]
+            [\mlex{man}{\fcat{N} \fsep}]
+        ]
+        [C$'$
+            [\mlex{\emptystring}{\fsel{T} \fsep \flcr{top} \fcat{C}}]
+            [TP
+                [\mlex{somebody}{\fcat{D} \flce{nom} \fsep}]
+                [T$'$
+                    [\mlex{\emptystring}{\fsel{V} \flcr{nom} \fcat{T} \fsep}]
+                    [VP
+                        [$t$]
+                        [V$'$
+                            [\mlex{punched}{\fsel{D} \fsel{D} \fcat{V} \fsep}]
+                            [$t$]
+                        ]
+                    ]
+                ]
+            ]
+        ]
+    ]
+\end{forest}
+\begin{forest}
+    [Move
+        [Merge
+            [\mlex{\emptystring}{\fsel{T} \flcr{top} \fcat{C}}]
+            [Move
+                [Merge
+                    [\mlex{\emptystring}{\fsel{V} \flcr{nom} \fcat{T}}]
+                    [Merge
+                        [\mlex{somebody}{\fcat{D} \flce{nom}}]
+                        [Merge
+                            [\mlex{punched}{\fsel{D} \fsel{D} \fcat{V}}]
+                            [Merge
+                                [\mlex{the}{\fsel{N} \fcat{D} \flce{top}}]
+                                [\mlex{man}{\fcat{N}}]
+                            ]
+                        ]
+                    ]
+                ]
+            ]
+        ]
+    ]
+\end{forest}
+\begin{forest}
+    [\mlex{\emptystring}{\fsel{T} \flcr{top} \fcat{C}}
+        [\mlex{\emptystring}{\fsel{V} \flcr{nom} \fcat{T}}
+            [\mlex{punched}{\fsel{D} \fsel{D} \fcat{V}}
+                [\mlex{somebody}{\fcat{D} \flce{nom}}]
+                [\mlex{the}{\fsel{N} \fcat{D} \flce{top}}
+                    [\mlex{man}{\fcat{N}}]
+                ]
+            ]
+        ]
+    ]
+\end{forest}
+\begin{forest}
+    [\mlex{\emptystring}{\fsel{T} \flcr{top} \fcat{C}}, name=C
+        [\mlex{\emptystring}{\fsel{V} \flcr{nom} \fcat{T}}, name=T
+            [\mlex{give}{\textcolor{green!50!black}{\fsel{P}}
+                         \textcolor{brown!75!black}{\fsel{D}}
+                         \textcolor{blue!50!black}{\fsel{D}}
+                         \fcat{V}}, name=V
+                [\mlex{somebody}{\textcolor{blue!50!black}{\fcat{D}}
+                                 \flce{nom}}, name=subj]
+                [\mlex{the}{\fsel{N}
+                            \textcolor{brown!75!black}{\fcat{D}}
+                            \flce{top}}, name=D
+                    [\mlex{book}{\fcat{N}}, name=N]
+                ]
+                [\mlex{to}{\fsel{D}
+                           \textcolor{green!50!black}{\fcat{P}}}, name=P
+                    [\mlex{Bill}{\fcat{D}}, name=PN]
+                ]
+            ]
+        ]
+    ]
+\end{forest}
+\begin{forest}
+    [\mlex{\emptystring}{\fsel{T} \flcr{top} \fcat{C}}, name=C
+        [\mlex{\emptystring}{\fsel{V} \flcr{nom} \fcat{T}}, name=T
+            [\mlex{give}{\textcolor{green!50!black}{\fsel{P}}
+                         \textcolor{brown!75!black}{\fsel{D}}
+                         \textcolor{blue!50!black}{\fsel{D}}
+                         \fcat{V}}, name=V
+                [\mlex{somebody}{\textcolor{blue!50!black}{\fcat{D}}
+                                 \flce{nom}}, name=subj]
+                [\mlex{the}{\fsel{N}
+                            \textcolor{brown!75!black}{\fcat{D}}
+                            \flce{top}}, name=D
+                    [\mlex{book}{\fcat{N}}, name=N]
+                ]
+                [\mlex{to}{\fsel{D}
+                           \textcolor{green!50!black}{\fcat{P}}}, name=P
+                    [\mlex{Bill}{\fcat{D}}, name=PN]
+                ]
+            ]
+        ]
+    ]
+    %
+    \node[fit=(C)(T),draw=red,thick] {};
+\end{forest}
+\begin{forest}
+    [\mlex{\emptystring}{\fsel{T} \flcr{top} \fcat{C}}, name=C
+        [\mlex{\emptystring}{\fsel{V} \flcr{nom} \fcat{T}}, name=T
+            [\mlex{give}{\textcolor{green!50!black}{\fsel{P}}
+                         \textcolor{brown!75!black}{\fsel{D}}
+                         \textcolor{blue!50!black}{\fsel{D}}
+                         \fcat{V}}, name=V
+                [\mlex{somebody}{\textcolor{blue!50!black}{\fcat{D}}
+                                 \flce{nom}}, name=subj]
+                [\mlex{the}{\fsel{N}
+                            \textcolor{brown!75!black}{\fcat{D}}
+                            \flce{top}}, name=D
+                    [\mlex{book}{\fcat{N}}, name=N]
+                ]
+                [\mlex{to}{\fsel{D}
+                           \textcolor{green!50!black}{\fcat{P}}}, name=P
+                    [\mlex{Bill}{\fcat{D}}, name=PN]
+                ]
+            ]
+        ]
+    ]
+    %
+    \node[fit=(T)(V),draw=red,thick] {};
+\end{forest}
+\begin{forest}
+    [\mlex{\emptystring}{\fsel{T} \flcr{top} \fcat{C}}, name=C
+        [\mlex{\emptystring}{\fsel{V} \flcr{nom} \fcat{T}}, name=T
+            [\mlex{give}{\textcolor{green!50!black}{\fsel{P}}
+                         \textcolor{brown!75!black}{\fsel{D}}
+                         \textcolor{blue!50!black}{\fsel{D}}
+                         \fcat{V}}, name=V
+                [\mlex{somebody}{\textcolor{blue!50!black}{\fcat{D}}
+                                 \flce{nom}}, name=subj]
+                [\mlex{the}{\fsel{N}
+                            \textcolor{brown!75!black}{\fcat{D}}
+                            \flce{top}}, name=D
+                    [\mlex{book}{\fcat{N}}, name=N]
+                ]
+                [\mlex{to}{\fsel{D}
+                           \textcolor{green!50!black}{\fcat{P}}}, name=P
+                    [\mlex{Bill}{\fcat{D}}, name=PN]
+                ]
+            ]
+        ]
+    ]
+    %
+    \node[fit=(V)(subj)(D)(P),draw=red,thick] {};
+\end{forest}
+\begin{forest}
+    [\mlex{\emptystring}{\fsel{T} \flcr{top} \fcat{C}}, name=C
+        [\mlex{\emptystring}{\fsel{V} \flcr{nom} \fcat{T}}, name=T
+            [\mlex{give}{\textcolor{green!50!black}{\fsel{P}}
+                         \textcolor{brown!75!black}{\fsel{D}}
+                         \textcolor{blue!50!black}{\fsel{D}}
+                         \fcat{V}}, name=V
+                [\mlex{somebody}{\textcolor{blue!50!black}{\fcat{D}}
+                                 \flce{nom}}, name=subj]
+                [\mlex{the}{\fsel{N}
+                            \textcolor{brown!75!black}{\fcat{D}}
+                            \flce{top}}, name=D
+                    [\mlex{book}{\fcat{N}}, name=N]
+                ]
+                [\mlex{to}{\fsel{D}
+                           \textcolor{green!50!black}{\fcat{P}}}, name=P
+                    [\mlex{Bill}{\fcat{D}}, name=PN]
+                ]
+            ]
+        ]
+    ]
+    %
+    \node[fit=(D)(N),draw=red,thick] {};
+\end{forest}
+\begin{forest}
+    [\mlex{\emptystring}{\fsel{T} \flcr{top} \fcat{C}}, name=C
+        [\mlex{\emptystring}{\fsel{V} \flcr{nom} \fcat{T}}, name=T
+            [\mlex{give}{\textcolor{green!50!black}{\fsel{P}}
+                         \textcolor{brown!75!black}{\fsel{D}}
+                         \textcolor{blue!50!black}{\fsel{D}}
+                         \fcat{V}}, name=V
+                [\mlex{somebody}{\textcolor{blue!50!black}{\fcat{D}}
+                                 \flce{nom}}, name=subj]
+                [\mlex{the}{\fsel{N}
+                            \textcolor{brown!75!black}{\fcat{D}}
+                            \flce{top}}, name=D
+                    [\mlex{book}{\fcat{N}}, name=N]
+                ]
+                [\mlex{to}{\fsel{D}
+                           \textcolor{green!50!black}{\fcat{P}}}, name=P
+                    [\mlex{Bill}{\fcat{D}}, name=PN]
+                ]
+            ]
+        ]
+    ]
+    %
+    \node[fit=(P)(PN),draw=red,thick] {};
+\end{forest}
+\begin{forest}
+    [,phantom, s sep = 5em
+        [\mlex{\emptystring}{\fsel{V}
+                             \textcolor{blue!50!black}{\flcr{nom}}
+                             \fcat{T}},
+                             name=nom-top
+            [\mlex{somebody}{\fcat{D}}
+                             \textcolor{blue!50!black}{\flce{nom}},
+                             name=nom-bot]
+        ]
+        [\mlex{\emptystring}{\fsel{T}
+                             \textcolor{brown!75!black}{\flcr{top}}
+                             \fcat{C}}, name=C
+            [\mlex{\emptystring}{\fsel{V}
+                                 \textcolor{blue!50!black}{\flcr{nom}}
+                                 \fcat{T}}, name=T
+                [\mlex{give}{\fsel{P}
+                             \fsel{D}
+                             \fsel{D}
+                             \fcat{V}}, name=V
+                    [\mlex{somebody}{\fcat{D}
+                                     \textcolor{blue!50!black}{\flce{nom}}},
+                                     name=subj]
+                    [\mlex{the}{\fsel{N}
+                                \fcat{D}
+                                \textcolor{brown!75!black}{\flce{top}}}, 
+                                name=D
+                        [\mlex{book}{\fcat{N}}, name=N]
+                    ]
+                    [\mlex{to}{\fsel{D}
+                               \fcat{P}}, name=P
+                        [\mlex{Bill}{\fcat{D}}, name=PN]
+                    ]
+                ]
+            ]
+        ]
+        [\mlex{\emptystring}{\fsel{T}
+                             \textcolor{brown!75!black}{\flcr{top}}
+                             \fcat{C}}, name=top-top
+            [\mlex{the}{\fsel{N}
+                        \fcat{D}
+                        \textcolor{brown!75!black}{\flce{top}}}, 
+                        name=top-bot
+            ]
+        ]
+    ]
+    %
+    \node at (nom-top.north) [anchor=south,font=\bfseries] {nom tier};
+    \node at (top-top.north) [anchor=south,font=\bfseries] {top tier};
+    \node at (C.north)       [anchor=south,font=\bfseries] {Dependency tree};
+\end{forest}
+\begin{forest}
+    [,phantom, s sep = 5em
+        [\mlex{\emptystring}{\fsel{T} \fcat{C}}, name=C
+            [\mlex{\emptystring}{\fsel{V} \flcr{nom} \fcat{T}}
+                [\mlex{think}{\fsel{C} \fsel{D} \fcat{V}}
+                    [\mlex{John}{\fcat{D} \flce{nom}}]
+                    [\mlex{that}{\fsel{T} \fcat{C}}
+                        [\mlex{\emptystring}{\fsel{V} \flcr{nom} \fcat{T}}
+                            [\mlex{complain}{\fsel{C} \fsel{D} \fcat{V}}
+                                [\fsel{Bill}{\fcat{D} \flce{nom}}]
+                                [\mlex{that}{\fsel{T} \fcat{C}}
+                                    [\mlex{\emptystring}{\fsel{V} \flcr{nom} \fcat{T}}
+                                        [\mlex{left}{\fsel{C} \fsel{D} \fcat{V}}
+                                            [\fsel{Mary}{\fcat{D} \flce{nom}}]
+                                        ]
+                                    ]
+                                ]
+                            ]
+                        ]
+                    ]
+                ]
+            ]
+        ]
+        [\mlex{\emptystring}{\fsel{V} \flcr{nom} \fcat{T}}, name=tier
+            [\mlex{John}{\fcat{D} \flce{nom}}]
+            [\mlex{\emptystring}{\fsel{V} \flcr{nom} \fcat{T}}
+                [\fsel{Bill}{\fcat{D} \flce{nom}}]
+                [\mlex{\emptystring}{\fsel{V} \flcr{nom} \fcat{T}}
+                    [\fsel{Mary}{\fcat{D} \flce{nom}}]
+                ]
+            ]
+        ]
+    ]
+    %
+    \node at (tier.north) [anchor=south,font=\bfseries] {nom tier};
+    \node at (C.north)       [anchor=south,font=\bfseries] {Dependency tree};
+\end{forest}
+\end{document}
