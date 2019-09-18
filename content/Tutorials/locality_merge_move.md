@@ -48,15 +48,15 @@ MGs are very similar to old school Minimalist syntax, where all structures are b
 We could add Agree, adjunction, Late Merge, phases, and the proverbial kitchen sink, but we won't because it's best to start with a simple model.
 Merge and Move must be triggered by features:
 
-1. Merge takes place whenever we have a **category feature** X~+~ and a matching **selector feature** X~-~.
-1. Move takes place whenever we have a **licensor feature** f~+~ and a matching **licensee feature** f~-~.
+1. Merge takes place whenever we have a **category feature** X^+^ and a matching **selector feature** X^-^.
+1. Move takes place whenever we have a **licensor feature** f^+^ and a matching **licensee feature** f^-^.
 
 Each lexical item is annotated with a string of features, and the features must be checked in the order they appear in on the lexical item.
-For instance, the noun *car* only carries the category feature N~-~.
+For instance, the noun *car* only carries the category feature N^-^.
 It may then be selected by say, *the*, yielding a DP.
-This is expressed by assigning *the* the feature string N~+~ D~-~.
-In other words, *the* selects a noun, and only after this selection step does its D~-~ feature become active.
-Once that happens, the category feature could trigger Merge with say, the transitive verb *punch*, which has the feature string D~+~ D~+~ V~-~.
+This is expressed by assigning *the* the feature string N^+^ D^-^.
+In other words, *the* selects a noun, and only after this selection step does its D^-^ feature become active.
+Once that happens, the category feature could trigger Merge with say, the transitive verb *punch*, which has the feature string D^+^ D^+^ V^-^.
 The example below shows how we can build the VP *somebody punched the man* this way.
 Because I'm a nice guy, I've also added a moving bullet to each feature string so that it's readily apparent which features have already been checked.
 
@@ -74,10 +74,10 @@ Because I'm a nice guy, I've also added a moving bullet to each feature string s
 ![]({static}/img/thomas/subreg_tutorials/mgtree_06.svg)
 
 But as every Minimalist will tell you, *somebody punched the man* isn't just a VP, it's a CP where the subject *somebody* moves to Spec,TP.
-So *somebody* doesn't have the feature string D~-~, it has D~-~ nom~-~.
-This nom~-~ is a feature that allows it to move to the closest matching nom~+~, which we will put on the unpronounced head T.
+So *somebody* doesn't have the feature string D^-^, it has D^-^ nom^-^.
+This nom^-^ is a feature that allows it to move to the closest matching nom^+^, which we will put on the unpronounced head T.
 
-(@) Introduce *somebody* with nom~-~ feature  
+(@) Introduce *somebody* with nom^-^ feature  
 ![]({static}/img/thomas/subreg_tutorials/mgtree_07.svg)
 (@) *punched* selects the subject DP  
 ![]({static}/img/thomas/subreg_tutorials/mgtree_08.svg)
@@ -93,24 +93,24 @@ This nom~-~ is a feature that allows it to move to the closest matching nom~+~, 
 ![]({static}/img/thomas/subreg_tutorials/mgtree_13.svg)
 
 Now suppose that the sentence is actually *the man, somebody punched*.
-In this case, we also want the C-head to carry a licensor feature top~+~ that will attract the topicalized phrase. 
-And the head of the topicalized phrase has to carry the matching licensee feature top~-~.
+In this case, we also want the C-head to carry a licensor feature top^+^ that will attract the topicalized phrase. 
+And the head of the topicalized phrase has to carry the matching licensee feature top^-^.
 Note that the features are ordered in such a way that the topicalized element can only move once its head has selected all its arguments and it has been selected by the next higher head.
 The licensor feature on the C-head, on the other hand, occurs before the category feature so that topicalization must happen before we have a completed CP.
 
-(@) C-head with top~+~ selects TP; *the* carries top~-~  
+(@) C-head with top^+^ selects TP; *the* carries top^-^  
 ![]({static}/img/thomas/subreg_tutorials/mgtree_14.svg)
 (@) Object undergoes topicalization to Spec,CP  
 ![]({static}/img/thomas/subreg_tutorials/mgtree_15.svg)
 
 Move is subject to only two constraints.
 First, a mover always has to target the closest possible landing site.
-You do not get to jump over an f~+~ that you could have checked with your f~-~.
+You do not get to jump over an f^+^ that you could have checked with your f^-^.
 Second, a derivation is automatically ill-formed if two movers can target the same landing site.
 This is actually a corollary of the first constraint:
-If two movers target the same landing site, only one gets to check the corresponding f~+~ feature.
-The other one has to move to a higher position even though it could have checked f~+~.
-This is basically a maximally self-centered version of Chomsky's Shortest Move Constraint (SMC) --- "I had to do all that extra work because this other guy suddenly barged in and snatched up the f~+~ I wanted, so I'm gonna file a complaint with the grammar supervisor".
+If two movers target the same landing site, only one gets to check the corresponding f^+^ feature.
+The other one has to move to a higher position even though it could have checked f^+^.
+This is basically a maximally self-centered version of Chomsky's Shortest Move Constraint (SMC) --- "I had to do all that extra work because this other guy suddenly barged in and snatched up the f^+^ I wanted, so I'm gonna file a complaint with the grammar supervisor".
 There have been approximately 2,713 discussions as to whether this version of the SMC is compatible with standard Minimalist analyses, and I don't want this to turn into discussion 2,714.
 So I'll just say that, yes, there are ways to have this strong SMC and still do what linguists want to do.
 
@@ -149,7 +149,7 @@ Ah, good ol' regularity, now we have a chance to look at subregularity.
 But we can actually provide an even more compact representation in terms of **dependency trees**.
 If you think about it, the Merge and Move nodes in the derivation tree don't really provide any information that we can't already get from the feature annotation.
 Of course *the* and *man* are combined via Merge, that's what has to happen since *the* starts with a selector feature and *man* with a category feature.
-And of course the phrase headed by *the* has to move to Spec,CP once the C-head has been merged, that's the only option at that point given the assignment of top~+~ and top~-~.
+And of course the phrase headed by *the* has to move to Spec,CP once the C-head has been merged, that's the only option at that point given the assignment of top^+^ and top^-^.
 We can just remove all the interior nodes and instead follow a format where a head is the mother of the arguments its selects.
 
 ![Dependency tree for *the man, somebody likes*]({static}/img/thomas/subreg_tutorials/mgtree_17.svg)
@@ -199,22 +199,22 @@ In fact, SL won't work at all because Move is not strictly local.
 There is no fixed upper bound on how far a mover may travel to reach its landing site.
 But movement does display relativized locality, and as you hopefully remember from our phonology discussion, we can get that by moving from SL to TSL.
 For each kind of movement feature (wh, top, nom, and so on), we'll construct a separate tree tier.
-The wh-tier, for instance, contains all lexical items that carry wh~+~ or wh~-~.
+The wh-tier, for instance, contains all lexical items that carry wh^+^ or wh^-^.
 Just like precedence in the string determine precedence in the tier for phonology, dominance in the dependency tree determines dominance in the tier.
 
 ![Dependency tree for *the book, somebody gave to Bill*, and its two movement tiers]({static}/img/thomas/subreg_tutorials/mgtree_24.svg)
 
 Now what do these tiers have to look like?
-Well, every carrier of an f~-~ must have a matching f~+~ mother, otherwise there's nowhere for it to move to.
-Every f~+~ must have an f~-~ daughter, otherwise there's nothing moving to it.
-And it also cannot have more than one f~-~ daughter, otherwise those daughters would be competing, which isn't allowed by the SMC.
+Well, every carrier of an f^-^ must have a matching f^+^ mother, otherwise there's nowhere for it to move to.
+Every f^+^ must have an f^-^ daughter, otherwise there's nothing moving to it.
+And it also cannot have more than one f^-^ daughter, otherwise those daughters would be competing, which isn't allowed by the SMC.
 This leaves us with a very simple constraint.
 
 Move constraint
 
 : For every movement feature f, the following two conditions must hold of every node on the f-tier.
-  1. If the node carries an f~-~ feature, it must have a mother carrying an f~+~ feature.
-  1. If the node carries an f~+~ feature, it must have exactly one node with an f~-~ feature among its daughters.
+  1. If the node carries an f^-^ feature, it must have a mother carrying an f^+^ feature.
+  1. If the node carries an f^+^ feature, it must have exactly one node with an f^-^ feature among its daughters.
 
 This works as intended even in more complex cases.
 
