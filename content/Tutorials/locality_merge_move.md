@@ -60,36 +60,36 @@ Once that happens, the category feature could trigger Merge with say, the transi
 The example below shows how we can build the VP *somebody punched the man* this way.
 Because I'm a nice guy, I've also added a moving bullet to each feature string so that it's readily apparent which features have already been checked.
 
-(@) Introduce *the* and *man*
+(@) Introduce *the* and *man*  
 ![]({static}/img/thomas/subreg_tutorials/mgtree_01.svg)
-(@) *the* selects *man*
+(@) *the* selects *man*  
 ![]({static}/img/thomas/subreg_tutorials/mgtree_02.svg)
-(@) Introduce *punched*
+(@) Introduce *punched*  
 ![]({static}/img/thomas/subreg_tutorials/mgtree_03.svg)
-(@) *punched* selects the object DP
+(@) *punched* selects the object DP  
 ![]({static}/img/thomas/subreg_tutorials/mgtree_04.svg)
-(@) Introduce *somebody*
+(@) Introduce *somebody*  
 ![]({static}/img/thomas/subreg_tutorials/mgtree_05.svg)
-(@) *punched* selects the subject DP
+(@) *punched* selects the subject DP  
 ![]({static}/img/thomas/subreg_tutorials/mgtree_06.svg)
 
 But as every Minimalist will tell you, *somebody punched the man* isn't just a VP, it's a CP where the subject *somebody* moves to Spec,TP.
 So *somebody* doesn't have the feature string D~-~, it has D~-~ nom~-~.
 This nom~-~ is a feature that allows it to move to the closest matching nom~+~, which we will put on the unpronounced head T.
 
-(@) Introduce *somebody* with nom~-~ feature
+(@) Introduce *somebody* with nom~-~ feature  
 ![]({static}/img/thomas/subreg_tutorials/mgtree_07.svg)
-(@) *punched* selects the subject DP
+(@) *punched* selects the subject DP  
 ![]({static}/img/thomas/subreg_tutorials/mgtree_08.svg)
-(@) Introduce the T-head
+(@) Introduce the T-head  
 ![]({static}/img/thomas/subreg_tutorials/mgtree_09.svg)
-(@) T-head selects the VP
+(@) T-head selects the VP  
 ![]({static}/img/thomas/subreg_tutorials/mgtree_10.svg)
-(@) Subject moves to Spec,TP
+(@) Subject moves to Spec,TP  
 ![]({static}/img/thomas/subreg_tutorials/mgtree_11.svg)
-(@) Introduce the C-head
+(@) Introduce the C-head  
 ![]({static}/img/thomas/subreg_tutorials/mgtree_12.svg)
-(@) C-head selects TP
+(@) C-head selects TP  
 ![]({static}/img/thomas/subreg_tutorials/mgtree_13.svg)
 
 Now suppose that the sentence is actually *the man, somebody punched*.
@@ -98,9 +98,9 @@ And the head of the topicalized phrase has to carry the matching licensee featur
 Note that the features are ordered in such a way that the topicalized element can only move once its head has selected all its arguments and it has been selected by the next higher head.
 The licensor feature on the C-head, on the other hand, occurs before the category feature so that topicalization must happen before we have a completed CP.
 
-(@) C-head with top~+~ selects TP; *the* carries top~-~
+(@) C-head with top~+~ selects TP; *the* carries top~-~  
 ![]({static}/img/thomas/subreg_tutorials/mgtree_14.svg)
-(@) Object undergoes topicalization to Spec,CP
+(@) Object undergoes topicalization to Spec,CP  
 ![]({static}/img/thomas/subreg_tutorials/mgtree_15.svg)
 
 Move is subject to only two constraints.
@@ -139,7 +139,7 @@ One could also look at **derivation trees**.
 A derivation tree records how a given phrase structure tree is to be assembled.
 For instance, the phrase structure tree for *the man, somebody likes* is assembled by following the instructions of the derivation tree below.
 
-![Derivation tree for *the man, sommebody likes*]({static}/img/thomas/subreg_tutorials/mgtree_16.svg)
+![Derivation tree for *the man, somebody likes*]({static}/img/thomas/subreg_tutorials/mgtree_16.svg)
 
 Each derivation tree provides all the information of the phrase structure tree that can be built from it.
 But the derivation tree chooses an alternative encoding, and this greatly reduces complexity.
@@ -152,7 +152,7 @@ Of course *the* and *man* are combined via Merge, that's what has to happen sinc
 And of course the phrase headed by *the* has to move to Spec,CP once the C-head has been merged, that's the only option at that point given the assignment of top~+~ and top~-~.
 We can just remove all the interior nodes and instead follow a format where a head is the mother of the arguments its selects.
 
-![Dependency tree for *the man, sommebody likes*]({static}/img/thomas/subreg_tutorials/mgtree_17.svg)
+![Dependency tree for *the man, somebody likes*]({static}/img/thomas/subreg_tutorials/mgtree_17.svg)
 
 Both derivation trees and dependency trees can be useful for various things, and both play a role for subregular complexity.
 But for now let's focus on dependency trees because they make some things easier to understand.
@@ -171,15 +171,15 @@ The next few figures show how this constraint works in practice.
 
 ![Well-formed dependency tree for *the book, somebody gave to Bill*]({static}/img/thomas/subreg_tutorials/mgtree_18.svg)
 
-(@) Check C-T configuration
+(@) Check C-T configuration  
 ![]({static}/img/thomas/subreg_tutorials/mgtree_19.svg)
-(@) Check T-V configuration
+(@) Check T-V configuration  
 ![]({static}/img/thomas/subreg_tutorials/mgtree_20.svg)
-(@) Check verb and all its arguments
+(@) Check verb and all its arguments  
 ![]({static}/img/thomas/subreg_tutorials/mgtree_21.svg)
-(@) Check *the* and its argument
+(@) Check *the* and its argument  
 ![]({static}/img/thomas/subreg_tutorials/mgtree_22.svg)
-(@) Check *to* and its argument
+(@) Check *to* and its argument  
 ![]({static}/img/thomas/subreg_tutorials/mgtree_23.svg)
 
 The Merge constraint requires us to only look at a node and its string of daughters.
@@ -202,7 +202,7 @@ For each kind of movement feature (wh, top, nom, and so on), we'll construct a s
 The wh-tier, for instance, contains all lexical items that carry wh~+~ or wh~-~.
 Just like precedence in the string determine precedence in the tier for phonology, dominance in the dependency tree determines dominance in the tier.
 
-![Dependency tree for *the book, sommebody gave to Bill*, and its two movement tiers]({static}/img/thomas/subreg_tutorials/mgtree_24.svg)
+![Dependency tree for *the book, somebody gave to Bill*, and its two movement tiers]({static}/img/thomas/subreg_tutorials/mgtree_24.svg)
 
 Now what do these tiers have to look like?
 Well, every carrier of an f~-~ must have a matching f~+~ mother, otherwise there's nowhere for it to move to.
