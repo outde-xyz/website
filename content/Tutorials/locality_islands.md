@@ -3,7 +3,7 @@ title: >-
     Islands are unexpectedly expected
 authors:
     - Thomas Graf
-date: 2019-08-23
+date: 2019-09-23
 bibliography: references.bib
 series: >-
     The subregular locality zoo
@@ -16,8 +16,8 @@ tags:
 ---
 
 <!-- START_SUMMARY_BLOCK -->
-In the [previous post]({filename}locality_syntax.md) we saw Merge is SL-2 over dependency trees, and Move is TSL-2. 
-For every movement feature *f* we project a separate tier that contains only lexical items that have a licensor feature f^+^ or a licensee feature f^-^.
+In the [previous post]({filename}locality_merge_move.md) we saw Merge is SL-2 over dependency trees, and Move is TSL-2. 
+For every movement feature f we project a separate tier that contains only lexical items that have a licensor feature f^+^ or a licensee feature f^-^.
 A tier is well-formed iff every lexical item with a licensee feature has a mother with a licensor feature, and every lexical item with a licensor feature has exactly one lexical item among its daughters that carries a licensee feature.
 It's a pretty simple system.
 Despite that simplicity, it predicts a fundamental aspect of movement: island effects!
@@ -26,11 +26,11 @@ Despite that simplicity, it predicts a fundamental aspect of movement: island ef
 ## The unexpected nature of islands
 
 There is a lot of debate as to whether island effects are due to the grammar or the parser.
-Personally, I think that's a confused question because it presupposes a distinction between grammar and parser that doesn't make a lot of sense if you probe it very deeply.
-But no matter which side of that debate you come down on, we can all agree that if your view of syntax furnishes an explanation or island constraints, that's a good thing.
-It ultimately might not be the correct explanation, but I'd rather have too many explanations than too few.
+Personally, I think that's an ill-defined question because it presupposes a distinction between grammar and parser that doesn't make a lot of sense if you probe it very deeply.
+But no matter which side of that debate you come down on, we can all agree that if your view of syntax furnishes an explanation or island constraints for free, that's a good thing.
+It ultimately might not be the correct explanation, but more is better in this case.
 
-The most striking thing about islands, then, is that they need to be bolted on to most syntactic theories.
+But the striking thing about islands is how unexpected they are in most syntactic theories.
 They do not arise naturally from the basic machinery.
 Consider two simple examples of islands below:
 
@@ -39,7 +39,7 @@ Consider two simple examples of islands below:
 
 Why should we find Complex NP islands and adjunct islands?
 I don't mean in the specific sense of "why is X an island, but not construction Y".
-No, I mean why should we find any islands?
+No, I mean why should we find any islands at all?
 Why should movement ever be forbidden?
 If syntax is just Merge and Move, how do islands arise?
 
@@ -54,7 +54,7 @@ The downside to all these stories is that deriving islands from first principles
 That's why islands always have a certain unexpected nature from the perspective of grammar.
 If you don't derive them from your basic machinery, then it is the existence of islands that is unexpected.
 If you do derive them from your basic machinery, then it is the existence of exceptional non-islands that is unexpected.
-I think that's why parsing-based explanations hold a certain allure for many linguists: they derive island effects from independently motivated processing assumptions,[^debatable] but since parsing measures are gradient they also allow for exceptions.
+I think that's the allure of parsing-based explanations to many linguists: they derive island effects from independently motivated processing assumptions,[^debatable] but since parsing measures are gradient they also allow for exceptions.
 But as I said, a grammar-based explanation would be welcome addition --- and the TSL view of Move provides just that.
 
 [^debatable]: That's actually debatable. Most of these processing models invoke ancillary assumptions, e.g. that adjuncts are somehow more costly than argument. At that point, you're just restating the facts through several levels of obfuscation. Then again, my student Aniello De Santo has [some promising results]() that use an MG processing model and don't need these assumptions.
@@ -67,12 +67,12 @@ Let's take a closer look at the Complex NP island.
 
 It's dependency tree is pretty simple.
 
-![]({static}/img/thomas/subreg_tutorials/complexnp_dependency.svg)
+![Dependency tree with Complex NP island ]({static}/img/thomas/subreg_tutorials/complexnp_dependency.svg)
 
 If we look at the two respective movement tiers of the tree (nom and wh), there doesn't seem to be much wrong either.
 On both tiers, every licensee has exactly one licensor mother, and every licensor has exactly one licensee among its daughters.
 
-![]({static}/img/thomas/subreg_tutorials/complexnp_tiers_noisland.svg)
+![Corresponding movement tiers]({static}/img/thomas/subreg_tutorials/complexnp_tiers_noisland.svg)
 
 But who's to say that these are the right tiers?
 From a computational perspective, there's nothing special about the lexical items that go on the respective tiers.
@@ -80,9 +80,9 @@ Yes, we said we're gonna project only lexical items that carry the relevant feat
 The computational machinery can put anything on the tier, including, say, anything with the feature string C^+^ N^-^.
 Hmm, now those tiers look quite different.
 
-![]({static}/img/thomas/subreg_tutorials/complexnp_tiers_island.svg)
+![Corresponding movement tiers, with Complex NP head on both tiers]({static}/img/thomas/subreg_tutorials/complexnp_tiers_island.svg)
 
-While the nom-tier is still well-formed, the wh-tier has become ill-formed because \emph{who} now has \emph{rumor} as its mother, which does not have a matching licensor feature.
+While the nom-tier is still well-formed, the wh-tier has become ill-formed because *who* now has *rumor* as its mother, which does not have a matching licensor feature.
 The local licensing relation has been destroyed by the island-inducing material intervening on the tier.
 
 The nifty thing about this perspective is that islands are perfectly natural.
@@ -100,12 +100,12 @@ It's main problem is that it underestimates the systematicity of islands:
    That's false.
 1. In the current system, there should be languages where adjuncts are never islands.
    That's false.
-1. In the current system, islands could be sensitive to the type of movement, so that some islands only block wh-movement but allow for topicalization.
+1. In the current system, islands could be sensitive to the type of movement --- some islands could block wh-movement but allow for topicalization.
    That's (largely) false.
 1. Not all island constraints can be handled this way.
    Freezing effects, for instance, do not fit this view.
 
-On the upside, it does explain why we can't have long-distance islands, e.g. "X is an island iff it is c-commanded by Y".
+On the upside, it does explain why we can't have configurational islands that depend on non-local information, e.g. "X is an island iff it is c-commanded by Y".
 The tier projection for TSL does not take context into account, so whether something projects can only depend on the lexical item itself and its feature annotation.
 
 But yes, I can't deny that the TSL account of islands is far from the final word.
@@ -118,7 +118,7 @@ This suggests that there might actually be multiple factors at work, and what we
 
 This is a very fast moving research program at this point, pretty much every month I figure out something new that changes how I think about islands.
 The TSL perspective I described here came first, and it certainly has its shortcomings.
-But I still like how it provides a very natural place for islands in the grammar without tying your hands to a point where exceptions become impossible to accommodate.
+But I still like how it provides a very natural place for islands in the grammar without tying your hands such much that exceptions become impossible to accommodate.
 If you assume that grammars have free rein over what projects as long as it stays within the preordained computational boundaries, then islands are expected, and so are exceptional non-islands.
 What's missing is the additional element of divine order that explains why islands aren't nearly as chaotic as they could be.
 
