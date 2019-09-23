@@ -1,0 +1,34 @@
+\documentclass[tikz]{standalone}
+\usepackage[linguistics]{forest}
+\usepackage[charter]{mathdesign}
+
+\newcommand{\mlex}[2]{\ensuremath{\textrm{#1} ::\thinspace \mathrm{#2}}}
+\newcommand{\fsel}[1]{\ensuremath{\mathrm{#1^+\thinspace\unskip}}}
+\newcommand{\fcat}[1]{\ensuremath{\mathrm{#1^-\thinspace\unskip}}}
+\newcommand{\flcr}[1]{\ensuremath{\mathrm{#1^+\thinspace\unskip}}}
+\newcommand{\flce}[1]{\ensuremath{\mathrm{#1^-\thinspace\unskip}}}
+\newcommand{\emptystring}{\ensuremath{\varepsilon}}
+
+
+\begin{document}
+\begin{forest}
+    [,phantom
+        [\mlex{\emptystring}{\fsel{V} \flcr{nom} \fcat{T}}, name=nom
+            [\mlex{you}{\fcat{D} \flce{nom}}]
+            [\mlex{rumor}{\fsel{C} \fcat{N}}
+                [\mlex{\emptystring}{\fsel{V} \flcr{nom} \fcat{T}}
+                    [\mlex{Mary}{\fcat{D} \flce{nom}}]
+                ]
+            ]
+        ]
+        [\mlex{did}{\fsel{T} \flcr{wh} \fcat{C}}, name=wh
+            [\mlex{rumor}{\fsel{C} \fcat{N}}
+                [\mlex{who}{\fcat{D} \flce{wh}}]
+            ]
+        ]
+    ]
+    %
+    \foreach \Root in {nom, wh}
+        \node at (\Root.north) [anchor=south, font=\bfseries] {\Root~tier};
+\end{forest}
+\end{document}
