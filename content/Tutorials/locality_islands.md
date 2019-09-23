@@ -116,7 +116,7 @@ The interesting thing is that cross-linguistically robust island effects like, s
 Less common constraints on movement like freezing effects or the *that*-trace effect often work with only one of those models.
 This suggests that there might actually be multiple factors at work, and what we call islands and movement constraints is an emergent property of these distinct systems.
 
-This is a very fast moving research program at this point, pretty much every month I figure out something new that changes how I think about islands.
+This is a very fast moving research program at this point, pretty much every month we figure out something new that adds a yet another subregular facet to islands specifically and syntax in general.
 The TSL perspective I described here came first, and it certainly has its shortcomings.
 But I still like how it provides a very natural place for islands in the grammar without tying your hands so much that exceptions become impossible to accommodate.
 If you assume that grammars have free rein over what projects as long as it stays within the preordained computational boundaries, then islands are expected, and so are exceptional non-islands.
