@@ -55,9 +55,9 @@ That's why islands always have a certain unexpected nature from the perspective 
 If you don't derive them from your basic machinery, then it is the existence of islands that is unexpected.
 If you do derive them from your basic machinery, then it is the existence of exceptional non-islands that is unexpected.
 I think that's the allure of parsing-based explanations to many linguists: they derive island effects from independently motivated processing assumptions,[^debatable] but since parsing measures are gradient they also allow for exceptions.
-But as I said, a grammar-based explanation would be welcome addition --- and the TSL view of Move provides just that.
+But as I said, a grammar-based explanation would be a welcome addition --- and the TSL view of Move provides just that.
 
-[^debatable]: That's actually debatable. Most of these processing models invoke ancillary assumptions, e.g. that adjuncts are somehow more costly than argument. At that point, you're just restating the facts through several levels of obfuscation. Then again, my student Aniello De Santo has [some promising results]() that use an MG processing model and don't need these assumptions.
+[^debatable]: It's actually debatable whether processing accounts derive islands for free. They tend to invoke ancillary assumptions, e.g. that adjuncts are somehow more costly than arguments. At that point, you're just restating the facts through several layers of obfuscation. Then again, my student Aniello De Santo has some promising results that use an MG processing model and don't need these assumptions. He'll have a poster at SCiL, colocated with the LSA, so if this sounds interesting to you you should drop by.
 
 ## The unexpected nature of islands is expected...
 
@@ -111,15 +111,15 @@ The tier projection for TSL does not take context into account, so whether somet
 But yes, I can't deny that the TSL account of islands is far from the final word.
 At the very least, it still needs a more fully articulated theory of tier projection to explain why islands are much more systematic than they could be.
 We also need some other subregular perspectives on islands to handle some cases that can't be captured by the TSL account at all.
-Me and my student Nazila Shafiei are exploring several subregular options for that.
+Together with my student Nazila Shafiei I've been exploring several subregular options for that.
 The interesting thing is that cross-linguistically robust island effects like, say, adjunct islands, fall out naturally from all those different perspectives.
 Less common constraints on movement like freezing effects or the *that*-trace effect often work with only one of those models.
 This suggests that there might actually be multiple factors at work, and what we call islands and movement constraints is an emergent property of these distinct systems.
 
 This is a very fast moving research program at this point, pretty much every month I figure out something new that changes how I think about islands.
 The TSL perspective I described here came first, and it certainly has its shortcomings.
-But I still like how it provides a very natural place for islands in the grammar without tying your hands such much that exceptions become impossible to accommodate.
+But I still like how it provides a very natural place for islands in the grammar without tying your hands so much that exceptions become impossible to accommodate.
 If you assume that grammars have free rein over what projects as long as it stays within the preordained computational boundaries, then islands are expected, and so are exceptional non-islands.
-What's missing is the additional element of divine order that explains why islands aren't nearly as chaotic as they could be.
+What's missing is the additional element of divine order that explains why the lay of the land for islands isn't nearly as chaotic as it could be.
 
 ## References
