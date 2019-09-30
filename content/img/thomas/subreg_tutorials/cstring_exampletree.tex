@@ -1,0 +1,37 @@
+\documentclass[tikz]{standalone}
+\usepackage[linguistics]{forest}
+\usepackage[charter]{mathdesign}
+
+\newcommand{\mlex}[2]{\ensuremath{\textrm{#1} ::\thinspace \mathrm{#2}}}
+\newcommand{\fsel}[1]{\ensuremath{\mathrm{#1^+\thinspace\unskip}}}
+\newcommand{\fcat}[1]{\ensuremath{\mathrm{#1^-\thinspace\unskip}}}
+\newcommand{\flcr}[1]{\ensuremath{\mathrm{#1^+\thinspace\unskip}}}
+\newcommand{\flce}[1]{\ensuremath{\mathrm{#1^-\thinspace\unskip}}}
+\newcommand{\emptystring}{\ensuremath{\varepsilon}}
+
+
+\begin{document}
+\begin{forest}
+    [\mlex{did}{\fsel{T} \flcr{wh} \fcat{C}}
+        [\mlex{\emptystring}{\fsel{V} \flcr{nom} \fcat{T}}
+            [\mlex{prove}{\fsel{D} \fsel{D} \fcat{V}}
+                [\mlex{the}{\fsel{N} \fcat{D} \flce{nom}}
+                    [\mlex{destruction}{\fsel{P} \fcat{N}}
+                        [\mlex{of}{\fsel{D} \fcat{P}}
+                            [\mlex{Kandor}{\fcat{D}}]
+                        ]
+                    ]
+                ]
+                [\mlex{that}{\fsel{T} \fcat{C}}
+                    [\mlex{\emptystring}{\fsel{V} \flcr{nom} \fcat{T}}
+                        [\mlex{hates}{\fsel{D} \fsel{D} \fsel{V}}
+                            [\mlex{Brainiac}{\fcat{D} \flce{nom}}]
+                            [\mlex{who}{\fcat{D} \flce{wh}}]
+                        ]
+                    ]
+                ]
+            ]
+        ]
+    ]
+\end{forest}
+\end{document}
