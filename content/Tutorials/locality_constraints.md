@@ -17,7 +17,7 @@ tags:
 ---
 
 <!-- START_SUMMARY_BLOCK -->
-The [previous post in this series]({filename}locality_islands.md) discussed the lay of the island from the perspective of TSL (I'm so disappointed in myself for not making this pun last time; better late than never).
+The [previous post in this series]({filename}locality_islands.md) discussed the lay of the (is)land from the perspective of TSL (I'm so disappointed in myself for not making this pun last time; better late than never).
 I mentioned that the TSL view cannot handle all island constraints.
 Sometimes, we need an alternative approach.
 But this alternative approach doesn't come out of nowhere.
@@ -194,7 +194,7 @@ One example is **aapan** in Marathi [@Kiparsky02].
 For those, the constraint is no longer TSL, but it is OTSL-2.
 Remember, OTSL is TSL where the projection is contingent on what's already on the tier.
 
-(@) **Non-local binding of reflexives is OTSL**
+(@) **Non-local binding of reflexives is OTSL**  
     Suppose that the binding domain for reflexives is delineated by some head H (possibly subject to cross-linguistic variation).
     If X is a reflexive that must be non-locally bound by some antecedent A, then c-string(X) must have a tier of the form HA.
     The tier is constructed as follows:
@@ -276,3 +276,5 @@ This is intrinsically limited in that it only provides information about derivat
 In a nutshell: tree tiers and c-string are distant points in a two-dimensional space, where one axis encodes how much of the tree structure is visible to the constraint, and the other expresses degrees of locality over the visible pieces of structure.
 We haven't gotten this balance quite right yet.
 But I don't think we're all that far away from a very good approximation.
+
+## References
