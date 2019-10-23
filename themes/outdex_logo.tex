@@ -1,0 +1,27 @@
+\documentclass[crop,tikz]{standalone}
+\usetikzlibrary{backgrounds,calc}
+\usepackage[charter]{mathdesign}
+\definecolor{outdex_orange}{HTML}{F26109}
+\definecolor{outdex_background}{HTML}{333333}
+\begin{document}
+\begin{tikzpicture}
+    % narrow viewport
+    \clip (-.8em, -.8em) rectangle (.8em, .8em);
+
+    % add background
+    \begin{pgfonlayer}{background}
+      \node at (0,0)
+        [fill=outdex_background,minimum size=2.2em] {};
+    \end{pgfonlayer}
+
+    \draw[line width=.2em, white]
+        ($(0,0) - (.5em, .5em)$) -- ($(0,0) + (.5em, .5em)$);
+    \draw[line width=.2em, white]
+        ($(-.01em,0) + (-.5em, .5em)$) -- ($(-.01em,0) + (.54em, -.54em)$);
+    \node at (0,0)
+        [minimum size=0pt, inner sep=1pt,
+         text=outdex_orange,
+         font=\Huge]
+        {$\mathbf{\otimes}$};
+\end{tikzpicture}
+\end{document}
