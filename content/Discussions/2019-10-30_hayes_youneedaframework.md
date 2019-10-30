@@ -55,9 +55,9 @@ Few things are less useful to science than philosophy of science.
 The strongest interpretation that I can come up with equates frameworks and linguistic theories.
 In this case, Bruce's question could be rephrased as a demand for a pledge of allegiance:
 
-(@) **Pledge of allegiance**  
-    Look fella, we linguists have a range of options for you math folks to choose from: SPE, OT, Harmonic Grammar, Autosegmental phonology, Government Phonology, Strict CV, and much more.
-    Pick your side, add those fancy formulas you guys love so much, but pick a side and run with it.
+- **Pledge of allegiance**  
+  Look fella, we linguists have a range of options for you math folks to choose from: SPE, OT, Harmonic Grammar, Autosegmental phonology, Government Phonology, Strict CV, and much more.
+  Pick your side, add those fancy formulas you guys love so much, but pick a side and run with it.
 
 For the record, I don't think that's what Bruce had in mind.
 But it is actually a common view.
