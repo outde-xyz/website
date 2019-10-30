@@ -15,7 +15,7 @@ As you might know, Stony Brook hosted AMP, the [American Meeting on Phonology](h
 [Jane Chandlee](https://chandlee.sites.haverford.edu/) started off the conference with an invited talk on the subregular view of phonological mappings from underlying representations to surface forms.
 It was well received, but during the question period [Bruce Hayes](https://linguistics.ucla.edu/people/hayes/) (no, [not that Bruce Hayes](https://www.brucehayes.com/?section=bio)) made a point that I found puzzling: "You need a framework!"
 Unfortunately I didn't have time to ask Bruce afterwards what exactly he meant by that.
-But every conceivable interpretation I've come up with I vehemently disagree with, and I think Bruce's demand for a framework stems from incorrectly applying the linguistic **modus operandi** to computational work.
+But every conceivable interpretation I've come up with I vehemently disagree with, and I think Bruce's demand for a framework stems from incorrectly applying the linguistic *modus operandi* to computational work.
 <!-- END_SUMMARY_BLOCK -->
 
 
