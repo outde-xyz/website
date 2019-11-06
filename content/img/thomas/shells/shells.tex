@@ -1,0 +1,54 @@
+\documentclass[tikz]{standalone}
+\usepackage[linguistics]{forest}
+\usepackage[charter]{mathdesign}
+
+\begin{document}
+\begin{forest}
+    [,phantom
+        [XP
+            [argument $n$]
+            [X$'$
+                [argument $n-1$]
+                [X$'$
+                    [X$'$, edge=dotted
+                        [argument 2]
+                        [X$'$
+                            [argument 1]
+                            [X]
+                        ]
+                    ]
+                ]
+            ]
+        ]
+        [X$n$P
+            [argument $n$]
+            [X$n'$
+                [empty X$n$ head]
+                [X$(n-1)$P
+                    [argument $n-1$]
+                    [X$(n-1)'$
+                        [empty X$(n-1)$ head]
+                        [X$(n-2)$P
+                            [X$2$P, edge=dotted
+                                [argument 2]
+                                [X$2'$
+                                    [emtpy X2 head]
+                                    [X$1$P
+                                        [argument 1]
+                                        [X$1'$
+                                            [empty X1 head]
+                                            [XP
+                                                [X]
+                                            ]
+                                        ]
+                                    ]
+                                ]
+                            ]
+                        ]
+                    ]
+                ]
+            ]
+        ]
+    ]
+\end{forest}
+\end{document}
