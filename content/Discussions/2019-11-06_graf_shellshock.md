@@ -65,7 +65,9 @@ And in the derivations below, those types appear on heads as well as constituent
 That's flexible constituency at work.
 
 ![VP adjunction in CCG]({filename}/img/thomas/shells/ccg_vpadjunction.svg)
+
 ![V' adjunction in CCG]({filename}/img/thomas/shells/ccg_vbaradjunction.svg)
+
 ![V adjunction in CCG]({filename}/img/thomas/shells/ccg_vadjunction.svg)
 
 
@@ -190,7 +192,7 @@ I also wonder if the *what the shell* analysis could be used for some other cons
 Suppose we analyze *nicht* as a coordination head whose semantics is $\lambda f \lambda g. f \wedge \neg g$ instead of $\lambda f \lambda g. f \wedge g$ for *and*.
 Then the structure above could be derived as follows.
 
-(@) Gegeben hat der Peter dem Hans ein Geschenk [V0P [V0P ~~gegeben~~] [V0' nicht [V0P weggenommen]]].
+(@) Gegeben hat der Peter dem Hans ein Geschenk [~V0P~ [~V0P~ ~~gegeben~~] [~V0'~ nicht [~V0P~ weggenommen]]].
 
 Since we now allow for adjunction, (@nicht) can actually be quite a bit more complex.
 
