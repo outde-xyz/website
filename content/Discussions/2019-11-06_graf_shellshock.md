@@ -64,9 +64,9 @@ In CCG, verbs can have the following types.
 And in the derivations below, those types appear on heads as well as constituents.
 That's flexible constituency at work.
 
-![VP adjunction in CCG]{%filename%/img/thomas/shells/ccg_vpadjunction.svg}
-![V' adjunction in CCG]{%filename%/img/thomas/shells/ccg_vbaradjunction.svg}
-![V adjunction in CCG]{%filename%/img/thomas/shells/ccg_vadjunction.svg}
+![VP adjunction in CCG]({filename}/img/thomas/shells/ccg_vpadjunction.svg)
+![V' adjunction in CCG]({filename}/img/thomas/shells/ccg_vbaradjunction.svg)
+![V adjunction in CCG]({filename}/img/thomas/shells/ccg_vadjunction.svg)
 
 
 ## Emulating sub-XP adjunction
@@ -86,7 +86,7 @@ Crazy, perhaps, but it's just the natural evolution of Larsonian shells [@Larson
 Rather than having an object level and a subject level for verbs, we would then have a verb level, an indirect object level, a direct object level, and a subject level.
 The figure below shows the intuition for an arbitrary XP.
 
-![Splitting an XP with n arguments into n+1 shells]{%filename%/img/thomas/shells/shells.svg}
+![Splitting an XP with n arguments into n+1 shells]({filename}/img/thomas/shells/shells.svg)
 
 To some extent we're already there for verbs thanks to an ever more fine-grained hierarchy of verb-related heads, e.g. applicative.
 But for some reason nobody has co-opted this approach to generalize coordination and get rid of across-the-board movement --- at least I'm not aware of any work along those lines.
@@ -138,11 +138,11 @@ However, what if the order of shells could be permuted?
 For the sake of simplicity, let's consider a transitive verb.
 Under the *so many shells, I can't even* analysis, this would look as follows:
 
-![Transitive verb with a separate shell for each argument]{%filename%/img/thomas/shells/transv.svg}
+![Transitive verb with a separate shell for each argument]({filename}/img/thomas/shells/transv.svg)
 
 Now suppose that the order of the higher shells could be switched, yielding the tree below.
 
-![The same shell structure, but with permuted argument positions]{%filename%/img/thomas/shells/transv_permuted.svg}
+![The same shell structure, but with permuted argument positions]({filename}/img/thomas/shells/transv_permuted.svg)
 
 This actually allows us to emulate yet another instance of flexible constituency in CCG.
 
@@ -156,13 +156,13 @@ The CCG analysis, on the other hand, uses type raising and functional compositio
 
 (@) [[Harvey loves] and [Rose despises]] mud wrestling.
 
-![CCG analysis of VP-coordination to the exclusion of the object]%filename%/img/thomas/shells/ccg_subjcoordination.svg}
+![CCG analysis of VP-coordination to the exclusion of the object]({filename}/img/thomas/shells/ccg_subjcoordination.svg)
 
 We can do the very same thing with the *shelling out shells* analysis if we assume that shell order may be altered in some cases.
 In contrast to the CCG approach, this solution does not require the subject to select the verb.
 However, it does require that the subject does not move to Spec,TP (which doesn't serve much purpose anyways once you can adjoin below VP and can permute shell order).
 
-![Shell explosion counterpart to CCG analysis]{%filename%/img/thomas/shells/subjVP_coordination.svg}
+![Shell explosion counterpart to CCG analysis]({filename}/img/thomas/shells/subjVP_coordination.svg)
 
 And the same approach can also be used to topicalize [IO V] to the exclusion of DO in German.
 Topicalization of [Subject V] to the exclusion of DO and IO would still be impossible because the subject has to move to Spec,TP.
