@@ -1,0 +1,46 @@
+\documentclass[tikz, landscape]{standalone}
+\usepackage[linguistics]{forest}
+\usepackage[charter]{mathdesign}
+
+\begin{document}
+\begin{forest}
+    [S
+        [NP
+            [John]
+        ]
+        [S$\backslash$NP
+            [S$\backslash$NP
+                [(S$\backslash$NP)/(S$\backslash$NP)
+                    [definitely]
+                ]
+                [S$\backslash$NP
+                    [(S$\backslash$NP)/NP
+                        [((S$\backslash$NP)/NP)/NP
+                            [showed]
+                        ]
+                        [NP
+                            [Bill]
+                        ]
+                    ]
+                    [NP
+                        [NP/N
+                            [a]
+                        ]
+                        [N
+                            [gift]
+                        ]
+                    ]
+                ]
+            ]
+            [(S$\backslash$NP)$\backslash$(S$\backslash$NP)
+                [($\sigma\backslash\sigma$)/$\sigma$
+                    [and]
+                ]
+                [S$\backslash$NP
+                    [allegedly gave Peter a briefcase, roof]
+                ]
+            ]
+        ]
+    ]
+\end{forest}
+\end{document}

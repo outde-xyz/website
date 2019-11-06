@@ -1,0 +1,33 @@
+\documentclass[tikz, landscape]{standalone}
+\usepackage[linguistics]{forest}
+\usepackage[charter]{mathdesign}
+
+\begin{document}
+\begin{forest}
+    [S
+        [S/NP
+            [S/NP
+                [S/(S$\backslash$NP)
+                    [NP
+                        [Harvey]
+                    ]
+                ]
+                [(S$\backslash$NP)/NP
+                    [loves]
+                ]
+            ]
+            [(S/NP)$\backslash$(S/NP)
+                [($\sigma\backslash\sigma$)/$\sigma$
+                    [and]
+                ]
+                [S/NP
+                    [Rose despises, roof]
+                ]
+            ]
+        ]
+        [NP
+            [mud wrestling]
+        ]
+    ]
+\end{forest}
+\end{document}
