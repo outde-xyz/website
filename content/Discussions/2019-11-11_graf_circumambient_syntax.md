@@ -73,7 +73,7 @@ So to me, this has always looked like a case of the lower complementizers agreei
 If the wh-mover does not move up all the way, the complementizers that aren't crossed by the wh-movement come out as *was* instead.
 
 (@) [~DP~ Wen] glaubst du **wen** die Maria gesagt hat **wen** der Hans mag *t*?  
-(@) Was glabust du [~DP~ wen] die Maria gesagt hat **wen** der Hans mag *t*?
+(@) Was glaubst du [~DP~ wen] die Maria gesagt hat **wen** der Hans mag *t*?
 (@) Was glaubst du was die Maria gesagt hat [~DP~ wen] der Hans mag *t*?
 
 Alright, so that's the rough lay of the land.
