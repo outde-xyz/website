@@ -36,6 +36,7 @@ The simplest form of MCA is exemplified by Irish complementizer agreement [@McCl
 (@C-agr) Deir said **gu**-r ghoid na síogaí í  
          say they C-Pst stole the fairies her  
          "They say that the fairies stole her away."
+
 (@C+agr) [cén t-úrscéal] **a** mheas mé **a** dúirt sé **a** thuig sé *t*  
           which novel C[agr] thought I C[agr] said he C[agr] understood he  
           "Which novel did I think that he said the he understood?"
@@ -47,13 +48,13 @@ The surface form of the complementizer thus is contingent on whether it is cross
 But there are also languages where complementizers aren't just sensitive to whether a mover crosses them, but also to what this mover looks like.
 One example is Kinande, where the complementizer agrees in noun class with the mover.
 
-(@) ekihi **kyo** Kambale asi nga **kyo** Yosefu akalengekanaya **kyo** Maty akahuka *t*
+(@) ekihi **kyo** Kambale asi nga **kyo** Yosefu akalengekanaya **kyo** Maty akahuka *t*  
     7.what 7.wh 1.Kambale 1.know if 7.wh 1.Yosefu 1.thinks 7.wh 1.Marya 1.cooks  
     "What did Kambale know that Yosefu thinks that Mary is cooking (for dinner)?"
 
 Notice how both the wh-phrase *what* and the wh-complementizer *kyo* belong to noun class 7.
 
-If you want to know more about the empirical landscape, [take a gander at @Georgi19](https://publishup.uni-potsdam.de/files/42654/of_trees_and_birds.pdf), which discusses the known data and its implications for TAG (kudos to Doreen for taking a close and very insightful look at TAG).
+If you want to know more about the empirical landscape, [[take a gander at @Georgi19]](https://publishup.uni-potsdam.de/files/42654/of_trees_and_birds.pdf), which discusses the known data and its implications for TAG (kudos to Doreen for taking a close and very insightful look at TAG).
 
 I'll add one more piece of data from German here, which is usually considered a different phenomenon.
 
@@ -118,7 +119,7 @@ This allows us to ignore some instances of L, and as a result tiers suddenly do 
 | HLLLH      | HLH      |
 
 With tiers like that, tone plateauing is enforced by forbidding the trigram HLH from ever appearing on the tier.
-This is an [ITSL grammar]({filename}/Tutorials/locality_iotsl.md#adding-context-information-input-tier-based-strict-locality-itsl) of tone plateauing.
+This is an [ITSL grammar]({filename}/Tutorials/locality_iotsl.md#adding-context-information-input-tier-based-strictly-local-itsl) of tone plateauing.
 
 Alternatively, we could use an [OTSL grammar]({filename}/Tutorials/locality_iotsl.md#adding-projection-interdependencies-output-tier-based-strictly-local-otsl).
 In this case, the tier projection is sensitive to what is already on the tier.
@@ -162,13 +163,13 @@ That's illustrated in the [MG dependency trees]({filename}/Tutorials/locality_me
 1. The third tree for *Bill wonders who John said Mary punched* illustrates that complementizers that are not crossed by the mover keep their default form.
 1. The fourth tree is an illicit version of three where none of the complementizers display agreement.
 
-[! Tree 1: Without movement, each complementizer keeps its default form]({filename}/img/thomas/movement_toneplateauing/dep_default.svg)
+![ Tree 1: Without movement, each complementizer keeps its default form]({filename}/img/thomas/movement_toneplateauing/dep_default.svg)
 
-[! Tree 2: Complementizers crossed by a mover surface with special agreement]({filename}/img/thomas/movement_toneplateauing/dep_agree.svg)
+![ Tree 2: Complementizers crossed by a mover surface with special agreement]({filename}/img/thomas/movement_toneplateauing/dep_agree.svg)
 
-[! Tree 3: Complementizer agreement does not extend beyond the landing sight]({filename}/img/thomas/movement_toneplateauing/dep_partial.svg)
+![ Tree 3: Complementizer agreement does not extend beyond the landing sight]({filename}/img/thomas/movement_toneplateauing/dep_partial.svg)
 
-[! Tree 4: A tree with non-agreeing complementizers along a movement path is illicit]({filename}/img/thomas/movement_toneplateauing/dep_noagree.svg)
+![ Tree 4: A tree with non-agreeing complementizers along a movement path is illicit]({filename}/img/thomas/movement_toneplateauing/dep_noagree.svg)
 
 As you might remember, it is sometimes convenient to truncate the tree representation to a string.
 We've done that before with [c-strings]({filename}/Tutorials/locality_constraints.md#the-role-of-command-strings).
