@@ -33,16 +33,16 @@ It has been known for a long time that complementizers can be sensitive to eleme
 I'll call this **movement-driven complementizer agreement**, or simply **MCA**.
 The simplest form of MCA is exemplified by Irish complementizer agreement [@McCloskey79; @McCloskey01].
 
-(@C-agr) Deir said **gu**-r ghoid na síogaí í  
-         say they C-Pst stole the fairies her  
-         "They say that the fairies stole her away."
+(@C) Deir said **gu**-r ghoid na síogaí í  
+     say they C-Pst stole the fairies her  
+     "They say that the fairies stole her away."
 
-(@C+agr) [cén t-úrscéal] **a** mheas mé **a** dúirt sé **a** thuig sé *t*  
+(@Cagr) [cén t-úrscéal] **a** mheas mé **a** dúirt sé **a** thuig sé *t*  
           which novel C[agr] thought I C[agr] said he C[agr] understood he  
           "Which novel did I think that he said the he understood?"
 
-In (@C-agr), the complementizer surfaces in its standard form *gu*.
-But in (@C+agr), the complementizer is crossed by a wh-mover and thus is spelled out as *a* instead, glossed here as C[agr] instead of default C.
+In (@C), the complementizer surfaces in its standard form *gu*.
+But in (@Cagr), the complementizer is crossed by a wh-mover and thus is spelled out as *a* instead, glossed here as C[agr] instead of default C.
 The surface form of the complementizer thus is contingent on whether it is crossed by a mover.
 
 But there are also languages where complementizers aren't just sensitive to whether a mover crosses them, but also to what this mover looks like.
@@ -54,7 +54,7 @@ One example is Kinande, where the complementizer agrees in noun class with the m
 
 Notice how both the wh-phrase *what* and the wh-complementizer *kyo* belong to noun class 7.
 
-If you want to know more about the empirical landscape, [[take a gander at @Georgi19]](https://publishup.uni-potsdam.de/files/42654/of_trees_and_birds.pdf), which discusses the known data and its implications for TAG (kudos to Doreen for taking a close and very insightful look at TAG).
+If you want to know more about the empirical landscape, take a gander at [[@Georgi19]](https://publishup.uni-potsdam.de/files/42654/of_trees_and_birds.pdf), which discusses the known data and its implications for TAG (kudos to Doreen for taking a close and very insightful look at TAG).
 
 I'll add one more piece of data from German here, which is usually considered a different phenomenon.
 
@@ -99,7 +99,7 @@ Adam Jardine calls such processes **circumambient** [@Jardine15] because it isn'
 There is nothing wrong with an L appearing to the right or to the left of an H.
 Only if L is surrounded by H do we get a problem.
 
-Tone plateauing is not [TSL with the usual tier projection]({filename}/Tutorials/locality_sltlsl.md#not-everything-is-tsl), i.e. a tier projection that does not consider any structural information beyond the segment itself.
+Tone plateauing is not [TSL with the usual tier projection]({filename}/Tutorials/locality_sltsl.md#not-everything-is-tsl), i.e. a tier projection that does not consider any structural information beyond the segment itself.
 As a reminder, here's why.
 First, the tier needs to contain H and L since we want to regulate the distribution of L but cannot do so unless we are also aware of every H.
 So the tier of something like HLLLH is, well, HLLLH.
