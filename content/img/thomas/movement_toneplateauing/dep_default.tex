@@ -1,0 +1,31 @@
+\documentclass[tikz]{standalone}
+\usepackage[linguistics]{forest}
+\usepackage[charter]{mathdesign}
+
+\newcommand{\mlex}[2]{\ensuremath{\textrm{#1} ::\thinspace \mathrm{#2}}}
+\newcommand{\fsel}[1]{\ensuremath{\mathrm{#1^+\thinspace\unskip}}}
+\newcommand{\fcat}[1]{\ensuremath{\mathrm{#1^-\thinspace\unskip}}}
+\newcommand{\flcr}[1]{\ensuremath{\mathrm{#1^+\thinspace\unskip}}}
+\newcommand{\flce}[1]{\ensuremath{\mathrm{#1^-\thinspace\unskip}}}
+\newcommand{\emptystring}{\ensuremath{\varepsilon}}
+
+
+\begin{document}
+\begin{forest}
+    [\mlex{C}{\fsel{T} \fcat{C}}
+        [\mlex{\emptystring}{\fsel{V} \flcr{nom} \fcat{T}}
+            [\mlex{said}{\fsel{D} \fsel{D} \fcat{V}}
+                [\mlex{John}{\fcat{D} \flce{nom}}]
+                [\mlex{C}{\fsel{T} \fcat{C}}
+                    [\mlex{\emptystring}{\fsel{V} \flcr{nom} \fcat{T}}
+                        [\mlex{punched}{\fsel{D} \fsel{D} \fsel{V}}
+                            [\mlex{Mary}{\fcat{D} \flce{nom}}]
+                            [\mlex{somebody}{\fcat{D}}]
+                        ]
+                    ]
+                ]
+            ]
+        ]
+    ]
+\end{forest}
+\end{document}
