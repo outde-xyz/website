@@ -41,7 +41,7 @@ In the promotion analysis, the head noun of the RC starts out as an argument of 
 (@) the [~CP~ man[f^-^] that[f^+^] I called *t*] was very rude **(ORC with pronounced C)**
 (@) the [~CP~ man[f^-^] C[f^+^] I called *t*] was very rude **(ORC with empty C)**
 (@) the [~CP~ man[f^-^] that[f^+^] [~TP~ *t* [~VP~ *t* called me] was very rude **(SRC with pronounced C)**
-(@) \*the [~CP~ man C[f^+^] [~TP~ *t* [~VP~ *t* called me] was very rude **(SRC with empty C)**
+(@) \*the [~CP~ man[f^-^] C[f^+^] [~TP~ *t* [~VP~ *t* called me] was very rude **(SRC with empty C)**
 
 
 ## An OTSL grammar
@@ -58,6 +58,7 @@ To accommodate that, we make some minor changes to the OTSL grammar.
 
 Pretty simple, I'd say.
 The same system can also be used to enforce the *qui*/*que* alternation in French.
-And both phenomena fall in a natural class with movement-driven complementizer agreement.
+
+Both phenomena then form a natural class with movement-driven complementizer agreement.
 In all those cases, it's the same computational machinery doing the job.
 If we're not surprised by something mundane like the SRC/ORC split for *that* in English or the *qui*/*que* alternation in French, then we shouldn't be surprised by movement-driven complementizer agreement in general.
