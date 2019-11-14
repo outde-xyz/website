@@ -5,6 +5,8 @@ authors:
     - Thomas Graf
 date: 2019-11-11
 bibliography: references.bib
+series: >-
+    Circumambience in syntax
 tags:
     - subregular
     - syntax
