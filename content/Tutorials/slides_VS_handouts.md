@@ -21,7 +21,7 @@ Just like it's hard to talk about mimeographs nowadays without a smirk on your f
 Okay, then let's tackle the very first issue, one that is still so contentious in some parts of the field that it might rip asunder the fabric of space and time: slides or handouts?
 <!-- END_SUMMARY_BLOCK -->
 
-# That's not the right question to start with
+## That's not the right question to start with
 
 Before you even start thinking about the medium of presentation, you should have already asked yourself some fundamental questions about the content:
 
@@ -35,7 +35,7 @@ Before you even start thinking about the medium of presentation, you should have
 
 Until you are fairly certain about the answers to these questions, don't even ask yourself if it should be slides or a handout.
 
-# That's still not the right question
+## That's still not the right question
 
 Okay, so let's assume you have a rough idea of what your talk should look like.
 Now we can finally decide if you should be preparing slides or a handout, right?
@@ -70,7 +70,7 @@ So is there any reason to ever go with just handouts?
 Isn't slides + handouts by definition at least as good as just handouts?
 Well, not quite.
 
-# Con: Slides are a time sink
+## Con: Slides are a time sink
 
 Slides take a lot of time by default, and good slides take tons of time.
 Those [slides of my UMass talk](https://thomasgraf.net/output/graf19umasstalk.html)?
@@ -95,14 +95,14 @@ Remember, the real medium for the talk is you, the speaker.
 Everything else is just adornment to assist you in that task.
 The nicest slides won't do diddly squad if you're stumbling through them with awkward pauses and flat intonation while staring at a corner.
 
-# Con: Slides aren't papers
+## Con: Slides aren't papers
 
 Slides not only take a lot of time, they take a lot of time in an unproductive manner.
 Many handouts I've seen are essentially full papers where the paragraphs have been roughly sketched out with bullet points.
 A handout like that doesn't take too much effort to turn into a paper, and papers are the currency of academia.
 Nobody gives a hoot about slides or handouts, but the latter you can turn into something that people do care about.
 
-# Pro: Slides aren't papers
+## Pro: Slides aren't papers
 
 At the same time, I'd say the main advantage of slides is exactly that they don't work like papers.
 A talk is a talk, not a paper speed reading session.
@@ -125,14 +125,14 @@ But actually their argument hinges only on Y, not Z, and Y can be established wi
 They could've gone straight to Y without X or Z, but they never realized that because they weren't forced to simplify, which means they weren't forced to think deeply about X, Y, and Z.
 Slides force you to think about these things.
 
-# Pro: Slides can do things handouts can't
+## Pro: Slides can do things handouts can't
 
 Sometimes you just need animations, multimedia, or at least (colorblind-friendly) use of color.
 Sometimes your audience expects slides and nothing less will do --- just like linguists would be amused at best and appalled at worst by a philosopher reading out their paper, computer scientists would be flabbergasted at the sight of a linguist showing up with a handout.
 When you need something handouts can't do, slides are your only option unless you're brave enough to give a blackboard talk.
 Assuming your conference venue even has a blackboard.
 
-# Conclusion: Slides unless they aren't worth your time
+## Conclusion: Slides unless they aren't worth your time
 
 So here's the take-home message:
 
