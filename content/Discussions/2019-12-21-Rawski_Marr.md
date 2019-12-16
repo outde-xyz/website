@@ -3,13 +3,12 @@ title: >-
     Overappreciated Arguments: Marr's Three Levels
 authors:
     - Jon Rawski
-date: 2019-11-21
+date: 2019-11-16
 bibliography: rawski.bib
 tags:
     - neuroscience
     - representation
     - marr
-    -
 ---
 
 <!-- START_SUMMARY_BLOCK -->
@@ -19,7 +18,7 @@ It's so ubiquitous that it's been memed by grad students.
 <!-- END_SUMMARY_BLOCK -->
 
 
-![]({static}/img/Rawski/Marr/Onion.jpg){ width=50% }
+![A Marr Meme]({static}/img/Rawski/Marr/Onion.jpg){ width=50% }
 
 Marr's 1982 book Vision is trotted out in many a linguistics paper, some of which are seen in the [JustMarrThings twitter account](https://twitter.com/justmarrthings).
 Why is Marr everywhere? Most papers polled in that twitter account have barely anything to do with vision, much less neuroscience.
@@ -110,7 +109,7 @@ It's hard to draw a three-way split there that resembles the Three Levels in a c
 Also notice that representation, which before was confined to the middle level as an object, now has its own flow.
 This makes a bit more sense under the representation-as-process view.
 
-![]({static}/img/Rawski/Marr/7Lvls.jpg){ width=50% }
+![more levels]({static}/img/Rawski/Marr/7Lvls.jpg){ width=50% }
 
 In his [afterward to the re-release of the book](http://cbcl.mit.edu/publications/ps/marr-vision-afterword.pdf), Tommaso Poggio is critical of level independence.
 He recounts the gritty origin story of the Three Levels: while they were colleagues, Marr adapted the framework of @reichardt1976, which distinguished behavioral, algorithmic, and implementational levels (Marr swapped out 'computation' for behavior).
