@@ -28,7 +28,8 @@ What better way to end the decade than a rant, right?
 But since I'm not a total Grinch (garlic in my soul, three-decker sauerkraut and toadstool sandwich with arsenic sauce? no thanks), I'll marshall a defense of Marr and insights for how linguists can talk more productively to neuroscientists.  
 
 
-##Marr's Three Levels/Lenses
+## Marr's Three Levels/Lenses
+
 Marr's contribution in *Vision* was to determine "the different levels at which an information processing device must be understood before one can be said to have understood it completely".
 Marr suggested that explanation of information processing necessarily takes three forms.
 The most macro view is the **computational theory** level that defines the problem from an information processing perspective.
@@ -57,8 +58,10 @@ You can see variants of this argument in the Twitter account above. It is not pr
 It alienates generative linguists from other linguists, and alienates linguists from neuroscientists.
 Lots of it stems from misunderstandings of these levels, but some of it is Marr's fault.
 
-##Problems with the Three Levels
-###Why Information Processing?
+## Problems with the Three Levels
+
+### Why Information Processing?
+
 My first gripe is that the whole thing comes from an information processing framework, which makes little sese neuronally or linguistically.
 Marr says "by taking an information-processing point of view, we have been able to formulate a rather clear overall framework for the process of vision".
 But that was 1982.
@@ -86,7 +89,8 @@ Romain Brette gives very clear evidence of this, for brains and more generally.
 Read his BBS target article on it [@brette2019], or his earlier "Philosophy of the spike" [@brette2015].
 
 
-###Relationships matter more
+### Relationships matter more
+
 My second gripe is that the three levels make little sense on their own, but the linguist argument behaves as though they do.
 I think this is mostly Marr's fault: "these three levels are coupled, but only loosely".
 A big motivation for Marr was to clearly delineate computational and algorithmic/representational explanations.
@@ -126,7 +130,8 @@ This should put immediate red flags up to linguists, since a central motivation 
 Poggio also notes this, and argues for placing learning as another level, on top of computational theory, or as a part of each level.
 For him, "the problem of learning is at the core of the problem of intelligence and of understanding the brain"
 
-###What is 'Implementation'?
+### What is Implementation?
+
 An implication of the Three Levels argument is that linguists and psycholinguists get to talk about 'neural implementation' without being specific at all, or can just say 'we need to have good representational theories first'.
 In practice this has resulted in waving away the hard problem that we actually want to solve.
 Yes, we've got things like localization of Merge to some part of the Inferior Frontal gyrus, but as David Poeppel frequently points out, that's a map, not a mapping.
@@ -146,8 +151,8 @@ Obviously they do.
 But treating neural entities as implementations on a single level is extremely misleading.
 
 
-##Beyond The Three Levels
+## Beyond The Three Levels
 
 
 
-##References
+## References
