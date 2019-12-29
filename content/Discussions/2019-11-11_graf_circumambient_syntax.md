@@ -169,7 +169,7 @@ That's illustrated in the [MG dependency trees]({filename}/Tutorials/locality_me
 
 ![ Tree 2: Complementizers crossed by a mover surface with special agreement]({filename}/img/thomas/movement_toneplateauing/dep_agree.svg)
 
-![ Tree 3: Complementizer agreement does not extend beyond the landing sight]({filename}/img/thomas/movement_toneplateauing/dep_partial.svg)
+![ Tree 3: Complementizer agreement does not extend beyond the landing sight]({filename}/img/thomas/movement_toneplateauing/dep_partialagree.svg)
 
 ![ Tree 4: A tree with non-agreeing complementizers along a movement path is illicit]({filename}/img/thomas/movement_toneplateauing/dep_noagree.svg)
 
