@@ -7,6 +7,7 @@ date: 2019-12-28
 bibliography: references.bib
 tags:
     - semantics
+    - donkey sentences
     - parsing
 ---
 
@@ -38,7 +39,7 @@ In some cases, the existential stays an existential.
 
 No reasonable person interprets this as a claim that each farmer wears every hat they own at church.
 It only means that if a farmer has at least one hat, then he wears a hat at church.
-And this kind of minimal reading is actually available for (@best) if we set up the context in a way where the relevant piece of information is whether at least one donkey of each farmer is being beaten.
+And this kind of minimal reading is actually available for (@beat) if we set up the context in a way where the relevant piece of information is whether at least one donkey of each farmer is being beaten.
 That's in contrast to the (@taxes), where this reading is very hard to get:
 
 (@taxes) Every farmer who owns a donkey pays taxes on it.
@@ -87,22 +88,22 @@ This sentence is ambiguous.
 Perhaps me and my friend Arnold watched a movie together, as in (@watch).
 Or I watched a movie featuring Arnold Schwarzenegger, as in (@actor).
 The latter reading is available only because Arnold Schwarzenegger is the only actor that is regularly referred to by his first name.
-The actor reading is really hard to get if we pick a different name instead.
+The actor-reading is really hard to get if we pick a different name instead.
 
-(@clint) I watched a movie with Sylvester.
+(@sylvester) I watched a movie with Sylvester.
 
 Even though Sylvester Stallone is the only well-known actor whose first name is Sylvester, it is very unlikely that anybody would assign the actor-interpretation to this sentence.
 So far, so familiar.
 
-The important thing is that it would be ludicrous to expect a theory of parsing to account for this contrast.
+The important thing is that it would be ludicrous to expect a theory of parsing to account for the contrast between (@arnold) and (@sylvester).
 That's not the job of a parsing algorithm.
 All we require is that the parser allows for the structural ambiguity that gives rise to these different interpretations.
 On top of that, we may then build a mechanism that ranks different parses, and this mechanism would be allowed to interface with some kind of oracle that encodes aspects of world knowledge such as the *Arnold*/*Sylvester* contrast above.
 A simple core on top of which we can put various extensions in order to get a better fit for actual human behavior.
 
-Going back to donkey sentences, it seems to me that semantics (by which I mean the interpretative system as well as the subfield of linguistics) has only one job: correctly identifying donkey pronouns and providing both an existential and a universal interpretation in those cases.
+Going back to donkey sentences, it seems to me that semantics (by which I mean both the interpretative system and the subfield of linguistics) has only one job: correctly identifying donkey pronouns and providing both an existential and a universal interpretation in those cases.
 Choosing between those two goes far beyond what semantics should be about.
-It hinges on so many subtle aspects of human cognition that I think the problem is hopeless from a scientific perspective.
+It hinges on so many subtle aspects of human cognition and how humans carve up he world that I think the problem is hopeless from a scientific perspective.
 Engineers may of course try to design various probabilistic heuristics to approximate human behavior, that's a worthy goal.
 But that's not what semanticists are doing, which puts their work in this odd spot that is neither here nor there.
 They're taking on way more than just defining a parser for meaning, but the payoff of this extra work remains dubious to me.
