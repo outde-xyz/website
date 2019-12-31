@@ -158,7 +158,7 @@ We know that what makes a mind/brain, what gives rise to human cognition, is a c
 It is also a rule-governed processor of discrete symbolic structures at a higher level of description, more abstract than the biophysical, but still governed by formal laws.
 How can we use both of these insights to move beyond the information-processing model, to properly describe the relation of linguistics and neuroscience?
 
-I think there are actually two questions here, and they each need to be present in every discussion. The best statement of them I can find comes from @Smolensky2006. The question this whole post has been exploring is as follows 
+I think there are actually two questions here, and they each need to be present in every discussion. The best statement of them I can find comes from @smolensky2006. The question this whole post has been exploring is as follows 
  
 >**The neural question for cognitive science**
 >
