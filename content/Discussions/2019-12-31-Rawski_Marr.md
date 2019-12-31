@@ -62,7 +62,7 @@ Lots of it stems from misunderstandings of these levels, but some of it is Marr'
 
 ### Why Information Processing?
 
-My first gripe is that the whole thing comes from an information processing framework, which makes little sese neuronally or linguistically.
+My first gripe is that the whole thing comes from an information processing framework, which makes little sense neuronally or linguistically.
 Marr says "by taking an information-processing point of view, we have been able to formulate a rather clear overall framework for the process of vision".
 But that was 1982.
 It's not at all clear in 2019 that 'information processing', 'encoding and decoding', and the rest is an appropriate characterization either of linguistic cognition or brain function.
@@ -75,14 +75,14 @@ Stimulus attributes are not objective physical characteristics of stimuli.
 How relevant a stimulus is instead depends on changing internal states coupled with experience.
 Taking a view of brain function as "Information processing" is irreconcilable with an internalist perspective.
 It confuses what you're trying to explain with what you're using to explain it.
-This is an underappreciated point noted also by early phonetics work [@hammarberg1976; @hammarberg1981].  
-Information is not inherent in computation but becomes such when interpreted by an observer that recognizes its meaning and significance.
+This is an underappreciated point noted also by some phoneticians [@hammarberg1976; @hammarberg1981].  
+Information is not inherent in computation but becomes such when interpreted by an observer recognizing its significance.
 This means that a framework designed to understand 'information processing' misses the mark in terms of explanatory power either for language or brains.
 So when linguists say they work at a computational level defined in terms of information processing, they're actually doing the opposite of what they'd like.
 
 While I'm here, let me say something about representation.
-“Processing” has this annoying connotation of a procedure that takes something and turns it into something else, or format transformation.
-“Information processing” relies on this, tacitly implying representation is the end product.
+“Processing” has this annoying connotation of a procedure that takes a thing and turns it into another thing, or format transformation.
+“Information processing” relies on this connotation, tacitly implying representation is the end product.
 Linguists also accept this use when they talk about 'representations'.
 But representation is not a thing! It is a process!
 Romain Brette gives very clear evidence of this, for brains and more generally.
@@ -154,9 +154,9 @@ But treating neural entities as implementations on a single level is extremely m
 ## Beyond The Three Levels
 Okay, enough complaining. 
 Marr did everyone a great service by centering computation as both a cognitive and neural problem. 
-We know that what makes a mind/brain, what gives rise to human cognition, is a complex dynamical system --- a massively parallel computer at a level of formal description closer to the biophysical. 
-It is also a rule-governed processor of discrete symbolic structures at a higher level of description, more abstract than the biophysical, but still governed by formal laws.
-How can we use both of these insights to move beyond the information-processing model, to properly describe the relation of linguistics and neuroscience?
+We know that what makes a mind/brain, what gives rise to human cognition, is a complex dynamical system --- a massively parallel computer when the formal description is closer to the biophysical. 
+It is also a rule-governed computer of discrete symbolic structures at a higher, more abstract level of description.
+How can we use both of these insights to move beyond the information-processing model, to properly reconcile the contributions of linguistics and neuroscience?
 
 I think there are actually two questions here, and they each need to be present in every discussion. The best statement of them I can find comes from @smolensky2006. The question this whole post has been exploring is as follows 
  
@@ -169,7 +169,7 @@ I think there are actually two questions here, and they each need to be present 
 Smolensky & Legendre say this question is often confused with **the cognitive question for neuroscience**. 
 That question asks for the cognitive significance of various biological components. 
 To address it, a mathematical model of the mind/brain must be sufficiently faithful to the neurobiology to capture the role of each component in its biological system. 
-On the surface, these two questions seem like they need to be answered by two different groups of people. Absolutely not. 
+At first glance, these two questions seem like they need to be answered by two different groups of people. Absolutely not. 
 That's the same mistake made in thinking Marr's levels can be isolated. 
 A linguist can very well ignore biological plausibility when generalizing linguistic principles. 
 A linguist who cares about cognition cannot. 
@@ -177,7 +177,7 @@ If they do, they can guarantee that they'll alienate themselves.
 
 Marr's computational centrality can be a great equalizer for linguists and neuroscientists. 
 As someone who interacts daily with neuroscientists, when linguistic knowledge is framed computationally, they are hooked, and often surprised that linguists care about these things. 
-We have extremely good insights on problems neuroscientists care about, that they can't get answers about from the psychologists. 
+Linguists have extremely good insights on problems neuroscientists care about, that they can't get answers about from the psychologists. 
 And they have many good insights on cognitive problems linguists care about but can't answer using the tools they have. 
 In my opinion, the 2020s should be the decade when linguists and neuroscientists should be working together as much as possible (and not just when we borrow their fMRI). 
 This is extremely important given the rise of Distibuted Computation/Connectionism Part 2. 
