@@ -1,9 +1,9 @@
 ---
 title: >-
-    Corrections to my semantics post
+    Semantic: Corrections and further thoughts
 authors:
     - Thomas Graf
-date: 2019-01-08
+date: 2020-01-08
 bibliography: references.bib
 tags:
     - semantics
