@@ -4,6 +4,7 @@ title: >-
 authors:
     - Thomas Graf
 date: 2019-12-28
+modified: 2020-01-08
 bibliography: references.bib
 tags:
     - semantics
@@ -19,6 +20,11 @@ On the other hand most of semantics is pretty dull, and I think that's because s
 I've previously had a hard time putting this into concrete terms, but Lucas Champollion's invited talk on donkey sentences finally presented me with a specific example.
 <!-- END_SUMMARY_BLOCK -->
 
+**Update:**
+As it turns out, the rest of this post is not exactly up to snuff.
+First of all, it doesn't mention that this is joint work of Lucas Champollion, Dylan Blumford, and Robert Henderson.
+Second, it screws up some details that actually matter for the general point I want to make.
+I discuss them in detail in [this follow-up post]({filename}2020-01-08_graf_semantics_followup.md).
 
 ## Donkey sentences: More interesting than I thought
 
@@ -107,3 +113,4 @@ It hinges on so many subtle aspects of human cognition and how humans carve up h
 Engineers may of course try to design various probabilistic heuristics to approximate human behavior, that's a worthy goal.
 But that's not what semanticists are doing, which puts their work in this odd spot that is neither here nor there.
 They're taking on way more than just defining a parser for meaning, but the payoff of this extra work remains dubious to me.
+

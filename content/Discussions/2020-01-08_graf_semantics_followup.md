@@ -1,6 +1,6 @@
 ---
 title: >-
-    Semantic: Corrections and further thoughts
+    Semantics: Corrections and further thoughts
 authors:
     - Thomas Graf
 date: 2020-01-08
