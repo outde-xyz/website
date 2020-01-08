@@ -26,7 +26,7 @@ and
 I'm really upset with myself about that one, in some sense giving partial credit is even worse than giving no credit at all, and the latter is already a dick move.
 My sincerest apologies to Dylan and Robert.
 
-If I had run the post past Lucas before publishing it, a lot of this could have been avoided, so I'll make that a priority for future posts that talk about work that's I'm not well-acquainted with.
+If I had run the post past Lucas before publishing it, a lot of this could have been avoided, so I'll make that a priority for future posts that talk about work that I'm not well-acquainted with.
 Alright, so let's talk a bit what I got wrong and how that affects the central message of the previous post.
 <!-- END_SUMMARY_BLOCK -->
 
@@ -41,7 +41,7 @@ I don't think this affects the overall thrust of the original post, but it does 
 
 ## The account does what I want
 
-The Champollion-Bumford-Henderson account (CBH from here on) is actually an instance of the kind of model that I want, with a very lean semantics that leaves a lot of work to other components.
+The Champollion-Blumford-Henderson account (CBH from here on) is actually an instance of the kind of model that I want, with a very lean semantics that leaves a lot of work to other components.
 The overall logic of the architecture is actually similar to Eric Reuland's Minimalist work on syntactic binding.
 Reuland says that if a pronoun doesn't get bound in syntax, then it can try to establish binding relations in semantics, and if that doesn't work out, then pragmatics will figure out the antecedent.
 CBH has a similar multi-layer machinery.
@@ -58,6 +58,12 @@ Sentence (@single) has only one possible parse, so we don't need to go into the 
 There's only one choice, and that's the one you have to go with.
 Whether Arnold is an actor is completely immaterial.
 But (@ambiguous) is ambiguous, and that opens the floodgates of context-dependent choice.
+
+The CBH case is still slightly different because the semantics doesn't fix a specific reading.
+Instead, it just decides if the readings even need to be distinguished in order to determine the truth value of the sentence.
+If that's not the case, it does all the work by itself.
+Otherwise, it's time for pragmatics to do its things.
+In parsing terms, CBH is more like a parser that ignores syntactic ambiguity when it cannot affect the semantics.
 
 
 ## So why no mic drop?
