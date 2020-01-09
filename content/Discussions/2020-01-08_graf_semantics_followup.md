@@ -85,7 +85,7 @@ I still find that interesting from a sociological perspective, though.
 Suppose I had a story about Heavy NP shift that also includes a specific theory of the syntax-external factors that make an NP heavy.
 Perhaps that notion of heaviness builds on some existing theory that has been fruitfully applied to linear orderings of verbal particles.
 I'm not so sure that it would be smart to include this part of the proposal in a submission to *Linguistic Inquiry* or *Syntax*.
-I can imagine that some reviewers would ask for that to be removed on the grounds that 1) it makes the paper harder to follow, and 2) has nothing to do with syntax proper.
+I can imagine that some reviewers would ask for that to be removed on the grounds that 1) it makes the paper harder to follow, and 2) it has nothing to do with syntax proper.
 And I'd actually agree with them: that part should go into a separate paper, for a different journal.
 
 Now it would be pretty ludicrous to ask CBH to remove the pragmatics part from their semantics paper considering that it appeared in --- drum roll --- *Semantics & Pragmatics*.
