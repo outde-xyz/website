@@ -49,7 +49,7 @@ He places Chomsky's competence/performance distinction as the difference between
 He even talks about trace theory a la Chomsky \& Lasnik showing "some of the rather ad hoc restrictions that form part of the computational theory may be consequences of weaknesses in the computational power that is available for implementing syntactical decoding".
 Linguists adapted this endorsement into the following argument (see above meme):
 
-- **Linguists' take on Marr** (very important apostrophe there!)
+- **Linguists' take on Marr** (very important apostrophe there!)   
   Marr distinguishes three levels of analysis of cognitive information-processing: computational, algorithmic, and implementational.
   Linguists work on the computational level, specifying the relevant representations and properties of language.
   We can't care about algorithms and neural instantiations before understanding the computational level - and those are performance considerations really, we care about competence.
