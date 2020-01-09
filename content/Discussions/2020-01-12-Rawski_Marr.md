@@ -76,7 +76,7 @@ Stimulus attributes are not objective physical characteristics of stimuli.
 How relevant a stimulus is instead depends on changing internal states coupled with experience.
 Taking a view of brain function as "Information processing" is irreconcilable with an internalist perspective.
 It confuses what you're trying to explain with what you're using to explain it.
-This is an underappreciated point noted also by some phoneticians [@hammarberg1976; @hammarberg1981].  
+This is an underappreciated point noted also by some phoneticians [@hammarberg1976; @hammarberg1981].
 Information is not inherent in computation but becomes such when interpreted by an observer recognizing its significance.
 This means that a framework designed to understand 'information processing' misses the mark in terms of explanatory power either for language or brains.
 So when linguists say they work at a computational level defined in terms of information processing, they're actually doing the opposite of what they'd like.
