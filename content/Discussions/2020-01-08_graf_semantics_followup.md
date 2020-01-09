@@ -46,6 +46,7 @@ The overall logic of the architecture is actually similar to Eric Reuland's Mini
 Reuland says that if a pronoun doesn't get bound in syntax, then it can try to establish binding relations in semantics, and if that doesn't work out, then pragmatics will figure out the antecedent.
 CBH has a similar multi-layer machinery.
 In cases that are clearly true or false, semantics does all the work.
+This happens when the choice between universal and existential construal of a donkey pronoun does not affect the overall truth.
 But when context matters, semantics passes it on to pragmatics, which then fills in the gaps based on the current question under discussion.
 
 That is indeed similar to what I said about how research on parsing is done (or ought to be done).
@@ -59,11 +60,14 @@ There's only one choice, and that's the one you have to go with.
 Whether Arnold is an actor is completely immaterial.
 But (@ambiguous) is ambiguous, and that opens the floodgates of context-dependent choice.
 
-The CBH case is still slightly different because the semantics doesn't fix a specific reading.
-Instead, it just decides if the readings even need to be distinguished in order to determine the truth value of the sentence.
+The CBH case is still slightly different because the semantics doesn't fix a specific interpretation.
+Instead, it just decides if the universal and existential construals even need to be distinguished in order to determine the truth value of the sentence.
 If that's not the case, it does all the work by itself.
 Otherwise, it's time for pragmatics to do its things.
-In parsing terms, CBH is more like a parser that ignores syntactic ambiguity when it cannot affect the semantics.
+In parsing terms, the CBH proposal is more like a parser that does not fix parts of the structure that cannot affect meaning.
+In *rusty bucket on the table*, for instance, it would not matter if we have *[rusty [bucket on the table]]* or *[[rusty bucket] on the table]*, the intersective semantics of the modifiers means that their order of application is immaterial.
+In *alleged bucket on the table*, on the other hand, it does matter whether allegedly there is a bucket on the table or there is an object on the table that is allegedly a bucket.
+That's the central idea behind CHB, but with donkey sentences and a choice between existential and universal.
 
 
 ## So why no mic drop?
@@ -97,4 +101,5 @@ The nice thing about blogging is that it allows me to throw out ideas that aren'
 In the case at hand, it should be apparent now that, contrary to my initial impression, the CBH work is actually a bad example of why I don't find semantics all that engaging.
 But the discussion with Amir has led me to coin the term "pre-semantics".
 It's not a well-defined term yet, but I envision it as the most minimal semantics possible, the very first step in the interpretative pipeline. 
-That's something I'll have to think more about.
+For instance, pre-semantics should not even be able to decide if the choice between universal and existential construal can affect the meaning of the given sentence, just like a parser simply provides all possible structures irrespective of whether they matter for semantics, prosody, or whatever.
+That's the general idea, at least, but I'll have to think more about it.
