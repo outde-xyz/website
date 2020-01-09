@@ -33,7 +33,7 @@ Alright, so let's talk a bit what I got wrong and how that affects the central m
 
 ## World knowledge != QUD
 
-This one was already pointed out by [Omer Preminger](https://omer.lingsite.org/) and [Amir Anvari](https://sites.google.com/site/amiraanvari/) in the comments:
+This one was already pointed out by Omer Preminger and Amir Anvari in the comments:
 world knowledge, context, and question under discussion are distinct things with specific definitions.
 They should not be lumped together.
 I don't think this affects the overall thrust of the original post, but it does show that I didn't grasp the finer points of the story.
