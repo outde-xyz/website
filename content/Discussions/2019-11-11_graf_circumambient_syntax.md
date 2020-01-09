@@ -165,13 +165,13 @@ That's illustrated in the [MG dependency trees]({filename}/Tutorials/locality_me
 1. The third tree for *Bill wonders who John said Mary punched* illustrates that complementizers that are not crossed by the mover keep their default form.
 1. The fourth tree is an illicit version of three where none of the complementizers display agreement.
 
-![ Tree 1: Without movement, each complementizer keeps its default form]({filename}/img/thomas/movement_toneplateauing/dep_default.svg)
+![ Tree 1: Without movement, each complementizer keeps its default form]({static}/img/thomas/movement_toneplateauing/dep_default.svg)
 
-![ Tree 2: Complementizers crossed by a mover surface with special agreement]({filename}/img/thomas/movement_toneplateauing/dep_agree.svg)
+![ Tree 2: Complementizers crossed by a mover surface with special agreement]({static}/img/thomas/movement_toneplateauing/dep_agree.svg)
 
-![ Tree 3: Complementizer agreement does not extend beyond the landing sight]({filename}/img/thomas/movement_toneplateauing/dep_partialagree.svg)
+![ Tree 3: Complementizer agreement does not extend beyond the landing sight]({static}/img/thomas/movement_toneplateauing/dep_partialagree.svg)
 
-![ Tree 4: A tree with non-agreeing complementizers along a movement path is illicit]({filename}/img/thomas/movement_toneplateauing/dep_noagree.svg)
+![ Tree 4: A tree with non-agreeing complementizers along a movement path is illicit]({static}/img/thomas/movement_toneplateauing/dep_noagree.svg)
 
 As you might remember, it is sometimes convenient to truncate the tree representation to a string.
 We've done that before with [c-strings]({filename}/Tutorials/locality_constraints.md#the-role-of-command-strings).
