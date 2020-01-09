@@ -3,7 +3,7 @@ title: >-
     Overappreciated Arguments: Marr's Three Levels
 authors:
     - Jon Rawski
-date: 2019-12-31
+date: 2020-01-12
 bibliography: rawski.bib
 tags:
     - neuroscience
@@ -50,6 +50,7 @@ He even talks about trace theory a la Chomsky \& Lasnik showing "some of the rat
 Linguists adapted this endorsement into the following argument (see above meme):
 
 (@folkmarr) **Linguists' take on Marr** (very important apostrophe there!)
+
   Marr distinguishes three levels of analysis of cognitive information-processing: computational, algorithmic, and implementational.
   Linguists work on the computational level, specifying the relevant representations and properties of language.
   We can't care about algorithms and neural instantiations before understanding the computational level - and those are performance considerations really, we care about competence.
@@ -66,7 +67,7 @@ Lots of it stems from misunderstandings of these levels, but some of it is Marr'
 My first gripe is that the whole thing comes from an information processing framework, which makes little sense neuronally or linguistically.
 Marr says "by taking an information-processing point of view, we have been able to formulate a rather clear overall framework for the process of vision".
 But that was 1982.
-It's not at all clear in 2019 that 'information processing', 'encoding and decoding', and the rest is an appropriate characterization either of linguistic cognition or brain function.
+It's not at all clear in 2020 that 'information processing', 'encoding and decoding', and the rest is an appropriate characterization either of linguistic cognition or brain function.
 We might just mean the narrow sense of Claude Shannon's information theory, but I think most linguists would bristle at that.
 Shannon himself warned against [bandwagoning](https://ieeexplore.ieee.org/stamp/stamp.jsp?arnumber=1056774), that information theory is “aimed in a very specific direction, a direction that is not necessarily relevant to such fields as psychology.”
 
