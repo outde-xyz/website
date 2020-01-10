@@ -1,6 +1,6 @@
 ﻿---
 title: >-
-    Overappreciated Arguments: Marr's Three Levels
+    Overappreciated arguments: Marr's three levels
 authors:
     - Jon Rawski
 date: 2020-01-12
