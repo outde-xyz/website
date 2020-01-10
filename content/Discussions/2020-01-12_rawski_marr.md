@@ -59,11 +59,11 @@ He places Chomsky's competence/performance distinction as the difference between
 He even talks about trace theory a la Chomsky \& Lasnik showing "some of the rather ad hoc restrictions that form part of the computational theory may be consequences of weaknesses in the computational power that is available for implementing syntactical decoding".
 Linguists adapted this endorsement into the following argument (see above meme):
 
-- **Linguists' take on Marr** (very important apostrophe there!)   
-  Marr distinguishes three levels of analysis of cognitive information-processing: computational, algorithmic, and implementational.
-  Linguists work on the computational level, specifying the relevant representations and properties of language.
-  We can't care about algorithms and neural instantiations before understanding the computational level - and those are performance considerations really, we care about competence.
-  In fact, perhaps neuroscientists should listen to linguists for what to look for first before they go looking in circuits for language stuff.
+(@) **Linguists' take on Marr** (very important apostrophe there!)   
+    Marr distinguishes three levels of analysis of cognitive information-processing: computational, algorithmic, and implementational.
+    Linguists work on the computational level, specifying the relevant representations and properties of language.
+    We can't care about algorithms and neural instantiations before understanding the computational level - and those are performance considerations really, we care about competence.
+    In fact, perhaps neuroscientists should listen to linguists for what to look for first before they go looking in circuits for language stuff.
 
 You can see variants of this argument in the Twitter account above. It is not productive.
 It alienates generative linguists from other linguists, and alienates linguists from neuroscientists.
@@ -171,10 +171,9 @@ How can we use both of these insights to move beyond the information-processing 
 
 I think there are actually two questions here, and they each need to be present in every discussion. The best statement of them I can find comes from @smolensky2006. The question this whole post has been exploring is as follows
 
->**The neural question for cognitive science**
->
->How are complex cognitive functions computed by a mass of numerical processors like neurons — each very simple, slow, and imprecise relative to the components that have traditionally been used to construct powerful, general-purpose computational systems?
->How does the structure arise that enables such a medium to achieve cognitive computation?
+(@) **The neural question for cognitive science**  
+    How are complex cognitive functions computed by a mass of numerical processors like neurons — each very simple, slow, and imprecise relative to the components that have traditionally been used to construct powerful, general-purpose computational systems?
+    How does the structure arise that enables such a medium to achieve cognitive computation?
 
 
 Smolensky & Legendre say this question is often confused with **the cognitive question for neuroscience**.
