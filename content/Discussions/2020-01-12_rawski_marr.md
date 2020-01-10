@@ -38,7 +38,7 @@ What better way to start a new decade than a rant, right?
 But since I'm not a total Grinch (garlic in my soul, three-decker sauerkraut and toadstool sandwich with arsenic sauce? no thanks), I'll marshall a defense of Marr and insights for how linguists can talk more productively to neuroscientists.  
 
 
-## Marr's Three Levels/Lenses
+## Marr's three levels/lenses
 
 Marr's contribution in *Vision* was to determine "the different levels at which an information processing device must be understood before one can be said to have understood it completely".
 Marr suggested that explanation of information processing necessarily takes three forms.
@@ -69,9 +69,9 @@ You can see variants of this argument in the Twitter account above. It is not pr
 It alienates generative linguists from other linguists, and alienates linguists from neuroscientists.
 Lots of it stems from misunderstandings of these levels, but some of it is Marr's fault.
 
-## Problems with the Three Levels
+## Problems with the three levels
 
-### Why Information Processing?
+### Why information processing?
 
 My first gripe is that the whole thing comes from an information processing framework, which makes little sense neuronally or linguistically.
 Marr says "by taking an information-processing point of view, we have been able to formulate a rather clear overall framework for the process of vision".
@@ -141,7 +141,7 @@ This should put immediate red flags up to linguists, since a central motivation 
 Poggio also notes this, and argues for placing learning as another level, on top of computational theory, or as a part of each level.
 For him, "the problem of learning is at the core of the problem of intelligence and of understanding the brain".
 
-### What is Implementation?
+### What is implementation?
 
 An implication of the Three Levels argument is that linguists and psycholinguists get to talk about 'neural implementation' without being specific at all, or can just say 'we need to have good representational theories first'.
 In practice this has resulted in waving away the hard problem that we actually want to solve.
@@ -162,7 +162,8 @@ They can compute all sorts of things.
 But treating neural entities as implementations on a single level is extremely misleading.
 
 
-## Beyond The Three Levels
+## Beyond The three levels
+
 Okay, enough complaining.
 Marr did everyone a great service by centering computation as both a cognitive and neural problem.
 We know that what makes a mind/brain, what gives rise to human cognition, is a complex dynamical system --- a massively parallel computer when the formal description is closer to the biophysical.
