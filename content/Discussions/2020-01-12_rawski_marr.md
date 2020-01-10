@@ -12,7 +12,17 @@ tags:
 ---
 
 <!-- START_SUMMARY_BLOCK -->
-To spice up the  *Underappreciated Arguments* series, I thought I'd describe a rhetorical chestnut beloved by many a linguist: Marr's Three Levels.
+`<TG soapbox>`
+The following is a guest post by [Jon Rawski](https://jrawski.jimdofree.com/).
+I'm ruthlessly abusing my editorial powers to insert this reminder that the Outdex welcomes guest posts.
+Maybe you'd like to start a discussion on a topic that's dear to your heart?
+Or maybe you have something to add to an ongoing discussion that can't be fit in the comments section because it's too long and involves multiple pictures and figures?
+Just send me your post in some editable format (**not** PDF) and I'll try to post it asap.
+If you want to reduce the time from sending to posting, check the [instructions on how to reduce the editorial load for me]({filename}/pages/contribute.md).
+Anyways, enough of my blabbering, let's hear what Jon has to say...
+`<TG soapbox/>`
+
+To spice up the *Underappreciated Arguments* series, I thought I'd describe a rhetorical chestnut beloved by many a linguist: Marr's Three Levels.
 Anyone who has taken a linguistics class that dips a toe into the cognitive pool has heard of the Three Levels argument.
 It's so ubiquitous that it's been memed by grad students.
 <!-- END_SUMMARY_BLOCK -->
@@ -143,7 +153,7 @@ Even "the neuron" itself is an abstraction!
 
 Neurons have a stunningly varied morphology.
 How a single "neuron" computes is sufficiently complicated that Christof Koch wrote a whole book on "The Biophysics of Computation".
-The last chapter, called 'Unconventional Computing', details how computation can even happen at the sub-neural level. It includes delightful sections like "Computing with Puffs of Gas" and "Programming with Peptides".
+The last chapter, called "Unconventional Computing", details how computation can even happen at the sub-neural level. It includes delightful sections like "Computing with Puffs of Gas" and "Programming with Peptides".
 Randy Gallistel's phenomenal book "Memory and the Computational Brain" ends with a chapter on "The Molecular Basis of Memory".
 In fact, pick a neural entity at random and you'll find work on how it computes.
 For example, concentration of free intracellular calcium in presynaptic terminals, dendrites, and cell bodies forms a variable that can act as memory, manipulated using buffers, calcium-dependent enzymes, and diffusion to instantiate specific computations.
