@@ -16,8 +16,8 @@ Congratulations, you're reading the shortest Outdex post yet!
 Peter Woit of [Not Even Wrong](https://www.math.columbia.edu/~woit/wordpress/),
 reacting to Sabine Hossenfelder of [Lost in Math](https://smile.amazon.com/Lost-Math-Beauty-Physics-Astray/dp/0465094252) fame,
 [has another post on the lack of progress in high-energy particle physics](https://www.math.columbia.edu/~woit/wordpress/?p=11551).
-If you've been following the debates about string theory and super symmetry in recent years, nothing in the post will shock you.
-What I find fascinating about this whole debate is that you could replace "particle physics" by "Minimalism" and the whole thing would all of a sudden look very familiar.
+If you've been following the debate about string theory and super symmetry in recent years, nothing in the post will shock you.
+What I find fascinating is that you could replace "particle physics" by "Minimalism" in this debate and the whole thing all of a sudden looks very familiar.
 <!-- END_SUMMARY_BLOCK -->
 
 So here's the thing.
