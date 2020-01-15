@@ -3,7 +3,7 @@ title: >-
     Physics cranks = syntax cranks?
 authors:
     - Thomas Graf
-date: 2020-01-14
+date: 2020-01-15
 bibliography: references.bib
 tags:
     - physics
