@@ -14,9 +14,9 @@ tags:
 <!-- START_SUMMARY_BLOCK -->
 Recently I found in my inbox an inquiry from a student who wants to pick up syntax on their own and would like to get some textbook recommendations.
 I happily complied, but I'm actually not all that qualified to give such recommendations.
-I have never taught a grad-level syntax introduction (despite requesting it multiple times).
+It's been a long time since I've read a syntax textbook.
+I have never taught a grad-level syntax introduction.
 At the undergraduate level I got to teach syntax twice at the very beginning of my Stony Brook career, and never again since then --- I can only surmise that what I did in those courses was too radical for the linguistic deep state to tolerate.
-And it's been a long time since I've read a syntax textbook myself.
 But the prestigious Outdex readership includes at least some syntacticians, so why not crowdsource the recommendations?
 <!-- END_SUMMARY_BLOCK -->
 
