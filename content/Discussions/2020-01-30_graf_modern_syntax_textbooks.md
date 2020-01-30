@@ -3,7 +3,7 @@ title: >-
     Hey syntax, where's my carrot?
 authors:
     - Thomas Graf
-date: 2020-01-29
+date: 2020-01-30
 bibliography: references.bib
 tags:
     - syntax
