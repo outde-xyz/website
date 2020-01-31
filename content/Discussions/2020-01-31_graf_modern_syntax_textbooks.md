@@ -80,7 +80,7 @@ The basic formula hasn't changed in decades.
 It imprints the next generation of researchers with a very narrow view of what it means to do syntax:
 A syntactician who combines their analysis with a learning model like Charles Yang's is not a syntactician but a computational linguist.
 A syntactician who tests the predictions of their analysis with data from sentence processing is not a syntactician but a psycholinguist.
-Most peculiar, and imho a disservice to the field of syntax.
+Most peculiar, and imho a disservice to the field. 
 
 
 ## References
