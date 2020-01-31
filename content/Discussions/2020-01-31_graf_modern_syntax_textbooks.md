@@ -41,7 +41,7 @@ This has changed, and there's now plenty of work that could be included in a syn
 ## What could be discussed in a modern syntax class
 
 Let's start with learnability and language acquisition.
-One obvious choice for a syntax course that operates in the framework of Principles-and-Parameters is @Yang02 and the work that followed from that.
+One obvious choice for a syntax course built on the Principles-and-Parameters framework is @Yang02, and the work that followed from that.
 It builds directly on the idea of UG and parameters, it allows you to model actual phenomena in language acquisition, and the math is fairly simple.
 It would also be instructive to contrast that approach against the Trigger algorithm and all the problems it faces [@NiyogiBerwick93; @BerwickNiyogi96].
 And then there's all the work coming out of the grammatical inference and machine learning world.
@@ -53,7 +53,7 @@ And there's a lot of nice work right now on how neural networks fail to generali
 There's enough to fill multiple chapters without even getting all that deep into the math and computation.
 
 The same is true for parsing.
-Any class on Minimalism will inevitably run into the question how those trees can be built up if processing and production proceeds left-to-right and hence top-down.
+Any class on Minimalism will inevitably run into the question how those trees can be built bottom-up if processing and production proceeds left-to-right and hence top-down.
 That prompts the usual discussion of the competence-performance distinction, and that is certainly a good thing to get into students' heads: syntactic derivations  are not a literal description of the production/comprehension assembly line.
 But it's also a good time to point out that
 
@@ -81,3 +81,6 @@ It imprints the next generation of researchers with a very narrow view of what i
 A syntactician who combines their analysis with a learning model like Charles Yang's is not a syntactician but a computational linguist.
 A syntactician who tests the predictions of their analysis with data from sentence processing is not a syntactician but a psycholinguist.
 Most peculiar, and imho a disservice to the field of syntax.
+
+
+## References
