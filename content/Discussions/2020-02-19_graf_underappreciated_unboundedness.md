@@ -255,7 +255,7 @@ It simply does not matter.
 The combinatorics of syntax are such that the quest for a compact description will inevitably drive you towards machinery that is largely agnostic about whether unboundedness holds.
 
 
-## The argument in a nutshell
+## The underappreciated argument in a nutshell
 
 Alright, this has been a long read (and those pesky automata made it an even longer write).
 But the bottom line is that there's no need to commit to unboundedness as an empirical truth.
@@ -266,6 +266,6 @@ Even if we stick only with those utterances that are easily processed, the combi
 Succinctly capturing these combinatorics requires factorization very much along the lines of what linguists have been doing.
 Linguistic analysis is not undermined by the issue of whether language is truly unbounded because this is completely independent of the factors that push us in the direction of factorization and succinctness.
 The same considerations that favor transformations over CFGs in @Chomsky57 also favor not committing to boundedness.
-Bounded, unbounded, it simply does not matter.
+Bounded, unbounded, it simply does not matter, so don't get hung up about it.
 
 ## References
