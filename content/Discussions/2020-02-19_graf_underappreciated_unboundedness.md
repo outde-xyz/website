@@ -34,7 +34,7 @@ We can continue this up to any natural number *n*, and the sentence will still b
 But that means there is no finite cut-off point, we can always construct a sentence that's even longer.
 This unboundedness of the construction (in this case, coordination) implies that the set of well-formed sentences is infinite.
 Of course in the real world there are outside factors that limit *n*.
-For instance, you can only say a finitely bounded number of words before the heat death of the universe sets in and all existence seizes to be.
+For instance, you can only say a finitely bounded number of words before the heat death of the universe sets in and all existence ceases to be.
 Or if you want something with less of a dash of cosmic horror, human memory and attention span can only handle so much before you slip up.
 But that's orthogonal to the speaker's linguistic knowledge.
 That's exactly why we want a competence-performance split, and hence we have unboundedness.
@@ -48,13 +48,13 @@ The second argument is very different in nature as it fully acknowledges the imp
 As far as I know @ScholzPullum02 were the first to make this argument in the literature, but it might have been floating around for a long time before that.
 Their point is that the unboundedness argument relies on an empirically unsupported step of induction.
 Thought experiments like the one above do not show us that there is no finite cut-off point past which competence breaks down.
-At best it shows that there is no cut-off point that is so low that we can find it experimentally.
-Except that there's actually plenty of such cut-off points, e.g. with center embedding, but they are factored out by the competence-performance distinction.
+At best one can show that there is no cut-off point that is so low that we can find it experimentally.
+Except that there's actually plenty of such cut-off points, e.g. with center embedding, but they are deemed inadmissible due to the competence-performance distinction.
 At this point the standard argument becomes circular: we assume a competence-performance split because the linguistic knowledge can generalize way beyond the limits of the performance systems, and all evidence to the contrary doesn't count because we assume a competence-performance split.
 The standard argument implicitly assumes as an axiom that which it is supposed to derive, which means the unboundedness assumption is unfounded speculation.
 Let's call this the **specter of speculation**.
 
-We could now dive deep into the merits of the plea for performance or the specter of speculation, but in the spirit of the *Underappreciated arguments* series we'll simply avoid all of that by presenting an alternative argument for unboundedness that sidesteps the issues of the standard argument.
+We could now take deep plunge into the merits of the plea for performance or the specter of speculation, but in the spirit of the *Underappreciated arguments* series we'll simply avoid all of that by presenting an alternative argument for unboundedness that sidesteps the issues of the standard argument.
 Spoilers: it's all about the rich combinatorics of syntax and how those are best described.
 
 
@@ -72,15 +72,16 @@ Even the most ardent unboundedness skeptic will usually concede that the three E
 (@ex2) The fact that the fact surprised me surprised me.
 (@ex3) The fact that the fact that the fact surprised me surprised me surprised me.
 
-The last one is pushing things a bit, and with further levels of embedding things do break down for most speakers.
-Linguists usually treat that as a performance artefact, but who knows, maybe it's competence --- we won't make any commitments here.
+The last one is pushing things a bit, and with further levels of embedding things do break down for most speakers (if you don't like ((@ex1) and (@ex2) are strictly speaking sufficient for the underappreciated argument to work, so you can disregard (@ex3) if you don't like it for some reason).
+Linguists usually treat the break down of center embedding as a performance artefact.
+But who knows, maybe it's competence --- we won't make any commitments here.
 All we need is the three examples above, with a maximum of two levels of embedding.
 
-What kind of computational mechanism could produce the three sentences above?
+What kind of computational mechanism could produce (@ex1), (@ex2), and (@ex3)?
 One of the simplest available options is a **finite-state automaton** (FSA).
 Here is the FSA that generates the first sentence, and nothing else.
 
-fixme: figure here
+![An FSA for *the fact surprised me*]({static}/img/thomas/underappreciated_unbounded/embedding0.svg)
 
 This FSA has a unique starting point, the initial state 0 marked by *start*.
 And it has a unique end point, the final state 4 marked by a double circle.
@@ -91,7 +92,7 @@ So this FSA considers (@ex1) well-formed, but nothing else.
 Okay, then let's try to expand the automaton so that it also accepts (@ex2), which displays an instance of center embedding.
 Note that we cannot simply add an edge labeled *that* from the final stack back to the initial state, as in the figure below.
 
-fixme: figure here
+![Looping back gives us right embedding, not center embedding]({static}/img/thomas/underappreciated_unbounded/embedding0_loop.svg)
 
 This automaton would produce right-embedding sentences like *the fact surprised me that the fact surprised me*, not center embedding as in (@ex2).
 And since the FSA contains a cycle, right-embedding can be repeated over and over again, allowing for an unbounded number of embeddings.
@@ -100,13 +101,13 @@ We do not want that here because we're trying to construct an argument that has 
 Back to the drawing board then.
 In order to capture one level of center embedding, we have to add new structure to the automaton, yielding the FSA below.
 
-fixme: figure here
+![The FSA now can handle one level of center embedding]({static}/img/thomas/underappreciated_unbounded/embedding1.svg)
 
 Now there are two possible paths depending on whether we follow the *surprised*-edge or the *that*-edge after state 2.
 Those two paths correspond to the strings in (@ex1) and (@ex2).
 We can use the same strategy to add yet another "level" to the automaton and add (@ex3) to the set of well-formed strings.
 
-fixme: figure here
+![And finally two levels of center embedding]({static}/img/thomas/underappreciated_unbounded/embedding2.svg)
 
 Alright, so now we have a simple computational device that handles the three sentences above.
 It doesn't even induce any tree structures, so if you're a fan of shallow parsing or similar ideas, this model does not directly contradict those assumptions either.
@@ -119,13 +120,13 @@ Great, time for the mid-argument turn-around!
 Clearly the three sentences above aren't the only sentences of English.
 At the very least, there's the following three variations.
 
-(@var1) The fact annoyed me.
-(@var2) The fact that the fact annoyed me annoyed me.
-(@var3) The fact that the fact that the fact annoyed me annoyed me annoyed me.
+(@var1) The fact shocked me.
+(@var2) The fact that the fact shocked me shocked me.
+(@var3) The fact that the fact that the fact shocked me shocked me shocked me.
 
-We can of course extend the FSA to allow for those sentences, but note that we have to modify it in three distinct places, one for each level of embedding.
+We can of course extend the FSA to allow for those sentences, but note that we have to modify it in multiple places due to how the FSA handles embedding.
 
-fixme: figure here
+![Adding 1 verb requires 5 changes]({static}/img/thomas/underappreciated_unbounded/embedding2_newverb.svg)
 
 That's not nice, and it only gets worse from here.
 The phrase *the fact* isn't exactly representative of the richness of English noun phrases.
@@ -134,29 +135,35 @@ All of the following are also well-formed:
 (@np1) a fact
 (@np2) a well-known fact
 (@np3) three very well-known facts 
-(@np4) these three very, very well-known facts 
+(@np4) these three very, very well-known facts
+(@np5) these three very, very well-known, controversial facts
 
 And at the same time there's some combinations that do not work, e.g. using the indefinite with a mass noun (*a furniture*) or combining a sentential complement with a noun that cannot take such an argument (*the car that you annoyed me*).
-Here's an FSA that handles some of those aspects.
+Let's put those aside and try to give an FSA that handles only the very basic facts in (@np1)--(@np5).
+To save space, I don't number the states, I use parts of speech instead of lexical items in this FSA, and I allow loops, which strictly speaking allows for unboundedness.
+But look guys, this is already a chunky FSA as is, I really don't want to explode it even further to enforce a limit on how many adjectives we may have:
 
-fixme: figure here
+![An FSA for (a fragment of) English noun phrases]({static}/img/thomas/underappreciated_unbounded/embedding2_newverb.svg)
 
-And now we have to --- you guessed it --- insert that into the previous automaton in three different places.
+And now we have to --- you guessed it --- insert that into the previous automaton in three distinct subject positions.
 
-fixme: monster figure here
+![We can't make it smaller than this, and this is a mess]({static}/img/thomas/underappreciated_unbounded/embedding2_npsubjects.svg)
 
 Yikes!
 Pleasant to look at this is not.
 And this is already a simplification because we only expanded the options for the subject position, while objects are still limited to just *me*.
-And noun phrases on their own raise their own embedding issues: 
+And remember that we didn't worry about things such as the mass/count distinction or the selectional restrictions of nouns.
+Nor did we consider that noun phrases can be embedded inside other noun phrases:
 
-(@np4) this fact about language in your talk
+(@np6) this fact about language in your talk
+(@np7) the destruction of the city
 
-Assuming again at cut-off point of 3 levels, we should actually have the FSA below.
+Assuming again at cut-off point of 3 levels of embedding for noun phrases, we should actually have the FSA below.
 
-fixme: monster monster figure here (are you insane, I'm not gonna typeset this)
+![I mean, seriously]({static}/img/thomas/underappreciated_unbounded/insane.svg)
 
 At this point, we should really start looking for a different way of describing those FSAs because nobody can make sense of those giant graphs, and we're still just talking about a tiny fragment of English.
+
 And while we're at it, this description mechanism should also enforce a certain degree of uniformity across the levels of embedding.
 In principle, we could modify the FSA above such that adjectives are only allowed at the lowest level of embedding, or such that even levels of embedding have the linear order Det-Num-Adj-N and odd levels instead have Num-N-Adj-Det.
 No natural language works like this.
@@ -168,7 +175,7 @@ We can exploit the fact that the rules of grammar are (largely) uniform across l
 Suppose that instead of a single, all-encompassing FSA, we have a collection of FSAs that we can switch between as we see fit.
 For instance, the very first FSA we saw, which only generates *The fact surprised me*, could instead be described as a collection of three interacting FSAs.
 
-fixme: figure here
+![A network of interacting FSAs]({static}/img/thomas/underappreciated_unbounded/ftn_factored.svg)
 
 We start with the S-automaton.
 In order to move from state S0 to state S1, we have to make our way through the NP-automaton.
@@ -184,21 +191,21 @@ This kind of factored representation is called a **finite transition network** (
 For each FTN, we can construct an equivalent FSA by replacing edges with the automata they refer to.
 For the FTN above, we take the S-automaton and replace the NP-edge with the NP-automaton and the VP with the VP-automaton.
 
-fixme: figure here
+![The FSA network can be compiled out into a single FSA]({static}/img/thomas/underappreciated_unbounded/ftn_compiled.svg)
 
-Struturally, that is exactly the same automaton as the one we originally gave for *the fact surprised me*.
+Structurally, that is exactly the same automaton as the one we originally gave for *the fact surprised me*.
 
 Factoring automata via FTNs can definitely be overkill, but it pays off for large automata because we can avoid duplication.
 To give just one example, it's very easy to allow more complex objects than just *me*:
 
-fixme: figure here
+![Complex objects come at a minimal cost]({static}/img/thomas/underappreciated_unbounded/ftn_factored_object.svg)
 
 All we did is add an NP-edge from VP1 to VP2, and now our objects can be just as complex as our subjects.
 
 The FTN above does not handle any levels of center embedding yet.
 The easiest way to do this is to add an S-edge to the NP automaton.
 
-fixme: figure here
+![And center embedding is also easy to add]({static}/img/thomas/underappreciated_unbounded/ftn_factored_embedding.svg)
 
 Our FTN is now a **recursive transition network** (RTN).
 The RTN uses a stack to keep track of how we move between the FSAs.
@@ -257,7 +264,8 @@ We can sidestep all of that.
 
 Even if we stick only with those utterances that are easily processed, the combinatorial space displays an extraordinary degree of systematicity.
 Succinctly capturing these combinatorics requires factorization very much along the lines of what linguists have been doing.
-Linguistic analysis is not undermined by the issue of whether language is truly unbounded because this is completely independent of the factors that push us in the direction of factorization and succinctness. 
-Unboundedness simply does not matter.
+Linguistic analysis is not undermined by the issue of whether language is truly unbounded because this is completely independent of the factors that push us in the direction of factorization and succinctness.
+The same considerations that favor transformations over CFGs in @Chomsky57 also favor not committing to boundedness.
+Bounded, unbounded, it simply does not matter.
 
 ## References
