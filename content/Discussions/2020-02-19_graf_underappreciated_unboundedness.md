@@ -81,7 +81,7 @@ What kind of computational mechanism could produce (@ex1), (@ex2), and (@ex3)?
 One of the simplest available options is a **finite-state automaton** (FSA).
 Here is the FSA that generates the first sentence, and nothing else.
 
-![An FSA for *the fact surprised me*]({static}/img/thomas/underappreciated_unbounded/embedding0.svg)
+![An FSA for *the fact surprised me*]({static}/img/thomas/underappreciated_unboundedness/embedding0.svg)
 
 This FSA has a unique starting point, the initial state 0 marked by *start*.
 And it has a unique end point, the final state 4 marked by a double circle.
@@ -92,7 +92,7 @@ So this FSA considers (@ex1) well-formed, but nothing else.
 Okay, then let's try to expand the automaton so that it also accepts (@ex2), which displays an instance of center embedding.
 Note that we cannot simply add an edge labeled *that* from the final stack back to the initial state, as in the figure below.
 
-![Looping back gives us right embedding, not center embedding]({static}/img/thomas/underappreciated_unbounded/embedding0_loop.svg)
+![Looping back gives us right embedding, not center embedding]({static}/img/thomas/underappreciated_unboundedness/embedding0_loop.svg)
 
 This automaton would produce right-embedding sentences like *the fact surprised me that the fact surprised me*, not center embedding as in (@ex2).
 And since the FSA contains a cycle, right-embedding can be repeated over and over again, allowing for an unbounded number of embeddings.
@@ -101,13 +101,13 @@ We do not want that here because we're trying to construct an argument that has 
 Back to the drawing board then.
 In order to capture one level of center embedding, we have to add new structure to the automaton, yielding the FSA below.
 
-![The FSA now can handle one level of center embedding]({static}/img/thomas/underappreciated_unbounded/embedding1.svg)
+![The FSA now can handle one level of center embedding]({static}/img/thomas/underappreciated_unboundedness/embedding1.svg)
 
 Now there are two possible paths depending on whether we follow the *surprised*-edge or the *that*-edge after state 2.
 Those two paths correspond to the strings in (@ex1) and (@ex2).
 We can use the same strategy to add yet another "level" to the automaton and add (@ex3) to the set of well-formed strings.
 
-![And finally two levels of center embedding]({static}/img/thomas/underappreciated_unbounded/embedding2.svg)
+![And finally two levels of center embedding]({static}/img/thomas/underappreciated_unboundedness/embedding2.svg)
 
 Alright, so now we have a simple computational device that handles the three sentences above.
 It doesn't even induce any tree structures, so if you're a fan of shallow parsing or similar ideas, this model does not directly contradict those assumptions either.
@@ -126,7 +126,7 @@ At the very least, there's the following three variations.
 
 We can of course extend the FSA to allow for those sentences, but note that we have to modify it in multiple places due to how the FSA handles embedding.
 
-![Adding 1 verb requires 5 changes]({static}/img/thomas/underappreciated_unbounded/embedding2_newverb.svg)
+![Adding 1 verb requires 5 changes]({static}/img/thomas/underappreciated_unboundedness/embedding2_newverb.svg)
 
 That's not nice, and it only gets worse from here.
 The phrase *the fact* isn't exactly representative of the richness of English noun phrases.
@@ -143,11 +143,11 @@ Let's put those aside and try to give an FSA that handles only the very basic fa
 To save space, I don't number the states, I use parts of speech instead of lexical items in this FSA, and I allow loops, which strictly speaking allows for unboundedness.
 But look guys, this is already a chunky FSA as is, I really don't want to explode it even further to enforce a limit on how many adjectives we may have:
 
-![An FSA for (a fragment of) English noun phrases]({static}/img/thomas/underappreciated_unbounded/embedding2_newverb.svg)
+![An FSA for (a fragment of) English noun phrases]({static}/img/thomas/underappreciated_unboundedness/embedding2_newverb.svg)
 
 And now we have to --- you guessed it --- insert that into the previous automaton in three distinct subject positions.
 
-![We can't make it smaller than this, and this is a mess]({static}/img/thomas/underappreciated_unbounded/embedding2_npsubjects.svg)
+![We can't make it smaller than this, and this is a mess]({static}/img/thomas/underappreciated_unboundedness/embedding2_npsubjects.svg)
 
 Yikes!
 Pleasant to look at this is not.
@@ -160,7 +160,7 @@ Nor did we consider that noun phrases can be embedded inside other noun phrases:
 
 Assuming again at cut-off point of 3 levels of embedding for noun phrases, we should actually have the FSA below.
 
-![I mean, seriously]({static}/img/thomas/underappreciated_unbounded/insane.svg)
+![I mean, seriously]({static}/img/thomas/underappreciated_unboundedness/insane.svg)
 
 At this point, we should really start looking for a different way of describing those FSAs because nobody can make sense of those giant graphs, and we're still just talking about a tiny fragment of English.
 
@@ -175,7 +175,7 @@ We can exploit the fact that the rules of grammar are (largely) uniform across l
 Suppose that instead of a single, all-encompassing FSA, we have a collection of FSAs that we can switch between as we see fit.
 For instance, the very first FSA we saw, which only generates *The fact surprised me*, could instead be described as a collection of three interacting FSAs.
 
-![A network of interacting FSAs]({static}/img/thomas/underappreciated_unbounded/ftn_factored.svg)
+![A network of interacting FSAs]({static}/img/thomas/underappreciated_unboundedness/ftn_factored.svg)
 
 We start with the S-automaton.
 In order to move from state S0 to state S1, we have to make our way through the NP-automaton.
@@ -191,21 +191,21 @@ This kind of factored representation is called a **finite transition network** (
 For each FTN, we can construct an equivalent FSA by replacing edges with the automata they refer to.
 For the FTN above, we take the S-automaton and replace the NP-edge with the NP-automaton and the VP with the VP-automaton.
 
-![The FSA network can be compiled out into a single FSA]({static}/img/thomas/underappreciated_unbounded/ftn_compiled.svg)
+![The FSA network can be compiled out into a single FSA]({static}/img/thomas/underappreciated_unboundedness/ftn_compiled.svg)
 
 Structurally, that is exactly the same automaton as the one we originally gave for *the fact surprised me*.
 
 Factoring automata via FTNs can definitely be overkill, but it pays off for large automata because we can avoid duplication.
 To give just one example, it's very easy to allow more complex objects than just *me*:
 
-![Complex objects come at a minimal cost]({static}/img/thomas/underappreciated_unbounded/ftn_factored_object.svg)
+![Complex objects come at a minimal cost]({static}/img/thomas/underappreciated_unboundedness/ftn_factored_object.svg)
 
 All we did is add an NP-edge from VP1 to VP2, and now our objects can be just as complex as our subjects.
 
 The FTN above does not handle any levels of center embedding yet.
 The easiest way to do this is to add an S-edge to the NP automaton.
 
-![And center embedding is also easy to add]({static}/img/thomas/underappreciated_unbounded/ftn_factored_embedding.svg)
+![And center embedding is also easy to add]({static}/img/thomas/underappreciated_unboundedness/ftn_factored_embedding.svg)
 
 Our FTN is now a **recursive transition network** (RTN).
 The RTN uses a stack to keep track of how we move between the FSAs.
