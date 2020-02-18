@@ -143,7 +143,7 @@ Let's put those aside and try to give an FSA that handles only the very basic fa
 To save space, I don't number the states, I use parts of speech instead of lexical items in this FSA, and I allow loops, which strictly speaking allows for unboundedness.
 But look guys, this is already a chunky FSA as is, I really don't want to explode it even further to enforce a limit on how many adjectives we may have:
 
-![An FSA for (a fragment of) English noun phrases]({static}/img/thomas/underappreciated_unboundedness/embedding2_newverb.svg)
+![An FSA for (a fragment of) English noun phrases]({static}/img/thomas/underappreciated_unboundedness/np.svg)
 
 And now we have to --- you guessed it --- insert that into the previous automaton in three distinct subject positions.
 
