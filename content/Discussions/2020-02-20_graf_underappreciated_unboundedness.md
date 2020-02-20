@@ -3,7 +3,7 @@ title: >-
     Unboundedness is a red herring
 authors:
     - Thomas Graf
-date: 2020-02-19
+date: 2020-02-20
 bibliography: references.bib
 series: Underappreciated arguments
 tags:
