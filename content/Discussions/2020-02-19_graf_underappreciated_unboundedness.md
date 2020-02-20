@@ -56,6 +56,7 @@ Let's call this the **specter of speculation**.
 
 We could now take deep plunge into the merits of the plea for performance or the specter of speculation, but in the spirit of the *Underappreciated arguments* series we'll simply avoid all of that by presenting an alternative argument for unboundedness that sidesteps the issues of the standard argument.
 Spoilers: it's all about the rich combinatorics of syntax and how those are best described.
+I'll present a very concrete example, but the general thrust of the argument goes back to @Savitch93, who worked it out in a more abstract, mathematical setting with theorems and proofs.
 
 
 ## Unboundedness is both red and a herring
@@ -265,7 +266,9 @@ We can sidestep all of that.
 
 Even if we stick only with those utterances that are easily processed, the combinatorial space displays an extraordinary degree of systematicity.
 Succinctly capturing these combinatorics requires factorization very much along the lines of what linguists have been doing.
-Linguistic analysis is not undermined by the issue of whether language is truly unbounded because this is completely independent of the factors that push us in the direction of factorization and succinctness.
+Even if you don't like trees, if you think syntax is all about strings, that is does not need to support semantic interpretation, that performance puts a hard bound on competence, or that linguistic theories don't need to enjoy any degree of cognitive reality, you'll still end up in a corner where succinctness pushes you towards machinery that could just as well be unbounded.
+
+Linguistic analysis is not undermined by the issue of whether language is truly unbounded because this is completely independent of the factors that favor factorization and succinctness.
 The same considerations that favor transformations over CFGs in @Chomsky57 also favor not committing to boundedness.
 Bounded, unbounded, it simply does not matter, so don't get hung up about it.
 
