@@ -21,6 +21,7 @@
     %%%%%%%%%%%%%
     %  Level 0  %
     %%%%%%%%%%%%%
+
     \node[state,initial] (n-0-0) at (0,0) {0};
     \foreach \x [remember=\x as \lastx (initially 0)] in {1,2,3,4} 
         \node[state] (n-0-\x) [right=4em of n-0-\lastx] {};
