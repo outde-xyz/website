@@ -19,21 +19,30 @@
 \begin{document}
 \begin{tikzpicture}
     \node[state,initial] (n-0-0) at (0,0) {};
-    \node[state] (n-0-1) [right=4em of n-0-0] {};
+    \foreach \x [remember=\x as \lastx (initially 0)] in {1,2,3,4} 
+        \node[state] (n-0-\x) [right=4em of n-0-\lastx] {};
+    \node[state,accepting] (n-0-5) [right=4em of n-0-4] {};
 
-    \node[state,accepting] (n-0-2) [right=4em of n-0-1] {};
-    \foreach \x/\newx in {0/3, 1/4, 2/5}
-        \node[state] (n-0-\newx) [below=3em of n-0-\x] {};
+    \draw[headarrow] (n-0-0) to node [above] {D}   (n-0-1);
+    \draw[headarrow, bend left=23] (n-0-0) to node [above, pos=.8] {Num} (n-0-2);
+    \draw[headarrow, bend left=28] (n-0-0) to node [above, pos=.7] {Adv} (n-0-3);
+    \draw[headarrow, bend left=42] (n-0-0) to node [above, pos=.95] {A}   (n-0-4);
+    \draw[headarrow, bend left=42] (n-0-0) to node [above, pos=.75] {N}   (n-0-5);
 
-    \draw[headarrow] (n-0-0) to node [above] {D} (n-0-1);
-    \draw[headarrow] (n-0-0) to node [left] {D} (n-0-3);
-    \draw[headarrow] (n-0-1) to node [above] {N} (n-0-2);
-    \draw[headarrow] (n-0-1) to node [left] {Adv} (n-0-4);
-    \draw[headarrow] (n-0-1) to node [above,sloped] {A} (n-0-5);
-    \draw[headarrow] (n-0-3) to node [above,sloped] {Num} (n-0-1);
-    \draw[headarrow] (n-0-4) [loop below] to node [below] {Adv} (n-0-4);
-    \draw[headarrow] (n-0-4) to [bend left=15] node [above] {A} (n-0-5);
-    \draw[headarrow] (n-0-5) to node [right] {N} (n-0-2);
-    \draw[headarrow] (n-0-5) to [bend left=15] node [below] {A} (n-0-4);
+    \draw[headarrow] (n-0-1) to node [above] {Num} (n-0-2);
+    \draw[headarrow, bend right=23] (n-0-1) to node [below, pos=.7] {Adv} (n-0-3);
+    \draw[headarrow, bend right=40] (n-0-1) to node [below, pos=.9] {A}   (n-0-4);
+    \draw[headarrow, bend right=30] (n-0-1) to node [below, pos=.9] {N}   (n-0-5);
+
+    \draw[headarrow] (n-0-2) to node [above] {Adv} (n-0-3);
+    \draw[headarrow, bend right=30] (n-0-2) to node [below, pos=.6] {A}   (n-0-4);
+    \draw[headarrow, bend left=40]  (n-0-2) to node [above, pos=.58] {N}   (n-0-5);
+
+    \draw[headarrow, bend right=13] (n-0-3) to node [below, pos=.4] {A} (n-0-4);
+    \draw[headarrow] (n-0-3) to [loop above] node [right, pos=.2] {\quad Adv} (n-0-3);
+
+    \draw[headarrow] (n-0-4) to node [above] {N} (n-0-5);
+    \draw[headarrow] (n-0-4) to [loop above] node [right, pos=.2] {\quad A} (n-0-4);
+    \draw[headarrow, bend right=13] (n-0-4) to node [above] {Adv} (n-0-3);
 \end{tikzpicture}
 \end{document}

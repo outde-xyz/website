@@ -132,16 +132,17 @@ That's not nice, and it only gets worse from here.
 The phrase *the fact* isn't exactly representative of the richness of English noun phrases.
 All of the following are also well-formed:
 
-(@np1) a fact
-(@np2) a well-known fact
+(@np1) facts
+(@np1) the facts
+(@np2) the well-known facts
 (@np3) three very well-known facts 
 (@np4) these three very, very well-known facts
-(@np5) these three very, very well-known, controversial facts
+(@np5) these three very, very well-known, controversial, definitely irrefutable facts
 
 And at the same time there's some combinations that do not work, e.g. using the indefinite with a mass noun (*a furniture*) or combining a sentential complement with a noun that cannot take such an argument (*the car that you annoyed me*).
 Let's put those aside and try to give an FSA that handles only the very basic facts in (@np1)--(@np5).
 To save space, I don't number the states, I use parts of speech instead of lexical items in this FSA, and I allow loops, which strictly speaking allows for unboundedness.
-But look guys, this is already a chunky FSA as is, I really don't want to explode it even further to enforce a limit on how many adjectives we may have:
+But look guys, this is already a chunky FSA as is, I really don't want to explode it even further to enforce a limit on how many adverbs or adjectives we may have:
 
 ![An FSA for (a fragment of) English noun phrases]({static}/img/thomas/underappreciated_unboundedness/np.svg)
 
@@ -165,7 +166,7 @@ Assuming again at cut-off point of 3 levels of embedding for noun phrases, we sh
 At this point, we should really start looking for a different way of describing those FSAs because nobody can make sense of those giant graphs, and we're still just talking about a tiny fragment of English.
 
 And while we're at it, this description mechanism should also enforce a certain degree of uniformity across the levels of embedding.
-In principle, we could modify the FSA above such that adjectives are only allowed at the lowest level of embedding, or such that even levels of embedding have the linear order Det-Num-Adj-N and odd levels instead have Num-N-Adj-Det.
+In principle, we could modify the FSA above such that adjectives are only allowed at the lowest level of embedding, or such that odd levels of embedding have the linear order Det-Num-Adj-N and even levels instead have Num-N-Adj-Det.
 No natural language works like this.
 But the FSA can make this distinction because it is always aware of which level of embedding it is at.
 We can exploit the fact that the rules of grammar are (largely) uniform across levels of embedding to give a more compact, factorized description of FSAs.
