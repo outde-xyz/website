@@ -39,7 +39,15 @@
            auth_str=auth_str,
            when=article.locale_date,
            category='<a href="%s/%s">%s</a>'|format(SITEURL, article.category.url, article.category)|safe) }}
-    </p>
+
+      {% if article.tags %}
+          &#8226; {{ _('🏷') }}
+          {% for tag in article.tags if tag != article.category %}
+              <a href="{{ SITEURL }}/{{ tag.url }}">{{ tag }}</a>{% if not loop.last %},{% endif %}
+          {% endfor %}
+      {% endif %}
+      </p>
+    </div>
   </header>
 
   {% if GOOGLE_ADSENSE and GOOGLE_ADSENSE.ads.article_top %}
@@ -60,44 +68,17 @@
   <div>
     {{ article.content }}
   </div>
-  <div class="tag-cloud">
-    <p>
-      {% if article.tags %}
-      {% for tag in article.tags %}
-      <a href="{{ SITEURL }}/{{ tag.url }}">{{ tag }}</a>
-      {% endfor %}
-      {% endif %}
-    </p>
-  </div>
 
-  {% include "custom/share_post.html" %}
-
-  {% if ADD_THIS_ID %}
-  <div class="center social-share">
-    <p>{{ _('Like this article? Share it with your friends!') }}</p>
-    <div class="addthis_native_toolbox"></div>
-    <div class="addthis_sharing_toolbox"></div>
-    <div class="addthis_inline_share_toolbox"></div>
-  </div>
-  {% endif %}
-
+  {# related posts #}
   {% include "partial/neighbors.html" %}
-
   {% include "custom/series.html" %}
 
-  {% if article.related_posts %}
-  <div class="related-posts">
-    <h4>{{ _('You might also enjoy') }}</h4>
-    <ul class="related-posts">
-    {% for related_post in article.related_posts %}
-      <li><a href="{{ SITEURL }}/{{ related_post.url }}">{{ related_post.title }}</a></li>
-    {% endfor %}
-    </ul>
-  </div>
-  {% elif ADD_THIS_ID %}
-    <div class="addthis_relatedposts_inline"></div>
-  {% endif %}
+  {# increasing exposure #}
+  {% include "custom/share_post.html" %}
+  {% include "custom/related_posts.html" %}
 
+  {# comments #}
+  {% include "partial/disqus.html" %}
   {% include "custom/utterances.html" %}
   {% include "custom/talkyard.html" %}
 
@@ -110,7 +91,5 @@
       (adsbygoogle = window.adsbygoogle || []).push({});
     </script>
   {% endif %}
-
-  {% include "partial/disqus.html" %}
 </article>
 {% endblock %}

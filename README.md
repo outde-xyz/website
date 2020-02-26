@@ -188,11 +188,11 @@ To Do
 -----
 
 - [x] set up email for submissions (hosted by Zoho)
-- [ ] fix summary breaking math; should always end immediately after first paragraph
+- [ ] fix summary breaking math; ~~should always end immediately after first paragraph~~
 - [x] ~~maybe switch commenting system to `staticman`?~~ We're now using [talkyard](https://www.talkyard.io/)
 - [x] expand pandoc reader to handle Pelican's `{filename}`-hooks
 - [ ] adapt filter for pandoc to automatically include tikz and forest code as svgs; this will be tricky because Netlify has no official Latex support
 - [ ] design pandoc filter for converting glossed examples to HTML tables
-- [ ] Categories should not be treated as tags
+- [x] Categories should not be treated as tags
 - [ ] automatically convert posts to PDF and embed download link
 - [x] create favicon from logo

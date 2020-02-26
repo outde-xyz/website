@@ -1,6 +1,6 @@
 {% if article.share_post and article.status != 'draft' %}
-<div class="center social-share">
-  <p id="post-share-links">
+<div class="social-share">
+  <p id="post-share-links" style="margin-top:25px; font-size:85%">
     Like this article? Share it:
     <a href="{{article.share_post['twitter']}}" target="_blank" title="Share on Twitter">Twitter</a>
     •
@@ -14,5 +14,12 @@
     <!-- • -->
     <a href="{{article.share_post['email']}}" target="_blank" title="Share via Email">Email</a>
   </p>
+</div>
+{% elif ADD_THIS_ID %}
+<div class="center social-share">
+  <p>{{ _('Like this article? Share it with your friends!') }}</p>
+  <div class="addthis_native_toolbox"></div>
+  <div class="addthis_sharing_toolbox"></div>
+  <div class="addthis_inline_share_toolbox"></div>
 </div>
 {% endif %}
