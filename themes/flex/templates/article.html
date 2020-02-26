@@ -80,12 +80,8 @@
   </div>
   {% endif %}
 
-  {% include "partial/neighbors.html" %}
-
-  {% include "custom/series.html" %}
-
   {% if article.related_posts %}
-  <div class="related-posts">
+  <div class="center social-share">
     <h4>{{ _('You might also enjoy') }}</h4>
     <ul class="related-posts">
     {% for related_post in article.related_posts %}
@@ -97,6 +93,8 @@
     <div class="addthis_relatedposts_inline"></div>
   {% endif %}
 
+  {% include "partial/neighbors.html" %}
+  {% include "custom/series.html" %}
   {% include "custom/utterances.html" %}
   {% include "custom/talkyard.html" %}
 
