@@ -1,0 +1,12 @@
+{% if article.related_posts %}
+<div class="social-share">
+  {{ _('You might also enjoy') }}
+  <ul class="related-posts">
+    {% for related_post in article.related_posts %}
+    <li><a href="{{ SITEURL }}/{{ related_post.url }}">{{ related_post.title }}</a></li>
+    {% endfor %}
+  </ul>
+</div>
+{% elif ADD_THIS_ID %}
+<div class="addthis_relatedposts_inline"></div>
+{% endif %}
