@@ -39,16 +39,13 @@
            auth_str=auth_str,
            when=article.locale_date,
            category='<a href="%s/%s">%s</a>'|format(SITEURL, article.category.url, article.category)|safe) }}
-    </p>
-    <div class="tag-cloud">
-      <p>
-        {% if article.tags %}
-        {% for tag in article.tags %}
-          {% if tag != "Discussions" and tag != "Tutorials" %}
-            <a href="{{ SITEURL }}/{{ tag.url }}">{{ tag }}</a>
-          {% endif %}
-        {% endfor %}
-        {% endif %}
+
+      {% if article.tags %}
+          &#8226; {{ _('🏷') }}
+          {% for tag in article.tags if tag != article.category %}
+              <a href="{{ SITEURL }}/{{ tag.url }}">{{ tag }}</a>{% if not loop.last %},{% endif %}
+          {% endfor %}
+      {% endif %}
       </p>
     </div>
   </header>
