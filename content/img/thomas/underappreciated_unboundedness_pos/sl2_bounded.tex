@@ -1,0 +1,101 @@
+\documentclass[crop,tikz]{standalone}
+\usetikzlibrary{%
+    arrows,
+    arrows.meta,
+    backgrounds,
+    calc,
+    decorations.pathreplacing,
+    fit,
+    matrix,
+    positioning,
+    scopes,
+    shadows
+}
+\usepackage[linguistics]{forest}
+\usepackage[charter]{mathdesign}
+\tikzset{headarrow/.style = {-{Latex[length=.5em]}}}
+\newcommand{\setof}[1]{\ensuremath{\left \{ #1 \right \}}}
+\newcommand{\emptystring}{\ensuremath{\varepsilon}}
+
+\begin{document}
+\begin{tikzpicture}
+    \matrix (m) at (0,0) [matrix of math nodes,
+                      row sep=3em, column sep=1em] {%
+                      & \setof{\$\$, \$a, a\$} & \setof{\$\$, \$a, aa} & \setof{\$\$, a\$, aa} & \setof{\$a, a\$, aa} & \\
+    \setof{\$\$, \$a} & \setof{\$\$, a\$}      & \setof{\$a, a\$}      & \setof{\$\$, aa}      & \setof{\$a, aa}      & \setof{a\$, aa}\\
+                      & \setof{\$\$}           & \setof{\$a}           & \setof{a\$}           & \setof{aa}           & \\
+    };
+    \node (top) [above=3em of m.north] {$\setof{\$\$, \$a, a\$, aa}$};
+    \node (bot) [below=3em of m.south] {$\setof{}$};
+
+    \foreach \Source/\Target in {%
+        3-2/2-1,
+        3-2/2-2,
+        3-2/2-4,
+        3-3/2-1,
+        3-3/2-3,
+        3-3/2-5,
+        3-4/2-2,
+        3-4/2-3,
+        3-4/2-6,
+        3-5/2-4,
+        3-5/2-5,
+        3-5/2-6,
+        1-2/2-1,
+        1-2/2-2,
+        1-2/2-3,
+        1-3/2-1,
+        1-3/2-4,
+        1-3/2-5,
+        1-4/2-2,
+        1-4/2-4,
+        1-4/2-6,
+        1-5/2-3,
+        1-5/2-5,
+        1-5/2-6%
+    }
+    \draw (m-\Source) to (m-\Target);
+    \foreach \Column in {2,3,4,5}
+        {
+            \draw (m-1-\Column) to (top);
+            \draw (m-3-\Column) to (bot);
+        }
+
+    \matrix (l) [right=5em of m,
+                 matrix of math nodes,
+                 row sep=3em, column sep=1em] {%
+        & \setof{} & \\
+        \setof{\emptystring}
+        & &
+        \setof{a}\\
+        &
+        \setof{\emptystring, a}\\
+        & \setof{s \in a^+ \mid |s| \leq 10}\\
+        & \setof{s \in a^* \mid |s| \leq 10}\\
+    };
+
+    \foreach \Source/\Target in {%
+        1-2/2-1,
+        1-2/2-3,
+        2-1/3-2,
+        2-3/3-2,
+        3-2/4-2,
+        4-2/5-2%
+    }
+        \draw (l-\Source) to (l-\Target);
+
+    \foreach \Source/\Target/\Color/\Bend/\Angle in {%
+        m-1-5/2-1/orange/left/5,
+        m-2-3/2-1/orange/left/5,
+        m-2-4/2-3/green!50!black/right/21,
+        m-2-5/2-1/orange/left/5,
+        m-2-6/2-1/orange/left/5,
+        m-3-2/4-2/blue/right/20,
+        m-3-3/2-1/orange/right/45,
+        m-3-4/2-1/orange/right/45,
+        m-3-5/3-2/purple/right/20,
+        bot/5-2/brown/right/10%
+    }
+        \draw[headarrow,\Color,dashed,bend \Bend=\Angle] (\Source) to (l-\Target);
+\end{tikzpicture}
+\end{document}
