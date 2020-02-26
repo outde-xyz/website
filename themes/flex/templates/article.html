@@ -69,12 +69,15 @@
     {{ article.content }}
   </div>
 
+  {# related posts #}
   {% include "partial/neighbors.html" %}
   {% include "custom/series.html" %}
 
+  {# sharing posts #}
   {% include "custom/share_post.html" %}
   {% include "custom/related_posts.html" %}
 
+  {# comments #}
   {% include "partial/disqus.html" %}
   {% include "custom/utterances.html" %}
   {% include "custom/talkyard.html" %}
