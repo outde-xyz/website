@@ -40,6 +40,17 @@
            when=article.locale_date,
            category='<a href="%s/%s">%s</a>'|format(SITEURL, article.category.url, article.category)|safe) }}
     </p>
+    <div class="tag-cloud">
+      <p>
+        {% if article.tags %}
+        {% for tag in article.tags %}
+          {% if tag != "Discussions" and tag != "Tutorials" %}
+            <a href="{{ SITEURL }}/{{ tag.url }}">{{ tag }}</a>
+          {% endif %}
+        {% endfor %}
+        {% endif %}
+      </p>
+    </div>
   </header>
 
   {% if GOOGLE_ADSENSE and GOOGLE_ADSENSE.ads.article_top %}
@@ -59,15 +70,6 @@
   {% endif %}
   <div>
     {{ article.content }}
-  </div>
-  <div class="tag-cloud">
-    <p>
-      {% if article.tags %}
-      {% for tag in article.tags %}
-      <a href="{{ SITEURL }}/{{ tag.url }}">{{ tag }}</a>
-      {% endfor %}
-      {% endif %}
-    </p>
   </div>
 
   {% include "custom/share_post.html" %}

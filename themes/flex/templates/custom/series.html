@@ -2,12 +2,12 @@
   <div class="neighbors">
   {% if article.series.previous %}
     <a class="btn float-left" href="{{ SITEURL }}/{{ article.series.previous.url }}" title="{{ article.series.previous.title }}">
-      <i class="fa fa-angle-left"></i> {{ _('Previous Part of Article') }}
+      <i class="fa fa-angle-left"></i> {{ _('Previous post in series') }}
     </a>
   {% endif %}
   {% if article.series.next %}
     <a class="btn float-right" href="{{ SITEURL }}/{{ article.series.next.url }}" title="{{ article.series.next.title }}">
-      {{ _('Next Part of Article') }} <i class="fa fa-angle-right"></i>
+      {{ _('Next post in series') }} <i class="fa fa-angle-right"></i>
     </a>
   {% endif %}
   </div>
