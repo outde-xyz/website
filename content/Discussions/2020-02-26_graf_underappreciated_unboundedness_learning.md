@@ -60,7 +60,7 @@ We can do better if we pay attention to the structure of the space.
 
 To this end, we take all 16 SL-2 grammars and order them by the subset relation.
 
-![Behold the space of SL-2 grammars]({static}/img/thomas/underappreciated_unboundedness_pos/sl2_lattice.tex})
+![Behold the space of SL-2 grammars]({static}/img/thomas/underappreciated_unboundedness_pos/sl2_lattice.svg})
 
 Why that's a nice powerset lattice we've got there.
 The learner can exploit this structure as follows:
@@ -90,9 +90,9 @@ This does not change anything about the structure of the hypothesis space.
 To wit, here's two diagrams, one showing the mapping from SL-2 grammars to SL-2 string languages, the other one the mapping from SL-2 grammars to SL-2 string languages with string length less than 10.
 To avoid clutter, I do not arrow for grammars that generate the empty language (which is deviant as a natural language anyways).
 
-![The function $f$ maps SL-2 grammars to the corresponding SL-2 string languages]({static}/img/thomas/underappreciated_unboundedness_pos/sl2_unbounded.tex})
+![The function $f$ maps SL-2 grammars to the corresponding SL-2 string languages]({static}/img/thomas/underappreciated_unboundedness_pos/sl2_unbounded.svg})
 
-![The function $g$ maps SL-2 grammars to the corresponding SL-2 string languages, restricted to strings up to length 10]({static}/img/thomas/underappreciated_unboundedness_pos/sl2_bounded.tex})
+![The function $g$ maps SL-2 grammars to the corresponding SL-2 string languages, restricted to strings up to length 10]({static}/img/thomas/underappreciated_unboundedness_pos/sl2_bounded.svg})
 
 Do you see a difference?
 Because I certainly don't.
