@@ -79,16 +79,20 @@ This structure tells us that the learner can converge on the target grammar real
 The number of steps the learner has to take is bounded by the number of "levels" in the lattice.
 That's because removing a bigram will always move us down by at least one level in the lattice, and we can only go so far before we hit rock bottom.
 Instead of 16 grammars, we have to test at most 4 grammars after the initial hypothesis that everything is forbidden.
-This fact gets a lot more impressive as we move beyond bigrams.
+The lattice structure of the hypothesis space allows us to rule out tons of potential grammars with just one piece of data.
+
+This combinatorial fact gets a lot more impressive as we move beyond bigrams.
 The space of SL-$n$ grammars over the alphabet $a$ has $2^{2^n}$ grammars, but the learner has to test at most $2^n$.
 With 5-grams, that's already a huge difference --- at most 32 grammars have to be tested in the space of 4,294,967,296 grammars.
 Talk about exploiting the structure of the learning space!
 
-Crucially, this insight is completely independent of unboundedness.
+## (Un)Boundedness doesn't matter... again
+
+Crucially, the lattice structure of the space is completely independent of unboundedness.
 Suppose that we take all SL-2 languages and limit their strings to a length of 10.
 This does not change anything about the structure of the hypothesis space.
 To wit, here's two diagrams, one showing the mapping from SL-2 grammars to SL-2 string languages, the other one the mapping from SL-2 grammars to SL-2 string languages with string length less than 10.
-To avoid clutter, I do not arrow for grammars that generate the empty language (which is deviant as a natural language anyways).
+To avoid clutter, I omit the arrows for grammars that generate the empty language (which is deviant as a natural language anyways).
 
 ![The function $f$ maps SL-2 grammars to the corresponding SL-2 string languages]({static}/img/thomas/underappreciated_unboundedness_pos/sl2_unbounded.svg)
 
@@ -99,12 +103,23 @@ Because I certainly don't.
 The boundedness has no impact on the hypothesis space, only on the relation between grammars and generated languages.
 
 We could have gone with a different hypothesis space, of course.
-For instance, we could have used the full space of SL-10 local languages, in which case the boundedness can be directly encoded in the grammar.
-But then the space will be much larger, and we will miss crucial generalizations (e.g. that no language should allow *aa* while forbidding *aaa*).
-And that's the POS argument right there.
-Based on how those languages behave, the hypothesis space has to have a specific structure that is exploited in a specific way.
-How that space is mapped to the output of generation is less important.
-In fact, shifting aspects like boundedness into the hypothesis space just messes things up.
-It's the FSAs all over again: our investigation is driven by the structure of the space, the need for compact descriptions and efficient generalizations.
-Boundedness is immaterial for all that, it simply does not change the picture.
+For instance, we could have used the full space of SL-10 local languages, in which case the boundedness can be directly encoded in the SL grammar.
+But then the space will be much larger, there will be $2^{2^10} = 2^{1024} = enormously$ many grammars, and even the efficient lattice space learner may take up to 1024 steps to find the target language.
+Beyond that, we will also miss crucial generalizations (e.g. that no language should allow *aa* while forbidding *aaa*).
+And that's the POS argument right there: the SL-10 hypothesis space furnishes grammars/languages that we really do not want if the target space is SL-2 with an upper bound on string length.
+And of course the same problem would hold if we lift the upper bound on string length, the lattice of SL-10 grammars would still be a bad hypothesis space for learning SL-2 languages.
+Bounded, unbounded, once again it does not matter.
+
+## As I said, a red herring
+
+Whether you assume that natural language is bounded or not, the fact remains that even within the bounded portion there is a lot of systematicity that linguistic proposals have to capture.
+The systematicity reflects a very constrained and richly structured hypothesis space, and exploiting this structure makes the learning problem much easier.
+This is what drives POS arguments.
+Whether the mapping from the hypothesis space to the generated languages incorporates (un)boundedness does not change this basic fact.
+If anything, shifting aspects like boundedness into the hypothesis space just messes things up.
+That's what we saw with the step from SL-2 to SL-10 above.
+It's FSAs all over again, missing generalizations and furnishing hypothesis that really shouldn't be in that space.
+
+POS arguments are driven by the structure of the space, the need to capture specific means of generalization.
+Boundedness is immaterial for that, it simply does not change the picture.
 A red herring indeed.
