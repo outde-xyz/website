@@ -52,8 +52,8 @@ Then there's 4 distinct forbidden substrings of length 2:
 - $\$\$$: don't have a string without any symbols (the **empty string**)
 
 There are $2^4 = 16$ distinct grammars that we can build from those 4 forbidden bigrams.
-For instance, $\setof{ \$\$ }$ permits all strings over $a$ except the empty string.
-The larger grammar $\setof{ \$\$, aa }$, on the other hand, generates the string $a$ and nothing else ( $\$\$$ rules out the empty string, and $aa$ rules out all longer strings).
+For instance, $\{ \$\$ \}$ permits all strings over $a$ except the empty string.
+The larger grammar $\{ \$\$, aa \}$, on the other hand, generates the string $a$ and nothing else ( $\$\$$ rules out the empty string, and $aa$ rules out all longer strings).
 Since there's only finitely many distinct SL-2 grammars, we know that the space of of SL-2 languages is finite, which means that the class of SL-2 languages can be learned in the limit from positive text.
 But the standard learning algorithm for finite language classes isn't all that efficient.
 We can do better if we pay attention to the structure of the space.
