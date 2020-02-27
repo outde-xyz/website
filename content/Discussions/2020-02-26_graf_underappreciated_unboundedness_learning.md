@@ -104,7 +104,7 @@ The boundedness has no impact on the hypothesis space, only on the relation betw
 
 We could have gone with a different hypothesis space, of course.
 For instance, we could have used the full space of SL-10 local languages, in which case the boundedness can be directly encoded in the SL grammar.
-But then the space will be much larger, there will be $2^{2^10} = 2^{1024} = enormously$ many grammars, and even the efficient lattice space learner may take up to 1024 steps to find the target language.
+But then the space will be much larger, there will be $2^{2^{10}} = 2^{1024} = \text{enormously many}$ grammars, and even the efficient lattice space learner may take up to 1024 steps to find the target language.
 Beyond that, we will also miss crucial generalizations (e.g. that no language should allow *aa* while forbidding *aaa*).
 And that's the POS argument right there: the SL-10 hypothesis space furnishes grammars/languages that we really do not want if the target space is SL-2 with an upper bound on string length.
 And of course the same problem would hold if we lift the upper bound on string length, the lattice of SL-10 grammars would still be a bad hypothesis space for learning SL-2 languages.
