@@ -62,7 +62,7 @@ To this end, we take all 16 SL-2 grammars and order them by the subset relation.
 
 ![Behold the space of SL-2 grammars]({static}/img/thomas/underappreciated_unboundedness_pos/sl2_lattice.svg})
 
-Why that's a nice powerset lattice we've got there.
+Why, that's a nice powerset lattice we've got there.
 The learner can exploit this structure as follows:
 
 1. Start with the grammar at the top of the lattice as the initial conjecture.
@@ -96,7 +96,7 @@ To avoid clutter, I do not arrow for grammars that generate the empty language (
 
 Do you see a difference?
 Because I certainly don't.
-The boundedness has no impact on the hypothesis space, only in the relation between grammars and generated languages.
+The boundedness has no impact on the hypothesis space, only on the relation between grammars and generated languages.
 
 We could have gone with a different hypothesis space, of course.
 For instance, we could have used the full space of SL-10 local languages, in which case the boundedness can be directly encoded in the grammar.
