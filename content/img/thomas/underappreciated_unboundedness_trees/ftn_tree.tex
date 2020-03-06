@@ -1,0 +1,43 @@
+\documentclass[crop,tikz]{standalone}
+\usetikzlibrary{%
+    arrows,
+    arrows.meta,
+    automata,
+    backgrounds,
+    calc,
+    decorations.pathreplacing,
+    fit,
+    matrix,
+    positioning,
+    scopes,
+    shadows
+}
+\usepackage[linguistics]{forest}
+\usepackage[charter]{mathdesign}
+\tikzset{headarrow/.style = {-{Latex[length=.5em]}}}
+
+\begin{document}
+\begin{forest}
+    [S
+        [NP
+            [the]
+            [fact]
+            [that]
+            [S
+                [NP
+                    [the]
+                    [fact]
+                ]
+                [VP
+                    [surprised]
+                    [me]
+                ]
+            ]
+        ]
+        [VP
+            [surprised]
+            [me]
+        ]
+    ]
+\end{forest}
+\end{document}
