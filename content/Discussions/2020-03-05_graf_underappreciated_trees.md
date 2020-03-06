@@ -102,5 +102,5 @@ One of the most important developments in computational syntax in the last twent
 This has been a very productive enterprise, and the insights obtained this way suggest that this is really what syntax is about.
 
 It also fits naturally with the computational view of the inverted T-model.
-The [bimorphism perspective]({filename}2019-10-15_graf_tmodel.md) puts syntax in the position of an interpolant, a means of succinctly describing a computational system of bidirectional mappings.
+The [bimorphism perspective]({filename}2019-05-15_graf_tmodel.md) puts syntax in the position of an interpolant, a means of succinctly describing a computational system of bidirectional mappings.
 From this perspective, syntax simply is computation; syntactic structure is computational structure.
