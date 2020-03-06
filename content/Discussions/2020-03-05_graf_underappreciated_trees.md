@@ -67,7 +67,7 @@ There, let me rearrange it a bit and add an S at the top.
 
 ![OMG, it's a tree]({static}/img/thomas/underappreciated_unboundedness_trees/ftn_tree.svg)
 
-Son of a gun!
+[Son of a gun!](https://www.smbc-comics.com/comic/sob)
 
 ## Trees = Computational traces
 
