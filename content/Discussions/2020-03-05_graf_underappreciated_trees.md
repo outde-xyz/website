@@ -103,5 +103,4 @@ This has been a very productive enterprise, and the insights obtained this way s
 
 It also fits naturally with the computational view of the inverted T-model.
 The [bimorphism perspective]({filename}2019-10-15_graf_tmodel.md) puts syntax in the position of an interpolant, a means of succinctly describing a computational system of bidirectional mappings.
-From this perspective, syntax simply is computation, and syntactic structure is computational structure.
-And that's what makes syntactic structure inevitable.
+From this perspective, syntax simply is computation; syntactic structure is computational structure.
