@@ -123,7 +123,7 @@ $$a = \{c, d\} = \{ \{a, b\}, d \} = \{ \{ \{c,d\}, b \}, d \} = \{ \{ \{ \{a, b
 Clearly that's not okay, right?
 Actually, it is.
 
-Ruling out such cases of infinite recursion requires the axiom of regularity.
+Ruling out such cases of infinite recursion requires the **axiom of regularity**.
 This axiom is part of the standard formalization of set-theory known as ZFC, **Zermelo-Fraenkel with the axiom of choice**.
 That is actually a really weird axiomatization because it is a first-order definition, which means that sets and the objects contained by sets have the same type.
 If you still think a set is a collection of objects, you're not thinking in ZFC terms where there is no distinction between objects and collections of objects.
@@ -142,7 +142,7 @@ The short Kuratowski definition simply does not work unless one makes very speci
 I think what this shows is that this kind of set-theoretic work in syntax is trying to have its cake and eat it to.
 On the one hand, nobody wants to say that syntax literally operates with a notion of set that corresponds to the ZFC axiomatization of set theory.
 That would entail a commitment to the psychological reality of its highly abstract and counter-intuitive axioms, including the axiom of regularity.
-And that's folly. 
+And as far as cognitive commitments go, that's pretty far out there.
 In general, the set-theoretic view of Merge is taken to be either a convenient metaphor or to be rooted in naive set theory.
 I don't know of a single paper that uses the short Kuratowski definition and explicitly states that the sets built by merge are assumed to obey the laws of ZFC.
 So that's one side of the cake: naive notions of set, rather than mathematical set theory.
