@@ -64,12 +64,12 @@ And there's many other alternatives.
 So don't attach too much metaphysical importance to the Kuratowski definition, it's just a definition that happens to work because it captures a specific property of pairs.
 
 Pairs are characterized by an essential equivalence:
-$$\langle a, b \rangle = \langle c, d \rangle \text{ iff } a = b \& c = d$$
+$$\langle a, b \rangle = \langle c, d \rangle \text{ iff } a = b\ \&\ c = d$$
 That's what separates pairs from sets, where the expression $\{ a, b \}$ is the same as $\{ b, a \}$ because of the lack of order.
 With pairs, on the other hand, $\langle a, b \rangle \neq \langle b , a \rangle$ (unless $a = b$, in which case we would have $\langle a, a \rangle = \langle a, a \rangle$).
 
 The Kuratowski definition works because sets of the form $\{ \{a\}, \{a, b\} \}$ satisfy the same equality condition:
-$$\{ \{a\}, \{a,b\} \} = \{ \{c\}, \{c,d\} \} \text{ iff } a = b \& c = d$$
+$$\{ \{a\}, \{a,b\} \} = \{ \{c\}, \{c,d\} \} \text{ iff } a = b\ \&\ c = d$$
 The right-to-left direction is easy to see.
 That is to say, if $a = b$ and $c = d$, then it is pretty much inevitable that $\{ \{a\}, \{a,b\} \} = \{ \{c\}, \{c,d\} \}$.
 It's the left-to-right direction of the *iff* that's tricky.
@@ -154,3 +154,5 @@ Quite to the contrary: the moment you invoke the Kuratowski definition, you're i
 And in service of what?
 If your idea works, we can define it in a million ways and it doesn't really matter what it looks like when it is hashed out in terms of sets.
 If your idea doesn't work, then it doesn't work and is bunk no matter how elegantly you derived it from set theory.
+
+## References
