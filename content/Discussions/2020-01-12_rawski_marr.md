@@ -124,7 +124,7 @@ It's hard to draw a three-way split there that resembles the Three Levels in a c
 Also notice that representation, which before was confined to the middle level as an object, now has its own flow.
 This makes a bit more sense under the representation-as-process view. However, I have an even harder time trying to fit modern linguistics into one level here.
 
-![more levels]({static}/img/Rawski/Marr/7Lvls.jpg){ width=60% }
+![more levels]({static}/img/Rawski/Marr/7lvls.jpg){ width=60% }
 
 In his [afterward to the re-release of the book](http://cbcl.mit.edu/publications/ps/marr-vision-afterword.pdf), Tommaso Poggio is critical of level independence.
 He recounts the gritty origin story of the Three Levels: while they were colleagues, Marr adapted the framework of @reichardt1976, which distinguished behavioral, algorithmic, and implementational levels (Marr swapped out 'computation' for behavior).

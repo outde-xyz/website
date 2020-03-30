@@ -60,7 +60,7 @@ A year or two ago, John Torr told me about the challenges he encountered in crea
 One thing that really struck me is that there was a large residue of sentences that involved constructions for which there was no widely agreed upon, off-the-shelf solution in the Minimalist literature.
 I think John said it was something like 7% of the whole corpus, but I might have that completely wrong.
 If it is, that's a lot of sentences!
-[The paper on neural A* parsing](https://stanojevic.github.io/papers/2019_ACL_MG_Wide_Coverage.pdf) that [Aniello discussed a while ago]({filename}/Discussions/2019-06-23_DeSanto_TorrACL-MGpaper.md) actually lists a few examples, including discontinuous quotes and definiteness effects with expletives:
+[The paper on neural A* parsing](https://stanojevic.github.io/papers/2019_ACL_MG_Wide_Coverage.pdf) that [Aniello discussed a while ago]({filename}/Discussions/2019-06-23_desanto_torracl-mgpaper.md) actually lists a few examples, including discontinuous quotes and definiteness effects with expletives:
 
 (@) "Funny thing," says the kicker "both these candidates are named Rudolph Giuliani".
 (@) There seem to be some/several/\*the/\*those problems.
