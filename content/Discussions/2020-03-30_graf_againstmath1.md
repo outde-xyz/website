@@ -30,7 +30,7 @@ Mathematical formalization is only worth it if it provides novel insights.
 Some work falls short of this bar (your call whether mine does).
 And some work is actively worse because of its use of math.
 Both things have happened and are still happening in Minimalist syntax.
-Ever since the introduction of *Bare Phrase Structure* [@Chomsky95], there has been a line of Minimalist research that wants to formalize Merge in set-theoretic terms and derive linguistic properties from mathematical set theory.
+Ever since the publication of *Bare Phrase Structure* [@Chomsky95], there has been a line of Minimalist research that wants to formalize Merge in set-theoretic terms and derive linguistic properties from mathematical set theory.
 This is, for lack of a better term, ass-backwards.
 
 Today's post is the start of a two-part series.
@@ -43,11 +43,12 @@ So, without further ado, let's talk Kuratowski.
 
 Quick show of hands, who has seen this before:
 $$\{ \{a\}, \{a, b\}\} = \langle a, b \rangle$$
-This is the **Kuratowski definition** of ordered pairs in terms of sets [@Kuratowski21].
-Instead of $\{ \{a\}, \{a, b\} \}$ one can also use $\{ a, \{a, b\} \}$, which is often called the **short Kuratowski definition**.
+This is the **Kuratowski definition** of pairs in terms of sets [@Kuratowski21].
+In contrast to sets, pairs have an intrinsic order, so that $\langle a, b \rangle \neq \langle b, a \rangle$ (unless $a = b$).
+Instead of $\{ \{a\}, \{a, b\} \}$ one can also use $\{ a, \{a, b\} \}$, which is called the **short Kuratowski definition**.
 
 I can't think of any other mathematical tidbit that has been invoked more often in syntax (although I have yet to find a paper that actually cites @Kuratowski21). 
-Minimalists like this definition because it looks very similar to the set-theoretic objects @Chomksy95 uses to encode syntactic structure:
+Minimalists like this definition because it looks very similar to the set-theoretic objects @Chomsky95 uses to encode syntactic structure:
 Merge takes two syntactic objects $a$ and $b$ and combines them into the syntactic object $\{ a, \{a, b\} \}$.
 Even though the object is a set and thus unordered, we can use the (short) Kuratowski definition to establish a connection to pairs, which are ordered.
 And from there we can develop all kinds of ideas about linear order in syntax.
@@ -78,25 +79,29 @@ That is to say, if $a = b$ and $c = d$, then it is pretty much inevitable that $
 It's the left-to-right direction of the *iff* that's tricky.
 In order to show that $\{ \{a\}, \{a,b\} \} = \{ \{c\}, \{c,d\} \}$ entails $a = b$ and $c = d$, we have to consider several cases.
 
-Suppose we already know that $\{ \{a\}, \{a,b\} \} = \{ \{c\}, \{c,d\} \}$.
-We have to show that $a = c$ and $b = d$.
+### Case 1: $a = b$
 
-1. Suppose $a = b$.
-   Remember that sets are **idempotent**, which means that repetitions are ignored.
-   For instance, $\{ a, b, c, b, a, a \} = \{a, b, c\}$.
-   If $a = b$, then $\{ \{a\}, \{a,b\} \} = \{ \{a\}, \{a, a\} \} = \{ \{a\}, \{a\} \} = \{ \{a\} \}$.
-   But then $\{ \{c\}, \{c,d\} \} = \{ \{a \} \}$, which is only possible if $\{ c \} = \{c ,d\}$, wherefore $c = d$.
-   So we actually have $\{ \{c\}, \{c,d\} \} = \{ \{c\}, \{c,c\} \} = \{ \{c\}, \{c,c\} \} = \{\{c\}\} = \{\{a\}\}$, and hence $a = c$.
-   Overall, then, we have $a = b = c = d$, which implies $a = c$ and $b =d$.
+Suppose $a = b$.
+Remember that sets are **idempotent**, which means that repetitions are ignored.
+For instance, $\{ a, b, c, b, a, a \} = \{a, b, c\}$.
+If $a = b$, then $\{ \{a\}, \{a,b\} \} = \{ \{a\}, \{a, a\} \} = \{ \{a\}, \{a\} \} = \{ \{a\} \}$.
+But then $\{ \{a\}, \{a,b\} \} = \{ \{c\}, \{c,d\} \}$ is actually $\{ \{a\} \} = \{ \{c\}, \{c,d\} \}$.
+This is possible only if $\{ c \} = \{c ,d\}$, which implies $c = d$.
+So we actually have $\{ \{c\}, \{c,d\} \} = \{ \{c\}, \{c,c\} \} = \{ \{c\}, \{c,c\} \} = \{\{c\}\} = \{\{a\}\}$, and hence $a = c$.
+Overall, then, we have $a = b = c = d$, which necessarily entails $a = c$ and $b = d$.
 
-1. Now suppose $a \neq b$.
-   Then either $\{a\} = \{c,d\}$ or $\{a\} = \{c\}$.
-   1. The equality $\{a\} = \{c,d\}$ holds only if $c = d$.
-      Then $\{ \{a\}, \{a,b\} \} = \{ \{c\}, \{c,d\} \} = \{ \{c\}, \{c\} \}$, but $\{c\} \neq \{a, b\}$ because $a \neq b$.
-      This is a contradiction, so it must be the case that $\{a\} \neq \{c,d\}$.
-   1. Assume, then, that $\{a\} = \{c\} \neq \{c,d\}$.
-      Then $c \neq d$, and $\{a, b\} = \{c, d\}$ iff $b = d$.
-      Overall, then, we $a = c$ and $b = d$, as required.
+### Case 2: $a \neq b$
+
+Now suppose $a \neq b$.
+Then either $\{a\} = \{c,d\}$ or $\{a\} = \{c\}$.
+
+1. Since two sets with distinct cardinality cannot be identical, the equality $\{a\} = \{c,d\}$ holds only if $c = d$.
+   Then $\{ \{a\}, \{a,b\} \} = \{ \{c\}, \{c,d\} \} = \{ \{c\}, \{c\} \}$, but $\{c\} \neq \{a, b\}$ because $a \neq b$.
+   This is a contradiction, so it must be the case that $\{a\} \neq \{c,d\}$.
+
+1. Assume, then, that $\{a\} = \{c\} \neq \{c,d\}$.
+   Then $c \neq d$, and $\{a, b\} = \{c, d\}$ iff $b = d$.
+   Overall, then, we have $a = c$ and $b = d$, as required.
 
 
 ## When does the Kuratowski definition work?
