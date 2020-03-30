@@ -1,9 +1,12 @@
 ---
 title: >-
     Against math: Kuratowski's spectre
+series: >-
+    Against math
 authors:
     - Thomas Graf
 date: 2020-03-30
+bibliography: references.bib
 tags:
     - methodology
     - syntax
