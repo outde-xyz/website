@@ -22,7 +22,7 @@ Just like most mathematicians weren't particularly fazed by Gödel's incompleten
 So this post will discuss a concrete case where a good linguistic insight got buried under mathematical rubble.
 <!-- END_SUMMARY_BLOCK -->
 
-Our case study is a [2018 paper](https://doi.org/10.1353/lan.2018.0037) by [Jordi Fortuny](https://doi.org/10.1353/lan.2018.0037), which refines the ideas first presented in @Fortuny08 and @FortunyCorominasMurtra09.
+Our case study is a [2018 paper](https://doi.org/10.1353/lan.2018.0037) by [Jordi Fortuny](http://departament-filcat-linguistica.ub.edu/directori-organitzatiu/jordi-fortuny-andreu), which refines the ideas first presented in @Fortuny08 and @FortunyCorominasMurtra09.
 The paper wrestles with one of the foundational issues of syntax: the interplay of structure and linear order, and why the latter seems to play second fiddle at best in syntax.
 Let's first reflect a bit on the nature of this problem before we look at Fortuny's proposed answer.
 
@@ -44,7 +44,7 @@ Quite generally, why doesn't syntax allow constraints that are based entirely on
 1. **RHOL subject placement**  
    The subject of a clause *C* is the rightmost DP with at least two lexical items.
    If no such DP exists in *C*, the subject is the leftmost DP instead.
-1. **Linear movement blocking**
+1. **Linear movement blocking**  
    No adjunct may linearly intervene between a mover and its trace.
 1. **Modulo binding**  
    Every reflexive must be an even number of words away from the left edge of the sentence.
@@ -55,9 +55,9 @@ How can we explain the absence of those constraints?
 
 There's two answers here, and neither one is satisfying.
 We might reject the initial assumption that linear order doesn't matter in syntax.
-That's basically [Benjamin Bruening's story for binding](https://www.linguisticsociety.org/sites/default/files/342-388_0.pdf) [@Bruening14].
+That's basically [Benjamin Bruening](https://udel.edu/~bruening/)'s [story for binding](https://www.linguisticsociety.org/sites/default/files/342-388_0.pdf) [@Bruening14].
 I have a weak spot for contrarian takes, but the Bruening stance doesn't answer why we still can't get constraints like the ones listed above.
-Perhaps linear order matters to some extent, but if so the extent seems to be much more limited than one could imagine.
+Perhaps Bruening is right and linear order matters to some extent, but if so the extent seems to be much more limited than one could imagine.
 
 This leaves us with option 2, which is the standard story: syntactic representations have no linear order, hence syntax can't make reference to linear order.
 The idea goes back to @Kayne94 and is also a major reason for the use of sets in Bare Phrase Structure [@Chomsky95].
@@ -79,7 +79,7 @@ A (strict) linear order arises when you have a relation that is transitive, irre
   ($x \not\mathrel{R} x$ for all $x$)
 - **asymmetric**: no two elements are mutually related  
   ($x \mathrel{R} y \rightarrow y \not\mathrel{R} x$)
-- **trichotomous**: no two elements are unrelated
+- **trichotomous**: no two elements are unrelated  
   ($x \mathrel{R} y \vee y \mathrel{R} x \vee x = y$)
 
 If you look at syntax in terms of binary Merge (or something
@@ -108,7 +108,7 @@ But hold on a second, that's circular, we're defining precedence in terms of pre
 And if you look at the formula, there's actually a completely different symbol there, $S$, which isn't the precedence symbol $\prec$.
 So what's $S$?
 It's the successor relation, and in contrast to precedence it's only defined for siblings.
-So $x \mathrel{S} y$ is true iff $x$ is the left sibling of $y$.
+So $x \mathrel{S} y$ is true iff $y$ is both a sibling of $x$ and its successor.
 Aha, so this is where it all breaks down, syntax doesn't actually have such a successor relation because there is no linear order in syntax!
 
 Nope, sorry, this particular hook you can't get off that easily.
@@ -138,16 +138,16 @@ But he does it with sets, and that opens up a whole can of worms.
 
 ## Fortuny's approach in detail
 
-Fortuny starts out with a generalization of the Kuratowski definition from pairs to tuples (btw, when rereading his paper I noticed that he actually cites @Kuratowski21; kudos!).
-With this generalized definition, an $n$-tuple $\langle a_1, \ldots, a_n$ is encoded as the **nest**
+Fortuny starts out with a generalization of the Kuratowski definition from pairs to tuples (btw, upon rereading his paper I noticed that he actually cites @Kuratowski21; kudos!).
+With this generalized definition, an $n$-tuple $\langle a_1, \ldots, a_n \rangle$ is encoded as the **nest**
 $$
 \{ \{a_1\}, \{a_1, a_2\}, \{a_1, a_2, a_3\}, \ldots, \{a_1, a_2, a_3, \ldots, a_n\} \}
 $$
 Based on earlier work [@Fortuny08; @FortunyCorominasMurtra09], he then postulates that syntactic derivations produce sets of this form, rather than the standard bare phrase structure sets.
 Think of it as follows: suppose that the syntactic workspace currently contains only $a$, which by itself forms the constituent $\{ a \}$.
 Now if we Merge some $b$ into this constituent, we get $\{ a, b \}$ as the output.
-Fortuny then says that the actual constituent is the set of the sets built by Merge, i.e. $\{ \{a\}, \{a,b\}$.
-Personally, I think it makes more sense to think of this as a derivation rather than a constituent, but my infatuation with derivation trees should be well-known by now.
+Fortuny then says that the actual constituent is the set of the sets built by Merge, i.e. $\{ \{a\}, \{a,b\} \}$.
+Personally, I'd say it makes more sense to think of this as a derivation rather than a constituent, but my infatuation with derivation trees should be well-known by now.
 I won't quibble over terminology and just follow Fortuny in calling these complex sets constituents.
 So we have an **output** $\{a,b\}$, but a **constituent** $\{ \{a\}, \{a,b\} \}$.
 If we merge a $c$ into the current output, we get $\{ a, b, c\}$, and the constituent grows to $\{ \{a\}, \{a,b\}, \{a,b,c\} \}$.
@@ -156,7 +156,7 @@ In a nutshell, Merge just inserts a lexical item into a set, and the nested stru
 But that's also where we run into the first problem.
 Well, two problems.
 Three, actually.
-First, [and as I said before]({filename}2020-03-30_graf_againstmath1.md), this kind of definition only works for specific axiomatizations of sets, and that's a lot of baggage to attach to your linguistic proposal.
+First, [and at the risk of repeating myself]({filename}2020-03-30_graf_againstmath1.md), this kind of definition only works for specific axiomatizations of sets, and that's a lot of baggage to attach to your linguistic proposal.
 Second, redefining Merge in that way means that large parts of the audience will immediately check out.
 A major deviation from established machinery is always a tough sell, so you should avoid that if you can.
 And then there's still problem three, which in a sense is the worst because it brings with it a rats tail of other problems.
@@ -180,32 +180,33 @@ If your encoding can't keep things distinct that should be distinct, it's not a 
 Fortuny is aware of that, and he has a workaround.
 Since the problem only arises for tuples that contain identical elements, one has to ensure that there are no identical elements.
 To this end, he subscripts each entry with the derivational step at which it was introduced.
-Here's what this would look like for our previous counterexample:
+Here's what this would look like for the counterexamples above:
 
 1. $\{ \{a_1\}, \{a_1,b_2\} \} = \langle a_1, b_2 \rangle$
 1. $\{ \{a_1\}, \{a_1,b_2\}, \{a_1,b_2,a_3\} \} = \langle a_1, b_2, a_3 \rangle$
 1. $\{ \{a_1\}, \{a_1,b_2\}, \{a_1,b_2,b_3\} \} = \langle a_1, b_2, b_3 \rangle$
 
-Alright, that fixes the math problem, but it creates even bigger problems --- I told you its a rat tail.
-Now that Fortunay has added subscripts, and he has to allow for arbitrary many of them.
+Alright, that fixes the math problem, but it creates even bigger problems --- I told you it's a rat tail.
+Now that Fortuny has added subscripts, and he has to allow for arbitrary many of them.
 From a computational perspective, that's not that great.
 At best it's clunky, at worst it creates serious issues with computational power.
 And from a linguistic perspective, it violates the Inclusiveness condition [@Chomsky95a], according to which syntax does not enrich lexical items with any mark-up, diacritics, or other encodings of non-lexical information.
 I certainly am not gonna lose any sleep over somebody's proposal violating the Inclusiveness condition, but I'd wager that this attitude isn't shared by the main audience for a pure theory paper on Merge and linearization.
-The set-theoretic formalism has forced Fortuny into a stance that makes his argument, which ultimately doesn't hinge on sets, less attractive to his target audience.
+The set-based view has forced Fortuny into a formalization that makes his argument, which ultimately doesn't hinge on sets, less attractive to his target audience.
 
-If you're willing to accept all those modifications, you now have a system where linear order is baked directly into syntax.
-But Fortuny still has to tell us why linear order doesn't seem to matter all that much, then.
+That said, let's assume you're you're willing to accept all those modifications and look at the payoff.
+You now have a system where linear order is baked directly into syntax.
+But Fortuny still has to tell us why linear order nonetheless doesn't seem to matter all that much in syntax.
 He relates this to a crucial limitation of Merge.
-As you might have noticed, the nesting system doesn't work as intended when you try to merge a complex specifier.
-Suppose you have already built the complex specifier $\{d, e\}$, ignoring subscripts because the notation is cluttered enough as is.
+As you might have noticed, the nesting system gets a bit more complicated when you try to merge a complex specifier.
+Suppose you have already built the complex specifier $\{d, e\}$; I omit subscripts because the notation is cluttered enough as is.
 Suppose furthermore that $\{d, e\}$ belongs to the constituent $\{ \{d\}, \{d, e\} \}$.
 Let's try to merge $\{d, e\}$ into $\{ a, b, c \}$, which is part of the constituent $\{ \{a\}, \{a,b\}, \{a,b,c\} \}$.
 What should be the output?
-Fortuny says that the whole constituent $\{ \{d\}, \{d, e\} \}$ is merged in, yielding the output $\{ a,b,c, \{ \{d\}, \{d,e\}\}\}$.
+Fortuny says that the whole constituent $\{ \{d\}, \{d, e\} \}$ is merged with the previous output $\{a,b,c\}$, yielding the new output $\{ a,b,c, \{ \{d\}, \{d,e\}\}\}$.
 Adding this to the previous constituent $\{ \{a\}, \{a,b\}, \{a,b,c\} \}$, we get the new constituent
 $$
-\{ \{a\}, \{a,b\}, \{a,b,c\}, \{ a,b,c \{\{d\}, \{d,e\}\} \} \}
+\{ \{a\}, \{a,b\}, \{a,b,c\}, \{ a,b,c, \{\{d\}, \{d,e\}\} \} \}
 $$
 Not the most readable, but internally consistent.
 
@@ -228,7 +229,7 @@ Nor do sets really help us understand why the role of linear order is limited.
 Fortuny stipulates a specific notion of domain based on empirical observations about Move, but that's completely independent of sets as it's a generalized version of the Specifier and Adjunct Island constraints.
 And those are all just more specific instances of the assumption that sensing tree automata are a computational upper bound on syntactic expressivity.
 I'd also say that Fortuny's set-based definition of domain is much harder to make sense of than sensing tree automata.
-Overall, the set-based presentation is a detriment to the paper, not a boon.
+Overall, the set-based presentation is a handicap for the paper, not a boon.
 
 It's unfortunate, because Fortuny's big picture points are right on the money imho.
 But they're buried under the mathematical clutter of sets, sets, and more sets.
