@@ -47,22 +47,16 @@ The command breaks down into a few simple components.
 
 Suppose we have the input text below.
 
-```
-A Note on Regular Expressions: Since "regular expression" is a long term, regular expressions are also called regexes.
-```
+> A Note on Regular Expressions: Since "regular expression" is a long term, regular expressions are also called regexes.
 
 This will be rewritten as follows.
 
-```
-A Note on Regular Expressions: Since "regex" is a long term, regexs are also called regexes.
-```
+> A Note on Regular Expressions: Since "regex" is a long term, regexs are also called regexes.
 
 Note that in either case the rewriting targets every instance of *regular expression*, even if it is followed by other characters like *s*.
 But without `g`, only the first instance of *regular expression* would have been replaced.
 
-```
-A Note on Regular Expressions: Since "regex" is a long term, regular expressions are also called regexes.
-```
+> A Note on Regular Expressions: Since "regex" is a long term, regular expressions are also called regexes.
 
 As you can see in the examples above, capitalization matters, so by default `regular expression` does not match `Regular Expression`.
 We can fix that by specifying alternatives (there's better ways for handling upper and lower case, but then I wouldn't get to demonstrate alternatives).
@@ -74,9 +68,7 @@ s/[Rr]egular [Ee]xpression/regex/g
 Here `[Rr]egular [Ee]expression` will match *Regular Expression*, *Regular expression*, *regular Expression*, and *regular expression*.
 So now we would get this output
 
-```
-A note on regexs: Since "regex" is a long term, regexs are also called regexes.
-```
+> A note on regexs: Since "regex" is a long term, regexs are also called regexes.
 
 But these instances of *regexs* are pretty ugly.
 Let's extend the match so that it can include an optional *s*.
@@ -89,9 +81,7 @@ We use `\?` to indicate that the preceding character is optional for the match.
 If there is an *s*, include it in the rewriting, otherwise ignore whatever comes after the *n*.
 With this, we get yet another output.
 
-```
-A note on regex: Since "regex" is a long term, regex are also called regexes.
-```
+> A note on regex: Since "regex" is a long term, regex are also called regexes.
 
 We could play this game for a few more rounds, but I think you get the gist.
 Now let's look at how quickly regular expressions can get pretty nasty.
@@ -143,7 +133,7 @@ Here's how that one starts
 
 Don't look at me, I have no clue what's going on here.
 But it works, somehow.
-If you want to figure it out, it might help to use [desed](https://cognitivesciencesociety.org/wp-content/uploads/2020/04/precis_pdf_Perkins.pdf), a debugger for `sed`.
+If you want to figure it out, it might help to use [desed](https://github.com/SoptikHa2/desed/), a debugger for `sed`.
 If you give it a try, please also try this [`sed`-based solution for a shortest path problem](https://tildes.net/~comp/b2k/programming_challenge_find_path_from_city_a_to_city_b_with_least_traffic_controls_inbetween#comment-2run).
 I'd really appreciate an in-depth explanation.
 
