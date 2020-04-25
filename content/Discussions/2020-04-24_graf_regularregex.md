@@ -158,10 +158,12 @@ Specification X may be better than Y as long as you only have to account for phe
 It's all very fuzzy, very tentative, mostly based on hunches, personal taste, aesthetics.
 
 That's okay.
-In general, researchers should do whatever makes them more productive.
-But we should acknowledge that this is a methodological choice.
-Reality might easily be a lot messier.
+In general, researchers should do whatever makes them more productive, and in general it is the case that elegance = simplicity = productivity.
+But we should acknowledge that this is a methodological criterion.
+Lack of elegance is not a knockout argument and does not tell us much about the cognitive reality of a proposal.
+Reality might in fact be messy.
 Even though that `a + b = c` program is just a one-liner in Python, the human brain might actually be using the [humongous `sed` clusterfuck](http://www.drregex.com/2018/11/how-to-match-b-c-where-abc-beast-reborn.html?m=1).
+That doesn't mean our theories have to be ugly --- there's nothing wrong with being better than reality --- but we should be much more cautious with the use of elegance criteria in theory comparison.
 
 And if you think learning considerations provide a natural push towards elegance, may I introduce you to [this lovely regex generator](https://github.com/MaLeLabTs/RegexGenerator) that infers the intended regex from a data sample?
 Yes, I only brought up learning so that I could link to that.
