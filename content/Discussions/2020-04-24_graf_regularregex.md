@@ -24,7 +24,7 @@ And don't you worry, we'll get to the "and language" part.
 If you don't know what a regular expression is, think of it as search (or search and replace) on steroids.
 If you work with a lot of text files --- surprise, I do --- regular expressions can make your life a lot easier, but they also have a nasty habit of turning into byzantine symbol salad that's impossible to decipher.
 Allow me to demonstrate.
-Or just skip ahead to the next section, this is all a rather slow, dull build-up to the interesting stuff. 
+Or maybe skip ahead to the next section, this one here is just a slow introductory build-up to the interesting stuff. 
 
 Suppose you want to change every instance of *regular expression* to the shorter *regex*.
 If you're like me, you will use `sed` for this, the **s**tream **ed**itor.
@@ -84,12 +84,12 @@ With this, we get yet another output.
 (@) A note on regex: Since "regex" is a long term, regex are also called regexes.
 
 We could play this game for a few more rounds, but I think you get the gist.
-Now let's look at how quickly regular expressions can get pretty nasty.
+Now let's look at how quickly regular expressions can get nasty.
 
 
 ## Cranking up the weird
 
-Things have been pretty reasonable so far.
+Things have been perfectly reasonable so far.
 Just to mix things up a bit, here's a regular expression I use a lot to rewrite things like `**foo**` as `<b>foo</b>` (don't ask why I need to do that, it's a quick hack while the long-term solution is still being worked on).
 
 ```bash
@@ -98,19 +98,19 @@ s/\*\*\([^*]*\)\*\*/<b>\1<\/b>/g
 
 If you're curious, here's how you read that regex:[^1]
 
-[^1]: Alright, strictly speaking the second part isn't a regular expression because it uses backreferences, which require unbounded copying. But it would be trivial to specify a finite-state transducer for this rewriting step. And actually, the existence of extended regular expressions is an interesting point in its own right: Even though every standard regex can be converted to an equivalent deterministic finite-state automaton, most regex implementations actually use a context-free parsing mechanism, and once you have that, backreferences and a lot are an easy addition. Sometimes, a powerful thing can be more efficient than a very restricted thing.
+[^1]: The second part isn't a regular expression in the original sense of formal language theory because it uses backreferences, which require unbounded copying and simply aren't regular. For the specific rewriting step I'm doing there, it would be trivial to specify a finite-state transducer, though. And the existence of backreferences is an interesting point in its own right: Even though every regex (in the formal language theory sense) can be converted to an equivalent deterministic finite-state automaton, most regex implementations actually use a context-free parsing mechanism --- and once you have that, backreferences are an easy addition. Sometimes, a powerful thing can be more efficient than a very restricted thing.
 
 
 1. `s`: substitute
 1. `/`: argument separator
 1. `\*\*`: match \*\*
-1. `\(`: start matching group 1; to be used with backreferences
+1. `\(`: start matching group 1
 1. `[^*]*`: match any string of 0 or more characters that are not \*
 1. `\)`: close matching group 1
 1. `\*\*`: match \*\*
 1. `/`: argument separator
 1. `<b>`: insert \<b\>
-1. `\1`: insert the content of the first matching group
+1. `\1`: insert the content of matching group 1
 1. `<\/b>`: insert \</b\>
 1. `/`: argument separator
 1. `g`: do a global replace
@@ -147,7 +147,7 @@ And that distinction is too often glossed over in linguistics.
 The literature is full of claims of the form "proposal X cannot account for phenomenon Y".
 And very often, that's not true, just like it isn't true that you can't use regular expressions to calculate a shortest path.
 For instance, you don't need copy movement to produce pronounced copies, but oh boy will the grammar look weird.
-What these claims actually means is "proposal X cannot elegantly account for phenomenon Y".
+What these claims actually mean is "proposal X cannot elegantly account for phenomenon Y".
 And that's a big difference.
 
 Elegance is a tricky criterion.
