@@ -1,6 +1,6 @@
 ---
 title: >-
-    Gradience
+    Categorical statements about gradience
 authors:
     - Thomas Graf
 date: 2020-04-28
@@ -20,31 +20,40 @@ But in a vacuum that remark might not make that much sense, so here's some more 
 ## Gradience in the broad sense
 
 My central claim is that linguists' worries about gradience are overblown because there isn't that much of a difference between categorical systems, which only distinguish between well-formed and ill-formed, and gradient systems, which have more shades of gray than that.
+In particular, the difference doesn't matter for those aspects of grammar that linguists really care about.
+A grammar with only a categorical distinction isn't irredeemably impoverished, and if your formalism gets the linguistic fundamentals wrong adding gradience won't fix that for you.
+
+Brief note:
 In practice, gradient systems are usually probabilistic, but there's no need for that.
 The familiar system of rating sentences as well-formed, `?`, `??`, `?*`, and `*` would also be gradient.
 This is an important fact that's frequently glossed over.
 I really wish researchers wouldn't always jump right to probabilistic systems when they want to make something gradient.
 Sure, probabilities are nice because they are easy to extract from the available data, but that doesn't mean that this is the right notion of gradience.
-But whatever, it doesn't matter for this post because what I have to say applies to all gradient systems, whether they're probabilistic or not. 
+
+That said, this post will frequently use probabilistic grammars to illustrate more general points about gradience.
+The take-home message, though, applies equally to all gradient systems, whether they're probabilistic or not. 
 
 
 ## A formula for categorical grammars
 
-Let's start with a very simple example in the form of a [strictly local grammar]({static}Tutorials/locality_sltsl.md).
+Let's start with a very simple example in the form of a [strictly local grammar]({static}/Tutorials/locality_sltsl.md).
 SL grammars are usually negative, which means that they list all the *n*-grams that must not occur in a string.
 But for the purposes of this post, it is preferable to convert the negative grammar into an equivalent positive grammar, which lists all the *n*-grams that may occur in a string.
 For example, the positive SL-2 grammar $G$ below generates the language $(ab)^+$, which contains the strings $\mathit{ab}$, $\mathit{abab}$, $\mathit{ababab}$, and so on.
 
-(@) **Positive SL-2 grammar for $\mathbf{(ab)^*}$**  
-    $\{ \mathit{\$a}, \mathit{ab}, \mathit{ba}, \mathit{b\$} \}$
+(@) **Positive SL-2 grammar for $\mathbf{(ab)^*}$**
+    1. $\mathit{\$a}$: the string may start with $a$
+    1. $\mathit{ab}$: $a$ may be followed by $b$
+    1. $\mathit{ba}$: $b$ may be followed by $a$
+    1. $\mathit{b\$}$: the string may end with $b$
 
 Now let's consider how one actually decides whether a given string is well-formed with respect to this grammar.
 There's many equivalent ways of thinking about this, but right now we want one that emphasizes the algebraic nature of grammars.
 
 Suppose we are given the string $\mathit{abab}$.
 As always with an SL grammar, we first add edge markers to it, giving us $\mathit{\$abab\$}$.
-That's just a mathematical trick to clearly distinguish the first and last symbol of the string, don't worry about it.
-The SL grammar decides the well-formedness of the string based on whether the bigrams that occur in it are well-formed.
+That's just a mathematical trick to clearly distinguish the first and last symbol of the string.
+The SL grammar decides the well-formedness of the string $\mathit{\$abab\$}$ based on whether the bigrams that occur in it are well-formed.
 Those bigrams are (including repetitions)
 
 1. $\mathit{\$a}$,
@@ -53,35 +62,40 @@ Those bigrams are (including repetitions)
 1. $\mathit{ab}$,
 1. $\mathit{b\$}$.
 
-We can write this as a single formula.
+We can write this as a single formula that doesn't make a lick of sense at this point:
 
 $$G(\mathit{\$abab\$}) := f(\$a) \otimes f(ab) \otimes f(ba) \otimes f(ab) \otimes f(b\$)$$
 
-This looks fancy, but I haven't really done anything substantial here.
+It sure looks fancy, but I haven't really done anything substantial here.
 Let's break this formula down into its components:
 
 - $G(\mathit{\$abab\$})$ is the value that the grammar $G$ assigns to the string $\mathit{\$abab\$}$.
+  Since $G$ is categorical, this can be $1$ for *well-formed* or $0$ for *ill-formed*.
 - $:=$ means "is defined as".
 - $f$ is some mystery function that maps each bigram to some value.
-- $\otimes$ is another mystery function that combines the values produced by $f$.
+- $\otimes$ is some mystery operation that combines the values produced by $f$.
 
-All I'm saying is that if we want to know whether our SL grammar $G$ considers $\mathit(\$abab\$)$ well-formed, then we do this by first mapping each bigram in the string to some value and the computing a composite value from the values of all bigrams.
-The only reason this looks weird is because I haven't told you what $f$ and $\otimes$ are.
+The formula expresses in mathematical terms the most fundamental rule of SL grammars: the value that $G$ assigns to $\mathit(\$abab\$)$ depends on the bigrams that occur in the string.
+Each bigram in the string is mapped to some value, and then all these values are combined into an aggregate value for the string.
+The only reason the formula looks weird is because I haven't told you what $f$ and $\otimes$ are.
 
-The answer is, they can be lots of things.
-But here is one system that will work for a categorical grammar.
-First, $f$ maps a bigram $b$ to $1$ if it is a member of $G$, which means that $G$ lists $b$ as a licit bigram.
+The cool thing is, $f$ and $\otimes$ can be lots of things.
+That's exactly what will allow us to unify categorical and gradient grammars.
+But let's not get ahead of ourselves, let's just focus on $f$ and $\otimes$ for our categorical example grammar $G$.
+
+We start with $f$.
+This function maps a bigram $b$ to $1$ if it is a licit bigram according to our grammar $G$.
 If $b$ is not a licit bigram, $f$ maps it to $0$.
 
 $$
 f(b) :=
 \begin{cases}
-1 & \text{if } b \in G\\
+1 & \text{if } b \text{ is a licit bigram of } G\\
 0 & \text{otherwise}
 \end{cases}
 $$
 
-Let's do this for the formula above.
+Let's go back to the formula above and fill in the corresponding values according to $f$ and $G$.
 
 $$
 \begin{align*}
@@ -100,9 +114,12 @@ G(\mathit{\$abba\$}) := & f(\$a) \otimes f(ab) \otimes f(bb) \otimes f(ba) \otim
 $$
 
 Notice how we get $1$ or $0$ depending on whether the bigram is licit according to grammar $G$.
-Now we just need to know what $\otimes$ does.
-Again there's equivalent multiple choices. 
-But hey, let's keep it simple, let's say $\otimes$ is multiplication, that will do.
+
+This only leaves us with $\otimes$.
+The job of this operation is to combine the values produced by $f$ such that we get $1$ if the string is well-formed, and $0$ otherwise.
+A string is well-formed iff it does not contain even one illicit bigram, or equivalently, iff there isn't a single bigram that was mapped to $0$ by $f$.
+If there is even one $0$, the whole aggregate value must be $0$.
+We can replace $\otimes$ with any operation that satisfies this property --- multiplication, for instance, will do just fine.
 
 $$
 \begin{align*}
@@ -122,7 +139,7 @@ G(\mathit{\$abba\$}) := & f(\$a) \otimes f(ab) \otimes f(bb) \otimes f(ba) \otim
 $$
 
 Tada, the well-formed string gets a 1, the ill-formed string a 0, just as intended.
-Quite generally, any string that contains at least one illicit bigram will be mapped to 0 because whenever you multiply by 0, you get 0.
+Any string that contains at least one illicit bigram will be mapped to 0 because whenever you multiply by 0, you get 0.
 The only way for a string to get mapped to 1 is if only consists of well-formed bigrams.
 This is exactly the intuition we started out with: a positive grammar deems a string well-formed iff it contains no illicit *n*-grams.
 
