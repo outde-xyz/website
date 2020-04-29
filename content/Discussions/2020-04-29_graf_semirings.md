@@ -14,7 +14,7 @@ tags:
 <!-- START_SUMMARY_BLOCK -->
 Omer has a [great post on gradience in syntax](https://omer.lingsite.org/blogpost-on-so-called-degrees-of-grammaticality/).
 I left a comment there that briefly touches on why gradience isn't really that big of a deal thanks to **monoids** and **semirings**.
-But in a vacuum that remark might not make that much sense, so here's some more background.
+But in a vacuum that remark might not make a lot of sense, so here's some more background.
 <!-- END_SUMMARY_BLOCK -->
 
 ## Gradience in the broad sense
