@@ -141,23 +141,30 @@ $$
 Tada, the well-formed string gets a 1, the ill-formed string a 0, just as intended.
 Any string that contains at least one illicit bigram will be mapped to 0 because whenever you multiply by 0, you get 0.
 The only way for a string to get mapped to 1 is if only consists of well-formed bigrams.
-This is exactly the intuition we started out with: a positive grammar deems a string well-formed iff it contains no illicit *n*-grams.
+This is exactly the intuition we started out with: the well-formedness of a string is contingent on the well-formedness of its parts; in this case, bigrams.
 
 
 ## A formula for gradient grammars
 
-Now here comes the crucial twist: the formula above also works for gradient grammars, we just have to change $f$ and $\otimes$.
+While it's certainly refreshing to think of a grammar as a device for multiplying $1$s and $0$s, there is a deeper purpose to this view.
+Here's the crucial twist: the formula above also works for gradient SL grammars, we just have to change $f$ and $\otimes$.
 If we use probabilities, we can even keep $\otimes$ the same.
 The math works exactly the same for categorical and probabilistic grammars.
 
-First, let's make our example grammar probabilistic by assigning each bigram a probability.
-I'll use completely random numbers here, in the real world those probabilities would usually come from a corpus.
+First, let's turn our categorical example grammar into a probabilistic one by assigning each bigram a probability.
+I'll use arbitrary numbers here, in the real world those probabilities would usually come from a corpus.
 
 (@) **Probabilistic SL-2 grammar for $\mathbf{(ab)^*}$**  
-    $\{ \mathit{\$a}: 1.0, \mathit{ab}: 1.0, \mathit{ba} .75, \mathit{b\$} .25\}$
+    1. $\mathit{\$a}$: the probability that a string starts with $a$ is 100%
+    1. $\mathit{ab}$: the probability that $a$ is followed by $b$ is 100%
+    1. $\mathit{ba}$: the probability that $b$ is followed by $a$ is 75%
+    1. $\mathit{b\$}$: the probability that $b$ is not followed by anything is 25%
 
-Our formula stays exactly the same, except that $f$ now gives us the probability of a bigram according to $G$.
-If there is none listed, the probability is 0.
+Now that the grammar is probabilistic, we also have to change our formula.
+Except that we don't!
+We keep everything the way it is and only interpret $f$ differently.
+The function $f$ no longer tells us whether a bigram is licit, it instead gives us the probability of the bigram according to $G$.
+The probability for bigrams that aren't listed in the grammar is set to $0$.
 
 $$
 \begin{align*}
@@ -176,42 +183,136 @@ G(\mathit{\$abba\$}) := & f(\$a) \otimes f(ab) \otimes f(bb) \otimes f(ba) \otim
 \end{align*}
 $$
 
-It's exactly the same mechanism.
+Compare that to the formula we had for the categorical grammar --- it's exactly the same mechanism!
 Nothing here has changed except the values.
-The basic mechanisms of the grammar remain unaltered, in particular how the value of the whole is computed from the values of its parts.
+The value of the whole is still computed from the values of the same parts.
+
+
+## A trivalent SL grammar
 
 What if we want to do a trivalent system, with well-formed, borderline, and ill-formed?
-We could model that by assigning the values $1$, $.5$, and $0$, and a coarser version of multiplication that rounds in specific ways.
-But that's lame, so let's do something nicer instead.
-Our three values are $1$, $?$, $*$; and $\otimes$ is replaced by an operation that always picks the less licit value:
+Let's modify our categorical grammar so that it marginally allows $\mathit{bb}$.
 
-|              | $\mathbf{1}$ | $\mathbf{?}$ | $\mathbf{*}$ |
-| --:          | :-:          | :-:          | :-:          |
-| $\mathbf{1}$ | $1$          | $?$          | $*$          |
-| $\mathbf{?}$ | $?$          | $?$          | $*$          |
-| $\mathbf{*}$ | $*$          | $*$          | $*$          |
+(@) **Trivalent SL-2 grammar for $\mathbf{(ab)^*}$**  
+    1. $\mathit{\$a}$: the string may start with $a$
+    1. $\mathit{ab}$: $a$ may be followed by $b$
+    1. $\mathit{ba}$: $b$ may be followed by $a$
+    1. $\mathit{b\$}$: the string may end with $b$
+    1. $\mathit{bb}$: $b$ may be marginally followed by $b$
 
-The grammar would have to specify for each bigram whether its value is $1$, $?$, or $*$, and we would get that value via $f$.
-But the overall formula once again stays the same.
-We compute the value of the whole string from the values of the bigrams.
+The corresponding formula once again will stay the same.
+But instead of $0$ and $1$, we will use three values:
 
-We can even move beyond anything resembling well-formedness.
-Suppose that $f$ maps each bigram $b$ to the singleton set $\{b\}$ that contains only $b$.
-And now let's instantiate $\otimes$ as $\cup$, which is union of sets.
-Then the formula above gives us for each string the set of bigrams that occur in it.
+- $1$: well-formed
+- $?$: borderline
+- $*$: ill-formed
+
+Instead of multiplication, $\otimes$ is now an operation $\mathrm{min}$ that always returns the least licit value, as specified in the table below.
+
+| $\mathrm{min}$ | $\mathbf{1}$ | $\mathbf{?}$ | $\mathbf{*}$ |
+| --:            | :-:          | :-:          | :-:          |
+| $\mathbf{1}$   | $1$          | $?$          | $*$          |
+| $\mathbf{?}$   | $?$          | $?$          | $*$          |
+| $\mathbf{*}$   | $*$          | $*$          | $*$          |
+
+And here are the corresponding formulas for our familiar example strings $\mathit{\$abab\$}$ and $\mathit{\$abba\$}$
+
+$$
+\begin{align*}
+G(\mathit{\$abab\$}) := & f(\$a) \otimes f(ab) \otimes f(ba) \otimes f(ab) \otimes f(b\$)\\
+                      = & 1 \otimes 1 \otimes 1 \otimes 1 \otimes 1\\
+                      = & 1 \mathrm{min} 1 \mathrm{min} 1 \mathrm{min} 1 \mathrm{min} 1\\
+                      = & 1\\
+\end{align*}
+$$
+$$
+\begin{align*}
+G(\mathit{\$abba\$}) := & f(\$a) \otimes f(ab) \otimes f(bb) \otimes f(ba) \otimes f(a\$)\\
+                      = & 1 \otimes 1 \otimes ? \otimes 1 \otimes *\\
+                      = & 1 \mathrm{min} 1 \mathrm{min} ? \mathrm{min} 1 \mathrm{min} *\\
+                      = & *\\
+\end{align*}
+$$
+
+Note how the second string is still considered ill-formed.
+While the presence of the bigram $\mathit{bb}$ degrades it to borderline status, the presence of the illicit bigram $\mathit{a\$}$ means that we cannot assign a higher value than $*$.
+
+
+## Beyond acceptability
+
+We can even use this formula to calculate aspects of the string that have nothing at all to do with well-formedness or acceptability.
+Suppose that $f$ once again maps each bigram to $1$ or $0$ depending on whether it is licit according to $G$.
+Next, we instantiate $\otimes$ as addition.
+Then we have a formula that calculates the number of licit bigrams in the string.
+
+$$
+\begin{align*}
+G(\mathit{\$abab\$}) := & f(\$a) \otimes f(ab) \otimes f(ba) \otimes f(ab) \otimes f(b\$)\\
+                      = & 1 \otimes 1 \otimes 1 \otimes 1 \otimes 1\\
+                      = & 1 + 1 + 1 + 1 + 1\\
+                      = & 5\\
+\end{align*}
+$$
+$$
+\begin{align*}
+G(\mathit{\$abba\$}) := & f(\$a) \otimes f(ab) \otimes f(bb) \otimes f(ba) \otimes f(a\$)\\
+                      = & 1 \otimes 1 \otimes 0 \otimes 1 \otimes 0\\
+                      = & 1 + 1 + 0 + 1 + 0\\
+                      = & 3\\
+\end{align*}
+$$
+
+Or maybe $f$ replaces each bigram $g$ with the singleton set $\{g\}$.
+And $\otimes$ will be $\cup$, the set union operation.
+Then the formula maps each string to the set of bigrams that occur in it.
+
+$$
+\begin{align*}
+G(\mathit{\$abab\$}) := & f(\$a) \otimes f(ab) \otimes f(ba) \otimes f(ab) \otimes f(b\$)\\
+                      = & \{\$a\} \otimes \{ab\} \otimes \{ba\} \otimes \{ab\} \otimes \{b\$\}\\
+                      = & \{\$a\} \cup \{ab\} \cup \{ba\} \cup \{ab\} \cup \{b\$\}\\
+                      = & \{\$a, ab, ba, b\$\}\\
+\end{align*}
+$$
+$$
+\begin{align*}
+G(\mathit{\$abba\$}) := & f(\$a) \otimes f(ab) \otimes f(bb) \otimes f(ba) \otimes f(a\$)\\
+                      = & \{\$a\} \otimes \{ab\} \otimes \{bb\} \otimes \{ba\} \otimes \{a\$\}\\
+                      = & \{\$a\} \cup \{ab\} \cup \{bb\} \cup \{ba\} \cup \{a\$\}\\
+                      = & \{\$a, ab, bb, ba, a\$\}\\
+\end{align*}
+$$
+
+Is there a point to these instantiations of $f$ and $\otimes$?
+They can be useful for certain computational tasks, but from a linguistic perspective there really isn't much point to them.
+But, you know what, I'd say the same is true for all the other instantiations we've seen so far.
+If you're a linguist, you shouldn't worry at all about how $f$ and $\otimes$ are instantiated.
+
+
+## Grammars combine, they don't calculate
 
 The general upshot is this: a grammar is a mechanism for determining the values of the whole from values of its parts.
 The difference between grammars is what parts they look at and how they relate them to each other.
-Basically, the overall shape of the formula they use for computing $G(o)$ for some object $o$.
-The shape of this formula is what separates an SL grammar from a TSL grammar, an SP grammar, or a finite-state automaton.
+
+A TSL grammar, for instance, would have a different formula.
+In a TSL grammar, we ignore irrelevant symbols in the string.
+So if we have a grammar that cares about $a$ but not $b$, the corresponding formula for the string $\mathit{abba}$ would be
+$f(\$a) \otimes f(aa) \otimes f(a\$)$.
+This is only a minor change because TSL grammars are very similar to SL grammars.
+The formula for, say, a finite-state automaton would differ by quite a bit more.
+That's what linguistic analysis is all about.
+Linguistics is about determining the **shape of the formula**!
 
 But that's not what the categorical VS gradience divide is about.
 That only kicks in once you have determined the overall shape of the formula and need to define $f$ and $\otimes$.
-But for anything a linguist would like to do, the resulting system will always form a particular kind of algebraic structure that's called a **monoid**.
+And that choice simply isn't very crucial from a linguistic perspective.
+
+There's many different choices for $f$ and $\otimes$ depending on what you want to do.
+But the choices that are useful for a linguist will always be limited in such way that they form a particular kind of algebraic structure that's called a **monoid**.
 I won't bug you with [the mathematical details of monoids](https://en.wikipedia.org/wiki/Monoid).
 Whether you prefer a categorical system or a gradient system, rest assured there's a suitable monoid for that.
 And that's all that matters.
-That's why linguists shouldn't worry about the categorical VS gradience divide --- linguistic insights are about the overall shape of the formula, not about plugging in specific operators.
+That's why linguists shouldn't worry about the categorical VS gradience divide --- linguistic insights are about the overall shape of the formula, not about calculating the result.
 
 
 ## From string to trees: semirings
@@ -221,13 +322,14 @@ If you're already worn out, just skip ahead to the wrap-up.
 
 Beyond the pleasant valleys of string land lies the thicket of tree land.
 In tree land, things can get a bit more complicated depending on what your question is.
-They don't necessarily do so, it really depends on what kind of value you're trying to compute.
+Not always, though.
+It really depends on what kind of value you're trying to compute.
 
 If you just want to know whether a specific tree is well-formed, nothing really changes.
 Take your standard phrase structure grammar.
-A rewrite rule of the form `S -> NP VP` is a tree bigram where the root is `S` and the daughters are `NP` and `VP`.
+A rewrite rule of the form `S -> NP VP` is a tree bigram where the mother is `S` and the daughters are `NP` and `VP`.
 Just like we can break down a string into its string bigrams, we can break down a tree into its tree bigrams.
-And the value of the whole tree is computed by combining the values of its tree bigrams.
+And the value of the whole tree according to a phrase structure grammar is computed by combining the values of its tree bigrams.
 With more expressive formalisms like MGs, things are once again more complicated, just like a finite-state automaton uses a more complicated formula in string land than the one for SL grammars above.
 But the general principle remains the same: once you have a formula for how the parts interact, you can plug in the operators you want.
 As before, we can switch between gradient and categorical systems by tweaking the values of $f$ and $\otimes$, under the condition that this still gets us a monoid.
@@ -239,7 +341,7 @@ For instance, in probabilistic syntax the probability of the string
 
 (@) I eat sushi with edible chopsticks.
 
-is the **sum** of the probabilities of two distinct trees:
+is the sum of the probabilities of two distinct trees:
 
 (@) [I eat [sushi with edible chopsticks]]
 (@) [I [[eat sushi] [with edible chopsticks]]
@@ -277,7 +379,7 @@ Most of the time that's not very illuminating for linguistics, but when it comes
 
 Monoids and semirings are a very abstract perspective of grammars, and I rushed through them in a (failed?) attempt to keep the post at a manageable length.
 But behind all that math is the simple idea that syntacticians, and linguists in general, don't need to worry that a categorical grammar formalism is somehow irreconcilable with the fact that acceptability judgments are gradient.
-Even if don't factor that out as a performance phenomenon, even if we want to place it in the heart of grammar, that does not require us to completely retool our grammar formalisms.
+Even if we don't factor out gradience as a performance phenomenon, even if we want to place it in the heart of grammar, that does not require us to completely retool our grammar formalisms.
 The change is largely mathematical in nature and doesn't touch on the things that linguists care about.
 Linguists care about representations and how specific parts of those representations can interact.
 In the mathematical terms I used in this post, those issues are about the shape of the formula for computing $G(o)$ for some object $o$.
