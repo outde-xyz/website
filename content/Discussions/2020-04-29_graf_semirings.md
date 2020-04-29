@@ -221,7 +221,7 @@ $$
 \begin{align*}
 G(\mathit{\$abab\$}) := & f(\$a) \otimes f(ab) \otimes f(ba) \otimes f(ab) \otimes f(b\$)\\
                       = & 1 \otimes 1 \otimes 1 \otimes 1 \otimes 1\\
-                      = & 1 \mathrm{min} 1 \mathrm{min} 1 \mathrm{min} 1 \mathrm{min} 1\\
+                      = & 1 \mathrel{\mathrm{min}} 1 \mathrel{\mathrm{min}} 1 \mathrel{\mathrm{min}} 1 \mathrel{\mathrm{min}} 1\\
                       = & 1\\
 \end{align*}
 $$
@@ -229,7 +229,7 @@ $$
 \begin{align*}
 G(\mathit{\$abba\$}) := & f(\$a) \otimes f(ab) \otimes f(bb) \otimes f(ba) \otimes f(a\$)\\
                       = & 1 \otimes 1 \otimes ? \otimes 1 \otimes *\\
-                      = & 1 \mathrm{min} 1 \mathrm{min} ? \mathrm{min} 1 \mathrm{min} *\\
+                      = & 1 \mathrel{\mathrm{min}} 1 \mathrel{\mathrm{min}} ? \mathrel{\mathrm{min}} 1 \mathrel{\mathrm{min}} *\\
                       = & *\\
 \end{align*}
 $$
