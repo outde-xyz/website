@@ -36,7 +36,7 @@ The take-home message, though, applies equally to all gradient systems, whether 
 
 ## A formula for categorical grammars
 
-Let's start with a very simple example in the form of a [strictly local grammar]({static}/Tutorials/locality_sltsl.md).
+Let's start with a very simple example in the form of a [strictly local grammar]({filename}/Tutorials/locality_sltsl.md).
 SL grammars are usually negative, which means that they list all the *n*-grams that must not occur in a string.
 But for the purposes of this post, it is preferable to convert the negative grammar into an equivalent positive grammar, which lists all the *n*-grams that may occur in a string.
 For example, the positive SL-2 grammar $G$ below generates the language $(ab)^+$, which contains the strings $\mathit{ab}$, $\mathit{abab}$, $\mathit{ababab}$, and so on.
