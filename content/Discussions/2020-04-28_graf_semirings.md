@@ -60,7 +60,7 @@ $$G(\mathit{\$abab\$}) := f(\$a) \otimes f(ab) \otimes f(ba) \otimes f(ab) \otim
 This looks fancy, but I haven't really done anything substantial here.
 Let's break this formula down into its components:
 
-- $G(\mathit{\$abab\$})$ is the value that the grammar $G$ assigns to the string $\mathit{\$abab\$})$.
+- $G(\mathit{\$abab\$})$ is the value that the grammar $G$ assigns to the string $\mathit{\$abab\$}$.
 - $:=$ means "is defined as".
 - $f$ is some mystery function that maps each bigram to some value.
 - $\otimes$ is another mystery function that combines the values produced by $f$.
@@ -101,8 +101,8 @@ $$
 
 Notice how we get $1$ or $0$ depending on whether the bigram is licit according to grammar $G$.
 Now we just need to know what $\otimes$ does.
-Again there's equivalent multiple choices, but you know what, let's keep it simple, let's say $\otimes$ is multiplication.
-That will do.
+Again there's equivalent multiple choices. 
+But hey, let's keep it simple, let's say $\otimes$ is multiplication, that will do.
 
 $$
 \begin{align*}
@@ -166,7 +166,7 @@ The basic mechanisms of the grammar remain unaltered, in particular how the valu
 What if we want to do a trivalent system, with well-formed, borderline, and ill-formed?
 We could model that by assigning the values $1$, $.5$, and $0$, and a coarser version of multiplication that rounds in specific ways.
 But that's lame, so let's do something nicer instead.
-Our values are $1$, $?$, $*$ instead, and $\otimes$ is replaced by an operation that always picks the more illicit value:
+Our three values are $1$, $?$, $*$; and $\otimes$ is replaced by an operation that always picks the less licit value:
 
 |              | $\mathbf{1}$ | $\mathbf{?}$ | $\mathbf{*}$ |
 | --:          | :-:          | :-:          | :-:          |
@@ -184,52 +184,76 @@ And now let's instantiate $\otimes$ as $\cup$, which is union of sets.
 Then the formula above gives us for each string the set of bigrams that occur in it.
 
 The general upshot is this: a grammar is a mechanism for determining the values of the whole from values of its parts.
-The difference between grammars is what parts they look at and how they put them into relation.
+The difference between grammars is what parts they look at and how they relate them to each other.
 Basically, the overall shape of the formula they use for computing $G(o)$ for some object $o$.
-The shape of this formula is what separates an SL grammar from a TSL grammar, and SP grammar, or a finite-state automaton.
+The shape of this formula is what separates an SL grammar from a TSL grammar, an SP grammar, or a finite-state automaton.
 
 But that's not what the categorical VS gradience divide is about.
 That only kicks in once you have determined the overall shape of the formula and need to define $f$ and $\otimes$.
 But for anything a linguist would like to do, the resulting system will always form a particular kind of algebraic structure that's called a **monoid**.
-I won't bug you with [the mathematical details of monoids](https://en.wikipedia.org/wiki/Monoid)..
-Whether you prefer a categorical system or a gradient system, there's a suitable monoid for that.
+I won't bug you with [the mathematical details of monoids](https://en.wikipedia.org/wiki/Monoid).
+Whether you prefer a categorical system or a gradient system, rest assured there's a suitable monoid for that.
 And that's all that matters.
 That's why linguists shouldn't worry about the categorical VS gradience divide --- linguistic insights are about the overall shape of the formula, not about plugging in specific operators.
 
 
 ## From string to trees: semirings
 
-Okay, there's one minor complication that I'd like to cover just to cross all *t*s and dot all *i*s.Beyond the pleasant valleys of string land lies the thicket of tree land.
+Okay, there's one minor complication that I'd like to cover just to cross all *t*s and dot all *i*s.
+If you're already worn out, just skip ahead to the wrap-up.
+
+Beyond the pleasant valleys of string land lies the thicket of tree land.
 In tree land, things can get a bit more complicated depending on what your question is.
+They don't necessarily do so, it really depends on what kind of value you're trying to compute.
 
 If you just want to know whether a specific tree is well-formed, nothing really changes.
 Take your standard phrase structure grammar.
 A rewrite rule of the form `S -> NP VP` is a tree bigram where the root is `S` and the daughters are `NP` and `VP`.
 Just like we can break down a string into its string bigrams, we can break down a tree into its tree bigrams.
 And the value of the whole tree is computed by combining the values of its tree bigrams.
-With more expressive formalisms like MGs, things are once again more complicated, just like a finite-state automaton uses a more complicated formula for string land than the one I gave above.
-But the general principle stays the same: once you have a formula for how the parts interact, you can plug in the operators you want.
+With more expressive formalisms like MGs, things are once again more complicated, just like a finite-state automaton uses a more complicated formula in string land than the one for SL grammars above.
+But the general principle remains the same: once you have a formula for how the parts interact, you can plug in the operators you want.
 As before, we can switch between gradient and categorical systems by tweaking the values of $f$ and $\otimes$, under the condition that this still gets us a monoid.
 
 I think this is actually enough for syntax.
-But perhaps you want to talk the value of a string, rather than a tree.
+But perhaps you want to talk about the value of a string, rather than a tree.
 This is a more complex value because one string can correspond to multiple trees.
-For instance, in probabilistic syntax the probability of the string *I eat sushi with edible chopsticks* is the sum of the tree probabilities of *[I eat [sushi with edible chopsticks]]* and *[I [[eat sushi] [with edible chopsticks]]*.
-So there is yet another operation $\oplus$ that combines all the values computed by $\otimes$.
-If that's what you want to do because you care about string values, then $\oplus$ also has to yield a monoid of some kind, and the combination of $\oplus$ and $\otimes$ has to form a **semiring**.
+For instance, in probabilistic syntax the probability of the string
+
+(@) I eat sushi with edible chopsticks.
+
+is the **sum** of the probabilities of two distinct trees:
+
+(@) [I eat [sushi with edible chopsticks]]
+(@) [I [[eat sushi] [with edible chopsticks]]
+
+So $\otimes$ by itself is not enough, there is yet another operation.
+For probabilistic grammars it's $+$, but we may again replace it with a more general mystery operation $\oplus$.
+The job of $\oplus$ is to combine all the values computed by $\otimes$.
+Like $\otimes$, $\oplus$ has to yield a monoid of some kind, and the combination of $\oplus$ and $\otimes$ has to form a **semiring**.
 Again I'll completely [gloss over the math](https://en.wikipedia.org/wiki/Semiring).
-Let's focus only on the essential point: the split between categorical systems and gradient systems is not very large because either way we end up with a semiring.
+Let's focus only on the essential point: once again the split between categorical systems and gradient systems is not very large because either way we end up with a semiring.
 The nature of the grammar stays the same, only the system for computing compound values uses different functions and operators.
 
 You might be wondering what a categorical grammar looks like from the semiring perspective.
 What is the mysterious operation $\oplus$ in that case?
-You can think of it as logical *or*: it returns 1 if there is at least one 1.
-In order to determine if a string *s* is well-formed, one looks at all possible trees that have *s* as their string yield.
-Some of these trees may be well-formed according to the grammar, and thus have a compound value of 1;
-others will be ill-formed and have a compound value of 0;
-When we combine all those trees values with $\oplus$, we get 1 iff there is at least one well-formed tree.
-That's not how we usually think about well-formedness --- illicit trees are not included in the calculation for a categorical grammar because we know that they can't affect the outcome.
-But mathematically it works just fine like this.
+It can't be addition because $1 + 1$ would give us $2$, which isn't a possible value in a categorical system.
+No, with categorical systems, $\oplus$ behaves like logical *or*: it returns 1 if there is at least one 1.
+Suppose, then, that we want to know if some string *s* is well-formed according to some categorical grammar $G$.
+Here is how this would work in a very simplified manner:
+
+1. We look at all possible trees that yield the string *s*, even if those strings are ill-formed according to $G$.
+1. We use $\otimes$ to compute the compound value for each tree.
+   As before, $\otimes$ is multiplication (but it could also be logical *and*, if you find that more pleasing).
+   Well-formed tress will evaluate to $1$, ill-formed ones to $0$.
+1. We then use $\oplus$, i.e. logical *or*, to combine all those compound values into a single value for the string *s*.
+   Then *s* will get the value $1$, and hence be deemed well-formed, iff there is at least one well-formed tree that yields *s*.
+
+Okay, that's not how we usually think about well-formedness.
+We view the grammar as a system for specifying a specific set of well-formed trees, rather than a function that maps every logically conceivable tree to some value.
+But as you hopefully remember from your semantics intro, there is no difference between a set and its characteristic function.
+The procedure above treats the grammar as the characteristic function of the set of well-formed trees.
+Most of the time that's not very illuminating for linguistics, but when it comes to the split between categorical and gradient it is really useful because it reveals the monoid/semiring structure of the grammar formalism.
 
 
 ## Wrapping up: Don't worry, be happy
@@ -239,7 +263,7 @@ But behind all that math is the simple idea that syntacticians, and linguists in
 Even if don't factor that out as a performance phenomenon, even if we want to place it in the heart of grammar, that does not require us to completely retool our grammar formalisms.
 The change is largely mathematical in nature and doesn't touch on the things that linguists care about.
 Linguists care about representations and how specific parts of those representations can interact.
-In the mathematical terms I used in this post, those issues are about the shape of the formula for computing $G(s)$.
+In the mathematical terms I used in this post, those issues are about the shape of the formula for computing $G(o)$ for some object $o$.
 It is not about the specific values or operators that appear in the formula.
 
 In many cases, there's actually many different operators that give the same result.
