@@ -15,7 +15,7 @@ Well, despair no more, I have found the perfect exercise to practice that differ
 
 Enter John Carter, Jeddak of Jeddaks, Warlord of Mars, depicted here with his devoted wife, Dejah Thoris, Princess of Helium, daughter of Mors Kajak, who is Jed of Helium and son to Tardos Mors, Jeddak of Helium.
 
-![John Carter as portrayed by Frank Frazetta](https://vignette.wikia.nocookie.net/barsoom/images/2/26/Frazetta_PoM.jpg/revision/latest?cb=20090528221427)
+![John Carter and Dejah Thoris, as portrayed by Frank Frazetta](https://vignette.wikia.nocookie.net/barsoom/images/2/26/Frazetta_PoM.jpg/revision/latest?cb=20090528221427)
 
 And here we have two of John Carter's most loyal friends.
 First, Tars Tarkas, Jeddak of Thark.
