@@ -1,0 +1,64 @@
+\documentclass[crop,tikz]{standalone}
+\usetikzlibrary{%
+    arrows,
+    arrows.meta,
+    backgrounds,
+    calc,
+    decorations.pathreplacing,
+    fit,
+    matrix,
+    positioning,
+    scopes,
+    shadows
+}
+\usepackage[linguistics]{forest}
+\usepackage[charter]{mathdesign}
+\tikzset{headarrow/.style = {-{Latex[length=.5em]}}}
+\tikzset{move/.style = {dashed,blue,headarrow}}
+
+\newcommand{\mlex}[2]{\ensuremath{\textrm{#1} ::\thinspace \mathrm{#2}}}
+\newcommand{\fsel}[1]{\ensuremath{\mathrm{#1^+}}}
+\newcommand{\fcat}[1]{\ensuremath{\mathrm{#1^-}}}
+\newcommand{\flcr}[1]{\ensuremath{\mathrm{#1^+}}}
+\newcommand{\flce}[1]{\ensuremath{\mathrm{#1^-}}}
+\newcommand{\fadj}[1]{\ensuremath{\mathrm{#1^\sim}}}
+\newcommand{\Merge}{Merge}
+\newcommand{\Move}{Move}
+\newcommand{\Adjoin}{Adjoin}
+
+\begin{document}
+\begin{forest}
+    [CP
+        [VP, name=target-VP
+            [$t$, name=source-obj]
+            [gelesen]
+        ]
+        [C$'$
+            [hat]
+            [TP
+                [DP, name=target-obj
+                    [das]
+                    [Buch]
+                ]
+                [TP
+                    [DP, name=target-nom
+                        [der]
+                        [Hans]
+                    ]
+                    [T$'$
+                        [T]
+                        [$\mathit{v}$P
+                            [$t$, name=source-nom]
+                            [$t$, name=source-VP]
+                        ]
+                    ]
+                ]
+            ]
+        ]
+    ]
+    %
+    \draw[move] (source-nom) [out=160, in=335] to (target-nom);
+    \draw[move] (source-VP) [out=220, in=185] to (target-VP);
+    \draw[move] (source-obj) [out=290, in=195] to (target-obj);
+\end{forest}
+\end{document}

@@ -27,16 +27,16 @@ So I figured I'd reveal my ignorance to the world and hopefully crowd source som
 Freezing is the idea that once a phrase starts moving, it becomes opaque to extraction.
 The sentence below presents a typical example --- to keep things readable, I'm using copies instead of traces, but that's just a descriptive device.
 
-(@) ^*^[~CP~ [which car] did [~TP~ [the driver of ~~which car~~] T [~*v*P~ ~~the driver of which car~~ *v* cause a scandal]]]
+(@) ^*^ [~CP~ [which car] did [~TP~ [the driver of ~~which car~~] T [~*v*P~ ~~the driver of which car~~ *v* cause a scandal]]]
 
 Here the subject DP *the driver of which car* undergoes movement from the base subject position Spec,*v*P to the surface subject position in Spec,TP.
-As a result, the DP effectively turns into an island, which makes it impossible to move the wh-phrase *which car* from within he subject into Spec,CP.
+As a result, the DP effectively turns into an island, which makes it impossible to move the wh-phrase *which car* from within the subject into Spec,CP.
 That's the essence of freezing, and it can be summarized in the form of a catchy slogan:
 
 (@eng) **Freezing in a nutshell**  
     Once you've escaped, nothing escapes from you.
 
-It's the Citizen Kane of movement: a free-spirited phrase that is eager to move finally achieves success but is corrupted by it and now uses its power to keep down all the other free-spirited phrases in its domain that would like to move.
+Freezing is the Citizen Kane of movement: a free-spirited phrase that is eager to move finally achieves success but is corrupted by it and now uses its power to keep down all the other free-spirited phrases in its domain that would like to move.
 
 Freezing has a well-known loophole: since a phrase P isn't opaque to extraction until it starts moving, other movers can escape from P as long as they do so before P moves.
 This still allows for instances of remnant movement as in the German example below.
@@ -45,52 +45,67 @@ This still allows for instances of remnant movement as in the German example bel
     [~CP~ [~VP~ ~~the book~~ read] has [~TP~ the book the Hans T [~*v*P~ ~~the Hans~~ *v* ~~[~VP~ the book read]~~]]]  
     `Hans **read** the book.'
 
-Yeah, that example is a lot harder to make sense of unless you're already familiar with the analysis.
+Yeah, unless you're already familiar with the analysis, this example is a lot harder to make sense of (@eng).
 Let's switch out the German for English glosses, just to make things a bit easier.
 Then the sentence starts out with the structure [~*v*P~ the Hans *v* [~VP~ the book read]], where *the book* is the object of the finite verb *read* and *the Hans* is the subject.
 At this point, *the Hans* undergoes the usual subject movement to Spec,TP.
-Then, the object *the book* moves out of the VP into some part of what's called the *Mittelfeld*, which may be some kind of TP-adjunct position.
-Notice that both movement steps are allowed because neither phrase was extracted from a moving phrase.
+Then, the object *the book* moves out of the VP into some part of what's called the *Mittelfeld*, which may be some kind of TP-specifier position.
+Both movement steps are allowed because neither phrase was extracted from a moving phrase.
 Now, finally, the whole VP moves to Spec,CP.
 This, too, is a licit step --- freezing effects do not say that you cannot move once something has moved out of you, they say that nothing can move out of you once you start moving.
-But that's not the case here.
-So the whole VP gets to move to the left edge of the sentence, but since the object had already moved out of the VP before, only the head of the VP is visible at the left edge of the surface string.
+And that's definitely not the case here, nothing moves out of the VP once the VP starts moving.
+So the whole VP gets to move to the left edge of the sentence without any issues.
+Since the object had already moved out of the VP before, only the head of the VP is visible at the left edge of the surface string, giving us a sentence where it looks like just the V-head underwent movement.
 
 If you're still confused, here's the bare phrase structure trees for (@eng) and (@ger).
 
-fixme: trees here
+![Bare phrase structure tree for (@eng)]({static}/img/thomas/monotonicity_freezing/bpstree_eng.svg)
+
+![Bare phrase structure tree for (@ger)]({static}/img/thomas/monotonicity_freezing/bpstree_ger.svg)
 
 
 # Connection to monotonicity
 
-For the examples above, there is a straight-forward account in terms of monotonicity.
-Remember that monotonicity is an order preservation principle ([check this earlier post](fixme)).
+For the two examples above, there is a straight-forward account in terms of monotonicity.
+Remember that monotonicity is an order preservation principle ([check this earlier post for details](fixme)).
 Given two structures $A$ and $B$ with orders $\leq_A$ and $\leq_B$, a function $f$ from $A$ to $B$ is monotonically increasing iff $x \leq_A y$ implies $f(x) \leq_B f(y)$.
 For our purposes, it will be sufficient to think of monotonicity as a generalized ban against crossing branches.
 
 We can apply the notion of monotonicity directly to the dependency tree representation provided by Minimalist grammars (MGs).
 In this format, the phrase structure trees above are represented as the trees below, except that I have simplified things a bit by omitting all features and instead indicating movement dependencies via arrows.
 
-fixme: figures here
+![MG dependency tree for (@eng)]({static}/img/thomas/monotonicity_freezing/deptree_eng.svg)
+
+![MG dependency tree for (@ger)]({static}/img/thomas/monotonicity_freezing/deptree_ger.svg)
 
 Each dependency tree defines a partial order over the lexical items in the sentence.
-Intuitively, this partial order encodes syntactic prominence in terms of head-argument relations, or, in Minimalist terms, (external) Merge.
+Intuitively, this partial order encodes syntactic prominence in terms of head-argument relations, or in Minimalist terms, (external) Merge.
 That is to say, if X is the daughter of Y, then Y is more prominent than X, and so is the mother of Y, and the mother of the mother of Y, and so on.
-Okay, so our first order for monotonicity comes straight from the MG dependency trees; I'll call this the **Merge order**.
+Okay, so our first order for monotonicity comes straight from the MG dependency trees.
+Strictly speaking there's some extra steps to be taken for mathematical reasons, but I'll ignore those here to keep things simple.
+So MG dependency trees will be our way of getting a partial order that I call the **Merge order**.
 
-For our second order, we construct a truncated version of the dependency trees that encodes prominence with respect to movement (internal Merge).
+For our second order we construct a truncated version of the dependency trees that encodes prominence with respect to movement (internal Merge).
 The construction is a bit more complicated, but putting aside some edge cases it's enough to take the dependency tree and remove all lexical items that don't provide the landing site for some mover.
 This gives us the reduced structures below.
+I'll call order of this kind **Move orders**.^[linear]
 
-fixme: reduced figures here
+^[linear]: While the Move orders in these examples are linear orders, more complex examples would produces partial orders.
+An example of that is *John slept and Mary snored*.
 
-Okay, order #2 is in place; I'll call this the **Move order**.
+![Move order for (@eng)]({static}/img/thomas/monotonicity_freezing/movetree_eng.svg)
 
-Now we define a mapping $f$ from the Move order to the Merge order such that each node M in the move order is mapped to the node N in the Merge order iff N moves to M.
+![Move order for (@ger)]({static}/img/thomas/monotonicity_freezing/movetree_ger.svg)
+
+Now we define a mapping *f* from the Move order to the Merge order such that each node M in the move order is mapped to the node N in the Merge order iff M provides the final landing site for N.
 Again it helps to look at this in terms of pictures.
-As you can see, $f$ essentially encodes the reverse of the arrows I added to the original dependency trees.
+As you can see, *f* essentially encodes the reverse of the arrows I added to the original dependency trees.
 
-Notice how the lines for $f$ cross in the illicit English sentence, but not in the well-formed German one.
+![Mapping for (@eng)]({static}/img/thomas/monotonicity_freezing/mapping_eng.svg)
+
+![Mapping for (@ger)]({static}/img/thomas/monotonicity_freezing/mapping.svg)
+
+Notice how the lines for *f* cross in the illicit English sentence, but not in the well-formed German one.
 So perhaps crossing branches aren't okay, and since monotonicity is essentially a ban against crossing branches, that would suggest that the problem with the English sentence is that it does not obey monotonicity.
 Freezing effects, then, amount to the requirement that a sentence's Move order must preserve its Merge order.
 The only permitted form of movement is **m**onotonicity **r**especting movement, or simply MR movement.
@@ -107,14 +122,14 @@ Freezing effects tell us that once N has been extracted from M, it is free to mo
 MR movement, on the other hand, can never move N to a position that's higher than the final landing site of M.
 Does this ever happen?
 I'm not sure.
-German certainly furnishes cases that look like this.
+German certainly furnishes cases that look like that.
 
-(@ger) [~CP~ [~DP~ das Buch] hat [~TP~ [~VP~ ~~das Buch~~ gelesen] ~~[~DP~ das Buch]~~ der Hans T [~*v*P~ ~~der Hans~~ *v* ~~[~VP~ das Buch gelesen]~~]]]  
-       [~CP~ [~DP~ the book] has [~TP~ [~VP~ ~~the book~~ read] ~~[~DP~ the book]~~ the Hans T [~*v*P~ ~~the Hans~~ *v* ~~[~VP~ the book read]~~]]]  
-       `The book, Hans **read**.'
+(@ger2) [~CP~ [~DP~ das Buch] hat [~TP~ [~VP~ ~~das Buch~~ gelesen] ~~[~DP~ das Buch]~~ der Hans T [~*v*P~ ~~der Hans~~ *v* ~~[~VP~ das Buch gelesen]~~]]]  
+        [~CP~ [~DP~ the book] has [~TP~ [~VP~ ~~the book~~ read] ~~[~DP~ the book]~~ the Hans T [~*v*P~ ~~the Hans~~ *v* ~~[~VP~ the book read]~~]]]  
+        `The book, Hans **read**.'
 
 But to be frank, German is a bad example to begin with because scrambling can do all kinds of stuff that won't fly for standard movement.
-I can't think of cases for other languages, but I'm pretty bad at remembering data points, so that's not saying much.
+I can't think of cases for other languages, but I'm also pretty bad at remembering data points, so that's not saying much.
 So, yes, MR movement might be too restrictive if it is stated with respect to the final landing site.
 
 One way to fix that is to redefine the Move order so that it keeps track of the first landing sites instead of the final ones.
@@ -133,11 +148,11 @@ Again I'm inclined to stick with MR movement simply because it provides a differ
 Maybe MR movement works, maybe it doesn't, but either result would provide useful insights into the nature of freezing effects.
 
 
-# The punchline
+# The crowd sourcing part
 
-Overall, freezing effects can be regarded as an instance of monotonicity, just not in the way I'd like to see.
-I defined the move order in terms of the final landing site, but to get an exact match for the standard definition of freezing we have to use the initial landing site.
-That's still interesting in that it allows us to reduce freezing to the more general principle of monotonicity, and I have argued many times that monotonicity really has a fundamental role to play in language.
+Overall, freezing effects can be regarded as an instance of monotonicity, just not in the way I prefer.
+I define the move order in terms of the final landing site, but to get an exact match for the standard definition of freezing one has to use the initial landing site.
+That's still noteworthy as it allows us to reduce freezing to the more general principle of monotonicity, and I have argued many times that monotonicity really has a fundamental role to play in language.
 
 But I'd really like to push for the MR movement perspective instead.
 I just find it more pleasing, and I like that it differs from the standard view of freezing on some edge cases.
