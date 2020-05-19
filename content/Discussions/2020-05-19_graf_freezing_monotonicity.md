@@ -14,10 +14,10 @@ tags:
 <!-- START_SUMMARY_BLOCK -->
 As you might know, I love reanalyzing linguistic phenomena in terms of monotonicity
 (see
-[this earlier post]({filename}/2019-05-31_graf_number-monotonicity.md),
+[this earlier post]({filename}2019-05-31_graf_number-monotonicity.md),
 [my JLM paper](http://dx.doi.org/10.15398/jlm.v7i2.211), and
 [this NELS paper by my student Sophie Moradi](https://github.com/somoradi/somoradi/blob/master/nels49_Moradi.pdf)).
-I'm now in the middle of writing another paper on this topic, and it currently includes a chapter on freezing effects.
+I'm now in the middle of writing another paper on this topic, and it currently includes a section on freezing effects.
 You see, freezing effects are obviously just bog-standard monotonicity, and I'm shocked that nobody else has pointed that out before.
 But perhaps the reason nobody's pointed that out before is simple: my understanding of freezing effects does not match the facts.
 In the middle of writing the paper, I realized that I don't know just how much freezing effects limit movement.
@@ -70,7 +70,7 @@ If you're still confused, here's the bare phrase structure trees for (@eng) and 
 # Connection to monotonicity
 
 For the two examples above, there is a straight-forward account in terms of monotonicity.
-Remember that monotonicity is an order preservation principle ([check this earlier post for details]({filename}/2019-05-31_graf_number-monotonicity.md),
+Remember that monotonicity is an order preservation principle ([check this earlier post for details]({filename}2019-05-31_graf_number-monotonicity.md),
 Given two structures $A$ and $B$ with orders $\leq_A$ and $\leq_B$, a function $f$ from $A$ to $B$ is monotonically increasing iff $x \leq_A y$ implies $f(x) \leq_B f(y)$.
 For our purposes, it will be sufficient to think of monotonicity as a generalized ban against crossing branches.
 
@@ -129,7 +129,7 @@ German certainly furnishes cases that look like that.
 
 (@ger2) [~CP~ [~DP~ das Buch] hat [~TP~ [~VP~ ~~das Buch~~ gelesen] ~~[~DP~ das Buch]~~ der Hans T [~*v*P~ ~~der Hans~~ *v* ~~[~VP~ das Buch gelesen]~~]]]  
         [~CP~ [~DP~ the book] has [~TP~ [~VP~ ~~the book~~ read] ~~[~DP~ the book]~~ the Hans T [~*v*P~ ~~the Hans~~ *v* ~~[~VP~ the book read]~~]]]  
-        `The book, Hans **read**.'
+        `The book, Hans read.'
 
 But to be frank, German is a bad example to begin with because scrambling can do all kinds of stuff that won't fly for standard movement.
 I can't think of cases for other languages, but I'm also pretty bad at remembering data points, so that's not saying much.
