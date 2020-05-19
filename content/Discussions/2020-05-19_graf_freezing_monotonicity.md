@@ -12,8 +12,11 @@ tags:
 ---
 
 <!-- START_SUMMARY_BLOCK -->
-As you might know, one of my hobby-horses is reanalyzing linguistic phenomena in terms of monotonicity (see here, here, and then there's this lovely paper here).
-<!-- fixme: links; add Sophie's stuff -->
+As you might know, I love reanalyzing linguistic phenomena in terms of monotonicity
+(see
+[this earlier post]({filename}/2019-05-31_graf_number-monotonicity.md),
+[my JLM paper](http://dx.doi.org/10.15398/jlm.v7i2.211), and
+[this NELS paper by my student Sophie Moradi](https://github.com/somoradi/somoradi/blob/master/nels49_Moradi.pdf)).
 I'm now in the middle of writing another paper on this topic, and it currently includes a chapter on freezing effects.
 You see, freezing effects are obviously just bog-standard monotonicity, and I'm shocked that nobody else has pointed that out before.
 But perhaps the reason nobody's pointed that out before is simple: my understanding of freezing effects does not match the facts.
@@ -25,9 +28,9 @@ So I figured I'd reveal my ignorance to the world and hopefully crowd source som
 # Freezing effects primer
 
 Freezing is the idea that once a phrase starts moving, it becomes opaque to extraction.
-The sentence below presents a typical example --- to keep things readable, I'm using copies instead of traces, but that's just a descriptive device.
+Below you have a prototypical example of a sentence that violates the freezing condition --- to keep things readable, I'm using copies instead of traces, but that's just a descriptive device.
 
-(@) ^*^ [~CP~ [which car] did [~TP~ [the driver of ~~which car~~] T [~*v*P~ ~~the driver of which car~~ *v* cause a scandal]]]
+(@) \* [~CP~ [which car] did [~TP~ [the driver of ~~which car~~] T [~*v*P~ ~~the driver of which car~~ *v* cause a scandal]]]
 
 Here the subject DP *the driver of which car* undergoes movement from the base subject position Spec,*v*P to the surface subject position in Spec,TP.
 As a result, the DP effectively turns into an island, which makes it impossible to move the wh-phrase *which car* from within the subject into Spec,CP.
@@ -67,7 +70,7 @@ If you're still confused, here's the bare phrase structure trees for (@eng) and 
 # Connection to monotonicity
 
 For the two examples above, there is a straight-forward account in terms of monotonicity.
-Remember that monotonicity is an order preservation principle ([check this earlier post for details](fixme)).
+Remember that monotonicity is an order preservation principle ([check this earlier post for details]({filename}/2019-05-31_graf_number-monotonicity.md),
 Given two structures $A$ and $B$ with orders $\leq_A$ and $\leq_B$, a function $f$ from $A$ to $B$ is monotonically increasing iff $x \leq_A y$ implies $f(x) \leq_B f(y)$.
 For our purposes, it will be sufficient to think of monotonicity as a generalized ban against crossing branches.
 
@@ -103,9 +106,9 @@ As you can see, *f* essentially encodes the reverse of the arrows I added to the
 
 ![Mapping for (@eng)]({static}/img/thomas/monotonicity_freezing/mapping_eng.svg)
 
-![Mapping for (@ger)]({static}/img/thomas/monotonicity_freezing/mapping.svg)
+![Mapping for (@ger)]({static}/img/thomas/monotonicity_freezing/mapping_ger.svg)
 
-Notice how the lines for *f* cross in the illicit English sentence, but not in the well-formed German one.
+Notice how the lines for the verb and the object cross in the illicit English sentence, but not in the well-formed German one (the crossing of lines with the subject is just an artefact of how we draw relations in two-dimensional space).
 So perhaps crossing branches aren't okay, and since monotonicity is essentially a ban against crossing branches, that would suggest that the problem with the English sentence is that it does not obey monotonicity.
 Freezing effects, then, amount to the requirement that a sentence's Move order must preserve its Merge order.
 The only permitted form of movement is **m**onotonicity **r**especting movement, or simply MR movement.
