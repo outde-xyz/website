@@ -70,7 +70,7 @@ If you're still confused, here's the bare phrase structure trees for (@eng) and 
 # Connection to monotonicity
 
 For the two examples above, there is a straight-forward account in terms of monotonicity.
-Remember that monotonicity is an order preservation principle ([check this earlier post for details]({filename}2019-05-31_graf_number-monotonicity.md),
+Remember that monotonicity is an order preservation principle ([check this earlier post for details]({filename}2019-05-31_graf_number-monotonicity.md)).
 Given two structures $A$ and $B$ with orders $\leq_A$ and $\leq_B$, a function $f$ from $A$ to $B$ is monotonically increasing iff $x \leq_A y$ implies $f(x) \leq_B f(y)$.
 For our purposes, it will be sufficient to think of monotonicity as a generalized ban against crossing branches.
 
