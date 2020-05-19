@@ -91,7 +91,7 @@ So MG dependency trees will be our way of getting a partial order that I call th
 For our second order we construct a truncated version of the dependency trees that encodes prominence with respect to movement (internal Merge).
 The construction is a bit more complicated, but putting aside some edge cases it's enough to take the dependency tree and remove all lexical items that don't provide the landing site for some mover.
 This gives us the reduced structures below.
-I'll call order of this kind **Move orders**.[^linear]
+I'll call orders of this kind **Move orders**.[^linear]
 
 [^linear]: While the Move orders in these examples are linear orders, more complex examples would produces partial orders.
 An example of that is *John slept and Mary snored*.
