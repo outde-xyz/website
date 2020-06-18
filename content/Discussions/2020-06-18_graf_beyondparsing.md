@@ -108,7 +108,7 @@ There aren't any conclusive answers yet because we haven't really looked at thos
    Can any of this be explained in generative models of morphology or prosody?
    Does any of this contradict the inverted T-model?
 
-1. **Assistive movement**
+1. **Assistive movement**  
    Which instances of movement reduce memory usage?
    Which increase it?
    What kinds of movement (don't) exist even though they worsen (ameliorate) memory usage?
