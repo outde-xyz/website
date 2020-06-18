@@ -4,6 +4,7 @@ title: >-
 authors:
     - Thomas Graf
 date: 2020-06-18
+bibliography: references.bib
 tags:
     - syntax
     - morphology
