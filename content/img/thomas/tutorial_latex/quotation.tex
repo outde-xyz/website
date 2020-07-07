@@ -1,10 +1,11 @@
-\documentclass[crop]{standalone}
+\documentclass[varwidth,crop]{standalone}
 \usepackage[charter]{mathdesign}
 \usepackage{verbatim}
 
 \begin{document}
-\noindent
-He said "something", alright.\hfill\verb|"| and \verb|"|\\[12pt]
-\noindent
-He said ``something'', alright.\hfill\verb|``| and \verb|''|
+\begin{tabular}{lr}
+    \textbf{Example} & \textbf{Command}\\
+    He said "something", alright. & \verb|"| and \verb|"|\\
+    He said ``something'', alright. & \verb|``| and \verb|''|\\
+\end{tabular}
 \end{document}

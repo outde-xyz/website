@@ -1,10 +1,11 @@
-\documentclass[crop]{standalone}
+\documentclass[varwidth,crop]{standalone}
 \usepackage[charter]{mathdesign}
 \usepackage{verbatim}
 
 \begin{document}
-\noindent
-$<a, b>$\hfill\verb|<a, b>|\\[12pt]
-\noindent
-$\langle a, b \rangle$\hfill\verb|\langle a, b \rangle|
+\begin{tabular}{lr}
+    \textbf{Example} & \textbf{Command}\\
+    $<a, b>$ & \verb|<a, b>|\\
+    $\langle a, b \rangle$ & \verb|\langle a, b \rangle|\\
+\end{tabular}
 \end{document}

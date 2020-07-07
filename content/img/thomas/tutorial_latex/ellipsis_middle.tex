@@ -1,10 +1,11 @@
-\documentclass[crop]{standalone}
+\documentclass[varwidth,crop]{standalone}
 \usepackage[charter]{mathdesign}
 \usepackage{verbatim}
 
 \begin{document}
-\noindent
-My favorite numbers are 1, 2, ..., and so on\hfill\verb|...|\\[12pt]
-\noindent
-My favorite numbers are 1, 2, \ldots, and so on\hfill\verb|\ldots|
+\begin{tabular}{lr}
+    \textbf{Example} & \textbf{Command}\\
+    My favorite numbers are 1, 2, ..., and so on & \verb|...|\\
+    My favorite numbers are 1, 2, \ldots, and so on & \verb|\ldots|\\
+\end{tabular}
 \end{document}

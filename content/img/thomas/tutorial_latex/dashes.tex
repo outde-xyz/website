@@ -1,14 +1,13 @@
-\documentclass[crop]{standalone}
+\documentclass[varwidth,crop]{standalone}
 \usepackage[charter]{mathdesign}
 \usepackage{verbatim}
 
 \begin{document}
-\noindent
-single-dashed\hfill\verb|-|\\[12pt]
-\noindent
-pages 55--68\hfill\verb|--|\\[12pt]
-\noindent
-John---as far as I'm aware---snores.\hfill\verb|---|\\[12pt]
-\noindent
-$15 -3 $\hfill\verb|$-$|
+\begin{tabular}{lr}
+    \textbf{Example} & \textbf{Command}\\
+    single-dashed & \verb|-|\\
+    pages 55--68 & \verb|--|\\
+    $15 - 3$ & \verb|$-$|\\
+    John---as far as I'm aware---snores & \verb|---|\\
+\end{tabular}
 \end{document}

@@ -1,12 +1,12 @@
-\documentclass[crop]{standalone}
+\documentclass[varwidth,crop]{standalone}
 \usepackage[charter]{mathdesign}
 \usepackage{verbatim}
 
 \begin{document}
-\noindent
-$a R b$\hfill\verb|a R b|\\[12pt]
-\noindent
-$a \mathrel{R} b$\hfill\verb|a \mathrel{R} b|\\[12pt]
-\noindent
-$a \mathop{R} b$\hfill\verb|a \mathop{R} b|\\[12pt]
+\begin{tabular}{lr}
+    \textbf{Example} & \textbf{Command}\\
+    $a R b$ & \verb|a R b|\\
+    $a \mathrel{R} b$ & \verb|a \mathrel{R} b|\\
+    $a \mathop{R} b$ & \verb|a \mathop{R} b|\\
+\end{tabular}
 \end{document}

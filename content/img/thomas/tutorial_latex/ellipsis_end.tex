@@ -1,10 +1,11 @@
-\documentclass[crop]{standalone}
+\documentclass[varwidth,crop]{standalone}
 \usepackage[charter]{mathdesign}
 \usepackage{verbatim}
 
 \begin{document}
-\noindent
-This sentence ends prematu...\hfill\verb|...|\\[12pt]
-\noindent
-This sentence ends prematu\ldots\hfill\verb|\ldots|
+\begin{tabular}{lr}
+    \textbf{Example} & \textbf{Command}\\
+    This sentence ends prematu... & \verb|...|\\
+    This sentence ends prematu\ldots & \verb|\ldots|\\
+\end{tabular}
 \end{document}
