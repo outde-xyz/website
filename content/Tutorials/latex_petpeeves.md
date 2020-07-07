@@ -3,7 +3,7 @@ title: >-
     LaTeX pet peeves
 authors:
     - Thomas Graf
-date: 2020-06-02
+date: 2020-07-07
 series: Tex advice
 tags:
     - student advice
@@ -11,9 +11,9 @@ tags:
 ---
 
 <!-- START_SUMMARY_BLOCK -->
-Somehow I wound up with five students writing their theses this semester, and you know what this means: lots and lots of reading.
-And when reading, I can't help but get riled up every time I see one of my $\LaTeX$ pet peeves.
-I also like to read the source files in parallel with the PDF, and I've come across some nightmare-fuel coding in those files.
+Somehow I wound up with five students writing their theses this Spring semester, and you know what this means: lots and lots of reading.
+And when reading, I can't help but get riled up every time I see one of my LaTeX pet peeves.
+I also like to read the source files in parallel with the PDF, and over the years I've come across some nightmare-fuel coding in those files.
 
 So, to save my future self's sanity, here's a list of all my LaTeX pet peeves.
 Many of them are covered in your average LaTeX tutorial, but people rarely read those cover to cover and instead just go to specific parts that they need to solve whatever problem they're wrestling with.
@@ -26,13 +26,14 @@ You have been warned!
 # Using LaTeX where it isn't needed
 
 Alright, let's start with the most important one: only use LaTeX if it's the best tool for the job.
-LaTeX is amazing when you have to do a lot of heavy lifting: bibliographies, references, multi-part documents, math, trees, autosegmental tiers, automata, glossed examples, data plotting, a single document for producing both handouts and slides;
+LaTeX is the unrivaled champion when you have to do a lot of heavy lifting: bibliographies, references, multi-part documents, math, trees, autosegmental tiers, automata, glossed examples, data plotting, a single document for producing both handouts and slides;
 LaTeX handles all of that, um, perhaps not well, but better than any other solution on the market.
 Beware, though: with great power comes great responsibility, and a lot of my pet peeves are actually examples of the writer not paying attention to the subtle details of LaTeX that are the source of its power.
 
 Great power also means a certain degree of clunkyness.
 For simple jobs, simpler tools are more efficient.
 If all you have to show me is a todo list, write that in a markdown dialect and convert it to PDF with [pandoc](https://pandoc.org/).
+If it's powerful enough for an outdex post, it's probably powerful enough for whatever collection of notes you want to show me in our meeting.
 
 
 # Not using labels and references
@@ -55,10 +56,11 @@ And container is the name of the containing unit.
 If a thesis contains a subsection in a chapter with label `\label{cha:foo}`, then the subsection would get the label `\label{ssec:foo_bar}`.
 That system isn't perfect as it creates quite a hassle when I decide to make a subsection its own section, but it provides a rudimentary typing system for the document.
 
-And if you're reference a section that doesn't exist and/or doesn't have a label yet, don't just omit the reference, just use `\ref{type:container_name}` based on what the label should be.
+And if you reference a section that doesn't exist and/or doesn't have a label yet, don't just omit the reference.
+Use `\ref{type:container_name}` based on what the label should be.
 That way, you won't forget to insert the reference later on, and when you finally get around to writing that section, you already have a record of which other sections tie into it.
 
-Oh, and because I've seen this mistake an estimate 328 times by now: labels in a float (figures, tables) must be specified after the caption, not before.
+Oh, and because I've seen this mistake an estimated 328 times by now: labels in a float (figures, tables) must be specified **after** `\caption`, not before.
 
 
 # Not using macros
@@ -74,7 +76,7 @@ Just define a bunch of custom macros:
 \newcommand{\fcat}[1]{\ensuremath{\featfont{#1}}}
 \newcommand{\flcr}[1]{\ensuremath{+\featfont{#1}}}
 \newcommand{\flce}[1]{\ensuremath{-\featfont{#1}}}
-\newcommand{\mlex}{2}{\ensuremath{\text{#1} :: #2}}
+\newcommand{\mlex}[2]{\ensuremath{\text{#1} :: #2}}
 ```
 
 With those macros, you can rewrite the code above as `\mlex{the}{\fsel{N} \fcat{D} \flce{nom}}`.
@@ -94,13 +96,13 @@ And if you decide later on that you want to use a different notation for feature
 # Subscripts
 
 One quirk of LaTeX is that it only provides subscripts in math mode.
-So a writer who wants, say, labeled bracketing with subscripts, might try the following code:
+So a writer that desires, say, labeled bracketing with subscripts, might try the following code:
 
 ```latex
 John [$_{VP}$ arrived $t$]
 ```
 
-This is wrong, wrong, wrong.
+This is wrong, *wrong*, **wrong**.
 In math mode, LaTeX treats each character as a separate mathematical variable and inserts some white space between them.
 So `$_{VP}$` is actually interpreted as `$_{V P}$`.
 Instead of a single subscript *VP*, you get two subscripts *V* and *P*.
@@ -108,18 +110,30 @@ Instead of a single subscript *VP*, you get two subscripts *V* and *P*.
 The difference is pretty blatant once you're aware of it.
 Here's the output produced from the code above.
 
-$$
-\text{John [$_{VP}$ arrived $t$]}
-$$
+![The subscript letters are too far apart]({static}/img/thomas/tutorial_latex/subscript_wrong.svg)
 
 And here's what it should look like:
 
-$$
-\text{John [$_\mathit{VP}$ arrived $t$]}
-$$
+![Correct subscript spacing]({static}/img/thomas/tutorial_latex/subscript_correct.svg)
 
-The latter is produced by replacing `$_{VP}$` with `$_\mathit{VP}$`, which now typesets VP as a single variable in math italics.
+Notice the decreased spacing between V and P.
+
+The second output is produced by replacing `$_{VP}$` with `$_\mathit{VP}$`:
+
+```latex
+John [$_\mathit{VP}$ arrived $t$]
+```
+
+This now typesets VP as a single variable in math italics.
+
 Alternatively, you could also use `$_\text{VP}$` or `$_\textrm{VP}$` to have the label typeset as normal text.
+
+```latex
+John [$_\text{VP}$ arrived $t$]
+```
+
+![Subscript typeset with `\textrm`]({static}/img/thomas/tutorial_latex/subscript_text.svg)
+
 Quite generally, may I suggest you define a custom macro for the subscripts of labeled brackets?
 
 ```latex
@@ -127,7 +141,7 @@ Quite generally, may I suggest you define a custom macro for the subscripts of l
 ```
 
 This way, you can change the definition of the macro to fit the layout of your paper.
-This separation of code and output is exactly what makes LaTeX so powerful, so make plenty of use of it!
+This separation of code and output is exactly what makes LaTeX so powerful, so make generous use of it!
 In fact, why don't you just use the following macro for your labeled bracketing:
 
 ```latex
@@ -139,7 +153,7 @@ This macro allows you to produce the output above from `\labbrack{CP}{John \labb
 
 # `\ensuremath`
 
-Some of the macros above use a command some of you might not have seen before: `\ensuremath`.
+Some of the macros above use a command you might not have seen before: `\ensuremath`.
 The name tells you exactly what it does: it ensures that its argument is typeset in math mode.
 When you need math mode inside a macro, you should always use `\ensuremath`.
 
@@ -156,8 +170,8 @@ This doesn't happen with `\ensuremath`: if you're not in math mode, it switches 
 
 # gb4e's automath
 
-Some of you might say that we don't need any of that because the package `gb4e` redefines `_` so that it can be used in text mode.
-This is a bad solution as it breaks tons of packages in weird ways that are difficult to debug.
+Some of you might say that we don't need any of that subscript hackery because the package `gb4e` redefines `_` so that it can be used in text mode.
+This is a bad solution as it tends to break packages in weird ways that are difficult to debug.
 Just spare yourself the hassle and turn that "feature" off:
 
 ```latex
@@ -165,7 +179,7 @@ Just spare yourself the hassle and turn that "feature" off:
 \noautomath
 ```
 
-And while you're at it, you might also want to add a bit more boilerplate around `gb4e` to make sure it actually loads correctly on recent TeX distros.
+And while you're at it, you might also want to add a bit more boilerplate around `gb4e` to make sure it doesn't throw some odd error messages on recent TeX distros.
 
 ```latex
 \makeatletter
@@ -175,9 +189,9 @@ And while you're at it, you might also want to add a bit more boilerplate around
 \noautomath
 ```
 
-Yes, `gb4e` is pretty broken by now.
-But it's still better than linguex in that it actually respects LaTeX's split between commands and environments and doesn't encourage bad coding choices (`\Next` and `\Last` are a bad idea).
-Here's hoping somebody comes up with a completely new package, based on tikz matrices.
+Yes, `gb4e` is pretty broken nowadays.
+But it's still better than `linguex` in that it actually respects LaTeX's split between commands and environments and doesn't encourage bad coding choices (context-sensitive commands like `\Next` and `\Last` undermine the strengths of the LaTeX labeling mechanism).
+Here's hoping somebody comes up with a completely new package, based on tikz matrices --- what are you looking at me for?
 
 
 # Punctuation
@@ -197,6 +211,8 @@ The phrase then moves to the specifier of the CP.
 This movement can be driven by various features, e.g. a wh-feature.
 ```
 
+![The space after *CP* is too narrow, the one after *e.g.* is too wide.]({static}/img/thomas/tutorial_latex/punctuation_wrong.svg)
+
 LaTeX's punctuation rules do exactly the wrong thing here.
 The dot after `CP` will be interpreted as part of an abbreviation when it is in fact sentence-ending.
 And the dot after `e.g.` will be interpreted as sentence-ending when it is in fact part of an abbreviation.
@@ -209,23 +225,32 @@ The phrase then moves to the specifier of the CP\@.
 This movement can be driven by various features, e.g.\ a wh-feature.
 ```
 
+![Correct spacing for sentence-ending dot and abbreviation dot]({static}/img/thomas/tutorial_latex/punctuation_correct.svg)
+
 This is just shitty design.
 
 
 # `~` is your friend
 
 There is actually a third solution for the spacing issue pointed out above.
-Instead of adding a backslash before the space, we could have replaced by space with a tilde.
+Instead of adding a backslash before the space, we could have replaced the space with a tilde.
 
 ```latex
 The phrase then moves to the specifier of the CP\@.
 This movement can be driven by various features, e.g.~a wh-feature.
 ```
 
-This also produces a normal-width space, but it also tells LaTeX that it shouldn't put a linebreak right after the abbreviation.
-Abbreviations at the end of a line look rather odd, so I generally put `~` after every abbreviation I use.
+![Tilde can be used instead of backslash to avoid linebreaks]({static}/img/thomas/tutorial_latex/punctuation_tilde.svg)
 
-It's a very minor thing, but again, once you're aware of it you'll be very annoyed when you see somebody not doing it.
+This also produces a normal-width space, but it also tells LaTeX that it shouldn't put a linebreak right after the abbreviation.
+Either *e.g. a* stays on the current line, or it all goes onto the next line, LaTeX can't keep *e.g.* on the current line and put *a* on the next.
+Abbreviations at the end of a line look rather odd, so I generally put `~` after every abbreviation I use.
+It's pretty much become muscle memory by now, and I just don't use the backslash after abbreviation dots anymore.
+
+You can go with whichever one of the two you prefer.
+But you should use one of them.
+Don't just write `e.g. a`, the spacing will be wrong.
+It's a very minor thing, but again, once you're aware of it you'll be annoyed when you see a paper that get's this wrong.
 
 
 # Ellipsis
@@ -234,22 +259,17 @@ Since we're already on the subject of punctuation, `...` is not how you typeset 
 The command for that is `\ldots`, and again the difference is in the spacing.
 Just compare:
 
-1.  **End of sentence**
-    - Three dots: $\text{This sentence ends prematu...}$
-    - `\ldots`: $\text{This sentence ends prematu\ldots}$
-1.  **Middle of sentence**
-    - Three dots: $\text{My favorite numbers are 1, 2, ... and so on}$
-    - `\ldots`: $\text{My favorite numbers are 1, 2, \ldots and so on}$
+![Ellipsis at end of a sentence]({static}/img/thomas/tutorial_latex/ellipsis_end.svg)
 
+![Ellipsis in the middle of a sentence]({static}/img/thomas/tutorial_latex/ellipsis_middle.svg)
 
 # Quotation marks
 
-My next pet peeve is actually covered early on in every LaTeX tutorial, yet I still see people consistently get it wrong: don't use `"` for quotation marks.
+My next pet peeve is actually covered early on in every LaTeX tutorial, yet I still get papers that consistently do it wrong: don't use `"` for quotation marks.
 You want `\`\`` for opening quotation marks and `''` (that's two single quotes) for closing quotation marks.
 Again the difference in typesetting is immediately apparent:
 
-- Using `"`: $\text{"something"}$
-- Using `\`\`` and `''`: $\text{``something''}$
+![Quotation marks must not be `"` in the source code]({static}/img/thomas/tutorial_latex/quotation.svg)
 
 Yes, this is just ridiculous and could easily be handled automatically (many LaTeX editors will do it for you), but LaTeX gonna LaTeX.
 
@@ -273,11 +293,11 @@ Oh well, the LaTeX code base is 40 years old by now, it's bound to have its quir
 
 You thought we were done with LaTeX curiosities, hmm?
 
-This one is not the mistake I see most often, but that's just because not every paper has a need for the epsilon symbol.
-But when it does, there's a good chance it will be the wrong symbol.
+This one is not the mistake I see most often, but that's just because not every student paper has a need for the epsilon symbol.
+But when a paper does use epsilon, there's a good chance it won't be the symbol that the student had in mind.
 For some reason, most LaTeX fonts use a shape for epsilon that doesn't look like the typical epsilon.
 They produce $\epsilon$ instead of $\varepsilon$.
-If you want $\varepsilon$ instead, you have to use `\varepsilon`.
+If you want $\varepsilon$ instead, you have to use `\varepsilon` rather than `\epsilon`.
 
 
 # ...and < and > aren't tuple brackets
@@ -291,6 +311,8 @@ Tuple brackets also have completely different spacing:
 
 - Using `<` and `>`: $<a, b>$
 - Using `\langle` and `\rangle`: $\langle a, b \rangle$
+
+![Tuple brackets are `\langle` and `\rangle`, not `<` and `>`]({static}/img/thomas/tutorial_latex/tuples.svg)
 
 Again I'd suggest using a custom macro to make your life a little easier.
 
@@ -313,21 +335,21 @@ So instead of `a R b`, you should write `a \mathrel{R} b` to get the correct spa
 If you want `|` to be an operator, you should write `a \mathop{|} b`.
 Again it's a good idea to use custom macros for that.
 
-- `a R b`: $a R b$
-- `a \mathrel{R} b`: $a \mathrel{R} b$
-- `a \mathop{R} b`: $a \mathop{R} b$
+![Math relations and operators have different spacing]({static}/img/thomas/tutorial_latex/relations.svg)
 
 
 # So, many, dashes
 
 Another subtle difference, this time with respect to hyphens and dashens.
 
-- `-` is a hyphen and is used word-internally, e.g. in `sentence-ending`: $\text{sentence-ending}$
-- `--` denotes a range, e.g. `pages 55--68`: $\text{pages 55--68}$
-- `---` is an em-dash and is used with parentheticals, e.g. `John---as far as I'm aware---did not come home last night`: $\text{John---as far as I'm aware---did not come home last night}$
+- `-` is a hyphen and is used word-internally, e.g. in `single-dashed`
+- `--` denotes a range, e.g. `pages 55--68` (yes, this means you should use `--` for page ranges in bibtex entries)
+- `---` is an em-dash and is used with parentheticals, e.g. `John---as far as I'm aware---snores`
 - `$-$` is a minus and should only be used in equations: $15 - 3$
 
-I also like to add spaces around `---`, and every single copy editor tried to dissuade me from that.
+![LaTeX has various kinds of dashes]({static}/img/thomas/tutorial_latex/dashes.svg)
+
+I like to even add spaces around the super-wide `---`, and every single copy editor tried to dissuade me from that.
 I like the extra space, but I'm sure it's somebody's pet peeve, so, sorry about that.
 
 
@@ -336,7 +358,7 @@ I like the extra space, but I'm sure it's somebody's pet peeve, so, sorry about 
 As you might know, your bibtex style automatically handles the capitalization of your references.
 But it only works well if
 
-1. your bibtex references are in sentence case, and
+1. your bibtex references are in Sentence Case, and
 2. you explicitly indicate which characters should not be lowercased.
 
 So don't write something like this:
@@ -345,13 +367,16 @@ So don't write something like this:
 title = {Some paper on MGs}
 ```
 
+There is no easy way to convert this to Sentence Case if that's what the publisher wants.
+And if the publisher want's lowercase, you'll get *mgs* instead of *MGs*.
+
 Instead, it should be:
 
 ```bibtex
 title = {Some Paper on {MG}s}
 ```
 
-This way, you will get lowercase or sentence case depending on the publisher's stylesheet, and either way `MGs` will stay MGs and won't be lowercased to `mgs`.
+This way, you will get the correct lowercase or sentence case depending on the publisher's stylesheet, and either way `MGs` will stay MGs and won't be lowercased to *mgs*.
 
 
 # More to come
@@ -361,7 +386,7 @@ But we're not done yet, I have another list that's all about doing figures with 
 In comparison to LaTeX, TikZ feels a lot more like an actual programming language, so there's a much higher risk to write working but really nasty code.
 Getting proficient with TikZ is hard, the manual is over a 1000 pages by now.
 But I think there's some general design principles that even newbies can follow easily and that make TikZ code a lot more fun to work with.
-So the next time we return to LaTeX, be prepared for some unsolicited TikZ advice by yours truly.
+So the next time we return to LaTeX (and I'm not saying that's anytime soon), be prepared for some unsolicited TikZ advice by yours truly.
 
 In the meantime, feel free to share your personal LaTeX pet peeves in the comments section.
 There's so many subtle issues, I'm sure there's some common mistakes that I still make myself.
