@@ -15,7 +15,7 @@ Somehow I wound up with five students writing their theses this Spring semester,
 And when reading, I can't help but get riled up every time I see one of my LaTeX pet peeves.
 I also like to read the source files in parallel with the PDF, and over the years I've come across some nightmare-fuel coding in those files.
 
-So, to save my future self's sanity, here's a list of all my LaTeX pet peeves.
+So, in a (futile?) attempt to save my future self's sanity, here's a list of all my LaTeX pet peeves.
 Many of them are covered in your average LaTeX tutorial, but people rarely read those cover to cover and instead just go to specific parts that they need to solve whatever problem they're wrestling with.
 Compiling it all into a single list might make for a more useful reference.
 Future students of mine, read this and adhere to it.
@@ -151,7 +151,7 @@ In fact, why don't you just use the following macro for your labeled bracketing:
 This macro allows you to produce the output above from `\labbrack{CP}{John \labbrack{VP}{arrived $t$}}`.
 
 
-# `\ensuremath`
+# \ensuremath
 
 Some of the macros above use a command you might not have seen before: `\ensuremath`.
 The name tells you exactly what it does: it ensures that its argument is typeset in math mode.
@@ -227,10 +227,11 @@ This movement can be driven by various features, e.g.\ a wh-feature.
 
 ![Correct spacing for sentence-ending dot and abbreviation dot]({static}/img/thomas/tutorial_latex/punctuation_correct.svg)
 
-This is just shitty design.
+So LaTeX forces you to not only keep in mind what kind of dot you want, but to also track the context of the dot to determine if it needs special diacritics to get what you want.
+This is crappy design, but at least you'll quickly develop the required muscle memory to work around this crappy design.
 
 
-# `~` is your friend
+# ~ is your friend
 
 There is actually a third solution for the spacing issue pointed out above.
 Instead of adding a backslash before the space, we could have replaced the space with a tilde.
@@ -274,7 +275,7 @@ Again the difference in typesetting is immediately apparent:
 Yes, this is just ridiculous and could easily be handled automatically (many LaTeX editors will do it for you), but LaTeX gonna LaTeX.
 
 
-# `/` and `\slash` are not the same slash
+# / and \slash are not the same slash
 
 Another bit of LaTeX voodoo.
 While `/` does indeed produce a slash, sometimes it's recommended that you use `\slash` instead.
@@ -289,7 +290,7 @@ Then `~` would just be a shorthand for a space followed by `|`.
 Oh well, the LaTeX code base is 40 years old by now, it's bound to have its quirks.
 
 
-# `\epsilon` isn't the epsilon you want
+# \epsilon isn't the epsilon you want
 
 You thought we were done with LaTeX curiosities, hmm?
 
