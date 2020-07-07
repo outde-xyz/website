@@ -151,7 +151,7 @@ In fact, why don't you just use the following macro for your labeled bracketing:
 This macro allows you to produce the output above from `\labbrack{CP}{John \labbrack{VP}{arrived $t$}}`.
 
 
-# \ensuremath
+# Ensure math with, well, `\ensuremath`
 
 Some of the macros above use a command you might not have seen before: `\ensuremath`.
 The name tells you exactly what it does: it ensures that its argument is typeset in math mode.
@@ -231,7 +231,7 @@ So LaTeX forces you to not only keep in mind what kind of dot you want, but to a
 This is crappy design, but at least you'll quickly develop the required muscle memory to work around this crappy design.
 
 
-# ~ is your friend
+# `~` is your friend
 
 There is actually a third solution for the spacing issue pointed out above.
 Instead of adding a backslash before the space, we could have replaced the space with a tilde.
@@ -264,6 +264,7 @@ Just compare:
 
 ![Ellipsis in the middle of a sentence]({static}/img/thomas/tutorial_latex/ellipsis_middle.svg)
 
+
 # Quotation marks
 
 My next pet peeve is actually covered early on in every LaTeX tutorial, yet I still get papers that consistently do it wrong: don't use `"` for quotation marks.
@@ -275,7 +276,7 @@ Again the difference in typesetting is immediately apparent:
 Yes, this is just ridiculous and could easily be handled automatically (many LaTeX editors will do it for you), but LaTeX gonna LaTeX.
 
 
-# / and \slash are not the same slash
+# `/` and `\slash` are not the same slash
 
 Another bit of LaTeX voodoo.
 While `/` does indeed produce a slash, sometimes it's recommended that you use `\slash` instead.
@@ -290,7 +291,7 @@ Then `~` would just be a shorthand for a space followed by `|`.
 Oh well, the LaTeX code base is 40 years old by now, it's bound to have its quirks.
 
 
-# \epsilon isn't the epsilon you want
+# `\epsilon` isn't the epsilon you want
 
 You thought we were done with LaTeX curiosities, hmm?
 
@@ -301,7 +302,7 @@ They produce $\epsilon$ instead of $\varepsilon$.
 If you want $\varepsilon$ instead, you have to use `\varepsilon` rather than `\epsilon`.
 
 
-# ...and < and > aren't tuple brackets
+# ...and `<` and `>` aren't tuple brackets
 
 Again this one doesn't show up that often simply because not every paper needs to typeset tuples, but when it's necessary, people get it wrong oh so often.
 And in this case, it's not even LaTeX being needlessly obtuse.
