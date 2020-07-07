@@ -1,0 +1,84 @@
+\documentclass[tikz,usenames,svgnames,x11names]{standalone}
+\usepackage[linguistics]{forest}
+\usepackage[charter]{mathdesign}
+\usetikzlibrary{arrows,arrows.meta}
+
+\newcommand{\mlex}[2]{\ensuremath{\textrm{#1} ::\thinspace \mathrm{#2}}}
+\newcommand{\fsel}[1]{\ensuremath{\mathrm{#1^+\thinspace\unskip}}}
+\newcommand{\fcat}[1]{\ensuremath{\mathrm{#1^-\thinspace\unskip}}}
+\newcommand{\flcr}[1]{\ensuremath{\mathrm{#1^+\thinspace\unskip}}}
+\newcommand{\flce}[1]{\ensuremath{\mathrm{#1^-\thinspace\unskip}}}
+\newcommand{\emptystring}{\ensuremath{\varepsilon}}
+
+\tikzset{headarrow/.style = {-{Latex[length=.5em]}}}
+\tikzset{move/.style = {dashed,blue,headarrow}}
+
+\begin{document}
+\begin{forest}
+    [,phantom, s sep = 5em
+        [CP, for tree={l sep=.7em,s sep=.1em}
+            [{\color{purple}DP$_w$}
+                [D [which] ]
+                [N [woman] ]
+            ]
+            [C$'$
+                [C
+                    [do]
+                    [{\color{SeaGreen4}T$_i$} [-ed] ]
+                ]
+                [TP
+                    [{\color{blue}DP$_m$} [Mary] ]
+                    [T$'$ 
+                        [$\color{SeaGreen4}t_i$]
+                        [VP
+                            [$\color{blue}t_m$]
+                            [V'
+                                [V [kiss] ]
+                                [$\color{purple}t_w$]
+                            ]
+                        ]
+                    ]
+                ]
+           ]
+       ]
+        [{\color{purple}Move(wh)}, name=target-wh, for tree={l =.75em, l sep=.5em}
+            [{\color{SeaGreen4}Move(h)}, name=target-head
+                [Merge(T)
+                    [do, name=do]
+                    [{\color{blue}Move(nom)}, name=target-nom
+                        [Merge(V)
+                            [{\color{SeaGreen4}-ed}, name=source-head]
+                            [Merge(D)
+                                [{\color{blue}Mary}, name=source-nom]
+                                [Merge(D)
+                                    [kiss,name =kiss]
+                                    [{\color{purple}Merge(N)}, name=source-wh
+                                        [which, name=which]
+                                        [woman, name=man]
+                                    ]
+                                ]
+                            ]
+                        ]
+                    ]
+                ]
+            ]
+        ]
+    ]
+    %
+    \foreach \Head/\Features in {%
+        do/\fsel{T} \flcr{h} \flcr{wh} \fcat{C},
+        source-nom/\fcat{D} \flce{nom},
+        kiss/\fsel{D} \fsel{D} \fcat{V},
+        which/\fsel{N} \fcat{D} \flce{wh}
+        }
+        \node[yshift=.15em] at (\Head.south) {\tiny \color{gray} \Features};
+        %
+        % do man separately to shift the feature string a bit
+        \node[xshift=.5em, yshift=.15em] at (man.south) {\tiny \color{gray} \fcat{N}};
+        \node[xshift=-1em, yshift=.15em] at (source-head.south) {\tiny \color{gray} \fsel{V} \flcr{nom} \fcat{T} \flce{h}};
+    %
+    \draw[move] (source-nom) .. controls +(180:10em) and +(215:9em) .. (target-nom);
+    \draw[move,SeaGreen4] (source-head) .. controls +(170:9em) and +(220:9em) .. (target-head);
+    \draw[move,purple] (source-wh) .. controls +(60:6em) and +(320:6em) .. (target-wh);
+\end{forest}
+\end{document}
