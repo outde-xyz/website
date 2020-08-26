@@ -21,7 +21,7 @@ Guilty as charged.
 In anticipation of my 1-year sabbatical (\*gloat\*), I have used this summer for an extended vacation from everything linguistics and academia.
 Well, not quite, there was something fun I did that is sort of related to linguistics, but more on that in an upcoming post.
 Anyway, this loyal reader knows how to reel me back in: a LaTeX question!
-More precisely, the best way to typeset a vowel chart in tikz.
+More precisely, the best way to typeset a vowel chart in tikz, which is the standard solution for graphics in LaTeX nowadays.
 Challenge accepted.
 <!-- END_SUMMARY_BLOCK -->
 
@@ -38,7 +38,7 @@ First, the placement of the vowels should be fairly accurate, ideally by using F
 Second, it should be possible to easily highlight variations between dialects, e.g. by showing dialect A in red, dialect B in blue, and connecting their peripheral vowels in a path.
 Third, it should be possible to transform the F1/F2-based chart so that it looks more like the idealized trapezoid in the IPA chart.
 
-![Trapezoid vowel chart]]({static}/img/thomas/pgfplot_phonetics/ipa_chart_vowelsonly.jpg)
+![Trapezoid vowel chart]({static}/img/thomas/pgfplot_phonetics/ipa_chart_vowelsonly.jpg)
 
 
 # General observations
@@ -54,16 +54,21 @@ Yes, but it's decidedly not easy.
 So tikz doesn't look like the right tool for this.
 
 Fortunately, tikz has a companion package that checks all boxes, and that's **pgfplots**.
-This package makes it very easy to plot data in LaTeX: you feed in a file of data points, e.g. formant frequencies, and out comes a nice plot.
-It can be a scatter plot that only shows dots, or your typical line plots.
-Alright, that takes care of points 1 and 2, leaving us with the transformation issue.
+Both tikz and pgfplots use the pgf library to produce graphics, and they are interoperable.
+But whereas tikz is a general purpose solution for graphics in LaTeX, pgfplots is designed just for creating plots.
+It makes it very easy to plot data in LaTeX: you feed in a file of data points, e.g. formant frequencies, and out comes a nice plot.
+It can be a scatter plot that only shows dots, or your typical line and bar plots.
+Thanks to those features, pgfplots should be able to take care of points 1 and 2 without much effort.
+
+This leaves us with requirement 3, the transformations.
 This isn't handled directly by pgfplots.
 But since the data can be stored externally in a separate file, you can change the plot by changing the data points in that file.
 And for that you can use any tool you want, be it Python, R, Julia, Matlab, bash, whatever.
-That's arguably the most flexible solution, but if you still want to use tikz transformations you can do that because tikz and pgfplots interact seemlessly (they're both high-level tools for working with pgf).
+And of course you can also do it manually.
+That's arguably the most flexible solution, but if you still want to use tikz transformations you can do that because tikz and pgfplots interact seemlessly (remember, they're both high-level tools for working with pgf).
 
 Okay, pgfplots it is, then.
-Let's see how that is done.
+Let's see how it's done.
 
 
 # Building a plot step by step
@@ -88,9 +93,9 @@ We start out with a new `.tex` file and drop in some boilerplate code.
 This doesn't do anything yet.
 I use the `standalone` class with the options `[tikz,crop]` so that LaTeX loads tikz and produces a pdf that is the size of the produced image.
 If I had used the `article` class, I would have gotten a single page in letter size with the image at the top --- not as nice to work with.
-There's several other advantages to doing this as a `standalone` document, but I guess that's best left for a future post.
+There's several other advantages to doing this as a `standalone` document, but I suppose that's best left for a future post.
 
-After this, I load `pgfplots` and use `\pgfplotsset{compat=newest}`.latex to tell it to use the most up-to-date version of its syntax.
+After this, I load `pgfplots` and use `\pgfplotsset{compat=newest}`{.latex} to tell it to use the most up-to-date version of its syntax.
 Then I tell LaTeX that the file uses the standard unicode text encoding, and I load the Charter font because I like it.
 
 
@@ -160,7 +165,7 @@ I have labeled the columns x and y for easier use with pgfplots.
 During compilation, LaTeX will write this table to the file `mydata.dat`, which is then read by pgfplots to construct the plot.
 The final result is shown below.
 
-![Vowel chart: Basic version]]({static}/img/thomas/pgfplot_phonetics/phon_plot_1.svg)
+![Vowel chart: Basic version]({static}/img/thomas/pgfplot_phonetics/phon_plot_1.svg)
 
 Okay, that was easy.
 If all you want is a simple line plot, you're done.
@@ -186,7 +191,7 @@ Time to tweak the plot:
 Can you spot the difference?
 We have expanded `\addplot` to `\addplot[only marks,]`, which instructs pgfplots not to connect the data points with a line.
 
-![Vowel chart: Dots only]]({static}/img/thomas/pgfplot_phonetics/phon_plot_2.svg)
+![Vowel chart: Dots only]({static}/img/thomas/pgfplot_phonetics/phon_plot_2.svg)
 
 
 ## Labeling the axes
@@ -215,7 +220,7 @@ But this time they go with the `axis`-environment rather than `\addplot`.
 That's because these parameters affect the whole plot, not just a specific set of data points.
 With these modifications, you'll now get the following plot.
 
-![Vowel chart: With labeled axes]]({static}/img/thomas/pgfplot_phonetics/phon_plot_3.svg)
+![Vowel chart: With labeled axes]({static}/img/thomas/pgfplot_phonetics/phon_plot_3.svg)
 
 Hardly a big change, what we really need is labels for the individual data points.
 
@@ -297,10 +302,9 @@ In plain English: for each data point, `\thelabel` refers to its value in the `l
 So overall, we had to add three lines of code to get labels.
 But surely the reward of a fully labeled vowel chart will be worth it, right?
 
+![Vowel chart: Data points have too many labels]({static}/img/thomas/pgfplot_phonetics/phon_plot_4.svg)
+
 Looks like we forgot something...
-
-![Vowel chart: Data points have too many labels]]({static}/img/thomas/pgfplot_phonetics/phon_plot_4.svg)
-
 
 ## Fixing the data point labels
 
@@ -309,7 +313,7 @@ And we would also like the data points to still be, well, points.
 
 In order to fix this, we have to add the option `point meta=explicit symbolic`.latex to the `axis`-environment.
 This basically tells pgfplots to only use the explicitly provided label and nothing else.
-And we also have to add `scatter` to `\addplot` so that pgfplot knows that we're arranging these data points as a scatter plot, and in scatter plots each data point still has to be shown as an actual dot.
+And we also have to add `scatter` to `\addplot` so that pgfplot knows that we're arranging these data points as a scatter plot, and in scatter plots each data point still has to be shown as an actual dot even if we're displaying labels.
 
 ```latex
 \begin{document}
@@ -333,7 +337,7 @@ And we also have to add `scatter` to `\addplot` so that pgfplot knows that we're
 \end{document}
 ```
 
-![Vowel chart: Data points with correct labels]]({static}/img/thomas/pgfplot_phonetics/phon_plot_5.svg)
+![Vowel chart: Data points with correct labels]({static}/img/thomas/pgfplot_phonetics/phon_plot_5.svg)
 
 
 ## Changing the origin
@@ -342,7 +346,7 @@ Now that we have nicely labeled dots, we can see that the vowels aren't arranged
 For instance, *i* is in the bottom right instead of the top left, and *u* is in the bottom left instead of the top right.
 If you contrast our plot against the one from Wikipedia at the top of this post, you can easily spot the problem.
 Our plot puts the origin (0,0) in the bottom left, whereas the Wikipedia plot has it in the top right.
-Or, putting it in clunkier terms, the Wikipedia plot reverse the direction of the axes.
+Or, putting it in clunkier terms, the Wikipedia plot reverses the direction of the axes.
 
 These clunkier terms are exactly the ones used by pgfplots --- `x dir=reverse`.latex and `y dir=reverse`.latex.
 Again these options go on the `axis`-environment because they effect the whole plot.
@@ -372,12 +376,12 @@ Again these options go on the `axis`-environment because they effect the whole p
 \end{document}
 ```
 
-![Vowel chart: Origin moved to top right corner]]({static}/img/thomas/pgfplot_phonetics/phon_plot_6.svg)
+![Vowel chart: Origin moved to top right corner]({static}/img/thomas/pgfplot_phonetics/phon_plot_6.svg)
 
 This still doesn't look right, though.
 The numbers now grow in reverse, as desired, but they're still drawn on the left edge for the y-axis and the bottom edge for the x-axis.
 That's very confusing.
-We have to tell pgfplots that it shouldn't just reverse the direction of the axes, it should also place them at the opposite edge.
+We have to tell pgfplots that it shouldn't just reverse the direction of the axes, it should also place each one at the opposite edge.
 That's what `axis x line*` and `axis y line*` are for.
 
 ```latex
@@ -407,7 +411,7 @@ That's what `axis x line*` and `axis y line*` are for.
 \end{document}
 ```
 
-![Vowel chart: Each axis line placed on opposite side]]({static}/img/thomas/pgfplot_phonetics/phon_plot_7.svg)
+![Vowel chart: Each axis line placed on opposite side]({static}/img/thomas/pgfplot_phonetics/phon_plot_7.svg)
 
 ## Controlling label placement
 
@@ -415,7 +419,7 @@ We basically have a fully readable plot now, but it doesn't look all that nice.
 For instance, the vowels *i* and *y* are placed on top of the F2-axis.
 And where vowels are placed closely together, it is easy to confuse the labels.
 We need more fine-grained control over the labels.
-While there's many ways this could be done, I'll present one that's fairly flexible and only uses techniques already covered in this tutorial.
+While there's many ways this could be done, I'll present one that's fairly flexible and primarily relies on techniques already covered in this tutorial.
 
 First, we once again modify the style of nodes near coordinates so that they can are placed at a specific angle from the center of the data point's dot.
 So instead of this:
@@ -436,7 +440,7 @@ every node near coord/.append style={%
 ```
 
 Notice the addition of `\labelangle:`, which will take a number and put the label at this specific angle.
-For instance, if `\labelangle` is 90, the label will above the dot, whereas an angle of 270 would put it below the dot.
+For instance, if `\labelangle` is 90, the label will be above the dot, whereas an angle of 270 would put it below the dot.
 But where does `\labelangle` get its value from?
 Well, we have to do it exactly the same way as we did with `\thelabel`: we put it in the table and use `visualization depends on` to tell pgfplots how to use the additional data in the table.
 
@@ -491,12 +495,12 @@ x        y       label   angle
 The angle values in the table can be tweaked to get the most pleasing placement.
 Since the placement of the label follows tikz-conventions, we could put all kinds of additional formatting information in the table to style the labels exactly the way we want.
 
-![Vowel chart: More sensible label placement]]({static}/img/thomas/pgfplot_phonetics/phon_plot_8.svg)
+![Vowel chart: More sensible label placement]({static}/img/thomas/pgfplot_phonetics/phon_plot_8.svg)
 
 Quite generally, you can use what you know about tikz to modify the output of pgfplots.
 For instance, we can make the axis labels boldface and rotate them to be more readable.
 
-![Vowel chart: More sensible label placement]]({static}/img/thomas/pgfplot_phonetics/phon_plot_9.svg)
+![Vowel chart: More sensible label placement]({static}/img/thomas/pgfplot_phonetics/phon_plot_9.svg)
 
 ## Final code
 
@@ -639,7 +643,7 @@ Oh, and don't forget to specify colors for the lines.
 \end{document}
 ```
 
-![Vowel chart for dialect comparison]]({static}/img/thomas/pgfplot_phonetics/phon_plot_dialects.svg)
+![Vowel chart for dialect comparison]({static}/img/thomas/pgfplot_phonetics/phon_plot_dialects.svg)
 
 There you go, easy peasy.
 Add some custom command magic and tikz styling on top of it, and you can easily produce different types of plots from a single piece of code.
