@@ -91,7 +91,7 @@ We start out with a new `.tex` file and drop in some boilerplate code.
 ```
 
 This doesn't do anything yet.
-I use the `standalone` class with the options `[tikz,crop]` so that LaTeX loads tikz and produces a pdf that is the size of the produced image.
+I use the `standalone` class with the options `[tikz,crop]`{.latex} so that LaTeX loads tikz and produces a pdf that is the size of the produced image.
 If I had used the `article` class, I would have gotten a single page in letter size with the image at the top --- not as nice to work with.
 There's several other advantages to doing this as a `standalone` document, but I suppose that's best left for a future post.
 
@@ -216,7 +216,7 @@ Let's start with the axis labels because those are way easier.
 ```
 
 Two more options have been added, `xlabel` and `ylabel`.
-But this time they go with the `axis`-environment rather than `\addplot`.
+But this time they go with the `axis`-environment rather than `\addplot`{.latex}.
 That's because these parameters affect the whole plot, not just a specific set of data points.
 With these modifications, you'll now get the following plot.
 
@@ -279,7 +279,7 @@ How about you look at the full code first and try to figure out what's going on.
 ```
 
 This code makes more sense when read in reverse.
-The `\addplot` command has been expanded with a second option `nodes near coords`.
+The `\addplot`{.latex} command has been expanded with a second option `nodes near coords`.
 This is the standard pgfplots way for adding a label to each data point.
 But pgfplots' default style for this isn't quite what we want, so we also add a new piece of code to the `axis` environment:
 
@@ -290,15 +290,15 @@ every node near coord/.append style={%
 ]
 ```
 
-This says that nodes that are added because of the `nodes near coords` option should have their style modified so that the label is the output of `\textipa{\thelabel}` --- basically, the IPA label!
-But this still isn't quite enough because `\thelabel` isn't a default command, it needs to be defined.
+This says that nodes that are added because of the `nodes near coords` option should have their style modified so that the label is the output of `\textipa{\thelabel}`{.latex} --- basically, the IPA label!
+But this still isn't quite enough because `\thelabel`{.latex} isn't a default command, it needs to be defined.
 That's what the line immediately above does.
 
 ```latex
 visualization depends on={value \thisrow{label} \as \thelabel},
 ```
 
-In plain English: for each data point, `\thelabel` refers to its value in the `label` column.
+In plain English: for each data point, `\thelabel`{.latex} refers to its value in the `label` column.
 So overall, we had to add three lines of code to get labels.
 But surely the reward of a fully labeled vowel chart will be worth it, right?
 
@@ -311,7 +311,7 @@ Looks like we forgot something...
 We want the data point labels to be just the IPA symbols, but pgfplots somehow decided to print both the F1-frequency and the IPA symbol.
 And we would also like the data points to still be, well, points.
 
-In order to fix this, we have to add the option `point meta=explicit symbolic`.latex to the `axis`-environment.
+In order to fix this, we have to add the option `point meta=explicit symbolic`{.latex} to the `axis`-environment.
 This basically tells pgfplots to only use the explicitly provided label and nothing else.
 And we also have to add `scatter` to `\addplot` so that pgfplot knows that we're arranging these data points as a scatter plot, and in scatter plots each data point still has to be shown as an actual dot even if we're displaying labels.
 
@@ -348,7 +348,7 @@ If you contrast our plot against the one from Wikipedia at the top of this post,
 Our plot puts the origin (0,0) in the bottom left, whereas the Wikipedia plot has it in the top right.
 Or, putting it in clunkier terms, the Wikipedia plot reverses the direction of the axes.
 
-These clunkier terms are exactly the ones used by pgfplots --- `x dir=reverse`.latex and `y dir=reverse`.latex.
+These clunkier terms are exactly the ones used by pgfplots --- `x dir=reverse`{.latex} and `y dir=reverse`{.latex}.
 Again these options go on the `axis`-environment because they effect the whole plot.
 
 ```latex
