@@ -5,6 +5,7 @@ authors:
     - Thomas Graf
 date: 2020-07-07
 series: Tex advice
+modified: 2020-08-26
 tags:
     - student advice
     - LaTeX
@@ -360,7 +361,7 @@ I like the extra space, but I'm sure it's somebody's pet peeve, so, sorry about 
 As you might know, your bibtex style automatically handles the capitalization of your references.
 But it only works well if
 
-1. your bibtex references are in Sentence Case, and
+1. your bibtex references are in ~~Sentence Case~~ Title Case (*thanks to Matthew Gotham for spotting this*), and
 2. you explicitly indicate which characters should not be lowercased.
 
 So don't write something like this:
@@ -369,7 +370,7 @@ So don't write something like this:
 title = {Some paper on MGs}
 ```
 
-There is no easy way to convert this to Sentence Case if that's what the publisher wants.
+There is no easy way to convert this to Title Case if that's what the publisher wants.
 And if the publisher want's lowercase, you'll get *mgs* instead of *MGs*.
 
 Instead, it should be:
@@ -378,7 +379,7 @@ Instead, it should be:
 title = {Some Paper on {MG}s}
 ```
 
-This way, you will get the correct lowercase or sentence case depending on the publisher's stylesheet, and either way `MGs` will stay MGs and won't be lowercased to *mgs*.
+This way, you will get the correct lowercase or Title Case depending on the publisher's stylesheet, and either way `MGs` will stay MGs and won't be lowercased to *mgs*.
 
 
 # More to come
