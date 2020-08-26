@@ -114,7 +114,7 @@ The document section has to be expanded as follows:
 \end{document}
 ```
 
-Notice the multiple levels of nesting here: We create a tikz picture, which will consists of a pgfplot (the `axis` environment), and in this plot we can map data points via the `\addplot` command.
+Notice the multiple levels of nesting here: We create a tikz picture, which will consists of a pgfplot (the `axis` environment), and in this plot we can map data points via the `\addplot`{.latex} command.
 In the case at hand, we load a single set of data points from a table in the file `mydata.dat`, which must be in the same directory as our `tex`-file.
 
 To keep this example self-contained, however, I'll instead add the data directly to the `tex`-file.
