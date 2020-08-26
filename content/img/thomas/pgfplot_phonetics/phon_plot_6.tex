@@ -1,0 +1,52 @@
+\documentclass[tikz,crop]{standalone}
+
+\usepackage{pgfplots}
+\pgfplotsset{compat=newest}
+\usepackage{filecontents}
+
+\usepackage[utf8]{inputenc}
+\usepackage[charter]{mathdesign}
+\usepackage{tipa}
+
+\begin{filecontents}{mydata.dat}
+x        y       label
+2400     240     i    
+2300     390     e    
+2100     235     y    
+1900     370     {\o} 
+1900     610     E    
+1710     585     {\oe}
+1610     850     a    
+1530     820     {\ae}
+940      750     A    
+760      700     6    
+1170     600     v    
+700      500     O    
+1310     460     Y    
+640      360     o    
+595      250     u    
+\end{filecontents}
+
+
+\begin{document}
+\begin{tikzpicture}
+    \begin{axis}[
+        xlabel={F2},
+        ylabel={F1},
+        x dir=reverse,
+        y dir=reverse,
+        %
+        point meta=explicit symbolic,
+        visualization depends on={value \thisrow{label} \as \thelabel},
+        every node near coord/.append style={%
+            label={\textipa{\thelabel}},
+            }
+        ]
+        \addplot[
+        scatter,
+        only marks,
+        nodes near coords,
+        ] table {mydata.dat};
+    \end{axis}
+\end{tikzpicture}
+\end{document}

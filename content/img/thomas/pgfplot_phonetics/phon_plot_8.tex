@@ -1,0 +1,56 @@
+\documentclass[tikz,crop]{standalone}
+
+\usepackage{pgfplots}
+\pgfplotsset{compat=newest}
+\usepackage{filecontents}
+
+\usepackage[utf8]{inputenc}
+\usepackage[charter]{mathdesign}
+\usepackage{tipa}
+
+\begin{filecontents}{mydata.dat}
+x        y       label   angle
+2400     240     i       120  
+2300     390     e       90   
+2100     235     y       270  
+1900     370     {\o}    90   
+1900     610     E       90   
+1710     585     {\oe}   270  
+1610     850     a       270  
+1530     820     {\ae}   0    
+940      750     A       90   
+760      700     6       90   
+1170     600     v       90   
+700      500     O       90   
+1310     460     Y       90   
+640      360     o       90   
+595      250     u       90   
+\end{filecontents}
+
+
+\begin{document}
+\begin{tikzpicture}
+    \begin{axis}[
+        xlabel={F2},
+        ylabel={F1},
+        x dir=reverse,
+        y dir=reverse,
+        axis x line*=top,
+        axis y line*=right,
+        %
+        point meta=explicit symbolic,
+        visualization depends on={value \thisrow{label} \as \thelabel},
+        visualization depends on={value \thisrow{angle} \as \labelangle},
+        every node near coord/.append style={%
+            anchor=center,
+            label={\labelangle:\textipa{\thelabel}},
+            }
+        ]
+        \addplot[
+        scatter,
+        only marks,
+        nodes near coords,
+        ] table {mydata.dat};
+    \end{axis}
+\end{tikzpicture}
+\end{document}

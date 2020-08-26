@@ -1,0 +1,41 @@
+\documentclass[tikz,crop]{standalone}
+
+\usepackage{pgfplots}
+\pgfplotsset{compat=newest}
+\usepackage{filecontents}
+
+\usepackage[utf8]{inputenc}
+\usepackage[charter]{mathdesign}
+
+\begin{filecontents}{mydata.dat}
+x        y
+2400     240
+2300     390
+2100     235
+1900     370
+1900     610
+1710     585
+1610     850
+1530     820
+940      750
+760      700
+1170     600
+700      500
+1310     460
+640      360
+595      250
+\end{filecontents}
+
+
+\begin{document}
+\begin{tikzpicture}
+    \begin{axis}[
+        xlabel={F2},
+        ylabel={F1},
+        ]
+        \addplot[
+        only marks,
+        ] table {mydata.dat};
+    \end{axis}
+\end{tikzpicture}
+\end{document}
