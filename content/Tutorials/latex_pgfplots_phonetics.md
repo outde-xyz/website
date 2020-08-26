@@ -159,7 +159,7 @@ x        y
 \end{document}
 ```
 
-Now the code contains a `filecontents` environment before `\begin{documents}`. 
+Now the code contains a `filecontents` environment before `\begin{documents}`{.latex}. 
 Inside the environment is a whitespace-separated table of formant frequencies for various vowels.
 I have labeled the columns x and y for easier use with pgfplots.
 During compilation, LaTeX will write this table to the file `mydata.dat`, which is then read by pgfplots to construct the plot.
@@ -189,7 +189,7 @@ Time to tweak the plot:
 ```
 
 Can you spot the difference?
-We have expanded `\addplot` to `\addplot[only marks,]`, which instructs pgfplots not to connect the data points with a line.
+We have expanded `\addplot`{.latex} to `\addplot[only marks,]`{.latex}, which instructs pgfplots not to connect the data points with a line.
 
 ![Vowel chart: Dots only]({static}/img/thomas/pgfplot_phonetics/phon_plot_2.svg)
 
@@ -313,7 +313,7 @@ And we would also like the data points to still be, well, points.
 
 In order to fix this, we have to add the option `point meta=explicit symbolic`{.latex} to the `axis`-environment.
 This basically tells pgfplots to only use the explicitly provided label and nothing else.
-And we also have to add `scatter` to `\addplot` so that pgfplot knows that we're arranging these data points as a scatter plot, and in scatter plots each data point still has to be shown as an actual dot even if we're displaying labels.
+And we also have to add `scatter` to `\addplot`{.latex} so that pgfplot knows that we're arranging these data points as a scatter plot, and in scatter plots each data point still has to be shown as an actual dot even if we're displaying labels.
 
 ```latex
 \begin{document}
@@ -349,7 +349,7 @@ Our plot puts the origin (0,0) in the bottom left, whereas the Wikipedia plot ha
 Or, putting it in clunkier terms, the Wikipedia plot reverses the direction of the axes.
 
 These clunkier terms are exactly the ones used by pgfplots --- `x dir=reverse`{.latex} and `y dir=reverse`{.latex}.
-Again these options go on the `axis`-environment because they effect the whole plot.
+Again these options go on the `axis`-environment because they affect the whole plot.
 
 ```latex
 \begin{document}
@@ -439,10 +439,10 @@ every node near coord/.append style={%
     }
 ```
 
-Notice the addition of `\labelangle:`, which will take a number and put the label at this specific angle.
-For instance, if `\labelangle` is 90, the label will be above the dot, whereas an angle of 270 would put it below the dot.
-But where does `\labelangle` get its value from?
-Well, we have to do it exactly the same way as we did with `\thelabel`: we put it in the table and use `visualization depends on` to tell pgfplots how to use the additional data in the table.
+Notice the addition of `\labelangle:`{.latex}, which will take a number and put the label at this specific angle.
+For instance, if `\labelangle`{.latex} is 90, the label will be above the dot, whereas an angle of 270 would put it below the dot.
+But where does `\labelangle`{.latex} get its value from?
+Well, we have to do it exactly the same way as we did with `\thelabel`{.latex}: we put it in the table and use `visualization depends on` to tell pgfplots how to use the additional data in the table.
 
 ```latex
 \begin{filecontents}{mydata.dat}
