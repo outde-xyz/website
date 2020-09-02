@@ -1,0 +1,124 @@
+\documentclass[tikz,crop]{standalone}
+
+\usepackage{pgfplots}
+\pgfplotsset{compat=newest}
+\usepackage{filecontents}
+
+\usepackage[utf8]{inputenc}
+\usepackage[charter]{mathdesign}
+\usepackage{tipa}
+
+\begin{filecontents}{dialectA.dat}
+x        y       label   angle
+2400     240     i       120 
+2300     390     e       90
+1900     610     E       90
+1610     850     a       270
+940      750     A       90 
+760      700     6       90 
+700      500     O       85 
+640      360     o       90 
+595      250     u       90 
+\end{filecontents}
+
+\begin{filecontents}{dialectB.dat}
+x        y       label   angle
+2500     340     i       120 
+2400     490     e       90
+2000     710     E       90
+1700     950     a       270
+1040     850     A       90 
+860      800     6       90 
+800      600     O       90 
+740      460     o       90 
+695      350     u       90 
+\end{filecontents}
+
+\begin{filecontents}{dialectC.dat}
+x        y       label   angle
+2700     220     i       120 
+2100     320     e       90
+1980     620     E       90
+1810     820     a       270
+950      720     A       90 
+760      720     6       90 
+790      520     O       85 
+610      320     o       90 
+505      220     u       90 
+\end{filecontents}
+
+\begin{filecontents}{dialectD.dat}
+x        y       label   angle
+2500     440     i       120 
+2500     540     e       90
+1580     840     E       90
+1510     940     a       270
+950      940     A       90 
+750      940     6       90 
+750      740     O       85 
+650      540     o       90 
+555      540     u       90 
+\end{filecontents}
+
+
+\begin{document}
+\begin{tikzpicture}
+    \begin{axis}[
+        legend entries={foo, bar, dings, bums},
+        legend pos=south west,
+        grid,
+        grid style={blue!15,dashed,very thin},
+        xlabel={F2},
+        ylabel={F1},
+        x label style={font=\bfseries,anchor=south},
+        y label style={font=\bfseries,rotate=-90,anchor=west},
+        x tick label style={
+            /pgf/number format/.cd,
+                1000 sep={},
+            /tikz/.cd
+        },
+        y tick label style={
+            /pgf/number format/.cd,
+                1000 sep={dot},
+                fixed,
+                fixed zerofill,
+                precision=1,
+            /tikz/.cd
+        },
+        x dir=reverse,
+        y dir=reverse,
+        axis x line*=top,
+        axis y line*=right,
+        %
+        point meta=explicit symbolic,
+        visualization depends on={value \thisrow{label} \as \thelabel},
+        visualization depends on={value \thisrow{angle} \as \labelangle},
+        every node near coord/.append style={%
+            anchor=center,
+            label={\labelangle:\textipa{\thelabel}},
+            }
+        ]
+        \addplot[
+        scatter,
+        only marks,
+        nodes near coords,
+        red,
+        ] table {dialectA.dat};
+        \addplot[
+        scatter,
+        mark=square*,
+        nodes near coords,
+        blue,
+        ] table {dialectB.dat};
+        \addplot[
+        only marks,
+        mark=triangle*,
+        teal,
+        ] table {dialectC.dat};
+        \addplot[
+        nodes near coords,
+        brown,
+        ] table {dialectD.dat};
+    \end{axis}
+\end{tikzpicture}
+\end{document}
