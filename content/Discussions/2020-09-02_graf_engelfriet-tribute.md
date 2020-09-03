@@ -86,10 +86,10 @@ And if you now want to become a true Engelfriet aficionado, here's a list of pap
   No, I haven't read the whole thing.
   Yes, I do keep coming back to it.
 
-- @EngelfrietEtAl15:
+- @EngelfrietEtAl17:
   Tree transducers break down into two macro-classes, the top-down transducers and the bottom-up transducers.
   Standard bottom-up transducers don't cut it for many tasks, including handling movement, so nowadays a lot of the attention goes to **multi bottom-up transducers**.
-  Top-down transducers are also very limited, prompting the introduction of **extended top-down tree transducers**.
+  Top-down transducers are also very limited, prompting the introduction of **linear extended top-down tree transducers** (also known as synchronous tree substitution grammars --- because transductions can be regarded as grammars, too).
   But extended top-down tree transducers aren't closed under composition, which means that a cascade of these transductions can do things a single extended top-down tree transducer cannot do.
   This raises the question how powerful these cascades are, and this paper provides the answer.
 
