@@ -13,7 +13,7 @@ tags:
 <!-- START_SUMMARY_BLOCK -->
 Ed Stabler sent me a link to [the most recent paper](https://arxiv.org/pdf/2008.12151.pdf) by [Joost Engelfriet](http://liacs.leidenuniv.nl/~engelfrietj/), which concludes with the following message:
 
-> **That's all folks! This was my last paper. Thank you, dear reader, and farewell.
+> **That's all folks!** This was my last paper. Thank you, dear reader, and farewell.
 
 That's bitter-sweet.
 On the one hand, I admire that he can draw a line in the sand like this.
@@ -26,8 +26,8 @@ But those are some impressive papers.
 They have been my go-to source for anything related to tree transductions.
 And if you're a regular reader of this blog, you know that this isn't just some mathematical curiosity, tree transductions are the lens that allows us to make sense of syntax.
 Movement is a tree transduction.
-The [bimorphism perspective of the inverted T-model]() involves tree transductions.
-The [derivation tree perspective of MGs]() wouldn't be possible without tree transductions, and that, in turn, means that we would have missed [the subregular nature of syntax]().
+The [bimorphism perspective of the inverted T-model]({filename}2019-05-15_graf_tmodel.md) involves tree transductions.
+The derivation tree perspective of MGs wouldn't be possible without tree transductions, and that, in turn, means that we would have missed [the subregular nature of syntax]({filename}/Tutorials/locality_merge_move.md).
 Engelfriet wasn't the first to work on tree transductions --- that honor goes to James Thatcher and William Rounds (who cites Transformational Grammar as a direct inspiration for tree transductions).
 Engelfriet was about 5 years late to the party, yet he's shaped the field more than anybody else.
 I think it's actually impossible to find a paper on tree transductions that doesn't cite Engelfriet.
@@ -35,7 +35,7 @@ He's that integral to the field; Engelfriet is the Chomsky of tree transductions
 
 Engelfriet has also worked hard on connecting the automata-theoretic view of tree transductions to mathematical logic, in particular monadic second-order logic (MSO).
 And because tree transductions apparently aren't complicated enough for him, he also teamed up with [Bruno Courcelle](https://www.labri.fr/perso/courcell/ActSci.html) to produce [the definitive reference on MSO over graphs](http://www.labri.fr/perso/courcell/Book/TheBook.pdf).
-And again this isn't just some pointless mathematical exercise, MSO has been an integral part of mathematical linguistics since the mid 90s, pioneered by [Jim Rogers](https://www.cs.earlham.edu/~jrogers/) Thomas Cornell, and [Uwe Mönnich](http://www.tcl-sfs.uni-tuebingen.de/~um/), among others.
+And again this isn't just some pointless mathematical exercise, MSO has been an integral part of mathematical linguistics since the mid 90s, pioneered by [Jim Rogers](https://www.cs.earlham.edu/~jrogers/), Thomas Cornell, and [Uwe Mönnich](http://www.tcl-sfs.uni-tuebingen.de/~um/), among others.
 It allowed us to study derivational formalisms as if they were representational formalisms, and that, too was an important stepping stone for me towards subregular syntax.
 
 Almost every paper I have written incorporates work by Engelfriet in one way or another.
@@ -43,7 +43,7 @@ And it's not just that his research is essential to my work and the field at lar
 I won't pretend that they're easy reads, at least they're not for me.
 Tree transductions are much more complex than string transductions, and topics like tree transducer decompositions or the equivalence of MSO-definable tree transductions and macro tree transductions of linear size increase are not for the faint of heart.
 But an Engelfriet paper never feels like it is any more complex than it has to be.
-It's the same feeling of awe that I get watching somebody [speedrun Super Metroid](https://youtu.be/shNyq0TfHBs?t=230): I don't quite get everything they're doing, and I certainly can't do it myself, but I can recognize the beauty in it.
+It's the same feeling of awe that I experience when watching somebody [speedrun Super Metroid](https://youtu.be/shNyq0TfHBs?t=230): I don't quite get everything they're doing, and I certainly can't do it myself, but I can recognize the beauty in it.
 
 Engelfriet's work is also like Super Metroid speedruns in that many Outdex readers were probably unaware of its existence.
 Well, now you're in the know. 
@@ -96,7 +96,11 @@ And if you now want to become a true Engelfriet aficionado, here's a list of pap
 - @EngelfrietEtAl18:
   This paper studies multiple context-free tree grammars, which are closely related to (set-local) multi-component TAG and multiple context-free string grammars.
   As you might know, the latter two are weakly equivalent to MGs.
-  I haven't fully absorbed this paper yet, but I have long wondered if [my translation from standard TAG to MGs with lowering]() could be extended to multi-component TAG.
+  I haven't fully absorbed this paper yet, but I have long wondered if [my translation from standard TAG to MGs with lowering](https://thomasgraf.net/doc/papers/Graf12TAG.pdf) could be extended to multi-component TAG.
   With a bit more time, I might find the answer in this paper.
 
-Happy reading!
+There's many other papers I could've listed here.
+Feel free to link to your favorite in the comments.
+Happy reading everyone!
+
+## References (The Engelfriet Paperpalooza)
