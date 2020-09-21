@@ -61,7 +61,7 @@ $$
 Any graph in which both formulas a true is a **model** of this set of formulas.
 Right now our logic is still too limited to do anything interesting, so let's add a bit of machinery to talk about how the nodes in a graph may be arranged.
 
-Every graph defines a **reachability relation** $R$ such that $y$ is reachable from $x$ ($\langle x,y\rangle \in R$) iff there is a sequence of edges that takes us from $x$ to $y$.
+Every graph defines a **reachability relation** $R$ $y$ is reachable from $x$ iff there is a sequence of edges that takes us from $x$ to $y$.
 In syntactic trees, reachability would correspond to (proper) dominance.
 We enrich our first-order logic with predicate $\triangleleft^+$ such that $x \triangleleft^+ y$ iff $y$ is reachable from $x$.
 Based on this, we can also define a predicate $\triangleleft$:
@@ -85,21 +85,23 @@ Whereas $\triangleleft^+$ must be stipulated as a primitive of our first-order l
 
 So $\triangleleft$ is more like a LaTeX macro in that we can treat it as syntactic sugar to save us some typing.
 Wherever you see a statement of the form $x \triangleleft y$ in this post, you can substitute the right-hand side of the formula above:
-$x \triangleleft^+ y \wedge \neg \exists z [x \triangleleft^+ z \wedge z \triangleleft^+ y]$.
-Doing so yields a first-order formula that only uses the primitives listed above.
-The difference between a primitive and a "macro" may seem pointless to you, but it will be really important once we start talking about transductions.
 
-Okay, so now that we have $\triangleleft^+$, and by extension $\triangleft$, what are we gonna use it for?
+$$x \triangleleft^+ y \wedge \neg \exists z [x \triangleleft^+ z \wedge z \triangleleft^+ y]$$
+
+Doing so yields a first-order formula that only uses the primitives listed above.
+The difference between a primitive and a "macro" may seem overly pedantic, but it will be really important once we start talking about transductions.
+
+Okay, so now that we have $\triangleleft^+$, and by extension $\triangleleft$, what are we gonna use it for?
 Well, for instance, we can require every well-formed graph to be a string.
 
 $$
-\begin{multline*}
-\forall x,y,z \big [\\
-    (x \triangleleft y \wedge x \triangleleft z \rightarrow y = z) \wedge\\
-    (x \triangleleft z \wedge y \triangleleft z \rightarrow x = y) \wedge\\
-    (x \triangleleft y \rightarrow \neg (x = y))
-\big ]
-\end{multline*}
+\begin{align*}
+\forall x,y,z \big [ &
+      (x \triangleleft y \wedge x \triangleleft z \rightarrow y = z) \wedge\\
+    & (x \triangleleft z \wedge y \triangleleft z \rightarrow x = y) \wedge\\
+    & (x \triangleleft y \rightarrow \neg (x = y))
+\big ]\\
+\end{align*}
 $$
 
 This says that
@@ -112,12 +114,12 @@ And now we could add yet another constraint so that the strings must consist of 
 To do this, we once again throw in some syntactic sugar:
 
 $$
-\mathrm{left-edge}(x) \Leftrightarrow
+\mathrm{leftedge}(x) \Leftrightarrow
    \neg \exists y [y \triangleleft x]
 $$
 
 $$
-\mathrm{right-edge}(x) \Leftrightarrow
+\mathrm{rightedge}(x) \Leftrightarrow
    \neg \exists y [x \triangleleft y]
 $$
 
@@ -127,11 +129,11 @@ With these two additional predicates at our disposal, we now formulate the const
 $$
 \begin{multline*}
 \forall x \big [
-    (\mathrm{left-edge}(x) \rightarrow a(x)) \wedge\\
-    (\mathrm{right-edge}(x) \rightarrow c(x)) \wedge\\
+    (\mathrm{leftedge}(x) \rightarrow a(x)) \wedge\\
+    (\mathrm{rightedge}(x) \rightarrow c(x)) \wedge\\
     (a(x) \rightarrow \exists y [x \triangleleft y \wedge b(y)]) \wedge\\
     (b(x) \rightarrow \exists y [x \triangleleft y \wedge c(y)]) \wedge\\
-    (c(x) \wedge \neg \mathrm{right-edge}(x) \rightarrow \exists y [x \triangleleft y \wedge a(y)])\\
+    (c(x) \wedge \neg \mathrm{rightedge}(x) \rightarrow \exists y [x \triangleleft y \wedge a(y)])\\
 \big ]
 \end{multline*}
 $$
@@ -161,7 +163,7 @@ Here's a depiction of this example that emphasizes the graph-based view of this 
 
 If you follow along the edges, you'll still get the string *abcabcabcabc*, so this is really just a matter of presentation, not content.
 
-Now remember that we can also define all kinds of syntactic sugar or macros, like $\mathrm{left-edge}$, $\mathrm{right-edge}$, or $\triangleleft$.
+Now remember that we can also define all kinds of syntactic sugar or macros, like $\mathrm{leftedge}$, $\mathrm{rightedge}$, or $\triangleleft$.
 Let me show you a very different kind of predicate we could have defined.
 Spoilers: although this predicate only piggybacks on our existing structure, it essentially defines a new graph --- the output of a specific transduction.
 
@@ -182,20 +184,20 @@ In our example string *abcabcabcabc*, it holds that $0 \prec_a 3$ as both $0$ an
 On the other hand, $0 \prec_a 5$ would be false because $5$ is not labeled $a$, $1 \prec_a 3$ would be false because $1$ is not labeled $a$, and $0 \prec_a 6$ is false because $3$ occurs between the two and is also labeled $a$.
 We define analogous predicates $\prec_b$ and $\prec_c$ for labels $b$ and $c$, respectively.
 
-Next, we will also relativize $\mathrm{left-edge}$ and $\mathrm{right-edge}$ to labels so that they pick out the first and last node with a specific label, respectively.
+Next, we will also relativize $\mathrm{leftedge}$ and $\mathrm{rightedge}$ to labels so that they pick out the first and last node with a specific label, respectively.
 Here is what this looks like for $a$:
 
 $$
-\mathrm{left-edge}_a(x) \Leftrightarrow
+\mathrm{leftedge}_a(x) \Leftrightarrow
    \neg \exists y [y \prec_a x]
 $$
 
 $$
-\mathrm{right-edge}_a(x) \Leftrightarrow
+\mathrm{rightedge}_a(x) \Leftrightarrow
    \neg \exists y [x \prec_a y]
 $$
 
-As you can see, that's almost the same formula as for $\mathrm{left-edge}$ and $\mathrm{right-edge}$, except that we have replaced $\triangleleft$ with $\prec_a$.
+As you can see, that's almost the same formula as for $\mathrm{leftedge}$ and $\mathrm{rightedge}$, except that we have replaced $\triangleleft$ with $\prec_a$.
 But since $\prec_a$ can be defined in terms of our logical primitives, this is a-okay, we haven't expanded the language in any way.
 Okay, all the preparatory work has been done, time to move on to the main course:
 
@@ -205,8 +207,8 @@ x \blacktriangleleft y \Leftrightarrow
     x \prec_a y \vee
     x \prec_b y \vee
     x \prec_c y \vee
-    (\mathrm{right-edge}_a(x) \wedge \mathrm{left-edge}_b(x)) \vee
-    (\mathrm{right-edge}_b(x) \wedge \mathrm{left-edge}_c(x))
+    (\mathrm{rightedge}_a(x) \wedge \mathrm{leftedge}_b(x)) \vee
+    (\mathrm{rightedge}_b(x) \wedge \mathrm{leftedge}_c(x))
 \end{multline*}
 $$
 
