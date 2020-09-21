@@ -127,15 +127,15 @@ These predicates check whether a node is the left edge or right edge of the stri
 With these two additional predicates at our disposal, we now formulate the constraint that limits the strings to iterations of *abc*.
 
 $$
-\begin{multline*}
+\begin{align*}
 \forall x \big [
-    (\mathrm{leftedge}(x) \rightarrow a(x)) \wedge\\
-    (\mathrm{rightedge}(x) \rightarrow c(x)) \wedge\\
-    (a(x) \rightarrow \exists y [x \triangleleft y \wedge b(y)]) \wedge\\
-    (b(x) \rightarrow \exists y [x \triangleleft y \wedge c(y)]) \wedge\\
-    (c(x) \wedge \neg \mathrm{rightedge}(x) \rightarrow \exists y [x \triangleleft y \wedge a(y)])\\
-\big ]
-\end{multline*}
+    & (\mathrm{leftedge}(x) \rightarrow a(x)) \wedge\\
+    & (\mathrm{rightedge}(x) \rightarrow c(x)) \wedge\\
+    & (a(x) \rightarrow \exists y [x \triangleleft y \wedge b(y)]) \wedge\\
+    & (b(x) \rightarrow \exists y [x \triangleleft y \wedge c(y)]) \wedge\\
+    & (c(x) \wedge \neg \mathrm{rightedge}(x) \rightarrow \exists y [x \triangleleft y \wedge a(y)])
+\big ]\\
+\end{align*}
 $$
 
 In plain English: the left edge must be *a* (if it exists), the right edge must be *c* (if it exists), *a* must be followed by *b*, *b* must be followed by *c*, and non-final *c* must be followed by *a*.
