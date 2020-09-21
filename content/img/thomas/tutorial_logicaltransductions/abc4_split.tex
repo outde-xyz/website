@@ -1,0 +1,71 @@
+\documentclass[tikz]{standalone}
+\usepackage[charter]{mathdesign}
+
+\usetikzlibrary{arrows, arrows.meta, matrix, positioning}
+\tikzset{headarrow/.style = {-{Latex[length=.5em]}}}
+
+\begin{document}
+\begin{tikzpicture}
+    \node (i) at (0,0) [matrix of nodes,
+                        row sep=3em, column sep=3em] {%
+    0 & 3 & 6 & 9\\
+    1 & 4 & 7 & 10\\
+    2 & 5 & 8 & 11\\
+    };
+
+    \node (o)          [matrix of nodes,
+                        row sep=3em, column sep=3em,
+                        below=3em of i.south, anchor=north] {%
+    0 & 3 & 6 & 9\\
+    1 & 4 & 7 & 10\\
+    2 & 5 & 8 & 11\\
+    };
+
+    \foreach \Target [remember=\Target as \Source (initially 1-1)] in {%
+        2-1,
+        3-1,
+        1-2,
+        2-2,
+        3-2,
+        1-3,
+        2-3,
+        3-3,
+        1-4,
+        2-4,
+        3-4%
+        }
+        \draw[headarrow] (i-\Source) to (i-\Target);
+
+    \foreach \Target [remember=\Target as \Source (initially 1-1)] in {%
+        1-2,
+        1-3,
+        1-4,
+        2-1,
+        2-2,
+        2-3,
+        2-4,
+        3-1,
+        3-2,
+        3-3,
+        3-4%
+        }
+        \draw[headarrow, dashed, blue!75] (o-\Source) to (o-\Target);
+
+    \foreach \y in {1,...,4}
+        \foreach \x/\Label in {%
+            1/a,
+            2/b,
+            3/c%
+            }
+            {
+            \node[circle,
+                  fill=brown, fill opacity=.25,
+                  inner sep=.1em, minimum size=1em] at
+                  (i-\x-\y.north west) [font=\small, text opacity=1] {\Label};
+            \node[circle,
+                  fill=brown, fill opacity=.25,
+                  inner sep=.1em, minimum size=1em] at
+                  (o-\x-\y.north west) [font=\small, text opacity=1] {\Label};
+            }
+\end{tikzpicture}
+\end{document}
