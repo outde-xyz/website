@@ -207,8 +207,8 @@ x \blacktriangleleft y \Leftrightarrow
     & x \prec_a y \vee\\
     & x \prec_b y \vee\\
     & x \prec_c y \vee\\
-    & (\mathrm{last}_a(x) \wedge \mathrm{first}_b(x)) \vee\\
-    & (\mathrm{last}_b(x) \wedge \mathrm{first}_c(x))\\
+    & (\mathrm{last}_a(x) \wedge \mathrm{first}_b(y)) \vee\\
+    & (\mathrm{last}_b(x) \wedge \mathrm{first}_c(y))\\
 \end{align*}
 $$
 
@@ -293,7 +293,7 @@ Some relations are shared between the interfaces, others only one interface pays
 Now we can make an ontological split and say "hey, relations X, Y, and Z are 'syntax', and the rest is post-syntactic", but from the perspective of logical transductions there's no bite to it.
 You have primitive relations, you have parasitic relations that piggyback on them, and you have tons of different yield functions to choose from, some of which are empirically viable and others are not.
 The formalism defines the static structure will all relevant relations, including the parasitic ones.
-There is no formal split between syntax on the one hand and interfaces on the other, the action all happens in the syntactic formalism and the interfaces are just yield functions that filter out some parts of the structure (did I mention that this dovetails nicely with the [bi-morphism perspective of the T-model]({filename}2019-05-15_graf_tmodel.md)?).
+There is no formal split between syntax on the one hand and interfaces on the other, the action all happens in the syntactic formalism and the interfaces are just yield functions that filter out some parts of the structure (did I mention that this dovetails nicely with the [bi-morphism perspective of the T-model]({filename}/Discussions/2019-05-15_graf_tmodel.md)?).
 As I said, it's syntax all the way down.
 
 Now, none of that means that the more traditional view in terms of input-output mappings is wrong.
