@@ -256,7 +256,7 @@ It reminds me of the paradox of an almighty God: God can be almighty only if (s)
 The only way to resolve it is to say that God is so almighty (s)he can do things even (s)he cannot do.
 Just like first-order logic apparently can do things first-order logic cannot do.
 
-At least the paradox of first-order logic can be resolved, though.
+The paradox of first-order logic can be resolved, though, and the resolution is to be more careful in what we do with our representatoins.
 The important thing to realize is that our collection of first-order formulas didn't actually define the stringset $a^n b^n c^n$, it defined graph structures with multiple relations over them, including $\triangleleft$ and $\blacktriangleleft$.
 In order to get $a^n b^n c^n$ from this collection of graph structures, we have to use a yield function that maps the graph to a specific string.
 In the case of $a^n b^n c^n$, the yield function uses $\blacktriangleleft$, which is actually just syntactic sugar for an intricate collection of formulas using $\triangleleft^+$.
@@ -303,7 +303,7 @@ Asking which one is really true is like asking whether light is a wave or a part
 
 But don't we have an encapsulation problem, then?
 If it's all in a single structure, can't everything be sensitive to everything, LF to PF, syntax to PF, and so on?
-Yes, one thing the logical perspective shows us is that representational encapsulation doesn't get the way done.
+Yes, one thing the logical perspective shows us is that representational encapsulation doesn't get the work done.
 And I think that's one of several ways how representations lead us astray in our thinking.
 My hunch is that the answer lies in computation, not representation... more on that next time.
 
