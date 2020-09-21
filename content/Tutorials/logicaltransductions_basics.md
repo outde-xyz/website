@@ -114,12 +114,12 @@ And now we could add yet another constraint so that the strings must consist of 
 To do this, we once again throw in some syntactic sugar:
 
 $$
-\mathrm{leftedge}(x) \Leftrightarrow
+\mathrm{first}(x) \Leftrightarrow
    \neg \exists y [y \triangleleft x]
 $$
 
 $$
-\mathrm{rightedge}(x) \Leftrightarrow
+\mathrm{last}(x) \Leftrightarrow
    \neg \exists y [x \triangleleft y]
 $$
 
@@ -129,11 +129,11 @@ With these two additional predicates at our disposal, we now formulate the const
 $$
 \begin{align*}
 \forall x \big [
-    & (\mathrm{leftedge}(x) \rightarrow a(x)) \wedge\\
-    & (\mathrm{rightedge}(x) \rightarrow c(x)) \wedge\\
+    & (\mathrm{first}(x) \rightarrow a(x)) \wedge\\
+    & (\mathrm{last}(x) \rightarrow c(x)) \wedge\\
     & (a(x) \rightarrow \exists y [x \triangleleft y \wedge b(y)]) \wedge\\
     & (b(x) \rightarrow \exists y [x \triangleleft y \wedge c(y)]) \wedge\\
-    & (c(x) \wedge \neg \mathrm{rightedge}(x) \rightarrow \exists y [x \triangleleft y \wedge a(y)])
+    & (c(x) \wedge \neg \mathrm{last}(x) \rightarrow \exists y [x \triangleleft y \wedge a(y)])
 \big ]\\
 \end{align*}
 $$
@@ -163,7 +163,7 @@ Here's a depiction of this example that emphasizes the graph-based view of this 
 
 If you follow along the edges, you'll still get the string *abcabcabcabc*, so this is really just a matter of presentation, not content.
 
-Now remember that we can also define all kinds of syntactic sugar or macros, like $\mathrm{leftedge}$, $\mathrm{rightedge}$, or $\triangleleft$.
+Now remember that we can also define all kinds of syntactic sugar or macros, like $\mathrm{first}$, $\mathrm{last}$, or $\triangleleft$.
 Let me show you a very different kind of predicate we could have defined.
 Spoilers: although this predicate only piggybacks on our existing structure, it essentially defines a new graph --- the output of a specific transduction.
 
@@ -172,7 +172,7 @@ Again we do not need to add this predicate to our language, it's just a convenie
 
 $$
 x \prec_a y \Leftrightarrow
-   x \triangleft^+ y \wedge
+   x \triangleleft^+ y \wedge
    a(x) \wedge
    a(y) \wedge
    \neg \exists z [x \triangleleft^+ z \wedge
@@ -184,32 +184,32 @@ In our example string *abcabcabcabc*, it holds that $0 \prec_a 3$ as both $0$ an
 On the other hand, $0 \prec_a 5$ would be false because $5$ is not labeled $a$, $1 \prec_a 3$ would be false because $1$ is not labeled $a$, and $0 \prec_a 6$ is false because $3$ occurs between the two and is also labeled $a$.
 We define analogous predicates $\prec_b$ and $\prec_c$ for labels $b$ and $c$, respectively.
 
-Next, we will also relativize $\mathrm{leftedge}$ and $\mathrm{rightedge}$ to labels so that they pick out the first and last node with a specific label, respectively.
+Next, we will also relativize $\mathrm{first}$ and $\mathrm{last}$ to labels so that they pick out the first and last node with a specific label, respectively.
 Here is what this looks like for $a$:
 
 $$
-\mathrm{leftedge}_a(x) \Leftrightarrow
+\mathrm{first}_a(x) \Leftrightarrow
    \neg \exists y [y \prec_a x]
 $$
 
 $$
-\mathrm{rightedge}_a(x) \Leftrightarrow
+\mathrm{last}_a(x) \Leftrightarrow
    \neg \exists y [x \prec_a y]
 $$
 
-As you can see, that's almost the same formula as for $\mathrm{leftedge}$ and $\mathrm{rightedge}$, except that we have replaced $\triangleleft$ with $\prec_a$.
+As you can see, that's almost the same formula as for $\mathrm{first}$ and $\mathrm{last}$, except that we have replaced $\triangleleft$ with $\prec_a$.
 But since $\prec_a$ can be defined in terms of our logical primitives, this is a-okay, we haven't expanded the language in any way.
 Okay, all the preparatory work has been done, time to move on to the main course:
 
 $$
-\begin{multline*}
+\begin{align*}
 x \blacktriangleleft y \Leftrightarrow
-    x \prec_a y \vee
-    x \prec_b y \vee
-    x \prec_c y \vee
-    (\mathrm{rightedge}_a(x) \wedge \mathrm{leftedge}_b(x)) \vee
-    (\mathrm{rightedge}_b(x) \wedge \mathrm{leftedge}_c(x))
-\end{multline*}
+    & x \prec_a y \vee\\
+    & x \prec_b y \vee\\
+    & x \prec_c y \vee\\
+    & (\mathrm{last}_a(x) \wedge \mathrm{first}_b(x)) \vee\\
+    & (\mathrm{last}_b(x) \wedge \mathrm{first}_c(x))\\
+\end{align*}
 $$
 
 What does this do?
