@@ -30,7 +30,7 @@ It's basically a more rigorous form of constraint-based formalisms in linguistic
 
 I'll explain in a minute how exactly this works, but the key insight I want to relate to you right-away:
 from the perspective of mathematical logic, talking about a structure isn't all that different from talking about a transduction that changes this structure into something else.
-The common dichotomy between structures one the one hand and processes that manipulate those structures on the other hand, it just falls apart --- like chlorine under sun light.
+The common dichotomy between structures one the one hand and processes that manipulate those structures on the other hand just falls apart, like chlorine under sun light.
 
 But let's not get too far ahead of ourselves.
 For now, our focus is still on the more standard case of using logic to talk about structure.
@@ -49,13 +49,13 @@ Given the same interpretation for $b(x)$ and $c(x)$, the formula above is a cons
 We can tighten this with another constraint to ensure that every node has exactly one label.
 
 $$
-\begin{multline*}
-\forall x \big [\\
-    (a(x) \rightarrow \neg b(x) \wedge \neg c(x)) \wedge\\
-    (b(x) \rightarrow \neg a(x) \wedge \neg c(x)) \wedge\\
-    (c(x) \rightarrow \neg a(x) \wedge \neg b(x))
-\big ]
-\end{multline*}
+\begin{align*}
+\forall x \big [
+                 & (a(x) \rightarrow \neg b(x) \wedge \neg c(x)) \wedge\\
+                 & (b(x) \rightarrow \neg a(x) \wedge \neg c(x)) \wedge\\
+                 & (c(x) \rightarrow \neg a(x) \wedge \neg b(x))
+\big ]\\
+\end{align*}
 $$
 
 Any graph in which both formulas a true is a **model** of this set of formulas.
@@ -303,6 +303,6 @@ But don't we have an encapsulation problem, then?
 If it's all in a single structure, can't everything be sensitive to everything, LF to PF, syntax to PF, and so on?
 Yes, one thing the logical perspective shows us is that representational encapsulation doesn't get the way done.
 And I think that's one of several ways how representations lead us astray in our thinking.
-I think the answer lies in computation, not representation... more on that next time.
+My hunch is that the answer lies in computation, not representation... more on that next time.
 
 ## References
