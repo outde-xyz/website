@@ -1,0 +1,49 @@
+\documentclass[tikz]{standalone}
+\usepackage[linguistics]{forest}
+\usepackage[charter]{mathdesign}
+
+\usetikzlibrary{arrows,arrows.meta,calc}
+\tikzset{headarrow/.style = {-{Latex[length=.5em]}}}
+\tikzset{move/.style = {dashed,blue,headarrow}}
+
+\newcommand{\mlex}[2]{\ensuremath{\textrm{#1} ::\thinspace \mathrm{#2}}}
+\newcommand{\fsel}[1]{\ensuremath{\mathrm{#1^+\thinspace\unskip}}}
+\newcommand{\fcat}[1]{\ensuremath{\mathrm{#1^-\thinspace\unskip}}}
+\newcommand{\flcr}[1]{\ensuremath{\mathrm{#1^+\thinspace\unskip}}}
+\newcommand{\flce}[1]{\ensuremath{\mathrm{#1^-\thinspace\unskip}}}
+\newcommand{\fsep}{\ensuremath{\bullet}}
+\newcommand{\emptystring}{\ensuremath{\varepsilon}}
+
+
+\begin{document}
+\begin{forest}
+    [,phantom
+        [\mlex{\emptystring}{\fsel{T} \flcr{wh} \fcat{C}},name=base
+            [\mlex{\emptystring}{\fsel{V} \flcr{nom} \fcat{T}},name=t-nom
+                [\mlex{saw}{\fsel{C} \fsel{D} \flcr{wh} \fcat{V}},name=t-wh
+                    [\mlex{which}{\fsel{N} \fcat{D} \flce{nom} \flce{wh}},name=s-nom
+                        [\mlex{witness}{\fcat{N}}]
+                    ]
+                    [\mlex{what}{\fcat{D} \flce{wh}},name=s-wh]
+                ]
+            ]
+        ]
+        [\mlex{\emptystring}{\fsel{V} \flcr{nom} \fcat{T}},name=nom
+            [\mlex{who}{\fcat{D} \flce{nom} \flce{wh}}]
+        ]
+        [\mlex{\emptystring}{\fsel{T} \flcr{wh} \fcat{C}},name=wh
+            [\mlex{saw}{\fsel{C} \fsel{D} \flcr{wh} \fcat{V}}
+                [\mlex{which}{\fsel{N} \fcat{D} \flce{nom} \flce{wh}}]
+                [\mlex{what}{\fcat{D} \flce{wh}}]
+            ]
+        ]
+    ]
+    %
+    \foreach \Tree/\Label in {base/Derivation, nom/nom-tier, wh/wh-tier}
+        \node [anchor=south] at (\Tree.north) [font=\small\bfseries] {\Label};
+    %
+    \draw[move] (s-nom) .. controls +(120:3em) and +(200:5em) .. (t-nom);
+    \draw[move] (s-nom) .. controls +(120:3em) and +(200:5em) .. (base);
+    \draw[move] (s-wh) .. controls +(50:3em) and +(330:2em) .. (t-wh.east);
+\end{forest}
+\end{document}
