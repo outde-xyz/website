@@ -1,0 +1,41 @@
+\documentclass[tikz]{standalone}
+\usepackage[linguistics]{forest}
+\usepackage[charter]{mathdesign}
+\usetikzlibrary{arrows,arrows.meta}
+\tikzset{headarrow/.style = {-{Latex[length=.5em]}}}
+\tikzset{move/.style = {dashed,blue,headarrow}}
+
+\begin{document}
+\begin{forest}
+    [CP
+        [DP,name=which
+            [which]
+            [witness]
+        ]
+        [C$'$
+            [C]
+            [TP
+                [$t$,name=whicht2]
+                [T$'$
+                    [T]
+                    [VP
+                        [what,name=what]
+                        [VP
+                            [$t$,name=whicht1]
+                            [V$'$
+                                [saw]
+                                [$t$,name=whatt]
+                            ]
+                        ]
+                    ]
+                ]
+            ]
+        ]
+    ]
+    %
+    \draw[move] (whatt) .. controls +(150:5em) and +(270:3em) .. (what.south);
+    \draw[move] (whicht1) to [out=160,in=220] (whicht2);
+    \clip (-7.35em,-1em) rectangle (5em,-10em);
+    \draw[move] (whicht2) ..controls +(180:8em) and +(200:8em) .. (which);
+\end{forest}
+\end{document}

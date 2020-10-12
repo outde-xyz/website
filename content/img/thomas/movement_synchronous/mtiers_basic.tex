@@ -1,0 +1,56 @@
+\documentclass[tikz]{standalone}
+\usepackage[linguistics]{forest}
+\usepackage[charter]{mathdesign}
+
+\usetikzlibrary{arrows,arrows.meta,calc}
+\tikzset{headarrow/.style = {-{Latex[length=.5em]}}}
+\tikzset{move/.style = {dashed,blue,headarrow}}
+
+\newcommand{\mlex}[2]{\ensuremath{\textrm{#1} ::\thinspace \mathrm{#2}}}
+\newcommand{\fsel}[1]{\ensuremath{\mathrm{#1^+\thinspace\unskip}}}
+\newcommand{\fcat}[1]{\ensuremath{\mathrm{#1^-\thinspace\unskip}}}
+\newcommand{\flcr}[1]{\ensuremath{\mathrm{#1^+\thinspace\unskip}}}
+\newcommand{\flce}[1]{\ensuremath{\mathrm{#1^-\thinspace\unskip}}}
+\newcommand{\fsep}{\ensuremath{\bullet}}
+\newcommand{\emptystring}{\ensuremath{\varepsilon}}
+
+
+\begin{document}
+\begin{forest}
+    [,phantom
+        [\mlex{\emptystring}{\fsel{T} \fcat{C}},name=base
+            [\mlex{\emptystring}{\fsel{V} \flcr{nom} \fcat{T}},name=t-nom1
+                [\mlex{wonders}{\fsel{C} \fsel{D} \fcat{V}}
+                    [\mlex{Mary}{\fcat{D} \flce{nom}},name=s-nom1]
+                    [\mlex{\emptystring}{\fsel{T} \flcr{wh} \fcat{C}},name=t-wh
+                        [\mlex{\emptystring}{\fsel{V} \flcr{nom} \fcat{T}},name=t-nom2
+                            [\mlex{bought}{\fsel{D} \fsel{D} \fcat{V}}
+                                [\mlex{Sue}{\fcat{D} \flce{nom}},name=s-nom2]
+                                [\mlex{which}{\fsel{N} \fcat{D} \flce{wh}},name=s-wh
+                                    [\mlex{car}{\fcat{N}}]
+                                ]
+                            ]
+                        ]
+                    ]
+                ]
+            ]
+        ]
+        [\mlex{\emptystring}{\fsel{V} \flcr{nom} \fcat{T}},name=nom
+            [\mlex{Mary}{\fcat{D} \flce{nom}}]
+            [\mlex{\emptystring}{\fsel{V} \flcr{nom} \fcat{T}}
+                [\mlex{Sue}{\fcat{D} \flce{nom}}]
+            ]
+        ]
+        [\mlex{\emptystring}{\fsel{T} \flcr{wh} \fcat{C}},name=wh
+            [\mlex{which}{\fsel{N} \fcat{D} \flce{wh}}]
+        ]
+    ]
+    %
+    \foreach \Tree/\Label in {base/Derivation, nom/nom-tier, wh/wh-tier}
+        \node [anchor=south] at (\Tree.north) [font=\small\bfseries] {\Label};
+    %
+    \draw[move] (s-nom1) .. controls +(120:3em) and +(200:5em) .. (t-nom1);
+    \draw[move] (s-nom2) .. controls +(120:3em) and +(200:5em) .. (t-nom2);
+    \draw[move] (s-wh) .. controls +(50:3em) and +(330:8em) .. (t-wh);
+\end{forest}
+\end{document}
