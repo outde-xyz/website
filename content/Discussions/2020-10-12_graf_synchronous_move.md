@@ -26,7 +26,7 @@ The idea is that we look at a syntactic derivation, represented as an MG depende
 For each movement type, i.e. wh, topicalization, subject movement, and so on, we consider only those nodes that participate in this kind of movement as either the head of the moving phrase or the that provides the landing site.
 This information is assumed to be encoded via features --- for instance, MGs use *licensee features* $\mathrm{f^-}$ for the mover and *licensor features* $\mathrm{f^+}$ for the landing site.
 In such a system, it is very easy to find the relevant nodes for each tier.
-On each $f$-tier, we then require that 
+On each $\mathrm{f}$-tier, we then require that 
 
 1. every $\mathrm{f^-}$ has an $\mathrm{f^+}$ mother, and 
 1. every $\mathrm{f^+}$ has exactly one $\mathrm{f^-}$ among its daughters.
@@ -47,16 +47,17 @@ The steps above would correspond to the following feature string configurations:
 
 1. $\bullet \mathrm{N^+} \mathrm{D^-}\ \mathrm{nom^-}\ \mathrm{wh^-}$: the selector feature $\mathrm{N^+}$ is active and must be checked via Merge
 1. $\mathrm{N^+} \bullet \mathrm{D^-}\ \mathrm{nom^-}\ \mathrm{wh^-}$: the category feature $\mathrm{D^-}$ is active and must be checked via Merge
-1. $\mathrm{N^+} \mathrm{D^-} \bullet \mathrm{nom^-} \mathrm{wh^-}$: the licensee feature $\mathrm{nom^-}$ is active and must be checked via Move
-1. $\mathrm{N^+} \mathrm{D^-} \mathrm{nom^-} \bullet \mathrm{wh^-}$: the licensee feature $\mathrm{wh^-}$ is active and must be checked via Move
-1. $\mathrm{N^+} \mathrm{D^-} \mathrm{nom^-} \mathrm{wh^-} \bullet$: all features of *which* have been checked
+1. $\mathrm{N^+}\ \mathrm{D^-} \bullet \mathrm{nom^-}\ \mathrm{wh^-}$: the licensee feature $\mathrm{nom^-}$ is active and must be checked via Move
+1. $\mathrm{N^+}\ \mathrm{D^-}\ \mathrm{nom^-} \bullet \mathrm{wh^-}$: the licensee feature $\mathrm{wh^-}$ is active and must be checked via Move
+1. $\mathrm{N^+}\ \mathrm{D^-}\ \mathrm{nom^-}\ \mathrm{wh^-} \bullet$: all features of *which* have been checked
 
 Since features are inactive by default, there is nothing wrong with derivations like the one below, represented once again as an MG dependency tree.
+The $\mathrm{wh}^-$ on *which* and *what* are never active at the same time, so there's no confusion about how these licensee features are matched up against $\mathrm{wh}^+$ on *saw* and the C-head.
 
 ![Dependency tree and tiers for *Which witness what saw*]({static}/img/thomas/movement_synchronous/mtiers_protected.svg)
 
 But if you look at the wh-tier for this derivation, it does not obey the constraints above.
-We have a $\mathrm{wh^+}$ without any $\mathrm{wh^-}$-daughter, whereas another $\mathrm{wh^+}$ has two.
+We have a $\mathrm{wh^+}$ without a $\mathrm{wh^-}$ daughter, whereas another $\mathrm{wh^+}$ has two.
 The tier-based perspective misses the fact that the $\mathrm{wh^-}$ on *which* only becomes active after $\mathrm{nom^-}$ has been checked.
 Basically, the position of *which* on the $\mathrm{wh^-}$ tier should be higher, corresponding to the point in the derivation where a $\mathrm{nom^+}$ checks the $\mathrm{nom^-}$ on *which*.
 
@@ -64,12 +65,12 @@ There's two ways to deal with this.
 My position so far has been to assume that the grammar is in **single movement normal form**. 
 This is a bulky term for the simple idea that no head can ever have more than one licensee feature.
 It's simply impossible for *which* to carry both $\mathrm{nom^-}$ and $\mathrm{wh^-}$.
-That's an innocent working assumption in the sense that it does not affect weak or strong generative capacity [@GrafEtAl16FG].
-But it also pushes us farther away from the standard view of syntax, and that's the very opposite of what I'd subregular syntax to accomplish.
+That's an innocent working assumption in the sense that it does not affect weak or strong generative capacity.
+But it also pushes us farther away from the standard view of syntax, and that's the very opposite of what I'd like subregular syntax to accomplish.
 
 The other option is to switch to a much more sophisticated tier projection mechanism.
 It's not even that hard to define, but it's not particularly natural from a subregular perspective, and that's why it doesn't strike me as a very insightful route to take.
-So recently I figured, the hell with it, what if the tier-based view of syntax is indeed correct? 
+So recently I figured, the hell with it, what if the tier-based view of syntax is correct in its current form? 
 What would syntax look like if we don't have the single movement normal form, but the tier constraints still apply in the same fashion?
 
 
@@ -77,19 +78,19 @@ What would syntax look like if we don't have the single movement normal form, bu
 
 Remember that I said above that features in MGs get unlocked one after the other.
 Features tend to spend most of their derivational life inactive, patiently waiting in line until $\bullet$ shows up to tell them its their turn.
-The tier-based view of syntax replaces this orderly line with a beehive where all features are active at the same time.
+The tier-based view of syntax cannot handle this orderly line, it thinks of each lexical item as a beehive where all features are active at the same time.
 The $\mathrm{wh^-}$ on *which* doesn't give a damn that it isn't its turn yet, it's ready to rock right away and it won't have other $\mathrm{wh^-}$ barge into its territory.
-The derivation above would no longer be allowed --- even though the lower $\mathrm{wh^+}$ can't even be targeted by *which*, it still won't let any other phrase move there.
+In a system that works like this, the derivation above would no longer be allowed --- even though *which* can't even target the $\mathrm{wh^+}$ on *saw*, it still won't let any other phrase move there.
 
-This may sound a little strange, but it gets even more bonkers once you think of it in terms of phrase structure trees.
+This may sound a little strange to you, but it gets even more bonkers once you look at it in terms of phrase structure trees.
 Traditionally, we think of it as *which* moving to the subject position in Spec,TP, and then it undergoes wh-movement from Spec,TP to Spec,CP.
 
 ![Standard view: Movement is continuous sequence of steps]({static}/img/thomas/movement_synchronous/phrasestructure_normal.svg)
 
 In tier-based syntax, *which* still undergoes subject movement as usual, but it simultaneously also undergoes wh-movement to Spec,CP.
-Kinda like in *Beyond Explanatory Adequacy* [@Chomsky04].
+Kinda like in Chomsky's *Beyond Explanatory Adequacy*.
 And also a bit like in a multi-dominant syntax, where a mover never truly leaves its base position.
-The fact that the feature string is $\mathrm{D^-} \mathrm{nom^-} \mathrm{wh^-}$ no longer means that subject movement precedes wh-movement, it only tells us that wh-movement must target a position higher than the one targeted by nom-movement (and that requirement would have to be enforced by some additional mechanism besides movement tiers).
+The fact that the feature string of is $\mathrm{N^+} \mathrm{D^-} \mathrm{nom^-} \mathrm{wh^-}$ no longer means that subject movement precedes wh-movement, it only tells us that wh-movement must target a position higher than the one targeted by nom-movement (and that requirement would have to be enforced by some additional mechanism besides movement tiers).
 
 ![Tier-based view: All movement steps start from the base position]({static}/img/thomas/movement_synchronous/phrasestructure_parallel.svg)
 
@@ -104,18 +105,17 @@ You usually don't get overlapping wh-paths, but rather two wh-phrases competing 
 
 Then I thought the distinction between A-movement and A$'$-movement might produce a counterexample.
 Perhaps a phrase must not undergo wh-movement from position X, but once it has undergone some other type of movement to a higher position it can move from there.
+This also seems to happen a lot with scrambling.
 But those cases can be reanalyzed as the difference between carrying just $\mathrm{wh^-}$ or $\mathrm{nom^-} \mathrm{wh^-}$ --- it's not the position itself that matters, but rather what kind of mover you are, a simple wh-mover VS a synchronous nom-wh-mover.
 
 I'm mostly talking about wh-movement here, but I don't think things are much different for topicalization, raising, and so on.
 I just can't find a good counterexample.
 Part of that could be because of a category mismatch between what the movement literature cares about and what I'm looking for.
-Subjacency and relativized minimality, for example, aren't directly about movement in a formalism where everything is encoded via features.
+Subjacency and relativized minimality, for example, aren't directly about movement once you operate under the assumption that everything is encoded via features.
 They are about how features must be distributed over heads: "no, you can't have a $\mathrm{wh^-}$, that has to go on this fellow over here because he's in a structurally more prominent position".
 Tier-based syntax, on the other hand, is a model of how movement has to proceed once these features have been distributed over heads.
 We're probing part of a larger system, which is difficult unless all parts of the system are precisely nailed down, which they aren't.
 
 But as I said, maybe this is all just me being really dense.
 Maybe there is an obvious problem that I'm missing.
-Maybe there is a clear-cut argument why movement must be thought of as a long trek with several stops on the way, rather than a number of parallel flights from the same airport to different destinations.
-
-## References
+Maybe there is a clear-cut argument why movement must be thought of as a road trip with several stops on the way, rather than a number of identical packages being sent from the same hub to different destinations.
