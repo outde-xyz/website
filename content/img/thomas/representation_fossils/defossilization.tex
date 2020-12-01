@@ -1,0 +1,30 @@
+\documentclass[tikz, landscape]{standalone}
+\usepackage[linguistics]{forest}
+\usepackage[charter]{mathdesign}
+\usetikzlibrary{arrows, arrows.meta}
+\tikzset{larrow/.style = {-{Latex[length=.5em]}}}
+
+\begin{document}
+\begin{forest}
+    [,phantom, s sep=5em
+        [water (V), name=lt
+            [the (D)
+                [gardeners (N)]
+            ]
+            [their (D)
+                [flowers (N), name=lb]
+            ]
+        ]
+        [water, name=rt,
+            [the
+                [gardeners, name=rb]
+            ]
+            [their
+                [flowers]
+            ]
+        ]
+    ]
+    \draw[larrow] (lb) to node [above] {removal} (rb);
+    \draw[larrow] (rt) to node [below] {feature assignment} (lt);
+\end{forest}
+\end{document}
