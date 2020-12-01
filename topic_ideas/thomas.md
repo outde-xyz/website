@@ -50,3 +50,10 @@
 # It's all about the base
 
 # what the heck is generalization, what does it cost, and why do we care?
+
+- can be tied into Hayes paper
+
+# Unifiers and dividers
+
+- mathling used to be all about unifying, bringing things together
+- with subregular complexity, we're divvying things up again
