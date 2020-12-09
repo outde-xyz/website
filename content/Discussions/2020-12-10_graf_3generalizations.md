@@ -11,7 +11,7 @@ tags:
 ---
 
 <!-- START_SUMMARY_BLOCK -->
-My [post on defossilization]({filename}2020-11-30_graf_fossilizedcomputation) prompted an extended debate with Hossep Dolatian --- thx Hossep, it was a joy, and a welcome change from the daily rut.
+My [post on defossilization]({filename}2020-11-30_graf_fossilizedcomputation.md) prompted an extended debate with Hossep Dolatian --- thx Hossep, it was a joy, and a welcome change from the daily rut.
 One of the many points we disagreed on was the role of generalization in linguistic theory.
 Yeah, pretty esoteric, but there are some real issues here.
 I think there's at least three types of generalization, and we shouldn't lump them together.
