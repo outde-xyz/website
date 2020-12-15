@@ -13,7 +13,7 @@ tags:
 <!-- START_SUMMARY_BLOCK -->
 My [post on defossilization]({filename}2020-11-30_graf_fossilizedcomputation.md) clearly wasn't esoteric enough, so I'm upping the ante by turning to one of the most esoteric and ephemeral issues in linguistic theory.
 Yes, we're gonna talk about generalizations and what their role ought to be in how we do linguistics.
-If you want a tldr: I think there's at least three types of generalization, and we shouldn't lump them together.
+Since it's a long post even for outdex standards, I'll give you a tldr: I think there's at least three types of generalization, and we shouldn't lump them together.
 <!-- END_SUMMARY_BLOCK -->
 
 
@@ -217,3 +217,5 @@ Would you be shocked?
 I wouldn't.
 It's a useful piece of information that does not undercut the idea of reduplication as something worth studying at various levels of generalization.
 We just have to make sure we know which level our theorems operate at.
+
+## References
