@@ -14,6 +14,7 @@ tags:
 My [post on defossilization]({filename}2020-11-30_graf_fossilizedcomputation.md) clearly wasn't esoteric enough, so I'm upping the ante by turning to one of the most esoteric and ephemeral issues in linguistic theory.
 Yes, we're gonna talk about generalizations and what their role ought to be in how we do linguistics.
 Since it's a long post even for outdex standards, I'll give you a tldr: I think there's at least three types of generalization, and we shouldn't lump them together.
+In particular, not every generalization has a payoff in the grammar.
 <!-- END_SUMMARY_BLOCK -->
 
 
