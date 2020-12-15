@@ -209,13 +209,13 @@ In the total reduplication example above, something has to build those finite-st
 But that is a one-time cost, so if you want an efficient processing system that can handle reduplication, you can pay that cost once in a precompilation step and after that you won't have to pay it again until a new entry needs to be added to the lexicon.
 The cost of L-generalizations doesn't need to be paid all the time, you can take care of it once and then forget about it.
 
-Similarly, we should not mistake L-generalizations with claims about specific processes in specific languages.
+Similarly, we should not mistake L-generalizations for claims about specific processes in specific languages.
 Language is a biological system.
 Biology tends to be messy, and it tends to implement the same idea in many different ways.
 Suppose a linguist from the future were to show up on your door step and tell you that there actually is no such thing as reduplication, and in fact it's a cluster of language-specific processes that are all distinct yet look the same at a sufficient level of abstraction.
 Would you be shocked?
 I wouldn't.
 It's a useful piece of information that does not undercut the idea of reduplication as something worth studying at various levels of generalization.
-We just have to make sure we know which level our theorems operate at.
+We just have to make sure we know which level each theorem operates at.
 
 ## References
