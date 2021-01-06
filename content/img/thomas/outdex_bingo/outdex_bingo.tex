@@ -1,0 +1,103 @@
+\documentclass[tikz,border=2mm]{standalone}
+% based on code from StackExchange: https://tex.stackexchange.com/questions/63357/automatically-generated-bingo-cards
+\usepackage{xifthen}
+\usepackage{xstring}
+\usepackage[charter]{mathdesign}
+
+\newcommand{\randomwords}{%
+;argument%
+;complex%
+;complexity%
+;computation%
+;constraints%
+;data%
+;depedency%
+;example%
+;$f$%
+;feature%
+;formal%
+;grammar%
+;harmony%
+;information%
+;islands%
+;John%
+;language%
+;linguists%
+;linguistics%
+;Latex%
+;learnability%
+;local%
+;locality%
+;mathematics%
+;merge%
+;MGs%
+;Minimalist%
+;movement%
+;order%
+;parsing%
+;perspective%
+;phonology%
+;problem%
+;regular%
+;sets%
+;simple%
+;SL%
+;strictly local%
+;strings%
+;structure%
+;subregular%
+;syntax%
+;system%
+;theory%
+;tier%
+;tone%
+;transductions%
+;trees%
+;TSL%
+;$x$%
+}
+% curiously absent: generative capacity, monoid, semiring, bimorphism
+
+\pgfmathsetmacro{\cellsize}{2}
+\pgfmathtruncatemacro{\gridsize}{5}
+
+
+\pgfmathtruncatemacro{\fieldcount}{\gridsize*\gridsize-1}
+\pgfmathtruncatemacro{\bingo}{\fieldcount/2}
+\StrCount{\randomwords}{;}[\numwords]
+\newcounter{myletter}
+\pgfmathtruncatemacro{\minusgrid}{\gridsize-1}
+
+\begin{document}
+
+\begin{tikzpicture}
+    \foreach \f in {0,...,\fieldcount}
+    { \pgfmathtruncatemacro{\x}{mod(\f,\gridsize)}
+        \pgfmathtruncatemacro{\y}{div(\f,\gridsize)}
+        \pgfmathtruncatemacro{\mycolor}{mod(\f,2)*100}
+        \draw[fill=yellow!\mycolor!red!10] ({\x*\cellsize},{\y*\cellsize}) rectangle ({(\x+1)*\cellsize},{(\y+1)*\cellsize});
+        \ifthenelse{\f=\bingo}
+        {   \node[rotate=45] at ({(\x+0.5)*\cellsize},{(\y+0.5)*\cellsize}) {BINGO!};
+        }
+        {   \pgfmathtruncatemacro{\maxvalue}{\numwords-1-\f)}
+          \pgfmathtruncatemacro{\myrandom}{random(\maxvalue)}
+          \pgfmathtruncatemacro{\mynextrandom}{\myrandom+1}
+          \StrBetween[\myrandom,\mynextrandom]{\randomwords}{;}{;}[\randomword]
+          \StrDel{\randomwords}{\randomword;}[\randomwords]
+          \xdef\randomwords{\randomwords}
+            \node[rotate=45,align=center,text width=6em] at ({(\x+0.5)*\cellsize},{(\y+0.5)*\cellsize}) {\randomword};
+        }
+        \ifthenelse{\x=0}
+        {   \draw[fill=blue!10] ({\x*\cellsize},{\y*\cellsize}) rectangle ({(\x-0.5)*\cellsize},{(\y+1)*\cellsize});
+            \node at ({(\x-0.25)*\cellsize},{(\y+0.5)*\cellsize}) {\pgfmathparse{int(\gridsize-\y)}\pgfmathresult};
+        }{}
+        \ifthenelse{\y=\minusgrid}
+        {   \draw[fill=blue!10] ({\x*\cellsize},{(\y+1)*\cellsize}) rectangle ({(\x+1)*\cellsize},{(\y+1.5)*\cellsize});
+            \pgfmathparse{int(\x+1)}
+            \setcounter{myletter}{\pgfmathresult}
+            \node at ({(\x+0.5)*\cellsize},{(\y+1.25)*\cellsize}) {\Alph{myletter}};
+        }{}
+    }
+\end{tikzpicture}
+
+\end{document}
