@@ -16,9 +16,8 @@ tags:
 2021 still has that "new car" smell, but it might need some help to stay fresh for the full 52 weeks.
 This is why I present you with my revolutionary invention: **Outdex bingo**.
 
-![An outdex bingo card]({static}/img/thomas/outdex_bingo/output/from_py/bingo1.svg)
-
 <!-- END_SUMMARY_BLOCK -->
+![An outdex bingo card]({static}/img/thomas/outdex_bingo/output/from_py/bingo1.svg)
 
 It works pretty much like regular bingo:
 
