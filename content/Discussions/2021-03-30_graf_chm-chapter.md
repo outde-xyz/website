@@ -1,6 +1,6 @@
 ---
 title: >-
-    Handbook chapter on Minimalism & Computation
+    Handbook chapter on Minimalism & computation
 authors:
     - Thomas Graf
 date: 2021-03-30
