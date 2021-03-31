@@ -1,6 +1,6 @@
 ---
 title: >-
-    Handbook chapter on Minimalism & computation
+    Handbook chapter on Minimalism and computational linguistics
 authors:
     - Thomas Graf
 date: 2021-03-30
