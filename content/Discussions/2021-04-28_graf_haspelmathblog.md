@@ -23,9 +23,9 @@ I think the latter is actually the most interesting, but for the sake of ~~compl
 
 Haspelmath frequently talks about how X should actually be called Y or Z.
 By [his own admission](https://dlc.hypotheses.org/989), he keeps "insisting on careful use of terminology in linguistics".
-For example, one terminological quibble that keeps coming up is why [*typology* should be called *comparative linguistics*](https://dlc.hypotheses.org/1915).
-Many of the problems with his specific terminological proposals have already been pointed out in the comments there, and I don't have much to add on those.
-I'll just take a moment to link to [xkcd](https://xkcd.com/927/) and [smbc](https://www.smbc-comics.com/comic/definition), which succinctly point out the real problem with such terminological musings.
+For example, one terminological quibble that keeps coming up is that [*typology* should be called *comparative linguistics*](https://dlc.hypotheses.org/1915).
+Problems with his specific terminological proposals have been pointed out in the comments there, and I don't have much to add in that respect.
+I'll just take a moment to link to [xkcd](https://xkcd.com/927/) and [smbc](https://www.smbc-comics.com/comic/definition), which succinctly point out the real problem with such terminological alterations: they only make things worse.
 
 But since this is the outdex, where absolutely everything has to circle back to computation, let's look at a recent case of such terminological confusion.
 Some of you might have heard of *sequential functions*, which are a subtype of finite-state transductions.
