@@ -83,7 +83,7 @@ I will point out, though, that
 
 But I really shouldn't have brought up those ancillary points, because the only thing that matters methodologically is that none of this matters.
 The cognitive issues may be what motivates the program, but the analytical work is largely independent of that.
-There's a reason why virtually all Minimalist textbooks include some spiel about the learning problem, syntax as a cognitive science, language as window into mental computation, yada yada yada, yet barely any of them contain a chapter on parsing, learnability, or computation (one notable exception being Sportiche, Koopman, and Stabler' *An Introduction to Syntactic Analysis*, and the list of authors should give you a clue how the computational chapter made it in).
+There's a reason why virtually all Minimalist textbooks include some spiel about the learning problem, syntax as a cognitive science, language as window into mental computation, yada yada yada, yet barely any of them contain a chapter on parsing, learnability, or computation (one notable exception being Sportiche, Koopman, and Stabler' *An Introduction to Syntactic Analysis and Theory*, and the list of authors should give you a clue how the computational chapter made it in).
 I've [complained about that before]({filename}2020-01-31_graf_modern_syntax_textbooks.md), but that's the way things are.
 And because that's the way things are, a Minimalist's analytical work does not hinge on any particular conception of UG.
 
