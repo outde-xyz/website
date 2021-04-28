@@ -11,8 +11,8 @@ tags:
 ---
 
 <!-- START_SUMMARY_BLOCK -->
-Unbecoming at it may be for a blogging linguist, I am not particularly familiar with the overall blogosphere in linguistics.
-As a dedicated Twitter & Facebook hermit, I am perpetually out of the loop, and I like it that way.
+Unbecoming as it may be for a blogging linguist, I am not particularly familiar with the overall blogosphere in linguistics.
+As a devoted Twitter & Facebook hermit, I am perpetually out of the loop, and I like it that way.
 So it is only recently that I have become aware of [Martin Haspelmath's long-running blog](https://dlc.hypotheses.org/), thanks to [a post by David Adger](https://davidadger.org/2021/04/08/are-generative-grammarians-abandoning-innateness/).
 There's tons of posts, but based on the limited sample I've read so far, it seems that most revolve around one of three issues: terminology, innateness, and peer-review.
 I think the latter is actually the most interesting, but for the sake of ~~completeness~~ self-indulgence, I'll add my \$0.02 regarding the first two, leaving peer-review for a separate post.
@@ -23,7 +23,7 @@ I think the latter is actually the most interesting, but for the sake of ~~compl
 
 Haspelmath frequently talks about how X should actually be called Y or Z.
 By [his own admission](https://dlc.hypotheses.org/989), he keeps "insisting on careful use of terminology in linguistics".
-One terminological quibble that keeps coming up is why [*typology* should be called *comparative linguistics*](https://dlc.hypotheses.org/1915).
+For example, one terminological quibble that keeps coming up is why [*typology* should be called *comparative linguistics*](https://dlc.hypotheses.org/1915).
 Many of the problems with his specific terminological proposals have already been pointed out in the comments there, and I don't have much to add on those.
 I'll just take a moment to link to [xkcd](https://xkcd.com/927/) and [smbc](https://www.smbc-comics.com/comic/definition), which succinctly point out the real problem with such terminological musings.
 
@@ -51,9 +51,9 @@ Bottom line: terminology is messy, cannot be regulated in a top-down manner, and
 Continuing the previous point, I am not a fan of the term *grammar blueprint* that Haspelmath uses for UG.
 To me, a blueprint is the very opposite of a large space of options with tremendous variation within.
 It makes me think of programming cookbooks like *Go Programming Blueprints*, which focus less on the programming language itself and more on prepackaged solutions to common problems.
-But whatever, I know what he's referring to, it's his blog, not mine, and this isn't really what I find confusing about his take on UG.
+But whatever, I know what Haspelmath is referring to, he can call things on his blog any way he wants, and this isn't really what I find confusing about his take on UG.
 
-Haspelmath argues that the post-[@Chomsky05] idea of a minimal UG undermines the universalist methodology of Minimalism, where it is still assumed that languages are largely the same (e.g. same functional projections) and that insights can be meaningfully transferred between languages.
+Haspelmath argues that the post-[@Chomsky05a] idea of a minimal UG undermines the universalist methodology of Minimalism, where it is still assumed that languages are largely the same (e.g. same functional projections) and that insights can be meaningfully transferred between languages.
 This is what the debate with Adger is about, and Haspelmath also has earlier exchanges with other linguists that touch on this, e.g. [Gillian Ramchand](https://dlc.hypotheses.org/1811) and [Elena Anagnostopoulou](https://dlc.hypotheses.org/2205).
 There's a few other posts that I think are informed by this view, e.g. [Haspelmath's evaluation of Laura Kalin's work on DOM](https://dlc.hypotheses.org/1496), which got an in-depth reply on [Philosophy of Linguistics](https://philosophyoflinguistics618680050.wordpress.com/2018/11/06/what-means-understanding-differential-object-marking-a-reply-to-haspelmath/) (another blog I was unaware of).
 Overall, a lot of ink has been spilled, and it is not clear to me why:
@@ -83,7 +83,7 @@ I will point out, though, that
 
 But I really shouldn't have brought up those ancillary points, because the only thing that matters methodologically is that none of this matters.
 The cognitive issues may be what motivates the program, but the analytical work is largely independent of that.
-There's a reason why virtually all Minimalist textbooks include some spiel about the learning problem, syntax as a cognitive science, language as window into mental computation, yada yada yada, yet barely any of them contain a chapter on parsing, learnability, or computation (one notable exception being Sportiche, Koopman, and Stabler' *An Introduction to Syntactic Analysis and Theory*, and the list of authors should give you a clue how the computational chapter made it in).
+There's a reason why virtually all Minimalist textbooks include some spiel about the learning problem, syntax as a cognitive science, language as a window into mental computation, yada yada yada, yet barely any of them contain a chapter on parsing, learnability, or computation (one notable exception being Sportiche, Koopman, and Stabler's *An Introduction to Syntactic Analysis and Theory*, and the list of authors should give you a clue how the computational chapter made it in).
 I've [complained about that before]({filename}2020-01-31_graf_modern_syntax_textbooks.md), but that's the way things are.
 And because that's the way things are, a Minimalist's analytical work does not hinge on any particular conception of UG.
 
