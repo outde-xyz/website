@@ -1,6 +1,6 @@
 ---
 title: >-
-    Mellow musings on peer review, and a rant against journals
+    Mellow musings on peer review
 authors:
     - Thomas Graf
 date: 2021-06-07
