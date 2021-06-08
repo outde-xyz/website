@@ -20,7 +20,7 @@ Moreover, reviewers are frequently forced into the role of gatekeepers who have 
 I do not want to directly argue for or against these points, I'm sure the prestigious outdex readership can make up its own mind.
 But I will say that my own experience has been a lot more positive, largely because of the field I'm in.
 So the following are some reflections on what I think mathematical linguistics as a field gets right with peer review (and there's also a tiny bit about how it can sometimes go wrong).
-
+<!-- END_SUMMARY_BLOCK -->
 
 ## Peer-review in mathematical linguistics is pleasantly mellow
 
