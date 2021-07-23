@@ -1,0 +1,43 @@
+\documentclass[tikz]{standalone}
+\usepackage[linguistics]{forest}
+\usepackage[charter]{mathdesign}
+
+\usetikzlibrary{arrows, arrows.meta, matrix}
+\tikzset{headarrow/.style = {-{Latex[length=.5em]}}}
+\tikzset{move/.style = {dashed,blue,headarrow}}
+
+\newcommand{\mlex}[2]{\ensuremath{\textrm{#1} ::\thinspace \mathrm{#2}}}
+\newcommand{\fsel}[1]{\ensuremath{\mathrm{#1^+\thinspace\unskip}}}
+\newcommand{\fcat}[1]{\ensuremath{\mathrm{#1^-\thinspace\unskip}}}
+\newcommand{\flcr}[1]{\ensuremath{\mathrm{#1^+\thinspace\unskip}}}
+\newcommand{\flce}[1]{\ensuremath{\mathrm{#1^-\thinspace\unskip}}}
+\newcommand{\emptystring}{\ensuremath{\varepsilon}}
+
+
+\begin{document}
+\begin{forest}
+    [Move, name=m1
+        [Merge
+            [\mlex{did}{\flcr{wh}}]
+            [Merge
+                [Mary]
+                [Merge
+                    [T]
+                    [Merge
+                        [Merge
+                            [\mlex{which}{\flce{wh}}, name=wh1]
+                            [book]
+                        ]
+                        [Merge
+                            [give]
+                            [Kelly]
+                        ]
+                    ]
+                ]
+            ]
+        ]
+    ]
+    %
+    \draw (wh1) to [out=160, in=220] (m1);
+\end{forest}
+\end{document}

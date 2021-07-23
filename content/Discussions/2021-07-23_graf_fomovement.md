@@ -1,6 +1,6 @@
 ---
 title: >-
-    Multiple wh-movement in first-order logic
+    MGs do not struggle (as much as you think) with multiple wh-movement
 authors:
     - Thomas Graf
 date: 2021-07-23
@@ -33,7 +33,7 @@ Let's ignore all the syntactic details like VP-internal subjects, what triggers 
 A fairly standard MG analysis would posit that *which* carries wh^-^ and *did* has wh^+^.
 Those are movement features of the same name but opposite polarity, which triggers movement of the phrase headed by *which* (i.e. *which book*) to a specifier of *did*.
 As part of this movement step, the wh-features that triggered it are also checked and deleted.
-Overall pretty vanilla and close in spirit to @Chomsky95 or @Adger02, except that MGs use feature polarity instead of interpretability.
+Overall pretty vanilla and close in spirit to @Chomsky95a or @Adger03, except that MGs use feature polarity instead of interpretability.
 
 We can represent the whole derivation for (@simple) in the form of a tree, but again I'll only indicate the features that matter for wh-movement.
 
@@ -81,7 +81,7 @@ But the most fundamental assumption of MGs is that the collection of lexical typ
 We have finally hit a dead end: the combination of the SMC and one-to-one feature checking forces us to treat multiple wh-movement in a way that is incompatible with the very foundation of MGs.
 
 
-## SMC, what art though good for?
+## SMC, what art thou good for?
 
 The argument above shows that MGs as defined in @Stabler97 cannot handle unbounded multiple wh-movement.
 But it is important to keep in mind why MGs were defined this way, in particular with respect to the SMC.
@@ -104,16 +104,22 @@ The standard MG feature calculus can be reinterpreted as a collection of constra
 Side remark: That's quite generally a good perspective to take as it gets us to look beyond feature notation (where MGs and Minimalism differ quite a bit) to look at the behavior of the whole feature calculus (where MGs and Minimalism are very close in spirit).
 Anyhoo, this tree-geometric view of feature checking is exactly what we need to get a grip on multiple wh-movement.
 
-In tree-geometric terms, MG feature checking revolves all around what I call **occurrences**.
-Intuitively, an interior node (Merge, Move) is an occurrence of a lexical item iff it checks one of the negative features on said lexical item.
+In tree-geometric terms, MG feature checking revolves all around what I decided to call **occurrences** many years ago, in my youthful exuberance.
+Intuitively, a Merge node or a Move is an occurrence of a lexical item iff it checks one of the negative features on said lexical item.
 More precisely:
 
 1. The 0-occurrence of a lexical item *l* is the Merge step where *l* gets selected, checking its category feature (in MGs, category features are negative and selector features are positive, so the 0-occurrence still involves checking of a negative feature).
-1. The $i$-th occurrence of *l* is the closest node that properly dominates the $(i-1)$-th occurrence of *l* and can check the $i$-th licensee feature on *l* (i.e. the $i$-th negative movement feature).
+1. The $i$-th occurrence of *l* is the closest node that
+    1. properly dominates the $(i-1)$-th occurrence of *l*, and
+    1. can check the $i$-th licensee feature on *l* (i.e. the $i$-th negative movement feature).
 
 This definition assumes that if a lexical item has multiple licensee features, they are linearly ordered to indicate in which order they must be checked.
 There is an alternative definition for MGs with unordered licensee features, but for our discussion it won't matter either way because we can get away with assuming that no lexical item has more than one licensee feature.
-So, feel free to stick with the intuitive notion, supplemented with whatever understanding you glean from the examples below.
+So, feel free to stick with the intuitive notion, supplemented by whatever understanding you glean from the two examples below.
+
+![]({static}/img/thomas/multiple_wh/der_simplewh_occurrences.svg)
+
+![]({static}/img/thomas/multiple_wh/der_multiplewh_multifeatures_occurrences.svg)
 
 The feature checking requirements of Merge and Move boil down to two simple constraints:
 
@@ -166,7 +172,7 @@ The cool thing is, this doesn't even need any modifications on our part.
 One particularly elegant view of movement is in terms of first-order transductions, which [you might remember from this post]({filename}/Tutorials/logicaltransductions_basics.md).
 The idea here is that we define the relations that hold in the derived structure in terms of relations that hold in the derivation tree.
 More concretely, we may treat movement as a first-order formula that reinterprets the derivation tree as a multi-dominance tree where the root of a phrase is connected to all the occurrences of its head.
-Using $\triangleleft$ and $\triangleleft^+$ for immediate dominance and proper dominance in the derivation tree, respectively, we can define the immediate dominance relation $\blacktriangleleft$ in the output structure as follows:
+Using $\triangleleft$ for immediate dominance in the derivation tree, we can define the immediate dominance relation $\blacktriangleleft$ in the output structure as follows:
 
 $$
 x \blacktriangleleft y \Leftrightarrow x \triangleleft y \vee \exists l [\text{occurrence}(x,l) \wedge \text{derivational-root}(y,l)]
@@ -181,11 +187,13 @@ Or in plain English:
 This presupposes that we have first-order definitions of the predicates *occurrence* and *derivational-root*, which isn't too hard --- you can check @Graf11FG and @Graf12LACL for the precise formulas.
 
 With the formula above, the derivation trees for simple and multiple wh-movement are mapped to the multi-dominance trees below.
-You might notice that it looks basically the same as the previous derivation tree, except that movement arrows are now interpreted as immediate dominance arcs.
+You might notice that they look basically the same as the original derivation trees, except that movement arrows are now interpreted as immediate dominance arcs.
+
+![]({static}/img/thomas/multiple_wh/der_simplewh_multidominance.svg)
 
 ![]({static}/img/thomas/multiple_wh/der_multiplewh_multidominance.svg)
 
-The cool thing is that this formula is independent of which version of the SMC is in place, it works equally well with both.
+The cool thing is that the first-order formula is independent of which version of the SMC is in place, it works equally well with both.
 In fact, this is just the usual first-order transduction for standard MGs, with not a single thing changed about it.
 Since the transduction hasn't changed at all, movement is still deterministic and regular: there is no ambiguity as to how we should connect movers to their landing sites, and doing so requires no new machinery.
 The derivation tree languages are also still regular, as we saw above, so all three formal properties of MGs have been preserved while opening up the framework enough to handle multiple wh-movement.

@@ -1,0 +1,52 @@
+\documentclass[tikz]{standalone}
+\usepackage[linguistics]{forest}
+\usepackage[charter]{mathdesign}
+
+\usetikzlibrary{arrows, arrows.meta, matrix, positioning}
+\tikzset{headarrow/.style = {-{Latex[length=.5em]}}}
+\tikzset{move/.style = {dashed,blue,headarrow}}
+
+\newcommand{\mlex}[2]{\ensuremath{\textrm{#1} ::\thinspace \mathrm{#2}}}
+\newcommand{\fsel}[1]{\ensuremath{\mathrm{#1^+\thinspace\unskip}}}
+\newcommand{\fcat}[1]{\ensuremath{\mathrm{#1^-\thinspace\unskip}}}
+\newcommand{\flcr}[1]{\ensuremath{\mathrm{#1^+\thinspace\unskip}}}
+\newcommand{\flce}[1]{\ensuremath{\mathrm{#1^-\thinspace\unskip}}}
+\newcommand{\emptystring}{\ensuremath{\varepsilon}}
+
+
+\begin{document}
+\begin{forest}
+    [Move
+        [Move
+            [Move, name=1123
+                [Merge
+                    [\mlex{did}{\flcr{wh} \flcr{wh} \flcr{wh}}]
+                    [Merge, name=02
+                        [\mlex{who}{\flce{wh}}, name=wh2]
+                        [Merge
+                            [T]
+                            [Merge, name=01
+                                [Merge, name=wh1
+                                    [\mlex{which}{\flce{wh}}]
+                                    [book]
+                                ]
+                                [Merge,name=03
+                                    [give]
+                                    [\mlex{whom}{\flce{wh}}, name=wh3]
+                                ]
+                            ]
+                        ]
+                    ]
+                ]
+            ]
+        ]
+    ]
+    %
+    \node[right=.2em of 1123, font=\small] {(1-occurrence of \emph{who}, \emph{which}, and \emph{whom})};
+    \foreach \Mover/\Label in {%
+        1/which,
+        2/who,
+        3/whom}
+        \node[right=.2em of 0\Mover, font=\small] {(0-occurrence of \emph{\Label})};
+\end{forest}
+\end{document}
