@@ -37,7 +37,8 @@
             ]
         ]
     ]
+    \clip (-7em,1em) rectangle (13em,-20em);
     %
-    \draw (wh1) to [out=160, in=220] (m1);
+    \draw (wh1) .. controls +(160:5em) and +(200:12em) .. (m1);
 \end{forest}
 \end{document}
