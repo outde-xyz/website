@@ -1,0 +1,48 @@
+\documentclass[tikz,usenames,svgnames,x11names]{standalone}
+\usepackage[linguistics]{forest}
+\usepackage[charter]{mathdesign}
+
+\usetikzlibrary{arrows, arrows.meta, decorations, decorations.pathmorphing, matrix}
+\tikzset{headarrow/.style = {-{Latex[length=.5em]}}}
+\tikzset{move/.style = {dashed,blue,headarrow}}
+
+\newcommand{\mlex}[2]{\ensuremath{\textrm{#1} ::\thinspace \mathrm{#2}}}
+\newcommand{\fsel}[1]{\ensuremath{\mathrm{#1^+\thinspace\unskip}}}
+\newcommand{\fcat}[1]{\ensuremath{\mathrm{#1^-\thinspace\unskip}}}
+\newcommand{\flcr}[1]{\ensuremath{\mathrm{#1^+\thinspace\unskip}}}
+\newcommand{\flce}[1]{\ensuremath{\mathrm{#1^-\thinspace\unskip}}}
+\newcommand{\emptystring}{\ensuremath{\varepsilon}}
+
+
+\begin{document}
+\begin{forest}
+    [Move, name=0
+        [Move, name=00
+            [Move, name=000
+                [Merge, name=0000
+                    [\mlex{did}{\flcr{wh} \flcr{wh} \flcr{wh}}, name=00000]
+                    [Merge, name=00001
+                        [\mlex{who}{\flce{wh}}, name=000010]
+                        [Merge, name=000011
+                            [T, name=0000110]
+                            [Merge, name=0000111
+                                [Merge, name=00001110
+                                    [\mlex{which}{\flce{wh}}, name=000011100]
+                                    [book, name=000011101]
+                                ]
+                                [Merge, name=00001111
+                                    [give, name=000011110]
+                                    [\mlex{whom}{\flce{wh}}, name=000011111]
+                                ]
+                            ]
+                        ]
+                    ]
+                ]
+            ]
+        ]
+    ]
+    \draw[->, decorate, decoration=snake, SeaGreen4, opacity=.75] (000011100.north west) -- (00001110.north west) -- (0000111.south west) -- (0000111.south east) -- (0000111.north east) -- (000011.north east) -- (00001.north east) -- (0000.north east) -- (000.north east) -- (00.north east) -- (0.south east);
+    \draw[->, decorate, decoration=snake, blue!75, opacity=.75] (000010.north east) -- (00001.south east) -- (00001.north east) -- (0000.north east) -- (000.north east) -- (00.south east);
+    \draw[->, decorate, decoration=snake, brown!75, opacity=.75] (000011111.north east) -- (00001111.north east) -- (0000111.north east) -- (000011.north east) -- (00001.north east) -- (0000.north east) -- (000.south east); 
+\end{forest}
+\end{document}

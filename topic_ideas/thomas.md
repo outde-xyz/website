@@ -20,10 +20,6 @@
 - share your data! mini-corpora (even a little data can help, cf. Frank paper)!
 - no specialized notation
 
-# Against representations
-
-- representations are fossilized computation
-
 # Semilinearity, Parikh's theorem, and movement
 
 - link to Makoto's lecture notes: http://makotokanazawa.ws.hosei.ac.jp/FormalGrammar/lecture5.pdf
