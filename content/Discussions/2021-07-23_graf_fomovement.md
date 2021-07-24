@@ -224,7 +224,6 @@ Here's the full quote:
 > For Bulgarian: leftmost one must be the one whose highest-position-prior-to-wh-movement is highest. Order amongst the others is free.
 
 I interpret this as a kind of two-class system, where we get to single out a finite number of wh-movers for the front positions, and the remaining wh-phrases, of which there can be an unbounded number, may show up in any arbitrary order.}}}
-Multiple wh-movement seems to behave more like scrambling in that you can have any arbitrary order (modulo a few restrictions), and the c-command relations match that observed order.
 So we need to be able to get any random permutation of any arbitrary number of wh-movers, and we can't get that by starting with a fixed hierarchy and moving stuff around.
 We could make the transduction non-deterministic, but that's a major step from a formal perspective, and more importantly, I think it's the less insightful route.
 
