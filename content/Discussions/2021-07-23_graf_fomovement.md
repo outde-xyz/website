@@ -4,6 +4,7 @@ title: >-
 authors:
     - Thomas Graf
 date: 2021-07-23
+modified: 2021-7-24
 bibliography: references.bib
 tags:
     - Minimalist grammars
