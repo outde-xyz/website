@@ -217,6 +217,13 @@ From a mathematical perspective, this kind of "partially c-command transparent" 
 
 But that doesn't seem to be how things actually work.
 [Omer Preminger mentioned that a while ago on this blog](https://outde.xyz/2021-03-30/handbook-chapter-on-minimalism-and-computational-linguistics.html#comment-1), citing work by Norvin Richards (if the link doesn't take you right to his comment: it's the one at the very top).
+~~Multiple wh-movement seems to behave more like scrambling in that you can have any arbitrary order (modulo a few restrictions), and the c-command relations match that observed order.~~
+{{{*Edit*: This characterization is overly simplified, and placing it right after the reference to Omer's comment suggests that it is his mischaracterization when it is in fact me that's being sloppy.
+Here's the full quote:
+
+> For Bulgarian: leftmost one must be the one whose highest-position-prior-to-wh-movement is highest. Order amongst the others is free.
+
+I interpret this as a kind of two-class system, where we get to single out a finite number of wh-movers for the front positions, and the remaining wh-phrases, of which there be an unbounded number, may show up in any arbitrary order.}}}
 Multiple wh-movement seems to behave more like scrambling in that you can have any arbitrary order (modulo a few restrictions), and the c-command relations match that observed order.
 So we need to be able to get any random permutation of any arbitrary number of wh-movers, and we can't get that by starting with a fixed hierarchy and moving stuff around.
 We could make the transduction non-deterministic, but that's a major step from a formal perspective, and more importantly, I think it's the less insightful route.
